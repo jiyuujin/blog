@@ -1,0 +1,29 @@
+{
+  "importMap": "./import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:react"
+  },
+  "tasks": {
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
+    "serve": "deno task lume -s",
+    "build": "deno task lume"
+  },
+  "lint": {
+    "exclude": [
+      "./_site",
+      "./_bin"
+    ],
+    "rules": {
+      "tags": [
+        "recommended"
+      ]
+    }
+  },
+  "fmt": {
+    "exclude": [
+      "./_site",
+      "./_bin"
+    ]
+  }
+}
