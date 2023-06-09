@@ -1,6 +1,5 @@
 {
   "imports": {
-    "lume/": "https://deno.land/x/lume@v1.17.4/",
-    "date-fns": "npm:date-fns"
+    "lume/": "https://deno.land/x/lume@v1.17.4/"
   }
 }
