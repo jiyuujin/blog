@@ -18,16 +18,16 @@ export default (
               cx="50%"
               r="150"
               stroke="white"
-              stroke-width="10"
+              strokeWidth="10"
               fill="black"
               opacity="50%"
             />
             <text
               x="50%"
               y="50%"
-              text-anchor="middle"
-              dominant-baseline="central"
-              font-size="60"
+              textAnchor="middle"
+              dominantBaseline="central"
+              fontSize="60"
             >
               {reaction}
             </text>
@@ -51,7 +51,9 @@ export default (
           <div className="flex gap-x-2 flex-wrap">
             {(tags ?? []).filter((e) => !(/^\s*$/.test(e)))
               .map((tag: string) => (
-                <div class="text-bluegray-500 font-bold">{`#${tag}`}</div>
+                <div key={tag} className="text-bluegray-500 font-bold">
+                  {`#${tag}`}
+                </div>
               ))}
           </div>
         </div>
