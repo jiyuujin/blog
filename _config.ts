@@ -21,4 +21,6 @@ site.use(jsx())
 
 site.copy("assets");
 
+site.ignore("README.md");
+
 export default site;
