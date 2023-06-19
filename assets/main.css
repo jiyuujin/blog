@@ -8,47 +8,101 @@ html {
   color: var(--font-primary);
 }
 
-main pre {
-  border-radius: 12px;
-  padding: 1rem;
-  margin: 1rem 0;
-  overflow-x: auto;
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-main p > code {
-  color: #cdd6f4;
-  background: var(--code-background);
-  display: inline-block;
-  padding: 0 0.5rem;
+.post-detail div a {
+  color: #fd0f82;
 }
 
-main code .table {
-  display: inherit;
-}
-
-main .post-detail h2 {
+.post-detail div h2 {
   padding: 0.24em 0.48em;
   margin: 8px 0;
   color: #35495e;
   border-left: solid 5px #42b883;
 }
 
-main .post-detail h3 {
+.post-detail div h3 {
   padding: 0.24em 0.48em;
   margin: 8px 0;
   color: #35495e;
   border-left: solid 5px #35495e;
 }
 
-main .post-detail h4 {
+.post-detail div h4 {
   padding: 0.24em 0.48em;
   margin: 8px 0;
   color: #35495e;
   border-left: solid 5px #ccc;
 }
 
-main .post-detail iframe {
+.post-detail div p {
+  padding: 0.16em 0.24em;
+  line-height: 2;
+  color: #000;
+  text-align: left;
+}
+
+.post-detail div ol {
+  padding: 0 0 0 2em;
+  margin: 0;
+  color: #35495e;
+  text-align: left;
+}
+
+.post-detail div ul {
+  padding: 0 0 0 2em;
+  margin: 0;
+  color: #35495e;
+  text-align: left;
+  list-style: disc;
+}
+
+.post-detail div dd {
+  margin: 0 0 0 2em;
+}
+
+.post-detail div table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse;
+}
+
+.post-detail div td,
+.post-detail div th {
+  padding: 3px 10px;
+  border: 2px solid #ccb8a3;
+}
+
+.post-detail div th {
+  padding: 5px 10px;
+}
+
+.post-detail div pre {
+  padding: 1.2rem 0.8rem;
+  overflow-x: scroll;
+  text-align: left;
+}
+
+.post-detail div code {
+  background-color: rgba(175, 184, 193, 0.4);
+  background: transparent;
+}
+
+.post-detail div img {
+  width: 80%;
+  margin: 0 10%;
+}
+
+.post-detail div iframe {
   width: 100%;
+}
+
+.post-detail div details {
+  text-align: left;
+  margin-bottom: 24px;
 }
 
 :root {
