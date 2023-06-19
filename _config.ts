@@ -19,4 +19,6 @@ site.use(jsx())
   .use(resolveUrls())
   .use(pagefind());
 
+site.copy("assets");
+
 export default site;
