@@ -19,19 +19,27 @@ export class MarkdownEngine implements Engine {
   deleteCache() {}
 
   render(
-    content: string,
+    _content: string,
     _data?: Data,
     _filename?: string,
   ): Promise<string> {
-    return Promise.resolve(markdownToHtml(content));
+    const content = markdownToHtml(_content, {
+      embedOrigin: "https://embed.zenn.studio",
+    });
+
+    return Promise.resolve(content);
   }
 
   renderSync(
-    content: string,
+    _content: string,
     _data?: Data,
     _filename?: string,
   ): string {
-    return markdownToHtml(content);
+    const content = markdownToHtml(_content, {
+      embedOrigin: "https://embed.zenn.studio",
+    });
+
+    return content;
   }
 
   addHelper() {}
