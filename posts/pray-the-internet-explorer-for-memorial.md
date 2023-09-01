@@ -23,20 +23,15 @@ tags:
 
 :::message is-primary
 
-Windows 10 における Internet Explorer デスクトップアプリケーションを 2022 年 6
-月 15 日に廃止し、サポートを終了します。この日以降 IE11
-デスクトップアプリケーションを利用しようとすると Microsoft Edge
-にリダイレクトされます。
+Windows 10 における Internet Explorer デスクトップアプリケーションを 2022 年 6 月 15 日に廃止し、サポートを終了します。この日以降 IE11 デスクトップアプリケーションを利用しようとすると Microsoft Edge にリダイレクトされます。
 
 :::
 
-今後 IE
-対応に力を注ぐことも多くないことは想像できるが、この度あえて自身がこれまでに施してきた処理内容をまとめて公開することにした。
+今後 IE 対応に力を注ぐことも多くないことは想像できるが、この度あえて自身がこれまでに施してきた処理内容をまとめて公開することにした。
 
 ### 各社 IE 対応をザッピング
 
-参考までに公式サポートが報じられる以前から、とりわけ 2021 年に入って以降 IE
-サポートの終了を告知するケースが増えている。
+参考までに公式サポートが報じられる以前から、とりわけ 2021 年に入って以降 IE サポートの終了を告知するケースが増えている。
 
 - [Backlog IE11 サポート終了のお知らせ | Backlog](https://backlog.com/ja/product-updates/announcement/ie11-support-ends/)
 - [Internet Explorer のサポート終了とその後の BASE の進化 | BASE](https://devblog.thebase.in/entry/ie-forever)
@@ -64,8 +59,7 @@ Vue 3 や Angular12 で IE サポートの終了がアナウンスされてい�
 
 そもそも Internet Explorer は ES6 すらも対応していないクソ仕様。
 
-ParentNode や ChildNode で Element には children をサポートする一方 Document
-にはサポートしない。
+ParentNode や ChildNode で Element には children をサポートする一方 Document にはサポートしない。
 
 | 機能                            | 使用できるか |
 | :------------------------------ | :----------- |
@@ -87,14 +81,13 @@ ParentNode や ChildNode で Element には children をサポートする一方
 
 ### IE では使えないあんなものこんなもの
 
-コレクション系の処理 (find など) を始め `XMLHttpRequest` と同様に使える fetch
-など IE11 では使えない。
+コレクション系の処理 (find など) を始め `XMLHttpRequest` と同様に使える fetch など IE11 では使えない。
 
 ```js
-fetch("url")
+fetch('url')
   .then((response) => response.text())
   .then((text) => console.log(text))
-  .catch((error) => console.log(error));
+  .catch((error) => console.log(error))
 ```
 
 非同期処理を実現できる Promise も IE11 では使えない。
@@ -102,24 +95,22 @@ fetch("url")
 ```js
 new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve("😆");
-  }, 300);
+    resolve('😆')
+  }, 300)
 }).then((emoji) => {
-  console.log(emoji); // 😆
-});
+  console.log(emoji) // 😆
+})
 ```
 
 ## 自力で頑張る IE 対応
 
 それでも私自身には IE 対応に力を注ぐ瞬間があった。
 
-これまで私自身が対応した IE
-対応をザッピング。スポット的なものを中心に集めており容易に対応可能なものから、後半にかけて少々重めなものまで。
+これまで私自身が対応した IE 対応をザッピング。スポット的なものを中心に集めており容易に対応可能なものから、後半にかけて少々重めなものまで。
 
 ### table-layout
 
-画面全体に対して table タグが覆っている場面を例にとった。すると Chrome
-では横幅ぴったり表示され遜色ない結果も IE では右端はみ出る不恰好な結果に。
+画面全体に対して table タグが覆っている場面を例にとった。すると Chrome では横幅ぴったり表示され遜色ない結果も IE では右端はみ出る不恰好な結果に。
 
 ```css
 .data-table {
@@ -133,8 +124,7 @@ new Promise((resolve, reject) => {
 
 #### IE では
 
-上記のような横にはみ出てしまうデザインの崩れに対しては width
-を削除することで一件落着。
+上記のような横にはみ出てしまうデザインの崩れに対しては width を削除することで一件落着。
 
 ```css
 .data-table {
@@ -147,27 +137,26 @@ new Promise((resolve, reject) => {
 
 ### IntersectionObserver
 
-画像や動画を遅延読み込みする際にスクロールイベントで使えるものの IE11
-では使えない。
+画像や動画を遅延読み込みする際にスクロールイベントで使えるものの IE11 では使えない。
 
 しかし Polyfill が存在するので、有り難く利用させてもらう。
 
 [w3c/IntersectionObserver](https://github.com/w3c/IntersectionObserver/tree/main/polyfill)
 
 ```js
-document.querySelectorAll("img").forEach((target) => {
+document.querySelectorAll('img').forEach((target) => {
   const io = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const img = entry.target;
-        const src = img.getAttribute("data-lazy");
-        img.setAttribute("src", src);
-        observer.disconnect();
+        const img = entry.target
+        const src = img.getAttribute('data-lazy')
+        img.setAttribute('src', src)
+        observer.disconnect()
       }
-    });
-  });
-  io.observe(target);
-});
+    })
+  })
+  io.observe(target)
+})
 ```
 
 ### object-fit-images
@@ -187,15 +176,12 @@ document.querySelectorAll("img").forEach((target) => {
 IE の時だけ `objectFitImages()` を呼び出す。
 
 ```js
-window.addEventListener("load", function () {
-  const ua = navigator.userAgent.toLowerCase();
-  if (
-    ua.indexOf("msie") !== -1 || ua.indexOf("trident") !== -1 ||
-    ua.indexOf("edge") !== -1
-  ) {
-    objectFitImages();
+window.addEventListener('load', function () {
+  const ua = navigator.userAgent.toLowerCase()
+  if (ua.indexOf('msie') !== -1 || ua.indexOf('trident') !== -1 || ua.indexOf('edge') !== -1) {
+    objectFitImages()
   }
-});
+})
 ```
 
 Polyfill で解決できない場合 CSS を書いて解決。
@@ -233,31 +219,24 @@ Polyfill で解決できない場合 CSS を書いて解決。
 
 ### `getComputedStyle`
 
-`getElementById()`
-で得られるスタイルシートの情報は、要素のインラインで設定されているものだけ。ブラウザ上で適用されているスタイルを呼び出したい場合には
-`getComputedStyle()` を使う。
+`getElementById()` で得られるスタイルシートの情報は、要素のインラインで設定されているものだけ。ブラウザ上で適用されているスタイルを呼び出したい場合には `getComputedStyle()` を使う。
 
-`getComputedStyle()` 後にプロパティ名を直接書いても使える一方 IE11
-ではそれが使えないので、その代わりに `Element.currentStyle` を使う。
+`getComputedStyle()` 後にプロパティ名を直接書いても使える一方 IE11 ではそれが使えないので、その代わりに `Element.currentStyle` を使う。
 
 ```js
-const body = document.querySelector(".overview .overview__description__body");
-const bodyEl = document.getElementById("overviewDescriptionBody");
+const body = document.querySelector('.overview .overview__description__body')
+const bodyEl = document.getElementById('overviewDescriptionBody')
 
-let bodyLineHeight;
-if (
-  ua.indexOf("msie") !== -1 || ua.indexOf("trident") !== -1 ||
-  ua.indexOf("edge") !== -1
-) {
-  bodyLineHeight = bodyEl.currentStyle.lineHeight;
+let bodyLineHeight
+if (ua.indexOf('msie') !== -1 || ua.indexOf('trident') !== -1 || ua.indexOf('edge') !== -1) {
+  bodyLineHeight = bodyEl.currentStyle.lineHeight
 } else {
   bodyLineHeight = getComputedStyle(body)
-    .getPropertyValue("line-height")
-    .replace(/[^-\d\.]/g, "");
+    .getPropertyValue('line-height')
+    .replace(/[^-\d\.]/g, '')
 }
 ```
 
 ## 最後に
 
-こればかりはあくまでほんの一部に過ぎない。先日の WWDC 2021 で Safari
-における拡張機能の標準化がアナウンスされたこともあり、個別のブラウザに対して工数をかけることが少なくなることを祈る所存です。
+こればかりはあくまでほんの一部に過ぎない。先日の WWDC 2021 で Safari における拡張機能の標準化がアナウンスされたこともあり、個別のブラウザに対して工数をかけることが少なくなることを祈る所存です。

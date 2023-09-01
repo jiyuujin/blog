@@ -12,9 +12,7 @@ tags:
   - Vue
 ---
 
-最近は React/Serverless のお仕事と並行して、CakePHP に Vue
-を導入するお仕事を進めてます。既に一部リリース済みですが既存のような新規案件、負債は決して存在しないとは言えないちょっぴりカオスな環境。先日その
-MPA 導入過程の中でも vue.config.js に主眼を置いて書きました。
+最近は React/Serverless のお仕事と並行して、CakePHP に Vue を導入するお仕事を進めてます。既に一部リリース済みですが既存のような新規案件、負債は決して存在しないとは言えないちょっぴりカオスな環境。先日その MPA 導入過程の中でも vue.config.js に主眼を置いて書きました。
 
 <a class="link-preview" href="https://blog.nekohack.me/posts/vue-config-and-more">vue.config.js</a>
 
@@ -22,15 +20,13 @@ MPA 導入過程の中でも vue.config.js に主眼を置いて書きました�
 
 その心は TypeScript を選定するか、結論は TS Go です。
 
-後から TypeScript
-で書いた方が良かったと後悔するくらいなら、という気持ちが強かったです。
+後から TypeScript で書いた方が良かったと後悔するくらいなら、という気持ちが強かったです。
 
 ## Lint を考える
 
 早速 .eslintrc.js の初期設定では以下参考にさせていただきました。
 
-<a class="link-preview" href="https://teppeis.hatenablog.com/entry/2019/02/typescript-eslint">@typescript-eslint
-ことはじめ</a>
+<a class="link-preview" href="https://teppeis.hatenablog.com/entry/2019/02/typescript-eslint">@typescript-eslint ことはじめ</a>
 
 最初から黄金比率 (まで行かなくても) 良いです。
 
@@ -51,8 +47,7 @@ module.exports = {
 }
 ```
 
-今回この組み合わせ(ESLint+Prettier)に加えて、一番のキモは eslint-config-standard
-も継承したこと。
+今回この組み合わせ(ESLint+Prettier)に加えて、一番のキモは eslint-config-standard も継承したこと。
 
 ```bash
 yarn add -D eslint-config-standard
@@ -89,8 +84,7 @@ npx tsc --noEmit
 
 全てはサーバサイドとの通信を安全に完結させるため。
 
-通信処理をひとつの module として切り分け、必要に応じてこの module
-をインポートして返却値を厳密に管理する。
+通信処理をひとつの module として切り分け、必要に応じてこの module をインポートして返却値を厳密に管理する。
 
 ```js
 export default class SummaryService {
@@ -123,11 +117,9 @@ mounted() {
 }
 ```
 
-あとテーブルやグラフチャート用にデータを加工する訳ですが、必要に応じて props
-を渡します。
+あとテーブルやグラフチャート用にデータを加工する訳ですが、必要に応じて props を渡します。
 
-親コンポーネントから孫コンポーネントのように 2
-世代以上を超えて引数を渡すといったことの無いような設計を堅持しています。
+親コンポーネントから孫コンポーネントのように 2 世代以上を超えて引数を渡すといったことの無いような設計を堅持しています。
 
 おいおい自力で型定義を書ければ良いでしょう。
 
@@ -147,9 +139,7 @@ declare module "vue-toasted" {
 
 ## コンポーネントで既存の CSS と競合
 
-実際にコンポーネントでは services
-にアクセスするための加工済データをローカルステートとして管理。こうしたコンポーネント化を進めるに当たって新たに導入検討を進めていた
-bootstrap-vue の存在。
+実際にコンポーネントでは services にアクセスするための加工済データをローカルステートとして管理。こうしたコンポーネント化を進めるに当たって新たに導入検討を進めていた bootstrap-vue の存在。
 
 ### 想定と比べて深刻かも
 
@@ -159,8 +149,7 @@ Vue CLI 内では Scoped CSS を採用、それはあくまで Vue Component 内
 
 既存の CSS はグローバルに書かれており、競合が発生するのも納得。
 
-そこで CSS
-のベタ書きに変更。今回は一例にモーダルを自作コンポーネント化しました。
+そこで CSS のベタ書きに変更。今回は一例にモーダルを自作コンポーネント化しました。
 
 ```html
 <atoms-button ref="branchSelectButton" :text="title" @handleClick="displayModal"></atoms-button>
@@ -173,12 +162,9 @@ Vue CLI 内では Scoped CSS を採用、それはあくまで Vue Component 内
 </div>
 ```
 
-基本的な考え方としてボタンをタップした時に `showModal` フラグを `true`
-にする一方で、マスク領域をタップすると `showModal` フラグを `false`
-にしています。
+基本的な考え方としてボタンをタップした時に `showModal` フラグを `true` にする一方で、マスク領域をタップすると `showModal` フラグを `false` にしています。
 
-また Button や Input などで使える v-model
-をあえてプロジェクト内で使わない方針を立てました。
+また Button や Input などで使える v-model をあえてプロジェクト内で使わない方針を立てました。
 
 ```html
 <input v-model="searchText" />
@@ -194,7 +180,6 @@ Vue CLI 内では Scoped CSS を採用、それはあくまで Vue Component 内
 
 ## 最後に
 
-細々とした Tips
-を羅列した、これまでと違ってとても不恰好な登壇になってしまいました。
+細々とした Tips を羅列した、これまでと違ってとても不恰好な登壇になってしまいました。
 
 <a class="link-preview" href="https://slides.com/jiyuujin/20190918#/">小さなことから改善してる話</a>

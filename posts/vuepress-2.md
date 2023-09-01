@@ -19,18 +19,13 @@ tags:
 
 [Flutter Osaka | ドキュメント一覧](https://flutter-osaka.netlify.app)
 
-これは Flutter 日本ユーザグループ (大阪)
-のドキュメントサイトで、主にハンズオンやミートアップ等で開発者と技術情報を共有するため
-2 年前に開設した。
+これは Flutter 日本ユーザグループ (大阪) のドキュメントサイトで、主にハンズオンやミートアップ等で開発者と技術情報を共有するため 2 年前に開設した。
 
-`docs/.vuepress/config.ts`
-でナビゲーションバー並びにサイドバーの設定を書く。これは VuePress 1
-系と比べて書き方は一切変わらないので今回は割愛させていただく。
+`docs/.vuepress/config.ts` でナビゲーションバー並びにサイドバーの設定を書く。これは VuePress 1 系と比べて書き方は一切変わらないので今回は割愛させていただく。
 
 ## VuePress 2 の特長
 
-VuePress は Markdown をベースに書ける静的サイトジェネレータで適宜 Vue
-コンポーネントを使ってカスタマイズできる。
+VuePress は Markdown をベースに書ける静的サイトジェネレータで適宜 Vue コンポーネントを使ってカスタマイズできる。
 
 この度 VuePress 2 最大の特徴として型安全に書けるようになったことを挙げる。
 
@@ -44,20 +39,19 @@ VuePress は Markdown をベースに書ける静的サイトジェネレータ�
 
 :::message is-primary
 
-これまでの Vue 2 系の書き方ではなく `createApp` で生成された app
-インスタンスに対し use を使ってプラグインを注入して書けば良い。
+これまでの Vue 2 系の書き方ではなく `createApp` で生成された app インスタンスに対し use を使ってプラグインを注入して書けば良い。
 
 - Vue コンポーネントを読み込む
 - サードパーティ製プラグインを読み込む
 
 ```js
-import { defineClientAppEnhance } from "@vuepress/client";
+import { defineClientAppEnhance } from '@vuepress/client'
 
-import Example from "./components/Example.vue";
+import Example from './components/Example.vue'
 
 export default defineClientAppEnhance(({ app, router, siteData }) => {
-  app.component("Example", Example);
-});
+  app.component('Example', Example)
+})
 ```
 
 :::
@@ -70,8 +64,7 @@ export default defineClientAppEnhance(({ app, router, siteData }) => {
 
 `docs/.vuepress/config.ts` でウェブサイトの設定を書く。
 
-かつて JavaScript で書いた設定を `defineUserConfig<DefaultThemeOptions>`
-という型定義の下で書けるようになった。
+かつて JavaScript で書いた設定を `defineUserConfig<DefaultThemeOptions>` という型定義の下で書けるようになった。
 
 ```js
 import { defineUserConfig } from 'vuepress'
@@ -104,8 +97,7 @@ export declare type HeadAttrsConfig = Record<string, string | boolean>;
 この規則を頭に入れておけばハマる心配も無くなる。
 
 ```js
-head:
-[
+head: [
   [
     `meta`,
     {
@@ -122,15 +114,14 @@ head:
       content: `<DESCRIPTION>`,
     },
   ],
-];
+]
 ```
 
 ## その他ハマった点
 
 先述の Vue 3 について、これまで使えていたプラグインが使えなくなることもある。
 
-Flutter 日本ユーザグループのウェブサイトでは YouTube の配信動画を埋め込むため
-`vue-youtube` というプラグインを利用している。
+Flutter 日本ユーザグループのウェブサイトでは YouTube の配信動画を埋め込むため `vue-youtube` というプラグインを利用している。
 
 しかし VuePress 2 ではそのプラグインが動かない。
 
@@ -143,26 +134,26 @@ Flutter 日本ユーザグループのウェブサイトでは YouTube の配信
 ```
 
 ```ts
-import YouTube from "vue-youtube";
+import YouTube from 'vue-youtube'
 
 export default {
   components: {
-    YouTube,
+    YouTube
   },
   props: {
     videoId: {
       type: String,
-      default: "",
-    },
+      default: ''
+    }
   },
   data() {
     return {
       playerVars: {
-        origin: `${location.protocol}//${location.hostname}/`,
-      },
-    };
-  },
-};
+        origin: `${location.protocol}//${location.hostname}/`
+      }
+    }
+  }
+}
 ```
 
 そこで Vue 3 に対応しているプラグイン (があったので、それ) に乗り換えた。
@@ -176,24 +167,24 @@ export default {
 ```
 
 ```ts
-import YouTube from "vue3-youtube";
+import YouTube from 'vue3-youtube'
 
 export default {
   components: {
-    YouTube,
+    YouTube
   },
   props: {
     videoId: {
       type: String,
-      default: "",
-    },
+      default: ''
+    }
   },
   methods: {
     onReady() {
-      this.$refs.youtube.playVideo();
-    },
-  },
-};
+      this.$refs.youtube.playVideo()
+    }
+  }
+}
 ```
 
 あくまで違う方が開発されておりこの辺りの仕様が違っている点は仕方ありません。

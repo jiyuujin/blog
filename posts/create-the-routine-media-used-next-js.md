@@ -21,23 +21,17 @@ tags:
   - SSG
 ---
 
-JAMStack は、JavaScript と API、Markup からなることば。2
-年前自ら製作を開始、現在もこうして運営中の当ブログも、この内のひとつ。しかし
-Headless CMS を使わずに、トリガービルドや自動ビルドを利用することでこの JAMStack
-を実現する話を今回させていただければ。
+JAMStack は、JavaScript と API、Markup からなることば。2 年前自ら製作を開始、現在もこうして運営中の当ブログも、この内のひとつ。しかし Headless CMS を使わずに、トリガービルドや自動ビルドを利用することでこの JAMStack を実現する話を今回させていただければ。
 
 ## 読みものリストを製作しました
 
-ここからが本題。今回は GAS Execution API を使って、楽に JAMStack な Web
-プロダクトを作れるというお話。実際に製作した Web プロダクトは
-[Routine | Daily](https://routine.nekohack.app/) として公開中です。
+ここからが本題。今回は GAS Execution API を使って、楽に JAMStack な Web プロダクトを作れるというお話。実際に製作した Web プロダクトは [Routine | Daily](https://routine.nekohack.app/) として公開中です。
 
 ![](https://i.imgur.com/diWcF7F.png)
 
 :::message is-primary
 
-フロントエンドのソースコードはこちら、ちなみにサーバサイド (GAS)
-のソースコードは現在公開していません。
+フロントエンドのソースコードはこちら、ちなみにサーバサイド (GAS) のソースコードは現在公開していません。
 
 [jiyuujin/routine](https://github.com/jiyuujin/routine)
 
@@ -45,17 +39,14 @@ Headless CMS を使わずに、トリガービルドや自動ビルドを利用�
 
 ### 前提として、
 
-今年の VR 勉強会で
-[登壇](https://blog.nekohack.me/posts/recommend-tools-in-vr-study-3)
-させていただいた内容とかぶってしまうので一部割愛させていただく。
+今年の VR 勉強会で [登壇](https://blog.nekohack.me/posts/recommend-tools-in-vr-study-3) させていただいた内容とかぶってしまうので一部割愛させていただく。
 
 この登壇で伝えたかったこと、それは個人で Slack のワークスペースを持つこと。
 
 - IFTTT を利用して RSS から Slack に集める
 - 顔文字リアクションが付けられたリンクをスプレッドシートに集める
 
-それに加え、Slack
-のワークスペースを無料で使っていると、ある一定の期間を過ぎてしまうと遡って見られなくなる。
+それに加え、Slack のワークスペースを無料で使っていると、ある一定の期間を過ぎてしまうと遡って見られなくなる。
 
 😇
 
@@ -75,40 +66,36 @@ Headless CMS を使わずに、トリガービルドや自動ビルドを利用�
 
 そこで、簡単にフェッチしてこれる GAS Execution API を利用 (後述)
 
-フロントエンドのフレームワークには今年一流行っているという理由だけで Next.js
-を選択。
+フロントエンドのフレームワークには今年一流行っているという理由だけで Next.js を選択。
 
 ## GAS Execution API を利用
 
-スプレッドシートに保存されている情報をひとつのエンドポイントで取得するためには
-`doGet()` 関数を使えばいとも容易く取得できる。
+スプレッドシートに保存されている情報をひとつのエンドポイントで取得するためには `doGet()` 関数を使えばいとも容易く取得できる。
 
 ```js
 function getData(sheetName, page) {
-  const sheet = SpreadsheetApp.getActive().getSheetByName(sheetName);
-  const rows = sheet.getDataRange().getValues();
-  const keys = rows.splice(0, 1)[0];
+  const sheet = SpreadsheetApp.getActive().getSheetByName(sheetName)
+  const rows = sheet.getDataRange().getValues()
+  const keys = rows.splice(0, 1)[0]
   return rows
     .filter((row) => Number(row[3]) === Number(page))
     .map(function (row) {
-      const obj = {};
+      const obj = {}
       row.map(function (item, index) {
-        obj[String(keys[index])] = String(item);
-      });
-      return obj;
-    });
+        obj[String(keys[index])] = String(item)
+      })
+      return obj
+    })
 }
 
 function doGet(e) {
-  const data = getData("main", e.parameter.page);
-  const updatedAt = Utilities.formatDate(new Date(), "JST", "yyyy/MM/dd HH:mm");
+  const data = getData('main', e.parameter.page)
+  const updatedAt = Utilities.formatDate(new Date(), 'JST', 'yyyy/MM/dd HH:mm')
   const out = ContentService.createTextOutput(
     JSON.stringify({ data: data, updated_at: updatedAt }, null, 2),
-  ).setMimeType(ContentService.MimeType.JSON);
-  out.setContent(
-    JSON.stringify({ data: data, updated_at: updatedAt }, null, 2),
-  ); // JSONPテキストをセット
-  return out;
+  ).setMimeType(ContentService.MimeType.JSON)
+  out.setContent(JSON.stringify({ data: data, updated_at: updatedAt }, null, 2)) // JSONPテキストをセット
+  return out
 }
 ```
 
@@ -125,34 +112,30 @@ function doGet(e) {
 
 ![](https://i.imgur.com/rzk1bM5.jpg)
 
-ウェブアプリケーションとして導入するため、URL を発行すれば API
-として使えるようになる。
+ウェブアプリケーションとして導入するため、URL を発行すれば API として使えるようになる。
 
 ![]8https://i.imgur.com/UiO90Fa.jpg)
 
-その発行した API をフェッチするには、ひとつ Hooks API (useEffect) もうひとつは
-SSR を利用する。
+その発行した API をフェッチするには、ひとつ Hooks API (useEffect) もうひとつは SSR を利用する。
 
 結論をいうと前者を選択。
 
-その理由、それは今回実行する API
-がたったひとつ、クエリパラメータでページのやり取りする (後述) ため。
+その理由、それは今回実行する API がたったひとつ、クエリパラメータでページのやり取りする (後述) ため。
 
-useEffect の副作用フックを利用してページにアクセスする度更新される方が SSG
-(静的サイト化) を利用する上で都合が良かった。
+useEffect の副作用フックを利用してページにアクセスする度更新される方が SSG (静的サイト化) を利用する上で都合が良かった。
 
 ```js
-const [items, setItems] = useState([]);
-const [page, setPage] = useState(1);
+const [items, setItems] = useState([])
+const [page, setPage] = useState(1)
 
 useEffect(() => {
   const getItems = async () => {
-    setItems([]);
-    const res = await fetchData(page);
-    setItems(res);
-  };
-  getItems();
-}, [page]);
+    setItems([])
+    const res = await fetchData(page)
+    setItems(res)
+  }
+  getItems()
+}, [page])
 ```
 
 非同期でフェッチするようにしたこと。フロントエンドでページをステートのひとつとして持たせ、ページを常に監視する。ページの変更がある度にページが再レンダリングされるよう書けば良さそう。
@@ -178,13 +161,11 @@ useEffect(() => {
 }
 ```
 
-フロントエンドではフェッチだけで済むが、これも useEffect
-の副作用フックを最大限活用できることを目指しているため、この設計になった。
+フロントエンドではフェッチだけで済むが、これも useEffect の副作用フックを最大限活用できることを目指しているため、この設計になった。
 
 ## PWA 化も忘れずに
 
-折角ここまで来たならというけどこの PWA 化が意外と面倒、まず manifest.json
-を準備すること。そしてアイコンも準備すること。
+折角ここまで来たならというけどこの PWA 化が意外と面倒、まず manifest.json を準備すること。そしてアイコンも準備すること。
 
 ### プラグインを設定してしまえば
 
@@ -197,21 +178,20 @@ yarn add next-offline -D
 next.config.js で `next-offline` を読み込める設定も行う。
 
 ```js
-const withOffline = require("next-offline");
+const withOffline = require('next-offline')
 
 const nextConfig = {
   //
-};
+}
 
-module.exports = withOffline(nextConfig);
+module.exports = withOffline(nextConfig)
 ```
 
 この PWA 化によってホームスクリーンに「アプリとして」保存できるようになる。
 
 ## 最後に、
 
-つらつらと書かせていただいたが、既に出来上がっているサービスを使わせてもらっているため、製作期間こそ
-1-2 日あればできてしまう。
+つらつらと書かせていただいたが、既に出来上がっているサービスを使わせてもらっているため、製作期間こそ 1-2 日あればできてしまう。
 
 ![]8https://i.imgur.com/diWcF7F.png)
 

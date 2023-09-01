@@ -22,21 +22,15 @@ tags:
 - markuplint 大きな特長を挙げる
 - markuplint v2 とは
 
-記事と合わせ
-[登壇スライド](https://docs.google.com/presentation/d/1vvkYKVMRt6pYJSZC2Fm_eFKYxjhrqchfqn6UJBKikfU/edit?usp=sharing)
-も作成しています。
+記事と合わせ [登壇スライド](https://docs.google.com/presentation/d/1vvkYKVMRt6pYJSZC2Fm_eFKYxjhrqchfqn6UJBKikfU/edit?usp=sharing) も作成しています。
 
 https://docs.google.com/presentation/d/1vvkYKVMRt6pYJSZC2Fm_eFKYxjhrqchfqn6UJBKikfU/edit?usp=sharing
 
 ## Lint とは
 
-まず Lint
-について、各個人によってコードの書き方は様々。機械的に体裁を整えることを目指し
-JavaScript や TypeScript の体裁を整える ESLint から CSS の体裁を整える StyleLint
-が存在しています。
+まず Lint について、各個人によってコードの書き方は様々。機械的に体裁を整えることを目指し JavaScript や TypeScript の体裁を整える ESLint から CSS の体裁を整える StyleLint が存在しています。
 
-そこに HTML の体裁を整える MarkupLint が新たに登場、実際に JavaScript
-フレームワークで利用可能となりました。
+そこに HTML の体裁を整える MarkupLint が新たに登場、実際に JavaScript フレームワークで利用可能となりました。
 
 ## 効果的に Lint を使う
 
@@ -46,18 +40,13 @@ JavaScript や TypeScript の体裁を整える ESLint から CSS の体裁を�
 - JetBrains IDE の `autoFix` を利用する
 - Git Hook (Husky) を利用する
 
-ただ、これらの機能を利用するにしても設定ファイル (ESLint なら .eslintrc 、
-MarkupLint なら .markuplintrc) を準備する必要があります。
+ただ、これらの機能を利用するにしても設定ファイル (ESLint なら .eslintrc 、 MarkupLint なら .markuplintrc) を準備する必要があります。
 
 ## markuplint とは
 
-2021 年 1 月 [W3C](https://www.w3.org/) が HTML Living Standard
-を正式な勧告として発表。実際に
-[HTML Living Standard](https://html.spec.whatwg.org/multipage/) の仕様に準拠した
-HTML となっているかを機械的に検証してくれます。
+2021 年 1 月 [W3C](https://www.w3.org/) が HTML Living Standard を正式な勧告として発表。実際に [HTML Living Standard](https://html.spec.whatwg.org/multipage/) の仕様に準拠した HTML となっているかを機械的に検証してくれます。
 
-一時期、その W3C を起因としたゴタゴタもあり、かつて勧告された HTML5
-はこれを機に廃止へ向かいました。
+一時期、その W3C を起因としたゴタゴタもあり、かつて勧告された HTML5 はこれを機に廃止へ向かいました。
 
 ## markuplint を導入する
 
@@ -67,8 +56,7 @@ HTML となっているかを機械的に検証してくれます。
 - HTML 規格に準拠しているかチェックする
 - コードスタイルをチェックする
 
-マークアップを巡るアクセシビリティを考慮するため
-[markuplint](https://github.com/markuplint/markuplint) をインストールします。
+マークアップを巡るアクセシビリティを考慮するため [markuplint](https://github.com/markuplint/markuplint) をインストールします。
 
 ```bash
 npx markuplint --init
@@ -80,10 +68,10 @@ npx markuplint --init
 ✔ Are you going to do with accessibility better practices? (y/N) · true
 ✔ Are you going to set the convention about naming? (y/N) · true
 ✔ Are you going to check for the code styles? (y/N) · true
+
 ```
 
-なお、ローカルに [markuplint](https://github.com/markuplint/markuplint)
-をインストールしていただいても構いません。
+なお、ローカルに [markuplint](https://github.com/markuplint/markuplint) をインストールしていただいても構いません。
 
 ```bash
 # npm
@@ -93,31 +81,24 @@ npm i -D markuplint
 yarn add -D markuplint
 ```
 
-この markuplint に加え JavaScript
-フレームワークごとお世話となるプラグインが異なります。
+この markuplint に加え JavaScript フレームワークごとお世話となるプラグインが異なります。
 
-- React では markuplint と合わせ `@markuplint/jsx-parser` や
-  `@markuplint/react-spec` をインストールする
-- Vue では markuplint と合わせ `@markuplint/vue-parser` や
-  `@markuplint/vue-spec` をインストールする
+- React では markuplint と合わせ `@markuplint/jsx-parser` や `@markuplint/react-spec` をインストールする
+- Vue では markuplint と合わせ `@markuplint/vue-parser` や `@markuplint/vue-spec` をインストールする
 
-各々、設定ファイル `.markuplintrc` の parser
-でインストールしたプラグインを読み込みます。
+各々、設定ファイル `.markuplintrc` の parser でインストールしたプラグインを読み込みます。
 
 ## markuplint 大きな特長を挙げる
 
-markuplint 公式ウェブサイトには、
-[Accessibility](https://markuplint.dev/rules#accessibility) の項目が存在します。
+markuplint 公式ウェブサイトには、 [Accessibility](https://markuplint.dev/rules#accessibility) の項目が存在します。
 
 https://markuplint.dev/rules#accessibility
 
 ### [landmark-roles](https://markuplint.dev/rules/landmark-roles)
 
-`banner` , `main` , `complementary` and `contentinfo`
-がトップレベルのランドマークか警告する。
+`banner` , `main` , `complementary` and `contentinfo` がトップレベルのランドマークか警告する。
 
-どのランドマークにも知覚できるコンテンツが存在するか警告します (Work in
-Progress)
+どのランドマークにも知覚できるコンテンツが存在するか警告します (Work in Progress)
 
 ### [required-h1](https://markuplint.dev/rules/required-h1)
 
@@ -125,8 +106,7 @@ Progress)
 
 ### [wai-aria](https://markuplint.dev/rules/wai-aria)
 
-role 属性や `aria-*` 属性が WAI-ARIA や "ARIA in HTML "
-の仕様に準拠していない場合に警告します。
+role 属性や `aria-*` 属性が WAI-ARIA や "ARIA in HTML " の仕様に準拠していない場合に警告します。
 
 :::message is-primary
 
@@ -134,8 +114,7 @@ role 属性や `aria-*` 属性が WAI-ARIA や "ARIA in HTML "
 
 - 仕様に存在しないロールを使用する
 - 抽象的なロールを使用する
-- 設定されたロール (または暗黙のロール)
-  に属さないプロパティまたはステートを使用する
+- 設定されたロール (または暗黙のロール) に属さないプロパティまたはステートを使用する
 - プロパティ/ステートの無効な値を使用する
 - HTML の ARIA に従って許可されていないロールを使用する
 - 必須のプロパティまたは状態を設定しない
@@ -144,8 +123,7 @@ role 属性や `aria-*` 属性が WAI-ARIA や "ARIA in HTML "
 
 - 非推奨のプロパティまたは状態を設定する
 - HTML の ARIA に従って明示的に暗黙的な役割を設定する
-- HTML の ARIA に従って、その要素がそれに相当するセマンティックな HTML
-  属性を持つ場合、そのプロパティ/ステートを明示的に設定する
+- HTML の ARIA に従って、その要素がそれに相当するセマンティックな HTML 属性を持つ場合、そのプロパティ/ステートを明示的に設定する
 
 :::
 
@@ -154,23 +132,17 @@ role 属性や `aria-*` 属性が WAI-ARIA や "ARIA in HTML "
 今年 1 月 12 日には v2 がリリースされました。
 
 - ルールプリセット
-  - [`markuplint:recommended`](https://markuplint.dev/configuration/#properties/extends)
-    を利用する
-- [`plugins`](https://markuplint.dev/configuration/#properties/plugins)
-  オプション
+  - [`markuplint:recommended`](https://markuplint.dev/configuration/#properties/extends) を利用する
+- [`plugins`](https://markuplint.dev/configuration/#properties/plugins) オプション
   - より自分たちのルールに合わせて拡張可能
     - ESLint でやってきたようなサードパーティ製をやっていき
 - その他
-  - [`selector`](https://markuplint.dev/configuration/#properties/node-rules-&-child-node-rules/selector)
-    プロパティ
-  - [`regexSelector`](https://markuplint.dev/configuration/#properties/node-rules-&-child-node-rules/regex-selector)
-    プロパティ
+  - [`selector`](https://markuplint.dev/configuration/#properties/node-rules-&-child-node-rules/selector) プロパティ
+  - [`regexSelector`](https://markuplint.dev/configuration/#properties/node-rules-&-child-node-rules/regex-selector) プロパティ
 
-詳細は [v2.0.0](https://github.com/markuplint/markuplint/releases/tag/v2.0.0)
-をご確認いただきたい。
+詳細は [v2.0.0](https://github.com/markuplint/markuplint/releases/tag/v2.0.0) をご確認いただきたい。
 
-その内 `extends` オプションの提供開始は大きい。なお、現時点で提供されている
-`markuplint:recommended` 1 種類のみ。
+その内 `extends` オプションの提供開始は大きい。なお、現時点で提供されている `markuplint:recommended` 1 種類のみ。
 
 ```.markuplintrc
 {
@@ -194,9 +166,7 @@ role 属性や `aria-*` 属性が WAI-ARIA や "ARIA in HTML "
 
 ## その他
 
-記事と合わせ
-[登壇スライド](https://docs.google.com/presentation/d/1vvkYKVMRt6pYJSZC2Fm_eFKYxjhrqchfqn6UJBKikfU/edit?usp=sharing)
-も作成しています。
+記事と合わせ [登壇スライド](https://docs.google.com/presentation/d/1vvkYKVMRt6pYJSZC2Fm_eFKYxjhrqchfqn6UJBKikfU/edit?usp=sharing) も作成しています。
 
 https://docs.google.com/presentation/d/1vvkYKVMRt6pYJSZC2Fm_eFKYxjhrqchfqn6UJBKikfU/edit?usp=sharing
 

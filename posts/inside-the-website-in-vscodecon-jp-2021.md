@@ -32,8 +32,7 @@ VSCodeCon 史上初めてカンファレンス用のティザーサイトを製�
 
 ### GitHub Pages へデプロイ
 
-今回 `vscodejp.github.io` というドメインで公開する方針の下 GitHub Pages
-へデプロイする。
+今回 `vscodejp.github.io` というドメインで公開する方針の下 GitHub Pages へデプロイする。
 
 next build と next export を合わせて進めることで静的 HTML が生成される。
 
@@ -76,28 +75,24 @@ jobs:
           PUBLISH_DIR: ./out
 ```
 
-また Github Pages 固有の事象として `_` から始まるディレクトリが見えず 404
-となってしまう問題に対処する必要がある。
+また Github Pages 固有の事象として `_` から始まるディレクトリが見えず 404 となってしまう問題に対処する必要がある。
 
-具体的には少し前に書かせていただいた
-[記事](https://blog.nekohack.me/posts/be-careful-to-use-next-js-ssg-on-github-pages)
-をチェックしていただければ幸いです。
+具体的には少し前に書かせていただいた [記事](https://blog.nekohack.me/posts/be-careful-to-use-next-js-ssg-on-github-pages) をチェックしていただければ幸いです。
 
 ### 英語化対応
 
 ローカライズは Dynamic Routes を利用している。
 
-各種 API `getStaticPaths` 並びに `getStaticProps`
-を使うことで、想定している言語を paths / props として返す。
+各種 API `getStaticPaths` 並びに `getStaticProps` を使うことで、想定している言語を paths / props として返す。
 
 ```js
 export async function getStaticPaths() {
   return {
     paths: languages.map((lang) => {
-      return { params: { lang: lang } };
+      return { params: { lang: lang } }
     }),
     fallback: false,
-  };
+  }
 }
 
 export async function getStaticProps({ params }) {
@@ -105,41 +100,38 @@ export async function getStaticProps({ params }) {
     props: {
       language: languages.includes(params.lang) ? params.lang : defaultLanguage,
     },
-  };
+  }
 }
 ```
 
 ルート `pages/index.tsx` で各言語に応じたパスへアクセスさせる。
 
 ```js
-import React from "react";
-import { useRouter } from "next/router";
-import i18next from "i18next";
+import React from 'react'
+import { useRouter } from 'next/router'
+import i18next from 'i18next'
 
 export default function Home() {
-  const router = useRouter();
+  const router = useRouter()
 
   React.useEffect(() => {
-    const { pathname } = router;
-    if (pathname == "/") {
-      router.push("/" + i18next.language.substring(0, 2));
+    const { pathname } = router
+    if (pathname == '/') {
+      router.push('/' + i18next.language.substring(0, 2))
     }
-  });
+  })
 
-  return null;
+  return null
 }
 ```
 
-Github Pages 同様、具体的には少し前に書かせていただいた
-[記事](https://blog.nekohack.me/posts/localization-on-next-js-ssg)
-をチェックしていただければ幸いです。
+Github Pages 同様、具体的には少し前に書かせていただいた [記事](https://blog.nekohack.me/posts/localization-on-next-js-ssg) をチェックしていただければ幸いです。
 
 ### ダークモード対応
 
 率直に言えば Context と localStorage を利用してテーマを保持している。
 
-事前に `ColorTheme`
-という名前の型定義の下で、保持するテーマを準備する必要がある。
+事前に `ColorTheme` という名前の型定義の下で、保持するテーマを準備する必要がある。
 
 ```js
 type ColorTheme = {
@@ -188,20 +180,16 @@ export const ColorThemeProvider: FC = ({ children }) => {
 
 先のユーザ情報保持と何ら変わらない。
 
-ここで管理されている状態 (Store) は `useReducer` で生成した State や Dispatch
-にあたるものと考えてください。
+ここで管理されている状態 (Store) は `useReducer` で生成した State や Dispatch にあたるものと考えてください。
 
 - Store を利用する際 `useContext` を利用して状態を取得する
-- Store に格納した State から状態を読み取ったり、また Store に格納した Dispatch
-  から状態を変更する
+- Store に格納した State から状態を読み取ったり、また Store に格納した Dispatch から状態を変更する
 
-そして保存したタイミングで localStorage
-に格納することで、次回以降のアクセスについてもそのテーマで表示される。
+そして保存したタイミングで localStorage に格納することで、次回以降のアクセスについてもそのテーマで表示される。
 
 ## 最後に
 
-これ以外にスタイルの定義を CSS modules で書いていたり、ライブラリ内の react を
-preact として書き換えてたりしている。
+これ以外にスタイルの定義を CSS modules で書いていたり、ライブラリ内の react を preact として書き換えてたりしている。
 
 ### 自分仕様の VS Code に変える
 

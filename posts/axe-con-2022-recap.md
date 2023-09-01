@@ -20,19 +20,15 @@ tags:
 
 ## Axe Con
 
-2022 年 3
-月、デジタル領域のアクセシビリティをテーマに、[Deque Systems, Inc.](https://deque.com/)
-主催の下執り行われた。
+2022 年 3 月、デジタル領域のアクセシビリティをテーマに、[Deque Systems, Inc.](https://deque.com/) 主催の下執り行われた。
 
-[Chrome のライブキャプション機能](https://blog.google/products/chrome/live-caption-chrome/)
-を有効にして動画を再生できる点は、さすがアクセシビリティを大いに考慮したカンファレンスであるという印象を持った。
+[Chrome のライブキャプション機能](https://blog.google/products/chrome/live-caption-chrome/) を有効にして動画を再生できる点は、さすがアクセシビリティを大いに考慮したカンファレンスであるという印象を持った。
 
 ### The Future of the Web and Accessibility
 
 [セッション詳細](https://www.deque.com/axe-con/sessions/opening-keynote/)
 
-歴史から始まり、最近流行りの XR やメタバースを含む新たな Web
-体験におけるアクセシビリティの重要性について触れられた。
+歴史から始まり、最近流行りの XR やメタバースを含む新たな Web 体験におけるアクセシビリティの重要性について触れられた。
 
 - 特定の障害への配慮を強化
 - XR やメタバースを含む新たな Web 体験への対応
@@ -40,14 +36,11 @@ tags:
 
 また WCAG 3.0 への言及もあった。
 
-W3C はこの
-[開発目標](https://www.w3.org/TR/wcag-3.0/#:~:text=1.3-,Goals%20and%20Requirements,-The%20goal%20of)
-に下記を採用している。
+W3C はこの [開発目標](https://www.w3.org/TR/wcag-3.0/#:~:text=1.3-,Goals%20and%20Requirements,-The%20goal%20of) に下記を採用している。
 
 > Web、ePub、PDF、アプリケーション、モバイルアプリ、その他の新しい技術を含むデジタル製品を、障害者にとってよりアクセスしやすく、使いやすいものにする
 
-なお 2021 年 1 月に作業草案となり、最新版は 2021 年 12 月 7
-日に公開された。最終的に 2023 年以前に最終版が発行されることはないと思われる。
+なお 2021 年 1 月に作業草案となり、最新版は 2021 年 12 月 7 日に公開された。最終的に 2023 年以前に最終版が発行されることはないと思われる。
 
 詳細は、下記 GitHub issue をご確認いただきければ幸いです。
 
@@ -57,16 +50,13 @@ https://github.com/w3c/silver/issues
 
 [セッション詳細](https://www.deque.com/axe-con/sessions/the-state-of-accessibility-report-findings/)
 
-ウェブサイトや代表的なモバイルアプリ (有償、無償、各 20 ずつ) を対象に
-[最新の調査 (pdf)](https://pages.diamond.la/hubfs/SOAR%20/SOAR%202021/FINAL%20DOCUMENTS/2021%20Diamond%20State%20of%20Accessibility%20Report.pdf)
-でアクセシビリティの傾向をまとめている。
+ウェブサイトや代表的なモバイルアプリ (有償、無償、各 20 ずつ) を対象に [最新の調査 (pdf)](https://pages.diamond.la/hubfs/SOAR%20/SOAR%202021/FINAL%20DOCUMENTS/2021%20Diamond%20State%20of%20Accessibility%20Report.pdf) でアクセシビリティの傾向をまとめている。
 
 ### Making Content Usable for People with Cognitive and Learning Disabilities
 
 [セッション詳細](https://www.deque.com/axe-con/sessions/making-content-usable-for-people-with-cognitive-and-learning-disabilities/)
 
-下記のように定量的な根拠で示しつつ、スコープとなる機能的なニーズ
-(注意障害、言語障害、学習障害、記憶障害、実行機能障害) を整理。
+下記のように定量的な根拠で示しつつ、スコープとなる機能的なニーズ (注意障害、言語障害、学習障害、記憶障害、実行機能障害) を整理。
 
 それらを下に、具体的な留意事項について俯瞰した内容を中心に触れられた。
 
@@ -79,20 +69,17 @@ https://github.com/w3c/silver/issues
 
 [セッション詳細](https://www.deque.com/axe-con/sessions/removing-bias-with-wizard-of-oz-screen-reader-usability-testing/)
 
-スクリーンリーダーにおける利用を想定した Web
-サイトのプロトタイピングで、「オズの魔法使い」を実施した事例紹介を中心に触れられた。
+スクリーンリーダーにおける利用を想定した Web サイトのプロトタイピングで、「オズの魔法使い」を実施した事例紹介を中心に触れられた。
 
 ### Scoring the Accessibility of Websites
 
 [セッション詳細](https://www.deque.com/axe-con/sessions/scoring-the-accessibility-of-websites/)
 
-米国の非営利団体 Web AIM が開発した Web アクセシビリティのスコア化手法「AIM
-(Accessibility IMpact)」の紹介を中心に触れられた。
+米国の非営利団体 Web AIM が開発した Web アクセシビリティのスコア化手法「AIM (Accessibility IMpact)」の紹介を中心に触れられた。
 
 ## 100 万のホームページに対するアクセシビリティ自動検証
 
-全体的なエラー件数は、昨年とほぼ変わらない水準だったようです。また 96.8
-％のホームページで、何らかの WCAG への不適合が検出されている。
+全体的なエラー件数は、昨年とほぼ変わらない水準だったようです。また 96.8 ％のホームページで、何らかの WCAG への不適合が検出されている。
 
 なお、当該記事では下記観点を中心に触れられている。
 

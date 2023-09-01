@@ -12,12 +12,9 @@ tags:
   - CMS
 ---
 
-結果的には `Nuxt.js` 案を採用した訳ですが、製作前は `VuePress`
-案も検討していました。
+結果的には `Nuxt.js` 案を採用した訳ですが、製作前は `VuePress` 案も検討していました。
 
-`this.$site.pages` に同リポジトリ内の Markdown
-ファイルが一通り入っており、適宜必要な Markdown
-ファイルを選択することでブログ化を実現できる。
+`this.$site.pages` に同リポジトリ内の Markdown ファイルが一通り入っており、適宜必要な Markdown ファイルを選択することでブログ化を実現できる。
 
 ```js
 computed: {
@@ -40,5 +37,4 @@ home: false
 <Post />
 ```
 
-ブログ化専用プラグインも準備。 `@vuepress/plugin-blog`
-を使えばブログを実現できるようです。
+ブログ化専用プラグインも準備。 `@vuepress/plugin-blog` を使えばブログを実現できるようです。

@@ -29,18 +29,15 @@ Flutter Japan User Group (Osaka) のハンズオンも、かれこれ第 11 弾�
 | カレンダーアプリを作る         | Plugins                 | アプリ        | 3.0.0 (特に指定せず)   | Flutter Japan User Group |
 | チャットアプリを作る           | Supabase                | アプリ        | 3.7.7 (特に指定せず)   | Flutter Japan User Group |
 
-今回 Supabase の [タイラー](https://twitter.com/dshukertjr)
-さんを招聘して、ハンズオン企画第 11 弾を開催させていただきました。
+今回 Supabase の [タイラー](https://twitter.com/dshukertjr) さんを招聘して、ハンズオン企画第 11 弾を開催させていただきました。
 
-前回のカレンダーアプリ同様、詳細は Zenn book
-に書かれていますので、そちらをご確認いただければ。
+前回のカレンダーアプリ同様、詳細は Zenn book に書かれていますので、そちらをご確認いただければ。
 
 https://zenn.dev/dshukertjr/books/flutter-supabase-chat
 
 ![](https://i.imgur.com/VGwooNe.png)
 
-実際 Flutter アプリで Supabase を使う手順について、チャットのロジック実装と UI
-装飾に分けて進めてきました。
+実際 Flutter アプリで Supabase を使う手順について、チャットのロジック実装と UI 装飾に分けて進めてきました。
 
 タイラーさんの作成したプロジェクトに参加者が乗り込む、という案は私自身考え付きませんでした。
 
@@ -50,8 +47,7 @@ https://zenn.dev/dshukertjr/books/flutter-supabase-chat
 
 飲み込みの早さには大変驚かれされます。
 
-その延長戦企画のひとつとして Flutter アプリの Supabase チャットに、いま流行りの
-ChatGPT を組み合わせる記事を書かせていただきました。
+その延長戦企画のひとつとして Flutter アプリの Supabase チャットに、いま流行りの ChatGPT を組み合わせる記事を書かせていただきました。
 
 この記事では、いくつか準備させていただいたチャレンジ課題を解説していきます。
 
@@ -60,14 +56,11 @@ ChatGPT を組み合わせる記事を書かせていただきました。
 - 関数 `requestChatGPT()` を作成、ChatGPT の回答を生成する
 - 関数 `requestImageGenerate()` を作成、画像を生成する
 
-なお、ChatGPT の API へアクセスする関数は `requestChatGPT()` や
-`requestImageGenerate()` とします。
+なお、ChatGPT の API へアクセスする関数は `requestChatGPT()` や `requestImageGenerate()` とします。
 
 ## OpenAI の API 実行環境を整備する
 
-OpenAI を使うために OpenAI Console より OPENAI SECRET
-を発行、作成します。実際、その OpenAI Console で作成した OPENAI SECRET を
-`OPENAI_API_KEY` に設定します。
+OpenAI を使うために OpenAI Console より OPENAI SECRET を発行、作成します。実際、その OpenAI Console で作成した OPENAI SECRET を `OPENAI_API_KEY` に設定します。
 
 ```dart
 String OPENAI_CHAT_COMPLETIONS_API =
@@ -77,9 +70,7 @@ String OPENAI_API_KEY = '';
 
 ### ChatGPT の回答を生成する
 
-API の詳細は
-[Chat completions 公式](https://platform.openai.com/docs/guides/chat/chat-completions-beta)
-を確認しながら、その実行を書いてみましょう。
+API の詳細は [Chat completions 公式](https://platform.openai.com/docs/guides/chat/chat-completions-beta) を確認しながら、その実行を書いてみましょう。
 
 https://platform.openai.com/docs/guides/chat/chat-completions-beta
 
@@ -89,8 +80,7 @@ https://platform.openai.com/docs/guides/chat/chat-completions-beta
 
 今回 Flutter アプリで呼び出す HTTP クライアントに dio を選定します。
 
-先日メンテ継続不可との記事が投稿されましたが、すぐ CFUG (http://flutter.cn/)
-へ移管されています。
+先日メンテ継続不可との記事が投稿されましたが、すぐ CFUG (http://flutter.cn/) へ移管されています。
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The dio package for <a href="https://twitter.com/FlutterDev?ref_src=twsrc%5Etfw">@FlutterDev</a> and <a href="https://twitter.com/dart_lang?ref_src=twsrc%5Etfw">@dart_lang</a> has been transferred to CFUG (<a href="https://t.co/YmZownRg3p">https://t.co/YmZownRg3p</a>) and we&#39;ll soon start to maintain the package again. Sorry for the inconvenience and looking forward to seeing you guys again. We&#39;ll also explore funding for the package.</p>&mdash; Alex Li (@AlexV525) <a href="https://twitter.com/AlexV525/status/1624978831860989952?ref_src=twsrc%5Etfw">February 13, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -151,8 +141,7 @@ void requestChatGPT(List<Map<String, String>> messages) async {
 }
 ```
 
-状態の変化したことを教えてくれる `setState()` で ChatGPT
-のレスポンスを取得します。
+状態の変化したことを教えてくれる `setState()` で ChatGPT のレスポンスを取得します。
 
 そして、そのまま Supabase へその値をデータベースに更新します。
 
@@ -165,17 +154,13 @@ setState(() {
 });
 ```
 
-取り急ぎ、Flutter アプリ内で ChatGPT を動かすロジックを作るなら、基本的に OpenAI
-の API を実行するだけで ChatGPT からの答えが返ってきます。
+取り急ぎ、Flutter アプリ内で ChatGPT を動かすロジックを作るなら、基本的に OpenAI の API を実行するだけで ChatGPT からの答えが返ってきます。
 
-回答は
-[`ver.2023.2.1-rc.1` branch](https://github.com/jiyuujin/flutter-openai-chat/tree/ver.2023.2.1-rc.1)
-をご確認いただければ幸いです。
+回答は [`ver.2023.2.1-rc.1` branch](https://github.com/jiyuujin/flutter-openai-chat/tree/ver.2023.2.1-rc.1) をご確認いただければ幸いです。
 
 ### UI 仕上げ
 
-自分自身のコメントに限らず ChatGPT
-からの答えも、コメントの表示位置を反転させるのが望ましいでしょう。
+自分自身のコメントに限らず ChatGPT からの答えも、コメントの表示位置を反転させるのが望ましいでしょう。
 
 ```dart
 // 自分自身のコメントでかつ ChatGPT ではないものに対して表示位置を反転させるよう更新
@@ -186,8 +171,7 @@ if (message.isMine && !message.isChatGPT) {
 
 Supabase 管理画面上で ChatGPT 用のユーザーを作成します。
 
-あらかじめ ChatGPT 用の UID を記録すると、実際 ChatGPT
-かどうかの判別を付けられます。
+あらかじめ ChatGPT 用の UID を記録すると、実際 ChatGPT かどうかの判別を付けられます。
 
 ```dart
 String CHATGPT_UID = '';
@@ -203,13 +187,11 @@ Message.fromMap({
       isChatGPT = myUserId == CHATGPT_UID;
 ```
 
-逐一 UID
-をチェックいただきつつ、常に会話している感覚を味合わせれば、ユーザー体験として良さそうです。
+逐一 UID をチェックいただきつつ、常に会話している感覚を味合わせれば、ユーザー体験として良さそうです。
 
 ## 最後に
 
-現時点で個人的にまだ GPT-4 の model
-を使えない状態ですが、少なくとも今後当たり前の存在となってくるのは間違い無いでしょう。
+現時点で個人的にまだ GPT-4 の model を使えない状態ですが、少なくとも今後当たり前の存在となってくるのは間違い無いでしょう。
 
 (再掲) ざっとソースコードを確認したい方は、下記コミットログをご確認ください。
 

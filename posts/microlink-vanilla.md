@@ -44,8 +44,8 @@ nuxt.config.ts で事前に準備したファイルを設定する。
 
 ```js
 module.export = {
-  plugins: ["~plugins/microlink.ts"],
-};
+  plugins: ['~plugins/microlink.ts'],
+}
 ```
 
 そして、ライフサイクルメソッド mounted() で使う。
@@ -53,13 +53,12 @@ module.export = {
 ```js
 export default Vue.extend({
   mounted() {
-    this.$microlinkjs(".link-preview");
+    this.$microlinkjs('.link-preview')
   },
-});
+})
 ```
 
-適宜該当リンクに `link-preview`
-タグを設定するとリッチな表現として表示されるようになる。
+適宜該当リンクに `link-preview` タグを設定するとリッチな表現として表示されるようになる。
 
 ```md
 <a class="link-preview" href="#"></a>

@@ -15,8 +15,7 @@ tags:
 
 https://yuukit.me/
 
-この度ルートのみ、ミニマムな構成に `/ja` と `/en` を新たに設定したことでルート
-(index.html) 以外のページを更新した時に遭遇した 404 エラー。
+この度ルートのみ、ミニマムな構成に `/ja` と `/en` を新たに設定したことでルート (index.html) 以外のページを更新した時に遭遇した 404 エラー。
 
 ```bash
 The specified key does not exist.

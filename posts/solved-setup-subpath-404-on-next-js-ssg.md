@@ -15,16 +15,11 @@ tags:
   - AWSS3
 ---
 
-そもそも Vercel や Amplify Console
-にデプロイするのが常である今日この頃。出会したのは Next.js で SSG
-化した静的サイトを S3 にデプロイした際 CSR したページでリロードすると 404
-事象だ。
+そもそも Vercel や Amplify Console にデプロイするのが常である今日この頃。出会したのは Next.js で SSG 化した静的サイトを S3 にデプロイした際 CSR したページでリロードすると 404 事象だ。
 
-`out/en.html` が吐き出され `https://hoge.com/en` にアクセスして欲しいところ
-`https://hoge.com/en.html` と拡張子が付く。
+`out/en.html` が吐き出され `https://hoge.com/en` にアクセスして欲しいところ `https://hoge.com/en.html` と拡張子が付く。
 
-Vercel や Amplify Console
-にデプロイするとよしなりにやってくれるので便利という訳。
+Vercel や Amplify Console にデプロイするとよしなりにやってくれるので便利という訳。
 
 - シェルを書く
 - Lambda@edge を導入する

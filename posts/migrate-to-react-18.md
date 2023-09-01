@@ -22,8 +22,7 @@ OSS の PR と合わせ、取り急ぎ各種リポジトリを更新した。
 
 ## 注意するべきこと
 
-React 18
-に更新する際、その変更差分は大きくないものの、いくつか気を付けたいことがある。
+React 18 に更新する際、その変更差分は大きくないものの、いくつか気を付けたいことがある。
 
 - `createRoot` への仕様変更
 - 暗黙的なコンポーネントにおける Children の扱い
@@ -41,19 +40,15 @@ Root DOM 作成 API に変更があった。
 - React 17 までは `ReactDOM.render` を使っていた
 - React 18 では `ReactDOM.createRoot` を使う
 
-具体的な差分は
-[コミットログ](https://github.com/jiyuujin/template-vite-react/commit/b6dcf252c22a68c89ca2ca4c21f212f4fcf86b1a)
-をご確認いただければ幸いです。
+具体的な差分は [コミットログ](https://github.com/jiyuujin/template-vite-react/commit/b6dcf252c22a68c89ca2ca4c21f212f4fcf86b1a) をご確認いただければ幸いです。
 
 https://github.com/jiyuujin/template-vite-react/commit/b6dcf252c22a68c89ca2ca4c21f212f4fcf86b1a
 
-Web アプリケーションのルートで `src/main.tsx`
-を読み込んでいるでしょうけれど、この変更点は大きいので注意していただければ幸いです。
+Web アプリケーションのルートで `src/main.tsx` を読み込んでいるでしょうけれど、この変更点は大きいので注意していただければ幸いです。
 
 ### 暗黙的なコンポーネントにおける Children の扱い
 
-Children
-を実装しているものの下記暗黙の宣言に依存しているコンポーネントについて、削除される破壊的変更があり注意しなければいけない。
+Children を実装しているものの下記暗黙の宣言に依存しているコンポーネントについて、削除される破壊的変更があり注意しなければいけない。
 
 - `React.FunctionComponent`
 - `React.Component.Function`
@@ -73,25 +68,19 @@ const SomeFunctionComponent: React.FunctionComponent<Props> = props => <div>{pro
 
 この通り場合によっては、これまでの型付けで動かなくなっているケースがあるため、こちらにも注意していただければ幸いです。
 
-なお、自動化された
-[移行スクリプト](https://github.com/eps1lon/types-react-codemod)
-があるので、この利用も検討すべきです。
+なお、自動化された [移行スクリプト](https://github.com/eps1lon/types-react-codemod) があるので、この利用も検討すべきです。
 
 https://github.com/eps1lon/types-react-codemod
 
 #### `useEffect` hook 周辺の挙動に留意
 
-StrictMode
-を取り入れる動機が、コンポーネントをアンマウントする代わりに、状態を保持することを可能にするため。
+StrictMode を取り入れる動機が、コンポーネントをアンマウントする代わりに、状態を保持することを可能にするため。
 
-この目的を達成するため、コンポーネントをアンマウントするときと同じライフサイクルフックを呼び出しますが、コンポーネントと
-DOM 要素の両方の状態を保持することになります。
+この目的を達成するため、コンポーネントをアンマウントするときと同じライフサイクルフックを呼び出しますが、コンポーネントと DOM 要素の両方の状態を保持することになります。
 
-それは、すなわちコンポーネントのマウントとアンマウントを複数回繰り返すことを意味しており、複数回呼び出される可能性のある
-`useEffect` で `init()` しない方が良いでしょう。
+それは、すなわちコンポーネントのマウントとアンマウントを複数回繰り返すことを意味しており、複数回呼び出される可能性のある `useEffect` で `init()` しない方が良いでしょう。
 
-また React 18 の新機能のひとつ Concurrency
-モードでは、レンダリング作業を分割し、ブラウザのブロックを回避するために作業を一時停止および再開します。
+また React 18 の新機能のひとつ Concurrency モードでは、レンダリング作業を分割し、ブラウザのブロックを回避するために作業を一時停止および再開します。
 
 https://reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects
 
@@ -99,8 +88,7 @@ https://reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects
 
 ### React 18 の新機能
 
-昨年暮れにアドベントカレンダーの記事のひとつとして、簡単に React 18
-の記事を書かせていただいた。
+昨年暮れにアドベントカレンダーの記事のひとつとして、簡単に React 18 の記事を書かせていただいた。
 
 React Conf でも触れられていた関係から React Suspense も合わせて解説している。
 
@@ -108,10 +96,7 @@ https://blog.nekohack.me/posts/upcoming-react-18-in-2022
 
 #### Concurrency モード
 
-Concurrency モードは、アリスとボブの 2
-人に電話する例をとり、上手く解説してくれている
-[GitHub discussion](https://github.com/reactwg/react-18/discussions/46)
-を確認いただきたい。
+Concurrency モードは、アリスとボブの 2 人に電話する例をとり、上手く解説してくれている [GitHub discussion](https://github.com/reactwg/react-18/discussions/46) を確認いただきたい。
 
 https://github.com/reactwg/react-18/discussions/46
 
@@ -123,28 +108,23 @@ https://github.com/reactwg/react-18/discussions/46
 
 文字通り React 18 以降、イベントコールバック内で全ての状態の更新を可能にした。
 
-この自動バッチ処理は、下記
-[GitHub discussion](https://github.com/reactwg/react-18/discussions/46#discussioncomment-846694)
-を確認いただきたい。
+この自動バッチ処理は、下記 [GitHub discussion](https://github.com/reactwg/react-18/discussions/46#discussioncomment-846694) を確認いただきたい。
 
 https://github.com/reactwg/react-18/discussions/46#discussioncomment-846694
 
 #### トランジション (Transition)
 
-`startTransition` は `setTimeout` と異なりすぐに実行される。 `setTimeout`
-には保証された遅延が存在する一方、 `startTransition`
-はデバイスのスペックや緊急のレンダリングによって、どの程度遅延するか異なる。
+`startTransition` は `setTimeout` と異なりすぐに実行される。 `setTimeout` には保証された遅延が存在する一方、 `startTransition` はデバイスのスペックや緊急のレンダリングによって、どの程度遅延するか異なる。
 
 ```js
-import { startTransition } from "react";
+import { startTransition } from 'react'
 
 // Transition
 startTransition(() => {
-  setCounter(counter);
-});
+  setCounter(counter)
+})
 ```
 
 ## 最後に
 
-それぞれの項目について、別途深く解説する時間を取らせていただくとして、いま一度
-React 18 を学んでおきたい次第です。
+それぞれの項目について、別途深く解説する時間を取らせていただくとして、いま一度 React 18 を学んでおきたい次第です。

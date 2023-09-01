@@ -2,9 +2,14 @@ import { joinUrl } from "./utils.tsx";
 
 export const layout = "base.tsx";
 
-export default (
-  { title, description, publish_date, children, tags, reaction },
-) => (
+export default ({
+  title,
+  description,
+  publish_date,
+  children,
+  tags,
+  reaction,
+}) => (
   <>
     <a href={joinUrl("/")}>&lt; Return to index</a>
     <div className="flex justify-center flex-col gap-y-4">
@@ -35,11 +40,8 @@ export default (
           <h1 className="mt-3 text-4xl text-gray-900 font-bold">
             {title ?? "個人ブログ"}
           </h1>
-          {description && (
-            <p className="text-lg text-gray-600">
-              {description}
-            </p>
-          )}
+          {description && <p className="text-lg text-gray-600">{description}
+          </p>}
           <p className="text-gray-500/80">
             <span>By {"jiyuujin"} at</span>
             {publish_date && (
@@ -49,7 +51,8 @@ export default (
             )}
           </p>
           <div className="flex gap-x-2 flex-wrap">
-            {(tags ?? []).filter((e) => !(/^\s*$/.test(e)))
+            {(tags ?? [])
+              .filter((e) => !/^\s*$/.test(e))
               .map((tag: string) => (
                 <div key={tag} className="text-bluegray-500 font-bold">
                   {`#${tag}`}

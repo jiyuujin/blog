@@ -10,8 +10,7 @@ tags:
   - A11Y
 ---
 
-5 月はアクセシビリティ周辺の知見が多く (下記参照) 発表、中でも特に第 3
-木曜日は毎年「世界的な」アクセシビリティを考える日として定められている。
+5 月はアクセシビリティ周辺の知見が多く (下記参照) 発表、中でも特に第 3 木曜日は毎年「世界的な」アクセシビリティを考える日として定められている。
 
 - TechFeed Conference 2022
   - [WCAG 2.2 で追加される達成基準](https://www.slideshare.net/mlca11y/wcag-22-251780511)
@@ -29,8 +28,7 @@ https://accessibility.day/%E6%97%A5%E6%9C%AC%E8%AA%9E/
 
 さすがと言わんばかりのものが字幕だ。
 
-全てのセッションに字幕 ([UDTalk](https://udtalk.jp/gaadjp2022/))
-が付けられ、配信されている。
+全てのセッションに字幕 ([UDTalk](https://udtalk.jp/gaadjp2022/)) が付けられ、配信されている。
 
 https://udtalk.jp/gaadjp2022/
 
@@ -44,13 +42,11 @@ https://udtalk.jp/gaadjp2022/
 
 いよいよ、日本国内でも法的制約を理由付けに啓発が進められるのではと考えられる。
 
-アクセシビリティに対する考え方を先んじて認識するきっかけのひとつこそ、昨年 2021
-年の GAAD Japan などでも例の上がった、ドミノ・ピザ社の訴訟事例です。
+アクセシビリティに対する考え方を先んじて認識するきっかけのひとつこそ、昨年 2021 年の GAAD Japan などでも例の上がった、ドミノ・ピザ社の訴訟事例です。
 
 :::message is-primary
 
-視覚障がいの男性がウェブサイトやアプリのアクセシビリティが不十分でメニューを注文できなかったことが
-ADA 法違反として訴えた裁判が起き、男性が勝訴している。
+視覚障がいの男性がウェブサイトやアプリのアクセシビリティが不十分でメニューを注文できなかったことが ADA 法違反として訴えた裁判が起き、男性が勝訴している。
 
 [米最高裁でドミノ・ピザが視覚障碍者に敗訴、知らなかったら済まされない企業ウェブ・アプリのアクセシビリティの必要性](https://mbit.co.jp/mag/column/36306)
 
@@ -63,8 +59,7 @@ ADA 法違反として訴えた裁判が起き、男性が勝訴している。
 - 2020 年 3550 件
 - 2021 年 4500 件を超える予想
 
-そもそもこの ADA 法を制定したきっかけとして、ワシントン D.C.
-にある政府機関へアクセスしづらいことが挙げられる。
+そもそもこの ADA 法を制定したきっかけとして、ワシントン D.C. にある政府機関へアクセスしづらいことが挙げられる。
 
 実際に車椅子利用者たちが車椅子を使わずに階段を上るという身をもって抗議したところより起因していると言われている。
 
@@ -93,18 +88,13 @@ GAAD 2022 に限らず Google I/O 2022 や TFCon 2022 でも触れられた。
 - [プレビュー機能: フルページアクセシビリティツリー](https://developer.chrome.com/ja/blog/new-in-devtools-98/#a11y-tree)
 - [アクセシビリティツリーを読む](https://docs.google.com/presentation/d/1pj1azprtCUM9b1tLWEO82wqHuX9lYOoacROfmbzRTmY/edit#slide=id.g129f6bb0506_2_32)
 
-[アクセシビリティツリー](https://developer.mozilla.org/ja/docs/Glossary/Accessibility_tree)
-とはユーザエージェント（ブラウザ）が HTML/CSS
-をパースして、レンダーツリーを生成するのと同様に、支援技術に対して提供する API
-です。
+[アクセシビリティツリー](https://developer.mozilla.org/ja/docs/Glossary/Accessibility_tree) とはユーザエージェント（ブラウザ）が HTML/CSS をパースして、レンダーツリーを生成するのと同様に、支援技術に対して提供する API です。
 
 なお、その仕様は [AOM](https://github.com/WICG/aom) によって策定されている。
 
 :::message is-primary
 
-[登壇](https://docs.google.com/presentation/d/19oRSGdHoHaGgdMVy7BT2rg8XINRnDWmWUv8Yp66bd4E/edit?usp=sharing)
-では、簡単な [デモ](https://codepen.io/jiyuujin/pen/gOrvJwO)
-を通して解説させていただく。
+[登壇](https://docs.google.com/presentation/d/19oRSGdHoHaGgdMVy7BT2rg8XINRnDWmWUv8Yp66bd4E/edit?usp=sharing) では、簡単な [デモ](https://codepen.io/jiyuujin/pen/gOrvJwO) を通して解説させていただく。
 
 https://docs.google.com/presentation/d/19oRSGdHoHaGgdMVy7BT2rg8XINRnDWmWUv8Yp66bd4E/edit?usp=sharing
 
@@ -117,12 +107,9 @@ https://docs.google.com/presentation/d/19oRSGdHoHaGgdMVy7BT2rg8XINRnDWmWUv8Yp66b
 どのセッションも印象に残ったが、掻い摘んで書くと下記の通りだ。
 
 - note や kintone、クラウドワークスの取り組み
-- 伊原さん ([@magi1125](https://twitter.com/magi1125))
-  の良いパターン・アンチパターン
+- 伊原さん ([@magi1125](https://twitter.com/magi1125)) の良いパターン・アンチパターン
 - [axe-core](https://github.com/dequelabs/axe-core) を利用した自動テスト
-  - 昨年も同じ axe-core を利用した自動テストについて
-    [発表](https://docs.google.com/presentation/d/1PPMrT7djg4pP7No_Jzj2h9PSSb4ZfmatC9GgNjm2YxI/edit?usp=sharing)
-    / [ブログ](https://accessible-usable.net/2021/05/entry_210527.html) があった
+  - 昨年も同じ axe-core を利用した自動テストについて [発表](https://docs.google.com/presentation/d/1PPMrT7djg4pP7No_Jzj2h9PSSb4ZfmatC9GgNjm2YxI/edit?usp=sharing) / [ブログ](https://accessible-usable.net/2021/05/entry_210527.html) があった
 
 #### エンジニア視点
 
@@ -145,21 +132,17 @@ https://docs.google.com/presentation/d/19oRSGdHoHaGgdMVy7BT2rg8XINRnDWmWUv8Yp66b
 
 ## 話題の本の紹介
 
-今年春に出版された話題の
-[HTML 解体新書](https://www.amazon.co.jp/HTML解体新書-仕様から紐解く本格入門-太田-良典/dp/4862465277)
-を下に話されたのもひとつ大きかった。
+今年春に出版された話題の [HTML 解体新書](https://www.amazon.co.jp/HTML解体新書-仕様から紐解く本格入門-太田-良典/dp/4862465277) を下に話されたのもひとつ大きかった。
 
 ## 事例を知る、現状を認識する
 
 こういう類の情報で「無知」という状態は怖い存在です。
 
-アクセシビリティの祭典 2022
-で知ることができ、今後の活動に変化が生まれると幸いです。
+アクセシビリティの祭典 2022 で知ることができ、今後の活動に変化が生まれると幸いです。
 
 - 日本の点字ブロックを参考に生まれた NaviLens
 - [ハッタツソン](https://fes.hattatuson.com) で生まれたプロジェクトの紹介動画
-  - 誰もが働きやすい環境を作るアプリ
-    [コンダクター](https://hattatuson.com/projects/conductor)
+  - 誰もが働きやすい環境を作るアプリ [コンダクター](https://hattatuson.com/projects/conductor)
   - 休憩支援アプリ [リッスル](https://hattatuson.com/projects/lissle)
 
 ## 資料一覧
@@ -175,16 +158,11 @@ GAAD Japan 2022 の資料一覧です。
 - [2021 年、サイバーエージェントのアクセシビリティを振り返る](https://developers.cyberagent.co.jp/blog/archives/33931/)
 - [HTML と Web アクセシビリティを見つめなおす ​ ― HTML 解体新書 発売に ​ よせて](https://www.docswell.com/s/momdo/54MX1Z-20220519)
 - [クラウドワークスのこれまでの取り組み、新たなミッションと考えるこれからについて](https://docs.google.com/presentation/d/1o4OH7a2mNvzTBvTP88tswxb4mNuRW2PjKLphKm43ChU/edit?usp=sharing)
-- クラウドワークス
-  [アクセシビリティを向上していくために出来ることから進めていく活動](https://note.com/earlgray_mk/n/n159046bd58e7)
-- クラウドワークス
-  [あなたのその資料、色を変えるともっと伝わるかも。](https://note.com/earlgray_mk/n/n83ef87b183cc)
-- クラウドワークス
-  [アクセシビリティ啓蒙活動は旗を振り続ければいつのまにか誰かが付いてきてくれる。](https://medium.com/@earlgraymk/アクセシビリティ啓蒙活動は旗を振り続ければいつのまにか誰かが付いてきてくれる-ed4c5ed5db06)
-- [axe-core で楽々アクセシビリティチェック](https://www.docswell.com/s/ydnjp/ZG6PMK-2022-05-12-193320)
-  (GAAD 2022)
-- [あなたのウェブサイトのアクセシビリティ、一括自動テストしてみませんか?](https://docs.google.com/presentation/d/1PPMrT7djg4pP7No_Jzj2h9PSSb4ZfmatC9GgNjm2YxI/edit?usp=sharing)
-  (GAAD 2021)
+- クラウドワークス [アクセシビリティを向上していくために出来ることから進めていく活動](https://note.com/earlgray_mk/n/n159046bd58e7)
+- クラウドワークス [あなたのその資料、色を変えるともっと伝わるかも。](https://note.com/earlgray_mk/n/n83ef87b183cc)
+- クラウドワークス [アクセシビリティ啓蒙活動は旗を振り続ければいつのまにか誰かが付いてきてくれる。](https://medium.com/@earlgraymk/アクセシビリティ啓蒙活動は旗を振り続ければいつのまにか誰かが付いてきてくれる-ed4c5ed5db06)
+- [axe-core で楽々アクセシビリティチェック](https://www.docswell.com/s/ydnjp/ZG6PMK-2022-05-12-193320) (GAAD 2022)
+- [あなたのウェブサイトのアクセシビリティ、一括自動テストしてみませんか?](https://docs.google.com/presentation/d/1PPMrT7djg4pP7No_Jzj2h9PSSb4ZfmatC9GgNjm2YxI/edit?usp=sharing) (GAAD 2021)
 - [「職能の越境」でアクセシビリティが加速する](https://docs.google.com/presentation/d/1fz1637rymBjb0ym0CfYFtT7N0KXMsa_BL-n3RXzYBtQ/edit#slide=id.g12c9278a8cc_2_55)
 - [note アクセシビリティ施策](https://note.com/info/m/mb0ecfac0e3ed)
 - [ユーザーと一緒に進めるアクセシビリティ](https://docs.google.com/presentation/d/1Uayti5omG2z7DOKfJFWxws3-jp-lX1_2YHSZEh7DlCo/edit#slide=id.g11b1bbf5e00_2_286)

@@ -12,18 +12,15 @@ tags:
   - Riverpod
 ---
 
-前提として Flutter Handson Osaka 8 では `1.26.0-17.6.pre` を利用したが `2.0.1`
-でも動作に問題が無いことを確認した。
+前提として Flutter Handson Osaka 8 では `1.26.0-17.6.pre` を利用したが `2.0.1` でも動作に問題が無いことを確認した。
 
-「人狼」アプリで使う Riverpod は、実質 flutter_riverpod と hooks_riverpod
-の二択です。
+「人狼」アプリで使う Riverpod は、実質 flutter_riverpod と hooks_riverpod の二択です。
 
 - [riverpod](https://pub.dev/packages/riverpod)
 - [flutter_riverpod](https://pub.dev/packages/flutter_riverpod)
 - [hooks_riverpod](https://pub.dev/packages/hooks_riverpod)
 
-Flutter で Riverpod を使う上で基本的な用法を使う場合は flutter_riverpod を、また
-flutter_hooks を併せて使う場合は hooks_riverpod を使う。
+Flutter で Riverpod を使う上で基本的な用法を使う場合は flutter_riverpod を、また flutter_hooks を併せて使う場合は hooks_riverpod を使う。
 
 今回は以下パッケージを利用した。
 
@@ -48,8 +45,7 @@ dependencies:
 
 ### `ProviderScope` を使えば Provider にアクセス可能な階層をコントロールできる。
 
-React hooks と違いクラス `HookWidget` を継承することで、該当クラス内で Flutter
-hooks が使えるようになる。
+React hooks と違いクラス `HookWidget` を継承することで、該当クラス内で Flutter hooks が使えるようになる。
 
 ```dart
 ProviderScope(
@@ -82,8 +78,7 @@ class Game extends StateNotifier<int> {
 
 ## 状態を読み込むには `useProvider` が使える
 
-ここでも同様にクラス `HookWidget` を継承して Provider
-インスタンスを作成することで、該当クラス内で Flutter hooks が使えるようになる。
+ここでも同様にクラス `HookWidget` を継承して Provider インスタンスを作成することで、該当クラス内で Flutter hooks が使えるようになる。
 
 ```dart
 class GameApp extends HookWidget {
@@ -96,8 +91,7 @@ class GameApp extends HookWidget {
 }
 ```
 
-先に定義した `shufflePositions()`
-を呼び出すことで役割をシャッフルして決められる。
+先に定義した `shufflePositions()` を呼び出すことで役割をシャッフルして決められる。
 
 ```dart
 class StartApp extends HookWidget {
@@ -111,8 +105,7 @@ class StartApp extends HookWidget {
 
 ## 最後に
 
-React hooks と同様の使い勝手
-(クラスを継承して書くのではなく関数レベルで書けるようになるなど) が良くなれば。
+React hooks と同様の使い勝手 (クラスを継承して書くのではなく関数レベルで書けるようになるなど) が良くなれば。
 
 作成済リポジトリは公開中です。
 
@@ -128,5 +121,4 @@ React hooks と同様の使い勝手
 
 [Flutter で始める状態管理 2020 年版](../startup-state-management-with-flutter-in-2020)
 
-Riverpod が主流になると同時に ChangeNotifer
-を使う機会が減ることを感じながら、こちらも良ければ確認してみてください。
+Riverpod が主流になると同時に ChangeNotifer を使う機会が減ることを感じながら、こちらも良ければ確認してみてください。

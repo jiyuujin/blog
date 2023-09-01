@@ -30,8 +30,7 @@ Gatsby 公式より Gatsby 3 を解説する記事も出ている。
 
 GraphQL 15 や Webpack 5 など、細かい話は今回割愛させていただく。
 
-また React 17 について、来週の React Advent Calendar 23
-日目で書かせていただく予定です。
+また React 17 について、来週の React Advent Calendar 23 日目で書かせていただく予定です。
 
 ## とある Gatsby プロジェクトの話
 
@@ -39,8 +38,7 @@ GraphQL 15 や Webpack 5 など、細かい話は今回割愛させていただ�
 
 [@preview](https://yuma-kitamura.nekohack.me/)
 
-Gatsby プラグインを v3.0 系に更新するのと同時に、周辺のプラグインも合わせ v3.0
-系に更新する。
+Gatsby プラグインを v3.0 系に更新するのと同時に、周辺のプラグインも合わせ v3.0 系に更新する。
 
 ```json
 {
@@ -67,8 +65,7 @@ Gatsby プラグインを v3.0 系に更新するのと同時に、周辺のプ�
 
 結論を言うとこのアップデートをもって `gatsby develop` の挙動確認を取れた。
 
-これでも上手く挙動確認を取れない場合は node_modules や .cache
-を削除して実行すると良い。
+これでも上手く挙動確認を取れない場合は node_modules や .cache を削除して実行すると良い。
 
 しかし、もう少し注意したいことがある。
 
@@ -106,8 +103,7 @@ Cannot find module '../build/Release/sharp.node'
 
 もとは Gatsby 2 で Sharp を使用しなくても挙動確認を取れていた。
 
-しかし、この度 Gatsby 3 に更新すると gatsby-transformer-sharp
-をインストールする必要がある。
+しかし、この度 Gatsby 3 に更新すると gatsby-transformer-sharp をインストールする必要がある。
 
 ```bash
 npm i gatsby-transformer-sharp
@@ -119,8 +115,7 @@ yarn add gatsby-transformer-sharp
 
 ### CSS Modules を ES Modules としてインポートする
 
-それまで CSS Modules を使う際 styles
-でインポートしていたものを個別でインポートする必要がある。既存の変数名に被りが出てしまい、その辺りの微調整は少し不便に感じた。
+それまで CSS Modules を使う際 styles でインポートしていたものを個別でインポートする必要がある。既存の変数名に被りが出てしまい、その辺りの微調整は少し不便に感じた。
 
 ## 最後に
 
@@ -135,8 +130,6 @@ yarn add gatsby-transformer-sharp
 - Deferred Static Generation (DSG)
 - Server-Side Rendering (SSR)
 
-ただし、国際化対応で使用されることの多い
-[React Intl](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-intl/)
-が、現時点で Gatsby 4 に対応していない。
+ただし、国際化対応で使用されることの多い [React Intl](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-intl/) が、現時点で Gatsby 4 に対応していない。
 
 暫くは Gatsby 4 対応を待ちたい。

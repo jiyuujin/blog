@@ -16,8 +16,7 @@ tags:
 
 この度、モノレポ (Lerna / Nx) について、チーム勉強会で登壇させていただきました。
 
-もとは、現在私自身のジョインさせていただいているプロジェクトで、最近 Nx
-を利用したモノレポの中で開発を進めています。
+もとは、現在私自身のジョインさせていただいているプロジェクトで、最近 Nx を利用したモノレポの中で開発を進めています。
 
 キーワードで見る Nx について、ざっくり下記の通りです。
 
@@ -33,16 +32,13 @@ tags:
 
 Nx と Lerna の違いが、より明確に別れていくのでは、と考えたり、となど。
 
-なお、登壇資料の公開はチーム内に限定させていただいた一方、汎用化の一環で Zenn
-book への [執筆](https://zenn.dev/books/monorepo-tutorial/edit)
-も行っております。
+なお、登壇資料の公開はチーム内に限定させていただいた一方、汎用化の一環で Zenn book への [執筆](https://zenn.dev/books/monorepo-tutorial/edit) も行っております。
 
 https://zenn.dev/books/monorepo-tutorial
 
 ### リポジトリ一覧
 
-勉強会の登壇を前に、各種リポジトリを
-[整理](https://blog.nekohack.me/posts/monorepo-memo) しました。
+勉強会の登壇を前に、各種リポジトリを [整理](https://blog.nekohack.me/posts/monorepo-memo) しました。
 
 - [`Lerna` を利用したユニットテスト](https://github.com/jiyuujin/frontend-tests)
 - [`yarn workspaces` を利用したユニットテスト](https://github.com/jiyuujin/yarn_workspace-frontend-tests)

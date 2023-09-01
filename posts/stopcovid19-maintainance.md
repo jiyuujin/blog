@@ -16,10 +16,7 @@ tags:
 
 ## STOPCOVID19 現況を把握する
 
-かれこれ 3 年間、毎日 1
-日足りともトリガー実行を欠かさずデータの更新を継続していた
-[STOPCOVID19 現況](https://stopcovid19.vercel.app/)
-ウェブサイトについて、この度そのステータスをメンテナンスモードに格下げさせていただきます。
+かれこれ 3 年間、毎日 1 日足りともトリガー実行を欠かさずデータの更新を継続していた [STOPCOVID19 現況](https://stopcovid19.vercel.app/) ウェブサイトについて、この度そのステータスをメンテナンスモードに格下げさせていただきます。
 
 https://stopcovid19.vercel.app/
 
@@ -29,8 +26,7 @@ https://stopcovid19.vercel.app/
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">【マスクの着用について】<br>本日から、マスクの着用は「個人の判断」が基本となります。<br>ただし、高齢者など重症化リスクの高い方への感染を防ぐため、医療機関を受診する時や、医療機関・高齢者施設などを訪問する時などは、マスクの着用をお願いします。<br> <br>▼詳細はこちら<a href="https://t.co/hhZmgdQjY4">https://t.co/hhZmgdQjY4</a> <a href="https://t.co/9JLl1FRioT">https://t.co/9JLl1FRioT</a></p>&mdash; 首相官邸 (@kantei) <a href="https://twitter.com/kantei/status/1635156626675212290?ref_src=twsrc%5Etfw">March 13, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-また 5 月より、新型コロナウイルス (COVID19) の指定分類も 2 類から 5
-類に下げられる予定となります。
+また 5 月より、新型コロナウイルス (COVID19) の指定分類も 2 類から 5 類に下げられる予定となります。
 
 そもそも、このウェブサイトを製作していた事実をご存知ない方が大半に上るかと考えています。
 
@@ -63,16 +59,12 @@ https://stopcovid19.vercel.app/
 
 ちなみに、これを製作するきっかけになったのが、オープンデータの存在より起因しています。
 
-実際この手の COVID19
-のデータ群は下記より辿って、オープンデータとしてどなたでも利用できます。
+実際この手の COVID19 のデータ群は下記より辿って、オープンデータとしてどなたでも利用できます。
 
 - [新型コロナウイルス感染症について オープンデータ (厚生労働省)](https://www.mhlw.go.jp/stf/covid-19/open-data.html)
 - [これまでのワクチン総接種回数 (首相官邸)](https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html)
 
-かつて、オープンソース (OSS) 界隈では Code for Sabae (鯖江のために創る部) の
-[新型コロナウイルス対策ダッシュボード](https://www.stopcovid19.jp/) や、東京都の
-[新型コロナウイルス感染症対策サイト](https://stopcovid19.metro.tokyo.lg.jp/)
-など、不特定多数の人たちを閲覧対象にしたウェブサイトの開発が活発となっていました。
+かつて、オープンソース (OSS) 界隈では Code for Sabae (鯖江のために創る部) の [新型コロナウイルス対策ダッシュボード](https://www.stopcovid19.jp/) や、東京都の [新型コロナウイルス感染症対策サイト](https://stopcovid19.metro.tokyo.lg.jp/) など、不特定多数の人たちを閲覧対象にしたウェブサイトの開発が活発となっていました。
 
 https://stopcovid19.metro.tokyo.lg.jp/
 
@@ -82,5 +74,4 @@ https://stopcovid19.metro.tokyo.lg.jp/
 
 現在もなお開発は継続されており、技術スタックなどで参考にされている方も多いことでしょう。
 
-実際自ら [STOPCOVID19 現況](https://stopcovid19.vercel.app/)
-ウェブサイトの製作を通して、オープンデータを使用してみて、色々と感じる部分も多かったように考えています。
+実際自ら [STOPCOVID19 現況](https://stopcovid19.vercel.app/) ウェブサイトの製作を通して、オープンデータを使用してみて、色々と感じる部分も多かったように考えています。

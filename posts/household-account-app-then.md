@@ -12,8 +12,7 @@ tags:
   - Riverpod
 ---
 
-家計簿一覧の取得、それに伴うデータの登録を可能にしたアプリで、簡易データベースとして
-Google Spreadsheet を利用している。
+家計簿一覧の取得、それに伴うデータの登録を可能にしたアプリで、簡易データベースとして Google Spreadsheet を利用している。
 
 当ハンズオンでは Dart 2.7 (Flutter 2.2.2-stable) を利用した。
 
@@ -53,22 +52,18 @@ Migration コマンドの実行により Dart 2.14 (Flutter 2.5.1-stable) に更
 - [flutter_riverpod](https://pub.dev/packages/flutter_riverpod)
 - [hooks_riverpod](https://pub.dev/packages/hooks_riverpod)
 
-Riverpod の基本的な用法を使う場合は flutter_riverpod を、また flutter_hooks
-を併せて使う場合は hooks_riverpod を使う。
+Riverpod の基本的な用法を使う場合は flutter_riverpod を、また flutter_hooks を併せて使う場合は hooks_riverpod を使う。
 
 基本的にほぼ Provider と変わりません。
 
 - Riverpod 用のウィジェットを継承する必要があること
 - Provide するためのコードを global な変数として記述すること
 
-~~実際に HookWidget を継承することで `useXXX` 関数 (たとえば `useProvider` など)
-として利用できる。~~
+~~実際に HookWidget を継承することで `useXXX` 関数 (たとえば `useProvider` など) として利用できる。~~
 
-~~また Hooks 機能を利用しない場合でも ConsumerWidget
-を継承することで同様の機能を実現できる。~~
+~~また Hooks 機能を利用しない場合でも ConsumerWidget を継承することで同様の機能を実現できる。~~
 
-v1.0.0 で `ref.xxx` を使った記法に統一されたことで `useProvider`
-が廃止され、その代わりに ConsumerWidget と `ref.watch` を使う。
+v1.0.0 で `ref.xxx` を使った記法に統一されたことで `useProvider` が廃止され、その代わりに ConsumerWidget と `ref.watch` を使う。
 
 ```dart
 enum RadioValue { SPENDING, INCOME }

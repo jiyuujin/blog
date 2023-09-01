@@ -17,8 +17,7 @@ tags:
 
 ## `static` モード
 
-Nuxt 2.13 以降より使える機能で API
-レスポンスも合わせた完全な静的化を実現できるのが特徴。
+Nuxt 2.13 以降より使える機能で API レスポンスも合わせた完全な静的化を実現できるのが特徴。
 
 [The target Property | Nuxt](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-target)
 
@@ -48,13 +47,12 @@ generate: {
 
 ```js
 export default {
-  target: "static",
-};
+  target: 'static',
+}
 ```
 
 ## 最後に
 
 Next.js でも同様の Full Static Generation 機能は既に実現されているとのこと。
 
-Next.js や Nuxt.js
-がありとあらゆることをこなしており、ブラックボックス化していることを改めて痛感させられた。
+Next.js や Nuxt.js がありとあらゆることをこなしており、ブラックボックス化していることを改めて痛感させられた。

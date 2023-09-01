@@ -24,19 +24,15 @@ tags:
 
 [Pokemon アプリ | Hack React](https://hack-react.netlify.app/handson/pokemon.html)
 
-そもそも React で Hooks
-を使って書くのが今の流行りで、コンポーネントを書く際、クラスコンポーネントと関数コンポーネントに分けられる。
+そもそも React で Hooks を使って書くのが今の流行りで、コンポーネントを書く際、クラスコンポーネントと関数コンポーネントに分けられる。
 
 今回扱った教材の Hooks API は後者の範疇に入る。
 
-Hooks 導入以前まで、関数コンポーネントに state を持たせられなかった代わりに
-state を持たせるためクラスコンポーネントを実装する他なかった。
+Hooks 導入以前まで、関数コンポーネントに state を持たせられなかった代わりに state を持たせるためクラスコンポーネントを実装する他なかった。
 
 ## 関数コンポーネントを使うべき理由
 
-主な理由を下記の通り。クラスコンポーネントでは `this` を用いて state
-を参照しなければいけず、更新する際も state に `this`
-を用いて参照しなければいけない。
+主な理由を下記の通り。クラスコンポーネントでは `this` を用いて state を参照しなければいけず、更新する際も state に `this` を用いて参照しなければいけない。
 
 - `this` を使う必要が無くなる
 - メソッドを bind する必要が無くなる
@@ -49,13 +45,13 @@ state を持たせるためクラスコンポーネントを実装する他な�
 ```js
 class Example extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { count: 0 };
-    this.handleCount = this.handleCount.bind(this);
+    super(props)
+    this.state = { count: 0 }
+    this.handleCount = this.handleCount.bind(this)
   }
 
   handleClick() {
-    this.setState({ count: this.state.count + 1 });
+    this.setState({ count: this.state.count + 1 })
   }
 
   render() {
@@ -64,7 +60,7 @@ class Example extends React.Component {
         <p>You clicked {this.state.count} times</p>
         <button onClick={this.handleClick}>+1</button>
       </div>
-    );
+    )
   }
 }
 ```
@@ -75,10 +71,10 @@ class Example extends React.Component {
 
 ```js
 const Example = () => {
-  const [count, setCount] = React.useState < number > 0;
+  const [count, setCount] = React.useState < number > 0
 
   function handleClick() {
-    setCount(() => count + 1);
+    setCount(() => count + 1)
   }
 
   return (
@@ -86,8 +82,8 @@ const Example = () => {
       <p>You clicked {count} times</p>
       <button onClick={handleClick}>+1</button>
     </div>
-  );
-};
+  )
+}
 ```
 
 今回のゴールである Pokemon API をフェッチして Vercel へのデプロイを果たした。
@@ -96,9 +92,7 @@ const Example = () => {
 
 ## 今回はフェッチと検索を扱う
 
-目標を Hooks API をベースとした Web
-アプリケーションを作ることとした。今回のターゲットを考慮して、フレームワーク
-Next.js を一切使わない選択をとった。
+目標を Hooks API をベースとした Web アプリケーションを作ることとした。今回のターゲットを考慮して、フレームワーク Next.js を一切使わない選択をとった。
 
 その目標を達成するため複数の技術的なマイルストーンを合わせ準備している。
 
@@ -106,15 +100,13 @@ Next.js を一切使わない選択をとった。
 - `useState` を利用した状態管理
 - `useMemo` を利用した再描画の仕組み
 
-今回は状態管理やユニットテストを扱っていない。次回以降、この辺りを中心にテーマを選定したい
-(ご気軽に Issue や PR ください)
+今回は状態管理やユニットテストを扱っていない。次回以降、この辺りを中心にテーマを選定したい (ご気軽に Issue や PR ください)
 
 [jiyuujin/hack-react](https://github.com/jiyuujin/hack-react)
 
 ### 状態管理で別の手段 `useEffect` も存在する
 
-API のフェッチを `useEffect` で行い state を `useState`
-で管理する方法も存在する。
+API のフェッチを `useEffect` で行い state を `useState` で管理する方法も存在する。
 
 ```js
 const [pokemonData, setPokemonData] = React.useState<Array<{ name: string; url: string }>>()
@@ -138,5 +130,4 @@ return (
 )
 ```
 
-`useSWR` を使うか `useEffect`
-を使うのは各プロジェクトの設計方針により決定しましょう。
+`useSWR` を使うか `useEffect` を使うのは各プロジェクトの設計方針により決定しましょう。

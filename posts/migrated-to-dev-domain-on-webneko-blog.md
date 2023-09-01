@@ -17,11 +17,9 @@ tags:
   - HTTPS
 ---
 
-今年 2 月に解禁となった dev ドメインをこの度購入。 dev ドメインへの接続を HTTPS
-に限定する HSTS (HTTP Strict Transport Security) 機能が特徴のひとつ。
+今年 2 月に解禁となった dev ドメインをこの度購入。 dev ドメインへの接続を HTTPS に限定する HSTS (HTTP Strict Transport Security) 機能が特徴のひとつ。
 
-HTTP でアクセスすると強制的に HTTPS
-にリダイレクトする仕組みとなっているようです。
+HTTP でアクセスすると強制的に HTTPS にリダイレクトする仕組みとなっているようです。
 
 [Hello .dev domain](https://www.blog.google/technology/developers/hello-dev/)
 
@@ -31,8 +29,7 @@ HTTP でアクセスすると強制的に HTTPS
 
 ## ひとまず Netlify で試します
 
-デプロイ先に dist
-を設定、デプロイしましょう。環境変数を設定し忘れないこと。デプロイに成功すると、早速カスタムドメイン化の作業に進みます。
+デプロイ先に dist を設定、デプロイしましょう。環境変数を設定し忘れないこと。デプロイに成功すると、早速カスタムドメイン化の作業に進みます。
 
 ```bash
 # Deploy
@@ -53,8 +50,7 @@ A レコードに 104.198.14.52 を設定します。
 
 半年前に構築したインフラをそのまま採用します。
 
-<a class="link-preview" href="../deploy-webneko-blog-to-fargate-in-ecs">Web猫ブログ
-(Nuxt) のインフラ周りを少々</a>
+<a class="link-preview" href="../deploy-webneko-blog-to-fargate-in-ecs">Web猫ブログ (Nuxt) のインフラ周りを少々</a>
 
 ### ドメインは Route53 で管理
 
@@ -76,14 +72,12 @@ A レコードに 104.198.14.52 を設定します。
 
 ### 旧ドメインから新ドメインにリダイレクト
 
-旧ドメイン `webneko.info` から新ドメイン `webneko.dev`
-にリダイレクトさせるようする。ちなみに現時点で旧ドメインを削除せず、暫くは共存させる予定で進めることにします。
+旧ドメイン `webneko.info` から新ドメイン `webneko.dev` にリダイレクトさせるようする。ちなみに現時点で旧ドメインを削除せず、暫くは共存させる予定で進めることにします。
 
 1. ロードバランサの A レコードを Route53 のドメインに追加
 2. S3 Bucket を作成、ファイルはひとつも無くて OK
 3. エンドポイントをメモ
-4. Static website hosting オプションから
-   `このバケットを使用してウェブサイトをホストする` を選択
+4. Static website hosting オプションから `このバケットを使用してウェブサイトをホストする` を選択
 5. リダイレクトルールを記述
 6. CloudFront で先ほどメモしたエンドポイントを `Origin Domain Name` に設定
 7. `Alternate Domain Names (CNAMEs)` に旧ドメインを設定

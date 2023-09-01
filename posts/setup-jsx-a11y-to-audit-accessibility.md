@@ -14,10 +14,7 @@ tags:
 
 ## jsx-a11y 用 ESLint プラグインを導入する
 
-当方 React (CRA) のプロジェクトにおけるアクセシビリティを考慮するため、jsx-a11y
-用 ESLint プラグイン
-[eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
-をインストールすることにしました。
+当方 React (CRA) のプロジェクトにおけるアクセシビリティを考慮するため、jsx-a11y 用 ESLint プラグイン [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) をインストールすることにしました。
 
 ```bash
 # npm
@@ -33,9 +30,9 @@ yarn add -D eslint-plugin-jsx-a11y
 
 ```js
 module.exports = {
-  extends: ["plugin:jsx-a11y/recommended"],
-  plugins: ["jsx-a11y"],
-};
+  extends: ['plugin:jsx-a11y/recommended'],
+  plugins: ['jsx-a11y'],
+}
 ```
 
 ### ルールセット
@@ -56,20 +53,17 @@ module.exports = {
 - [no-static-element-interactions](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/no-static-element-interactions.md)
 - [no-interactive-element-to-noninteractive-role](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/no-interactive-element-to-noninteractive-role.md)
 
-次に、非対話型の HTML 要素や WAI-ARIA
-ロールはマウスやキーイベントのハンドラーをサポートしないので role を付ける。
+次に、非対話型の HTML 要素や WAI-ARIA ロールはマウスやキーイベントのハンドラーをサポートしないので role を付ける。
 
 :::message is-primary
 
 #### 非対話型の HTML 要素
 
-`<main>`、 `<area>`、 `<h1>`、 `<h2>`、 `<h3>`、 `<h4>`、 `<h5>`、 `<h6>`、
-`<p>`、 `<img>`、 `<li>`、 `<ul>`、 `<ol>`
+`<main>`、 `<area>`、 `<h1>`、 `<h2>`、 `<h3>`、 `<h4>`、 `<h5>`、 `<h6>`、 `<p>`、 `<img>`、 `<li>`、 `<ul>`、 `<ol>`
 
 #### 非対話型の WAI-ARIA ロール
 
-`<article>`、 `<banner>`、 `<complementary>`、 `<img>`、 `<listitem>`、
-`<main>`、 `<region>`、 `<tooltip>`
+`<article>`、 `<banner>`、 `<complementary>`、 `<img>`、 `<listitem>`、 `<main>`、 `<region>`、 `<tooltip>`
 
 :::
 
@@ -80,9 +74,7 @@ module.exports = {
 
 最後に th 要素のみ scope を許容します。
 
-該当のルールは
-[scope](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/scope.md)
-です。
+該当のルールは [scope](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/scope.md) です。
 
 ## あらゆる warning を解決する
 
@@ -93,65 +85,51 @@ eslint-plugin-jsx-a11y 　を読み込んで `eslint --fix` してみます。
 npx eslint . --ext ts,tsx --fix
 ```
 
-修正すべき warning
-に遭遇しなければ、導入完了とみて問題無いだろう。しかし、いくつかの warning
-に遭遇することがあります。
+修正すべき warning に遭遇しなければ、導入完了とみて問題無いだろう。しかし、いくつかの warning に遭遇することがあります。
 
-具体的には `div` などに代表される静的な HTML 要素で `onClick`
-イベントを使ってしまっているケースなどが挙げられます。
+具体的には `div` などに代表される静的な HTML 要素で `onClick` イベントを使ってしまっているケースなどが挙げられます。
 
 ### `jsx-a11y/click-events-have-key-events`
 
-`onClick` イベントを使う場合、マウスを使用できないユーザのために `onKeyUp` /
-`onKeyDown` / `onKeyPress` を考慮する必要があります。
+`onClick` イベントを使う場合、マウスを使用できないユーザのために `onKeyUp` / `onKeyDown` / `onKeyPress` を考慮する必要があります。
 
 もちろん 1 つも無ければ、アクセシビリティ的なアウトになります。
 
 ```js
-const Component = () => <div onClick={() => {}}>{/* 何らかのコンテンツ */}
-</div>;
+const Component = () => <div onClick={() => {}}>{/* 何らかのコンテンツ */}</div>
 ```
 
-なお、広くボタン用途に使われる `button` 要素で `onClick`
-イベントを使用した方が良いと考えています。
+なお、広くボタン用途に使われる `button` 要素で `onClick` イベントを使用した方が良いと考えています。
 
-この `button` 要素では既に `onKeyUp` / `onKeyDown` / `onKeyPress`
-が考慮されています。
+この `button` 要素では既に `onKeyUp` / `onKeyDown` / `onKeyPress` が考慮されています。
 
 ```js
-const Component = () => (
-  <button onClick={() => {}}>{/* 何らかのコンテンツ */}</button>
-);
+const Component = () => <button onClick={() => {}}>{/* 何らかのコンテンツ */}</button>
 ```
 
 ### `jsx-a11y/no-static-element-interactions`
 
-`div` など静的な HTML 要素でマウスやキーイベントを設定する場合に、要素の role
-属性を設定する必要があります。
+`div` など静的な HTML 要素でマウスやキーイベントを設定する場合に、要素の role 属性を設定する必要があります。
 
 ```js
 const Component = () => (
   <div onClick={() => {}} role="button">
     {/* 何らかのコンテンツ */}
   </div>
-);
+)
 ```
 
 `onClick` イベントと合わせて role 属性を設定しても特に問題はありません。
 
-ただし、広くボタン用途で使われる `button`
-要素に変更する選択肢を取った方が良いと考えています。
+ただし、広くボタン用途で使われる `button` 要素に変更する選択肢を取った方が良いと考えています。
 
 ```js
-const Component = () => (
-  <button onClick={() => {}}>{/* 何らかのコンテンツ */}</button>
-);
+const Component = () => <button onClick={() => {}}>{/* 何らかのコンテンツ */}</button>
 ```
 
 ## 最後に
 
-とあるプロジェクトで ESLint プラグインを設定した当初 70 近い warning
-を観測しました。
+とあるプロジェクトで ESLint プラグインを設定した当初 70 近い warning を観測しました。
 
 ```bash
 ✘ 68 problems (68 errors, 0 warnings)
@@ -168,13 +146,11 @@ Errors:
 
 しかし、そのどれもが同じようなエラーのため、そこまで怖がる必要はありません。
 
-アクセシビリティの ESLint に伴う `--fix`
-をビルド時に強制したことで、最低限の品質を担保させるようにしました。
+アクセシビリティの ESLint に伴う `--fix` をビルド時に強制したことで、最低限の品質を担保させるようにしました。
 
 ## その他
 
-[eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
-でサポートされているルール一覧になります。
+[eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) でサポートされているルール一覧になります。
 
 視覚によるチェックでは確認しきれない部分を補うため、コードベースでコンポーネントごとに自動チェックします。
 

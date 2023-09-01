@@ -20,13 +20,11 @@ Vue Fes Japan Online 2022
 
 https://vuefes.jp/2022
 
-今回私自身は、[公式ウェブサイト](https://vuefes.jp/2022)
-の初期ローンチを始め、技術のリードをメインに取り組ませていただきました。
+今回私自身は、[公式ウェブサイト](https://vuefes.jp/2022) の初期ローンチを始め、技術のリードをメインに取り組ませていただきました。
 
 結果的に初期ローンチで緻密な設計を行え、以後度重なる機能追加を経るも全体の体裁は整えられたものと考えています。
 
-ちなみに、今回携わったチーム全体の [面々](https://vuefes.jp/2022/#team)
-を確認できます。
+ちなみに、今回携わったチーム全体の [面々](https://vuefes.jp/2022/#team) を確認できます。
 
 ![](https://i.imgur.com/KONfZLt.jpg)
 
@@ -36,21 +34,14 @@ https://note.com/kazu_pon/n/nc9926a474c03
 
 ## 数字で見る Vue Fes 2022
 
-リリース回数は 28 回、2 月に製作を開始した後、めでたく初期ローンチを 4 月 11
-日に迎え 745 回のコミットを経ました。その内、前半の一部については Vue.js
-日本ユーザーグループの公式 Twitter アカウントや Slack
-で公表させていただいております。
+リリース回数は 28 回、2 月に製作を開始した後、めでたく初期ローンチを 4 月 11 日に迎え 745 回のコミットを経ました。その内、前半の一部については Vue.js 日本ユーザーグループの公式 Twitter アカウントや Slack で公表させていただいております。
 
-具体的には、下記
-[CHANGELOG](https://github.com/vuejs-jp/vuefes-2022/blob/main/CHANGELOG.md)
-をご確認いただければ幸いです。
+具体的には、下記 [CHANGELOG](https://github.com/vuejs-jp/vuefes-2022/blob/main/CHANGELOG.md) をご確認いただければ幸いです。
 
 - [CHANGELOG](https://github.com/vuejs-jp/vuefes-2022/blob/main/CHANGELOG.md)
-- [`Release`](https://github.com/vuejs-jp/vuefes-2022/pulls?q=is%3Apr+is%3Aclosed+label%3ARelease)
-  tags
+- [`Release`](https://github.com/vuejs-jp/vuefes-2022/pulls?q=is%3Apr+is%3Aclosed+label%3ARelease) tags
 
-初期ローンチを果たした 4 月 11 日から 11 月 11 日まで、7
-か月間のデータを計測してみました。
+初期ローンチを果たした 4 月 11 日から 11 月 11 日まで、7 か月間のデータを計測してみました。
 
 ページビューは累計 20,000 を超えました。
 
@@ -73,9 +64,7 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 - Firefox 2%
 - Others (Android Webview, etc) 1%
 
-これらの数字を振り返ってみるだけでも大変勉強になりますが、この Advent Calendar
-では実際どうやって Vue Fes 2022
-のウェブサイトを運営してきたのか書かせていただきます。
+これらの数字を振り返ってみるだけでも大変勉強になりますが、この Advent Calendar では実際どうやって Vue Fes 2022 のウェブサイトを運営してきたのか書かせていただきます。
 
 ## キーワードで見る Vue Fes 2022
 
@@ -90,9 +79,7 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 - Newt
 - Netlify
 
-捕捉事項は 2 点あります。ひとつは GSAP について Vue Fes 2019 の
-[ウェブサイト](https://vuefes.jp/2019)
-より基本的なアニメーションロジックを引き継いでいます。
+捕捉事項は 2 点あります。ひとつは GSAP について Vue Fes 2019 の [ウェブサイト](https://vuefes.jp/2019) より基本的なアニメーションロジックを引き継いでいます。
 
 使用の前提として、クライアントサイドでアニメーションを動作させるのを考慮する必要があります。
 
@@ -102,8 +89,7 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 </client-only>
 ```
 
-大きく 6
-つの形状に分けて、それぞれの形状から構成されるコンポーネントの下でアニメーションのロジックを書いています。
+大きく 6 つの形状に分けて、それぞれの形状から構成されるコンポーネントの下でアニメーションのロジックを書いています。
 
 まずは、円形から構成されるコンポーネントのアニメーションを見ていきます。
 
@@ -137,8 +123,7 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 | :----------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
 | ![](https://i.imgur.com/n2UCx8Q.png) | [`/components/shapes/HeadCross.vue`](https://github.com/vuejs-jp/vuefes-2022/blob/main/app/components/shapes/HeadCross.vue) |
 
-三角形より話題は変わって、四角形 (長方形)
-から構成されるコンポーネントのアニメーションから。
+三角形より話題は変わって、四角形 (長方形) から構成されるコンポーネントのアニメーションから。
 
 ここでは `Horizontal` と命名しています。
 
@@ -154,36 +139,33 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 
 [`/components/shapes/HeadPhoto.vue`](https://github.com/vuejs-jp/vuefes-2022/blob/main/app/components/shapes/HeadPhoto.vue)
 
-こうして得られた各形状について、詳細なアニメーションロジックを
-`useAnimationParts()` フックへ書いていきます。
+こうして得られた各形状について、詳細なアニメーションロジックを `useAnimationParts()` フックへ書いていきます。
 
-それぞれの図形を生成する際に、図形の切り替えと比べて `duration`
-を多めにとってアニメーションを実現させるようにします。
+それぞれの図形を生成する際に、図形の切り替えと比べて `duration` を多めにとってアニメーションを実現させるようにします。
 
 ```js
-const PARTS_FADE_TIME = 0.2;
+const PARTS_FADE_TIME = 0.2
 
 // 図形の切り替え
 gsap.to(refs, {
   attr: { ...attr },
   ease: Power2.easeOut,
   duration: PARTS_FADE_TIME,
-});
+})
 ```
 
 ```js
-const PARTS_CREATE_TIME = 0.6;
+const PARTS_CREATE_TIME = 0.6
 
 // 図形の生成
 gsap.to(refs, {
   attr: { ...attr },
   ease: Power2.easeOut,
   duration: PARTS_CREATE_TIME,
-});
+})
 ```
 
-そして Vue 公式の提供するライフサイクルメソッド `onMounted()` や
-`onBeforeUnmount()` を利用することで、アニメーションを制御させています。
+そして Vue 公式の提供するライフサイクルメソッド `onMounted()` や `onBeforeUnmount()` を利用することで、アニメーションを制御させています。
 
 ```js
 export default {
@@ -229,45 +211,40 @@ Vue 3 では、下に示すようにアニメーションロジックをカス�
   Sorry, your browser doesn't support embedded videos.
 </video>
 
-他方、Headless CMS のひとつとして今年の 4 月に正式ローンチしたばかりの
-[Newt](https://www.newt.so/) を使わせていただいています。
+他方、Headless CMS のひとつとして今年の 4 月に正式ローンチしたばかりの [Newt](https://www.newt.so/) を使わせていただいています。
 
-こちらは Newt 側で作成したスペースの UID と、CDN API
-のトークンを読み込む必要があります。
+こちらは Newt 側で作成したスペースの UID と、CDN API のトークンを読み込む必要があります。
 
 ```js
-import { defineNuxtConfig } from "@nuxt/bridge";
+import { defineNuxtConfig } from '@nuxt/bridge'
 
 export default defineNuxtConfig({
   publicRuntimeConfig: {
     newtCdnToken: process.env.NUXT_NEWT_CDN_TOKEN,
     newtSpaceUid: process.env.NUXT_NEWT_SPACE_UID,
   },
-});
+})
 ```
 
-その上で、[`newt-client-js`](https://www.npmjs.com/package/newt-client-js) の
-`createClient` を利用します。
+その上で、[`newt-client-js`](https://www.npmjs.com/package/newt-client-js) の `createClient` を利用します。
 
-[`useRuntimeConfig`](https://nuxt.com/docs/guide/going-further/runtime-config)
-は `#app` よりアクセスできます。
+[`useRuntimeConfig`](https://nuxt.com/docs/guide/going-further/runtime-config) は `#app` よりアクセスできます。
 
 ```js
-import { useRuntimeConfig } from "#app";
-import { createClient } from "newt-client-js";
+import { useRuntimeConfig } from '#app'
+import { createClient } from 'newt-client-js'
 
 export const createNewtClient = () => {
-  const $config = useRuntimeConfig();
+  const $config = useRuntimeConfig()
   return createClient({
     spaceUid: $config.spaceUid,
     token: $config.accessToken,
-    apiType: "cdn",
-  });
-};
+    apiType: 'cdn',
+  })
+}
 ```
 
-作成済みインスタンスから `client.getContents<T>({ appUid, query })` の API
-を利用して、指定のクエリに所属するデータへアクセスできます。
+作成済みインスタンスから `client.getContents<T>({ appUid, query })` の API を利用して、指定のクエリに所属するデータへアクセスできます。
 
 ```js
 const fetchContent = (query?: Query) =>
@@ -289,19 +266,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "vue-blue": "#35495E",
-        "vue-green": "#42b893",
-        "typescript-blue": "#3178C6",
-        asagi: "#33A6B8",
-        sangosyu: "#F17C67",
-        tohoh: "#FFC408",
-        hiwamoegi: "#90B44B",
-        tsuchi: "#E5E5E5",
-        sponsor: "#F5F6F7",
+        'vue-blue': '#35495E',
+        'vue-green': '#42b893',
+        'typescript-blue': '#3178C6',
+        asagi: '#33A6B8',
+        sangosyu: '#F17C67',
+        tohoh: '#FFC408',
+        hiwamoegi: '#90B44B',
+        tsuchi: '#E5E5E5',
+        sponsor: '#F5F6F7',
       },
     },
   },
-};
+}
 ```
 
 一番の花形 TOP 画像のアニメーションでも、その恩恵を利用しています。
@@ -317,44 +294,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "anime-typescript-blue": "#4374AA",
-        "anime-asagi": "#4D9EAA",
-        "anime-vue-green": "#5AB088",
-        "anime-hiwamoegi": "#93AF5E",
-        "anime-sangosyou": "#D47373",
-        "anime-tohoh": "#E7C350",
-        "timetable-timeslot": "rgba(52, 73, 94, 0.7);",
-        "track-a": "#90B44B",
-        "track-b": "#F17C67",
-        "track-c": "#3178C6",
+        'anime-typescript-blue': '#4374AA',
+        'anime-asagi': '#4D9EAA',
+        'anime-vue-green': '#5AB088',
+        'anime-hiwamoegi': '#93AF5E',
+        'anime-sangosyou': '#D47373',
+        'anime-tohoh': '#E7C350',
+        'timetable-timeslot': 'rgba(52, 73, 94, 0.7);',
+        'track-a': '#90B44B',
+        'track-b': '#F17C67',
+        'track-c': '#3178C6',
       },
     },
   },
-};
+}
 ```
 
-先に述べた GSAP のアニメーションも、この `tailwind.config.js`
-で定義した色を使用しています。
+先に述べた GSAP のアニメーションも、この `tailwind.config.js` で定義した色を使用しています。
 
 ## Nuxt 3 の良さを体験する
 
 Nuxt Bridge では Vue 2 系を使用しながら Nuxt 3 で搭載の Nitro も使用できます。
 
-Vue Fes 2022 ウェブサイトを製作した当時は SG 未対応だったこともあり Nuxt Bridge
-を採用しています。
+Vue Fes 2022 ウェブサイトを製作した当時は SG 未対応だったこともあり Nuxt Bridge を採用しています。
 
-Composition 関数を管理するための `composables`
-が追加され、コンポーネント設計の新しい考え方も生まれています。
+Composition 関数を管理するための `composables` が追加され、コンポーネント設計の新しい考え方も生まれています。
 
 ### Nuxt 3 に更新する
 
-先月 16 日に Nuxt 3 が [リリース](https://v3.nuxtjs.org/community/roadmap/)
-されました。
+先月 16 日に Nuxt 3 が [リリース](https://v3.nuxtjs.org/community/roadmap/) されました。
 
 https://v3.nuxtjs.org/community/roadmap/
 
-Vue Fes 2022 ウェブサイトの Nuxt を 3 へ上げた際、いくつか
-[対応](https://github.com/vuejs-jp/vuefes-2022/pull/326) を要します。
+Vue Fes 2022 ウェブサイトの Nuxt を 3 へ上げた際、いくつか [対応](https://github.com/vuejs-jp/vuefes-2022/pull/326) を要します。
 
 https://github.com/vuejs-jp/vuefes-2022/pull/326
 
@@ -388,8 +360,7 @@ https://github.com/vuejs-jp/vuefes-2022/pull/326
 
 #### ソースディレクトリの扱い
 
-ソースディレクトリ (`srcDir`) を設定しない場合は app.vue
-をルートに置く必要があります。
+ソースディレクトリ (`srcDir`) を設定しない場合は app.vue をルートに置く必要があります。
 
 ```
 🗂 root
@@ -428,8 +399,7 @@ app.vue を誤ってルートに置いてしまった場合は正しくレンダ
 
 Vue Fes 2022 ウェブサイトでは SVG アイコンの扱いを変更する必要がありました。
 
-これまで [`@nuxtjs/svg`](https://github.com/nuxt-community/svg-module)
-を利用していました。
+これまで [`@nuxtjs/svg`](https://github.com/nuxt-community/svg-module) を利用していました。
 
 ```vue:NavPageSection.vue
 <template>
@@ -441,12 +411,9 @@ Vue Fes 2022 ウェブサイトでは SVG アイコンの扱いを変更する�
 </template>
 ```
 
-もともと SVG アイコンを Vue
-コンポーネントとして扱っていない辺り、設計上望ましくありません。
+もともと SVG アイコンを Vue コンポーネントとして扱っていない辺り、設計上望ましくありません。
 
-Nuxt 3 へ更新する際、代わりに
-[`vite-svg-loader`](https://github.com/jpkleemans/vite-svg-loader)
-を利用することとしました。
+Nuxt 3 へ更新する際、代わりに [`vite-svg-loader`](https://github.com/jpkleemans/vite-svg-loader) を利用することとしました。
 
 ```vue:NavPageSection.vue
 <script lang="ts" setup>
@@ -478,35 +445,26 @@ import VuefesLogo from '~/assets/icon/vuefes_logo.svg'
 
 今年のウェブサイト製作にあたって、遅ればせながら各々のリポジトリをチェックさせていただきました。
 
-ざっくり Nuxt 1 をベースに JavaScript で書かれた [2018](https://vuefes.jp/2018)
-など、基本的に Nuxt をメインの技術スタックとして実装されていることが分かります。
+ざっくり Nuxt 1 をベースに JavaScript で書かれた [2018](https://vuefes.jp/2018) など、基本的に Nuxt をメインの技術スタックとして実装されていることが分かります。
 
-| #                              | Framework                                                               | Language   |
-| :----------------------------- | :---------------------------------------------------------------------- | :--------- |
-| [2018](https://vuefes.jp/2018) | Nuxt 1 -> 2                                                             | JavaScript |
-| [2019](https://vuefes.jp/2019) | Nuxt 2<br />Decorator API                                               | TypeScript |
-| [2020](https://vuefes.jp/2020) | Vue CLI 4                                                               | TypeScript |
-| 2021                           | -                                                                       | -          |
-| [2022](https://vuefes.jp/2022) | Nuxt 3 Bridge (-> 3)<br />Composition API<br /> `<script setup>` syntax | TypeScript |
+| #                              | Framework                                                              | Language   |
+| :----------------------------- | :--------------------------------------------------------------------- | :--------- |
+| [2018](https://vuefes.jp/2018) | Nuxt 1 -> 2                                                            | JavaScript |
+| [2019](https://vuefes.jp/2019) | Nuxt 2<br />Decorator API                                              | TypeScript |
+| [2020](https://vuefes.jp/2020) | Vue CLI 4                                                              | TypeScript |
+| 2021                           | -                                                                      | -          |
+| [2022](https://vuefes.jp/2022) | Nuxt 3 Bridge (-> 3)<br />Composition API<br />`<script setup>` syntax | TypeScript |
 
-台風による中止という前代未聞の経験から 1 年も経たずして
-[2020](https://vuefes.jp/2020) の製作を進めていたとは、思いもよりませんでした。
+台風による中止という前代未聞の経験から 1 年も経たずして [2020](https://vuefes.jp/2020) の製作を進めていたとは、思いもよりませんでした。
 
-[2022](https://vuefes.jp/2022)
-のウェブサイトではこれまでの経験を踏まえ、大変メッセージ性の強いウェブサイトになりました。トップ画の
-SVG アニメーションを取り入れる格好で、それに纏わるロジックを
-[2019](https://vuefes.jp/2019) より移植しています。
+[2022](https://vuefes.jp/2022) のウェブサイトではこれまでの経験を踏まえ、大変メッセージ性の強いウェブサイトになりました。トップ画の SVG アニメーションを取り入れる格好で、それに纏わるロジックを [2019](https://vuefes.jp/2019) より移植しています。
 
 利用できるものは極力利用させていただく、という方針の下で段階を踏みながら一般公開させました。
 
 ## 最後に
 
-今回、初めて Vue Fes
-コアスタッフのひとりとして参画させていただきました。その中でウェブサイトのリードを担当させていただき、全体としてほんとうに貴重な経験をさせていただいた思いを抱いています。
+今回、初めて Vue Fes コアスタッフのひとりとして参画させていただきました。その中でウェブサイトのリードを担当させていただき、全体としてほんとうに貴重な経験をさせていただいた思いを抱いています。
 
-知見発信の促進や、地方の Vue.js コミュニティの再興など、この 3
-年余りの期間で失ってしまった文化を取り戻さなければいけないという使命も感じたりしています。
+知見発信の促進や、地方の Vue.js コミュニティの再興など、この 3 年余りの期間で失ってしまった文化を取り戻さなければいけないという使命も感じたりしています。
 
-来たる Vue Fes 2023 (仮称)
-でも引き続きコアスタッフのひとりとして、微力ながらお手伝いさせていただければ
-(余程の差し込み等無ければ) と前向きに考えています。
+来たる Vue Fes 2023 (仮称) でも引き続きコアスタッフのひとりとして、微力ながらお手伝いさせていただければ (余程の差し込み等無ければ) と前向きに考えています。
