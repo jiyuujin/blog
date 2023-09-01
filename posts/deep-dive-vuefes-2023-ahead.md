@@ -22,17 +22,13 @@ Vue Fes Japan 2023
 
 https://vuefes.jp/2023
 
-昨年の Vue Fes Japan Online 2022 ウェブサイト製作を開始した当初は Nuxt 3
-もまだリリースされていませんでしたが、今年は大きく悩むことなく (?) Nuxt 3
-を選定させていただきました。
+昨年の Vue Fes Japan Online 2022 ウェブサイト製作を開始した当初は Nuxt 3 もまだリリースされていませんでしたが、今年は大きく悩むことなく (?) Nuxt 3 を選定させていただきました。
 
-私自身の役割について、今回も技術のリードとして取り組まさせていただくとともに、Web
-サイトチームのリードとして引っ張らせていただいております。
+私自身の役割について、今回も技術のリードとして取り組まさせていただくとともに、Web サイトチームのリードとして引っ張らせていただいております。
 
 昨年同様、初期ローンチまでの間で緻密な設計を心がけました。
 
-なお、開催が無事に終わるまではリポジトリを public
-に変更させられないため、取り急ぎかいつまんでご紹介させていただきます。
+なお、開催が無事に終わるまではリポジトリを public に変更させられないため、取り急ぎかいつまんでご紹介させていただきます。
 
 まず package.json 内の依存関係を下へ示してみます。
 
@@ -65,13 +61,11 @@ https://vuefes.jp/2023
 }
 ```
 
-補足事項は [Nuxt DevTools](https://devtools.nuxtjs.org/)
-を有効化していることでしょうか。
+補足事項は [Nuxt DevTools](https://devtools.nuxtjs.org/) を有効化していることでしょうか。
 
 ![](https://user-images.githubusercontent.com/904724/217796838-597625f1-3f5a-4fb1-9720-68fd1c7d6615.jpg)
 
-活用方法の模索こそ現在進行形となりますが、かくいう私自身は現在、本業のおしごとで全く
-Vue.js をさわらない日常を送っています。
+活用方法の模索こそ現在進行形となりますが、かくいう私自身は現在、本業のおしごとで全く Vue.js をさわらない日常を送っています。
 
 折角、こうしたオープンソースのプロダクトへコントリビュートする機会、興味のあるものに取り組んでいくということは大変意義深いものと考えています。
 
@@ -97,9 +91,7 @@ Vue.js をさわらない日常を送っています。
 
 基本的な構造こそ昨年とあまり変わっておらず、初期ローンチ以後度重なる機能追加を経るも、全体の体裁は崩れないものと考えています。
 
-なお、今年は Vue Fes 2023
-全体として広報活動にも注力しており、先日デザイナーのわかまつさんが今回のウェブサイトのデザインについて
-[寄稿](https://note.com/hachi_ihcah/n/na60e5fa4a64e) されています。
+なお、今年は Vue Fes 2023 全体として広報活動にも注力しており、先日デザイナーのわかまつさんが今回のウェブサイトのデザインについて [寄稿](https://note.com/hachi_ihcah/n/na60e5fa4a64e) されています。
 
 <!-- note のリンクを貼り付ける -->
 
@@ -125,11 +117,9 @@ https://note.com/hachi_ihcah/n/na60e5fa4a64e
 
 基本的に、今年は思い切って挑戦することをモットーに行動させていただきます。
 
-昨年の秋に Nuxt 3
-正式リリースを迎え、漸く腰を据えて開発できる状態となったいま、保守的な姿勢で居続けるのは非常に勿体無いと考えています。
+昨年の秋に Nuxt 3 正式リリースを迎え、漸く腰を据えて開発できる状態となったいま、保守的な姿勢で居続けるのは非常に勿体無いと考えています。
 
-また、オープンソースのプロダクトへコントリビュートする機会、積極的に
-experimental な機能も試していきたい。
+また、オープンソースのプロダクトへコントリビュートする機会、積極的に experimental な機能も試していきたい。
 
 その上で、今回捕捉するのは、以下 3 点挙げることとします。
 
@@ -139,8 +129,7 @@ experimental な機能も試していきたい。
 
 ### CSS 選定
 
-まず、昨年採用した Tailwind CSS を、今年は採用しませんでした。代わりに CSS in TS
-のひとつ [Pinceau](https://pinceau.dev/) を採用させていただいています。
+まず、昨年採用した Tailwind CSS を、今年は採用しませんでした。代わりに CSS in TS のひとつ [Pinceau](https://pinceau.dev/) を採用させていただいています。
 
 ![](https://raw.githubusercontent.com/Tahul/pinceau/646f1d626187fdc9ba748fb20f9649ea718113c0/docs/public/cover.jpg)
 
@@ -158,110 +147,93 @@ css({
 </style>
 ```
 
-ちなみに、昨年の Vue Fes Japan Online 2022 の Peephole
-でも、その紹介がなされましたが、この Pinceau
-を今年のウェブサイトで使用することになりました。
+ちなみに、昨年の Vue Fes Japan Online 2022 の Peephole でも、その紹介がなされましたが、この Pinceau を今年のウェブサイトで使用することになりました。
 
-もちろん、いまこのタイミングで 0.x 系の Pinceau
-を選定するというのは、一プロダクト企業のプロジェクトとしては絶対に取り得ない選択肢かと考えています。
+もちろん、いまこのタイミングで 0.x 系の Pinceau を選定するというのは、一プロダクト企業のプロジェクトとしては絶対に取り得ない選択肢かと考えています。
 
-しかし、オープンソース (OSS) のプロジェクトかつ Vue
-のひとつの「象徴」として、stable
-なものを使う形式で落ち着いてしまって良いのか、といった疑問符がついてまわりました。
+しかし、オープンソース (OSS) のプロジェクトかつ Vue のひとつの「象徴」として、stable なものを使う形式で落ち着いてしまって良いのか、といった疑問符がついてまわりました。
 
-実際、メンバー間のムードや昨年の KPT など総合的に鑑みて Pinceau を選定、この 1
-年間はお世話になろうと決意した形になります。
+実際、メンバー間のムードや昨年の KPT など総合的に鑑みて Pinceau を選定、この 1 年間はお世話になろうと決意した形になります。
 
-Pinceau
-の導入については、[公式ドキュメント](https://pinceau.dev/get-started/installation)
-と合わせご確認ください。
+Pinceau の導入については、[公式ドキュメント](https://pinceau.dev/get-started/installation) と合わせご確認ください。
 
 ```js
 export default defineNuxtConfig({
-  modules: ["pinceau/nuxt"],
-});
+  modules: ['pinceau/nuxt'],
+})
 ```
 
-今回、採用した Nuxt (v3 正式版) 上では、Pinceau
-のテーマ及びユーティリティに対する型定義の設定など自動で読み込まれるようになっています。
+今回、採用した Nuxt (v3 正式版) 上では、Pinceau のテーマ及びユーティリティに対する型定義の設定など自動で読み込まれるようになっています。
 
-CSS を書く上で必要となるデザイントークンについては、プロジェクトルートに
-tokens.config.ts を置きます。
+CSS を書く上で必要となるデザイントークンについては、プロジェクトルートに tokens.config.ts を置きます。
 
 そして nuxt.config.ts より `pinceau.configFileName` を読み込んでください。
 
 ```js
 export default defineNuxtConfig({
   pinceau: {
-    configFileName: "tokens.config",
+    configFileName: 'tokens.config',
   },
-});
+})
 ```
 
 基本的に Pinceau 導入のフェーズは、いたってシンプルとなります。
 
 #### カラートークンを定義する
 
-昨年採用の Tailwind CSS においても、ルートの tailwind.config.js
-で、カラートークンを中心に定義していました。
+昨年採用の Tailwind CSS においても、ルートの tailwind.config.js で、カラートークンを中心に定義していました。
 
 https://github.com/vuejs-jp/vuefes-2022/blob/main/tailwind.config.js#L5
 
 Pinceau においても同様に、カラートークンを定義できます。
 
 ```js
-import { defineTheme } from "pinceau";
+import { defineTheme } from 'pinceau'
 
 export default defineTheme({
   color: {
-    white: "#FFF",
+    white: '#FFF',
     vue: {
-      blue: "#35495E",
-      green: "#42B983",
+      blue: '#35495E',
+      green: '#42B983',
     },
     typescript: {
-      blue: "#3178C6",
+      blue: '#3178C6',
     },
   },
-});
+})
 ```
 
-なお、下のようにケバブケースとして定義することは (いまのところ)
-できないので気を付けましょう。
+なお、下のようにケバブケースとして定義することは (いまのところ) できないので気を付けましょう。
 
 ```js
-import { defineTheme } from "pinceau";
+import { defineTheme } from 'pinceau'
 
 export default defineTheme({
   color: {
-    "vue-blue": "#35495E", // NG
-    "vue-green": "#42B983", // NG
+    'vue-blue': '#35495E', // NG
+    'vue-green': '#42B983', // NG
   },
-});
+})
 ```
 
 ### 問い合わせの管理
 
-続いて問い合わせのフォームでは、昨年採用した Netlify form
-を、今年は採用しませんでした。代わりに Newt の
-[FormApp](https://www.newt.so/form-app) を採用させていただいています。
+続いて問い合わせのフォームでは、昨年採用した Netlify form を、今年は採用しませんでした。代わりに Newt の [FormApp](https://www.newt.so/form-app) を採用させていただいています。
 
 ![](https://prcdn.freetls.fastly.net/release_image/95676/6/95676-6-75b1a533f1bca5881e59aeb346bba080-1200x630.jpg?format=jpeg&auto=webp&quality=85%2C75&width=1950&height=1350&fit=bounds)
 
-奇しくも時を同じくして、[Newt](https://www.newt.so/)
-公式のチュートリアルが発表されていました。
+奇しくも時を同じくして、[Newt](https://www.newt.so/) 公式のチュートリアルが発表されていました。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">NewtのForm Appを利用して、Nuxt3で問い合わせフォームを作成するチュートリアルを公開しました🎉<br><br>自動返信・受信通知の設定はもちろん、少し面倒なバリデーションやGoogle reCAPTCHA v3の導入についても扱っています。Nuxtでフォームを作ってみたい方は是非どうぞ🥳<a href="https://t.co/v5WO3wOCxH">https://t.co/v5WO3wOCxH</a></p>&mdash; Newt (@newt_cms) <a href="https://twitter.com/newt_cms/status/1626009600943362049?ref_src=twsrc%5Etfw">February 16, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-一応、Newt
-公式のチュートリアルが発表されたのは、問い合わせツールの選定後になります。
+一応、Newt 公式のチュートリアルが発表されたのは、問い合わせツールの選定後になります。
 
 なお、昨年同様 Newt の CMS を使わせていただくかについては、現在検討中です。
 
 おいおいどうなったのか、共有させていただければと考えております。
 
-こちらは Newt 側で作成したスペースの UID と、フォームの UID
-を読み込む必要があります。
+こちらは Newt 側で作成したスペースの UID と、フォームの UID を読み込む必要があります。
 
 ```js
 export default defineNuxtConfig({
@@ -269,17 +241,14 @@ export default defineNuxtConfig({
     newtSpaceUid: process.env.NUXT_NEWT_SPACE_UID,
     newtFormUid: process.env.NUXT_NEWT_FORM_UID,
   },
-});
+})
 ```
 
-ここで、基本的には
-[Newt 公式のチュートリアル](https://www.newt.so/docs/tutorials/contact-form-in-nuxt)
-を見ていただくのが、大変分かりやすいと考えています。
+ここで、基本的には [Newt 公式のチュートリアル](https://www.newt.so/docs/tutorials/contact-form-in-nuxt) を見ていただくのが、大変分かりやすいと考えています。
 
 https://www.newt.so/docs/tutorials/contact-form-in-nuxt
 
-[`useRuntimeConfig`](https://nuxt.com/docs/guide/going-further/runtime-config)
-は `#app` よりアクセスできます。
+[`useRuntimeConfig`](https://nuxt.com/docs/guide/going-further/runtime-config) は `#app` よりアクセスできます。
 
 ```html
 <form
@@ -296,9 +265,7 @@ https://www.newt.so/docs/tutorials/contact-form-in-nuxt
 
 実際、一番シンプルな方法は `<form>` タグを利用していただくこととなります。
 
-HTML
-標準のバリデーションで間に合う場合はこのまま進めてください。しかし、固有のバリデーションを実装する場合は、vee-validate
-と合わせ `fetch` を利用していただくこととなります。
+HTML 標準のバリデーションで間に合う場合はこのまま進めてください。しかし、固有のバリデーションを実装する場合は、vee-validate と合わせ `fetch` を利用していただくこととなります。
 
 なお、今回 Vue Fes 2023 では、問い合わせ専用のカスタム hook を作成しました。
 
@@ -313,40 +280,39 @@ Newt へアクセスする責務、バリデーションエラーを設定する
 まず `useForm` に Newt へアクセスする責務を含めます。
 
 ```ts
-import { useForm as useValidateForm } from "vee-validate";
+import { useForm as useValidateForm } from 'vee-validate'
 
 export function useForm() {
-  const { useFieldModel, handleSubmit } = useValidateForm();
-  const [name, email, detail] = useFieldModel(["name", "email", "detail"]);
-  const config = useRuntimeConfig();
+  const { useFieldModel, handleSubmit } = useValidateForm()
+  const [name, email, detail] = useFieldModel(['name', 'email', 'detail'])
+  const config = useRuntimeConfig()
 
-  const endpoint =
-    `https://${config.newtSpaceUid}.form.newt.so/v1/${config.newtFormUid}`;
-  const isSent = ref(false);
+  const endpoint = `https://${config.newtSpaceUid}.form.newt.so/v1/${config.newtFormUid}`
+  const isSent = ref(false)
 
   const isSubmitting = computed(() => {
-    if (!name.value || !email.value || !detail.value) return false;
-    if (name.value && email.value && detail.value) return true;
-    return false;
-  });
+    if (!name.value || !email.value || !detail.value) return false
+    if (name.value && email.value && detail.value) return true
+    return false
+  })
 
   const onSubmit = handleSubmit(async function (values) {
-    const formData = new FormData();
+    const formData = new FormData()
     Object.entries(values).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
+      formData.append(key, value)
+    })
     await fetch(endpoint, {
-      method: "POST",
+      method: 'POST',
       body: formData,
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
       },
     })
       .then(() => (isSent.value = true))
-      .catch((err) => (console.error(err)));
-  });
+      .catch((err) => (console.error(err)))
+  })
 
-  return { name, email, detail, isSent, isSubmitting, onSubmit };
+  return { name, email, detail, isSent, isSubmitting, onSubmit }
 }
 ```
 
@@ -354,37 +320,37 @@ export function useForm() {
 
 ```ts
 export function useFormError() {
-  const nameError = ref("");
-  const emailError = ref("");
-  const detailError = ref("");
+  const nameError = ref('')
+  const emailError = ref('')
+  const detailError = ref('')
 
-  const submitError = ref("");
+  const submitError = ref('')
 
   function validateName(value: string) {
-    if (value === "") {
-      nameError.value = "名前を入力してください";
-      return;
+    if (value === '') {
+      nameError.value = '名前を入力してください'
+      return
     }
-    nameError.value = "";
+    nameError.value = ''
   }
 
   function validateEmail(value: string) {
-    if (value === "") {
-      emailError.value = "メールアドレスを入力してください";
-      return;
+    if (value === '') {
+      emailError.value = 'メールアドレスを入力してください'
+      return
     } else if (!/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/.test(value)) {
-      emailError.value = "メールアドレスの形式を確認してください";
-      return;
+      emailError.value = 'メールアドレスの形式を確認してください'
+      return
     }
-    emailError.value = "";
+    emailError.value = ''
   }
 
   function validateDetail(value: string) {
-    if (value === "") {
-      detailError.value = "問い合わせ内容を入力してください";
-      return;
+    if (value === '') {
+      detailError.value = '問い合わせ内容を入力してください'
+      return
     }
-    detailError.value = "";
+    detailError.value = ''
   }
 
   return {
@@ -395,15 +361,14 @@ export function useFormError() {
     validateName,
     validateEmail,
     validateDetail,
-  };
+  }
 }
 ```
 
-こうして作成したカスタム hook
-を、適宜コンポーネント側より使うよう書くことで、込み入ったドメインの情報を小分けにできます。
+こうして作成したカスタム hook を、適宜コンポーネント側より使うよう書くことで、込み入ったドメインの情報を小分けにできます。
 
 ```js
-const { name, email, detail, isSent, onSubmit } = useForm();
+const { name, email, detail, isSent, onSubmit } = useForm()
 ```
 
 ```html
@@ -425,17 +390,13 @@ const { name, email, detail, isSent, onSubmit } = useForm();
 
 ### その他
 
-まずは、適切な Lint
-ツールを選定します。といってももちろん適切なツール選定ということ自体、今年に限ったものではありません。
+まずは、適切な Lint ツールを選定します。といってももちろん適切なツール選定ということ自体、今年に限ったものではありません。
 
-昨年と違って StyleLint を止めました。そもそも CSS in TS のひとつ Pinceau
-を採用する以上、CSS に Lint をかける意味は無いと判断しました。
+昨年と違って StyleLint を止めました。そもそも CSS in TS のひとつ Pinceau を採用する以上、CSS に Lint をかける意味は無いと判断しました。
 
-一方、今年初めて markuplint
-を導入しています。昨今アクセシビリティの考え方を通して、ありとあらゆる人たちが一切の障壁なく平等にウェブサイトが使用できるのを目指す必要があります。
+一方、今年初めて markuplint を導入しています。昨今アクセシビリティの考え方を通して、ありとあらゆる人たちが一切の障壁なく平等にウェブサイトが使用できるのを目指す必要があります。
 
-ただ、現状 recommend
-ルールのプリセット適用にとどまっており、以後ルールの見直し、拡充を図っていきます。
+ただ、現状 recommend ルールのプリセット適用にとどまっており、以後ルールの見直し、拡充を図っていきます。
 
 ```.markuplintrc
 {
@@ -451,11 +412,9 @@ const { name, email, detail, isSent, onSubmit } = useForm();
 
 続いて、型定義について、見ていきます。
 
-今回 Vue Fes 2023 では初めて、SFC ファイルの型チェックライブラリ
-[`vue-tsc`](https://www.npmjs.com/package/vue-tsc) を利用しています。
+今回 Vue Fes 2023 では初めて、SFC ファイルの型チェックライブラリ [`vue-tsc`](https://www.npmjs.com/package/vue-tsc) を利用しています。
 
-というのも、昨年 Vue Fes 2022 では、その `vue-tsc`
-を採用せずウェブサイトの開発を進めていたの、などと指摘を受けてしまいますが。
+というのも、昨年 Vue Fes 2022 では、その `vue-tsc` を採用せずウェブサイトの開発を進めていたの、などと指摘を受けてしまいますが。
 
 ```bash
 vue-tsc --noEmit
@@ -469,8 +428,7 @@ vue-tsc --noEmit
 
 ## 最後に
 
-という形で、昨年に続いて今回も Vue Fes
-コアスタッフのひとりとして、さまざまなことにチャレンジさせていただいております。
+という形で、昨年に続いて今回も Vue Fes コアスタッフのひとりとして、さまざまなことにチャレンジさせていただいております。
 
 今回、昨年とは違う点を中心に、さわりの部分を解説してきた技術仕様のうち、まだいくつかの課題を抱えたままのものもあるでしょう。
 
@@ -483,11 +441,8 @@ vue-tsc --noEmit
 
 しかし、その中でも引き続きウェブサイトチームのプロジェクトリードを担当させていただき、初期ローンチを果たしたいま開催のその日まで邁進させていきたいと考えています。
 
-ちなみに、昨年の Vue Fes 2022 の
-[ふりかえり記事](http://blog.nekohack.me/posts/deep-dive-vuefes-2022)
-も合わせて再掲しておきます。
+ちなみに、昨年の Vue Fes 2022 の [ふりかえり記事](http://blog.nekohack.me/posts/deep-dive-vuefes-2022) も合わせて再掲しておきます。
 
 http://blog.nekohack.me/posts/deep-dive-vuefes-2022
 
-また今年はこのような知見発信の促進はもちろん、地方の Vue.js
-コミュニティの再興なども、積極的にやっていけたらと考えています。
+また今年はこのような知見発信の促進はもちろん、地方の Vue.js コミュニティの再興なども、積極的にやっていけたらと考えています。

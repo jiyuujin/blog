@@ -12,13 +12,11 @@ tags:
   - Contentful
 ---
 
-`nuxt-ts` 採用にあたってかれこれ 1
-年以上、メンテストップ中の公式テンプレートを見るも一切頼りにはできません。
+`nuxt-ts` 採用にあたってかれこれ 1 年以上、メンテストップ中の公式テンプレートを見るも一切頼りにはできません。
 
 [nuxt-community/typescript-template](https://github.com/nuxt-community/typescript-template)
 
-当ブログでは奇しくもちょうどひと月前に更新済。つい先日 `nuxt-ts`
-が不要になるのを見たばかり、しかし　`nuxt-ts` をインストールするしかありません。
+当ブログでは奇しくもちょうどひと月前に更新済。つい先日 `nuxt-ts` が不要になるのを見たばかり、しかし　`nuxt-ts` をインストールするしかありません。
 
 ```bash
 yarn add nuxt-ts
@@ -37,8 +35,7 @@ yarn add typescript @types/node ts-loader -D
 
 :::message is-primary
 
-ここで `はず` と書いた理由。それは `noImplicitAny` を `false`
-にしなければしんどいため。
+ここで `はず` と書いた理由。それは `noImplicitAny` を `false` にしなければしんどいため。
 
 :::
 
@@ -76,25 +73,21 @@ async routes() {
 コードのシンタックハイライトは markdown-it-highlight を使って実現。
 
 ```js
-highlight:
-((str, lang) => {
-  const hl = require("highlight.js");
+highlight: (str, lang) => {
+  const hl = require('highlight.js')
   if (lang && hl.getLanguage(lang)) {
     try {
-      return '<pre class="hljs"><code>' + hl.highlight(lang, str, true).value +
-        "</code></pre>";
+      return '<pre class="hljs"><code>' + hl.highlight(lang, str, true).value + '</code></pre>'
     } catch (__) {}
   }
   // 言語設定がない場合、プレーンテキストとして表示する
-  return '<pre class="hljs"><code>' +
-    hl.highlight("plaintext", str, true).value + "</code></pre>";
-});
+  return '<pre class="hljs"><code>' + hl.highlight('plaintext', str, true).value + '</code></pre>'
+}
 ```
 
 ## 型定義を自分で書く
 
-あいにく公式サポートされておらず asyncData や fetch などの API
-を型安全に利用するために自分で書かなければいけない。
+あいにく公式サポートされておらず asyncData や fetch などの API を型安全に利用するために自分で書かなければいけない。
 
 Nuxt 公式 Context 一覧と照らし合わせ `/types/nuxt.d.ts` を作成する。
 

@@ -17,15 +17,13 @@ tags:
 
 筆者 (私) は IntelliJ や VSCode の二刀流として Web 界隈に生息している。
 
-可能な限り IntelliJ 上で済ませるようにしており Docker (MySQL や PostgreSQL)
-なども IntelliJ 上で動かしている。
+可能な限り IntelliJ 上で済ませるようにしており Docker (MySQL や PostgreSQL) なども IntelliJ 上で動かしている。
 
 ## 私がお世話になっているエクステンション
 
 私自身少ないなりにもエクステンションをインストールしているが、エディタの機能をフル活用している訳でもありません。
 
-ちなみに Vetur や Flutter Intl
-は固有のフレームワークを使う際に便利なエクステンションで、全てのデベロッパが必要になる訳ではありません。
+ちなみに Vetur や Flutter Intl は固有のフレームワークを使う際に便利なエクステンションで、全てのデベロッパが必要になる訳ではありません。
 
 - Git Graph
 - Bracket Pair Colorizer 2
@@ -38,8 +36,7 @@ tags:
 - Flutter Intl
   - IntelliJ でも Flutter Intl
 
-またエクステンションでは無いものの、ファイル保存時に自動で ESLint fix
-してくれる機能がある。 IntelliJ では File Watcher という機能が存在する。
+またエクステンションでは無いものの、ファイル保存時に自動で ESLint fix してくれる機能がある。 IntelliJ では File Watcher という機能が存在する。
 
 [File Watcher](https://pleiades.io/help/idea/using-file-watchers.html)
 
@@ -87,23 +84,19 @@ IntelliJ でも同様のエクステンションが存在する。
 
 ### Remote Containers
 
-Docker 内で VSCode Server を動かす。ソースコードはボリュームマウントするため
-Docker 内から見える (VSCode で編集できる)
+Docker 内で VSCode Server を動かす。ソースコードはボリュームマウントするため Docker 内から見える (VSCode で編集できる)
 
 [Remote Containers](https://code.visualstudio.com/docs/remote/containers)
 
 ### Vetur
 
-言わずと知れた Vetur で Vue
-ファイルを操作しているとオススメのメッセージが表示されるため、ご存知の方も多いでしょう。
+言わずと知れた Vetur で Vue ファイルを操作しているとオススメのメッセージが表示されるため、ご存知の方も多いでしょう。
 
 [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 
 ### Flutter Intl
 
-`pubspec.yaml`
-に必要なライブラリ書いてインストールする。適宜初期化してロケールを追加すれば、自動で
-`/lib/generated` に吐き出してくれる。
+`pubspec.yaml` に必要なライブラリ書いてインストールする。適宜初期化してロケールを追加すれば、自動で `/lib/generated` に吐き出してくれる。
 
 [Flutter Intl](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl)
 

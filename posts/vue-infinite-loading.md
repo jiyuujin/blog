@@ -47,8 +47,7 @@ declare module 'vue-infinite-loading' {
 
 後になって気付いたんですが、開発元の issue を見ると載っていたようです。
 
-[TypeScript
-definition?]8https://github.com/PeachScript/vue-infinite-loading/issues/139#issue-307231773)
+[TypeScript definition?]8https://github.com/PeachScript/vue-infinite-loading/issues/139#issue-307231773)
 
 ## ただし SSR の下では使えない
 

@@ -24,8 +24,7 @@ cargo generate --git https://github.com/rustwasm/wasm-pack-template
 
 ### ビルドを行う
 
---target を付けてビルドすることで、JavaScript ファイルを吐き出してくれる。逆に
---target を付けなければ、webpack に対応する形式で吐き出してくれる。
+--target を付けてビルドすることで、JavaScript ファイルを吐き出してくれる。逆に --target を付けなければ、webpack に対応する形式で吐き出してくれる。
 
 ```bash
 wasm-pack build --target web

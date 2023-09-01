@@ -13,12 +13,9 @@ tags:
 
 ## `useEffect`
 
-今回は `useEffect` を中心に見ていく。結論を言うと `mountEffect` と
-`updateEffect` を見れば良い。その理由こそ `useEffect`
-がコンポーネントの初期レンダリングを始め、書き手の自由に応じたレンダリングの制御も可能であるため。
+今回は `useEffect` を中心に見ていく。結論を言うと `mountEffect` と `updateEffect` を見れば良い。その理由こそ `useEffect` がコンポーネントの初期レンダリングを始め、書き手の自由に応じたレンダリングの制御も可能であるため。
 
-実際に元の hook 同様のコールバック関数と依存関係の配列を受け入れる。第 2
-引数である依存関係の配列に何も渡されないと、コンポーネントの初期レンダリング時に実行される。
+実際に元の hook 同様のコールバック関数と依存関係の配列を受け入れる。第 2 引数である依存関係の配列に何も渡されないと、コンポーネントの初期レンダリング時に実行される。
 
 主に下記ケースで `useEffect` を使うことが多い。
 
@@ -36,15 +33,15 @@ tags:
 - コールバック関数内で DOM を更新する
 
 ```js
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 const Component = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  });
-};
+    document.title = `You clicked ${count} times`
+  })
+}
 ```
 
 するとコンポーネントは `count` に初期値が入っていることを確認できる。
@@ -61,15 +58,15 @@ You clicked 0 times
 - 第 2 引数に `count` を設定する
 
 ```js
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 const Component = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  }, [count]);
-};
+    document.title = `You clicked ${count} times`
+  }, [count])
+}
 ```
 
 するとコンポーネントは `count` が変更される度に DOM 更新が実行されるはずです。
@@ -84,17 +81,17 @@ You clicked 1 times
 するとコンポーネントは `count` が変更される度に DOM 更新が実行される。
 
 ```js
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 const Component = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
-  }, [count]);
+    document.title = `You clicked ${count} times`
+  }, [count])
 
-  return <button onClick={() => setCount(count + 1)}></button>;
-};
+  return <button onClick={() => setCount(count + 1)}></button>
+}
 ```
 
 ### さらに `useEffect` の内側を理解する
@@ -108,59 +105,53 @@ const Component = () => {
 
 ```js
 function enqueueUpdate(fiber, update) {
-  var updateQueue = fiber.updateQueue;
+  var updateQueue = fiber.updateQueue
 
-  var sharedQueue = updateQueue.shared;
-  var pending = sharedQueue.pending;
+  var sharedQueue = updateQueue.shared
+  var pending = sharedQueue.pending
 
   if (pending === null) {
-    update.next = update;
+    update.next = update
   } else {
-    update.next = pending.next;
-    pending.next = update;
+    update.next = pending.next
+    pending.next = update
   }
 
-  sharedQueue.pending = update;
+  sharedQueue.pending = update
 }
 ```
 
-関数を fiber
-と紐付けることで、各コンポーネントの更新を区別できるようにしています。
+関数を fiber と紐付けることで、各コンポーネントの更新を区別できるようにしています。
 
 #### 無限ループに注意する
 
-しばしば出会す無限ループ。結論を言うと第 2
-引数をきちんと追いきれていない可能性があります。
+しばしば出会す無限ループ。結論を言うと第 2 引数をきちんと追いきれていない可能性があります。
 
 具体的にカウンタアップをコールバック関数内で済ませてしまうケースを例にとります。
 
 ```js
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 const Component = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    setCount((count) => count + 1);
-  }, [count]);
-};
+    setCount((count) => count + 1)
+  }, [count])
+}
 ```
 
 `count` の値が変わって、コールバック関数でその都度更新されています。
 
 これこそ無限ループとなってしまう原因です。
 
-これ以外にも非同期通信を処理した場合など `useEffect`
-の使いどころを考慮する必要があります。
+これ以外にも非同期通信を処理した場合など `useEffect` の使いどころを考慮する必要があります。
 
 - 非同期通信を処理した場合
-- Hooks 用に公開された
-  [ESLint プラグイン](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks)
-  で `react-hooks/exhaustive-deps` をチェックした場合
+- Hooks 用に公開された [ESLint プラグイン](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks) で `react-hooks/exhaustive-deps` をチェックした場合
 
 他にも注意するべきことは存在するけど、今回はこの辺で。
 
 ## その他
 
-ひと昔前に書いていたクラスコンポーネントで `useEffect` を例えると
-`componentDidMount` と `componentDidUpdate` の組み合わせと説くことができます。
+ひと昔前に書いていたクラスコンポーネントで `useEffect` を例えると `componentDidMount` と `componentDidUpdate` の組み合わせと説くことができます。

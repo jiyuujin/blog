@@ -12,13 +12,11 @@ tags:
   - CMS
 ---
 
-CMS には API ベースと Git
-ベースの二種類が存在。それぞれの違いについては下記リンクが大変分かり易いので、こちらでは割愛させていただく。
+CMS には API ベースと Git ベースの二種類が存在。それぞれの違いについては下記リンクが大変分かり易いので、こちらでは割愛させていただく。
 
 [Git ベースの CMS と API ベースの CMS の比較](https://microcms.io/blog/git-based-cms-vs-api-first-cms/)
 
-間も無く 3 年近く経過する当ブログの裏側で使っている Contentful、API ベースの CMS
-のひとつ。
+間も無く 3 年近く経過する当ブログの裏側で使っている Contentful、API ベースの CMS のひとつ。
 
 製作当時こそ使いにくさを感じなかったものの、使っている内にふと気付いた点が出てきたのも事実。
 
@@ -26,11 +24,9 @@ CMS には API ベースと Git
 - 縦に長いモーダルを表示するとその上が見切れてしまう (スクロールも上に行かない)
 - 左に編集モード、右にプレビューモードがあると嬉しい
 
-バグもあれば、追加して欲しい機能もある。GitHub の Issue
-を立てれば解決するでしょう。しかし自分の中でそれら以上に今、自ら書いた記事を手元に残したい需要が高くなってきた。
+バグもあれば、追加して欲しい機能もある。GitHub の Issue を立てれば解決するでしょう。しかし自分の中でそれら以上に今、自ら書いた記事を手元に残したい需要が高くなってきた。
 
-とはいえ API ベースの CMS を採用した以上、Git
-でコンテンツを管理するのは難しい。その弱点を弱点でなくさせる可能性に気付いた。
+とはいえ API ベースの CMS を採用した以上、Git でコンテンツを管理するのは難しい。その弱点を弱点でなくさせる可能性に気付いた。
 
 ## JSON ファイルをエクスポート
 
@@ -41,11 +37,9 @@ contentful login --management-token $CTF_MANAGEMENT_TOKEN
 contentful space export --space-id $CTF_SPACE_ID --content-file webneko-blog-export.json
 ```
 
-ここで CTF_MANAGEMENT_TOKEN は、Management API
-用トークンを指す。コンテンツ描画に利用した Delivery API 用トークンとは違う。
+ここで CTF_MANAGEMENT_TOKEN は、Management API 用トークンを指す。コンテンツ描画に利用した Delivery API 用トークンとは違う。
 
-トークンを誤って使わないよう気を付けながら webneko-blog-export.json
-という名目でエクスポート。
+トークンを誤って使わないよう気を付けながら webneko-blog-export.json という名目でエクスポート。
 
 ## Markdown に変換する
 
@@ -57,17 +51,15 @@ contentful space export --space-id $CTF_SPACE_ID --content-file webneko-blog-exp
 fs.readFileSync を使って、先にエクスポートした JSON ファイルをパースする。
 
 ```js
-import * as fs from "fs";
-(async function () {
-  const jsonObject = JSON.parse(
-    await fs.readFileSync("./webneko-blog-export.json", "utf8"),
-  );
-  console.log(jsonObject?.entries);
-})();
+import * as fs from 'fs'
+
+;(async function () {
+  const jsonObject = JSON.parse(await fs.readFileSync('./webneko-blog-export.json', 'utf8'))
+  console.log(jsonObject?.entries)
+})()
 ```
 
-続き fs.writeFile を使って、パースしたコンテンツを Markdown
-ファイルに落とし込む。
+続き fs.writeFile を使って、パースしたコンテンツを Markdown ファイルに落とし込む。
 
 ```js
 import * as fs from 'fs'
@@ -111,17 +103,12 @@ Object(jsonObject?.entries).forEach((obj) => {
 | Tags        | `Array<string>` |
 | Category    | string          |
 
-詳しくは下記
-[記事](https://blog.nekohack.me/posts/created-webneko-blog-used-nuxt-js-and-contentful)
-をご確認いただければ。
+詳しくは下記 [記事](https://blog.nekohack.me/posts/created-webneko-blog-used-nuxt-js-and-contentful) をご確認いただければ。
 
-ブログのメインコンテンツである Body を Markdown
-に取り込めれば今回のゴールに到達する。
+ブログのメインコンテンツである Body を Markdown に取り込めれば今回のゴールに到達する。
 
 ## 最後に
 
-これで手元に markdown ファイル形式でバックアップを取ることに成功。ちなみに
-webhook の設定で S3 連携も可、指定の bucket に JSON
-ファイルをエクスポートできるそうです。
+これで手元に markdown ファイル形式でバックアップを取ることに成功。ちなみに webhook の設定で S3 連携も可、指定の bucket に JSON ファイルをエクスポートできるそうです。
 
 ※ ちなみに Contentful の利用を取り止める考えは現時点で無いことだけは念押しで。

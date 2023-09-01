@@ -19,8 +19,7 @@ tags:
 
 ![](https://i.imgur.com/7tiOTpE.jpg)
 
-当時 Public Beta になったばかりの Notion API
-にひとつの魅力を感じ流行りに乗っかっては Notion にまとめた次第です。
+当時 Public Beta になったばかりの Notion API にひとつの魅力を感じ流行りに乗っかっては Notion にまとめた次第です。
 
 3 か月前に書いた記事をチェックしていただければ幸いです。
 
@@ -34,8 +33,7 @@ tags:
 
 日々 Notion に書き留めていたが、この度 GitHub issue に移行した。
 
-理由は課金を回避するため。ただ最初からエンジニア界隈で一番馴染みのある GitHub
-を選択しておいても良かったですね。
+理由は課金を回避するため。ただ最初からエンジニア界隈で一番馴染みのある GitHub を選択しておいても良かったですね。
 
 ## GitHub API v4 を使う
 
@@ -43,17 +41,14 @@ tags:
 
 主に下記の場面で実践させていただいた。
 
-- Google Apps Script で新しい issue
-  を作成するスクリプトを書いて、毎朝決まった時間に実行する
-- 喋った内容をウェブサイトでも確認するため GitHub API を利用して全ての issue
-  を取得する
+- Google Apps Script で新しい issue を作成するスクリプトを書いて、毎朝決まった時間に実行する
+- 喋った内容をウェブサイトでも確認するため GitHub API を利用して全ての issue を取得する
 
 Notion を使っていた時と同じ前者については説明を省かせていただく。
 
 ### クエリを準備する
 
-下記に示したリクエスト制限も気になるところですが、今回は Github API v4
-を使った。
+下記に示したリクエスト制限も気になるところですが、今回は Github API v4 を使った。
 
 | API type | Description             |
 | :------- | :---------------------- |
@@ -75,7 +70,7 @@ REST と違って必要なものだけ記述すれば良い。
 - 参加者 (コントリビュータ) 一覧
 
 ```js
-import gql from "graphql-tag";
+import gql from 'graphql-tag'
 
 export const searchQuery = gql`
   query {
@@ -120,13 +115,12 @@ export const searchQuery = gql`
       }
     }
   }
-`;
+`
 ```
 
 `timelineItems` を取得する際に注意すること。
 
-それは Interface や Union を利用するため事前定義のスキーマに対応した Fragment
-Matcher を用意する必要がある。
+それは Interface や Union を利用するため事前定義のスキーマに対応した Fragment Matcher を用意する必要がある。
 
 ```json
 {
@@ -149,80 +143,70 @@ Matcher を用意する必要がある。
 そして Apollo Client のキャッシュで Fragment Matcher を設定する。
 
 ```js
-import {
-  InMemoryCache,
-  IntrospectionFragmentMatcher,
-} from "apollo-cache-inmemory";
-import introspectionQueryResultData from "./fragmentTypes.json";
+import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
+import introspectionQueryResultData from './fragmentTypes.json'
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData,
-});
+})
 
 export const apolloClient = new ApolloClient({
   cache: new InMemoryCache({
     fragmentMatcher,
   }),
-});
+})
 ```
 
 最終的に Vue で Apollo Client が使うために下記のような形となった。
 
 ```js
-import ApolloClient from "apollo-client";
-import { HttpLink } from "apollo-link-http";
-import { ApolloLink, concat } from "apollo-link";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import ApolloClient from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { ApolloLink, concat } from 'apollo-link'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
-const GITHUB_API_V4 = "https://api.github.com/graphql";
+const GITHUB_API_V4 = 'https://api.github.com/graphql'
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   operation.setContext({
     headers: {
-      Authorization:
-        `bearer ${import.meta.env.VITE_APP_GITHUB_API_ACCESS_TOKEN}`,
-      Accept: "application/vnd.github.v4.idl",
+      Authorization: `bearer ${import.meta.env.VITE_APP_GITHUB_API_ACCESS_TOKEN}`,
+      Accept: 'application/vnd.github.v4.idl',
     },
-  });
-  return forward(operation);
-});
+  })
+  return forward(operation)
+})
 
 const httpLink = new HttpLink({
   uri: GITHUB_API_V4,
   fetch,
-});
+})
 
 export const apolloClient = new ApolloClient({
   link: concat(authMiddleware, httpLink),
-});
+})
 ```
 
-もちろん事前に GitHub で Apollo Client
-を使うためのアクセストークンを発行しなければいけない。
+もちろん事前に GitHub で Apollo Client を使うためのアクセストークンを発行しなければいけない。
 
 ### `@vue/apollo-composable` を使う
 
 Hooks ベースで書ける `@vue/apollo-composable` を使う。
 
 ```js
-import { useQuery, useResult } from "@vue/apollo-composable";
-import { searchQuery } from "../graphql/issue";
+import { useQuery, useResult } from '@vue/apollo-composable'
+import { searchQuery } from '../graphql/issue'
 
 export default {
   setup() {
-    const { result, error, loading } = useQuery(searchQuery);
-    const issues = useResult(
-      result,
-      null,
-      (data) => data.viewer.repository?.issues?.nodes,
-    );
-    return { loading, error, issues };
+    const { result, error, loading } = useQuery(searchQuery)
+    const issues = useResult(result, null, (data) => data.viewer.repository?.issues?.nodes)
+    return { loading, error, issues }
   },
-};
+}
 ```
 
-先に作成したクエリと Plugin
-を合わせ、適宜呼び出したいコンポーネントで呼び出す。これをもってデータのフェッチが実現する。
+先に作成したクエリと Plugin を合わせ、適宜呼び出したいコンポーネントで呼び出す。これをもってデータのフェッチが実現する。
 
 - `@vue/apollo-composable` の `useQuery` でクエリを読み込む
 - useResult でレスポンスが吐き出される
@@ -230,13 +214,10 @@ export default {
 
 ## 最後に
 
-API の使い心地として、まだ Notion は完全でない。また Vite を静的サイトで使うため
-SG 用に設定した際はちょっと面倒臭かった印象があった。
+API の使い心地として、まだ Notion は完全でない。また Vite を静的サイトで使うため SG 用に設定した際はちょっと面倒臭かった印象があった。
 
-ここに来るまでに結構なボリュームがあったので、後者 Vite
-について詳しくは後日書きたい。
+ここに来るまでに結構なボリュームがあったので、後者 Vite について詳しくは後日書きたい。
 
 ### 雑談という取り組みについて
 
-今後もこの取り組みは継続予定です。お時間ある方は 5
-分間耳だけでも聴いてみてください。
+今後もこの取り組みは継続予定です。お時間ある方は 5 分間耳だけでも聴いてみてください。

@@ -49,16 +49,13 @@ tags:
     - Deferred Static Generation (DSG)
     - Server Side Rendering (SSR)
 
-特につい最近開催された React Conf 2021 は React 公式より
-[記事](https://reactjs.org/blog/2021/12/17/react-conf-2021-recap.html)
-が出ている。
+特につい最近開催された React Conf 2021 は React 公式より [記事](https://reactjs.org/blog/2021/12/17/react-conf-2021-recap.html) が出ている。
 
 https://reactjs.org/blog/2021/12/17/react-conf-2021-recap.html
 
 CSS フレームワーク界隈でも Material-UI のリブランディングもあった。
 
-スタイリングソリューション再考の一環で emotion または styled-components
-から選択可能です。
+スタイリングソリューション再考の一環で emotion または styled-components から選択可能です。
 
 ```bash
 # Material-UI v4.0-
@@ -75,24 +72,19 @@ npm i @mui/material @mui/styled-engine-sc styled-components
 yarn add @mui/material @mui/styled-engine-sc styled-components
 ```
 
-v5.0 では `makeStyles()` が廃止される代わりに `styled()`
-を利用することによってカスタマイズできる点は大きな変更点のひとつ。
+v5.0 では `makeStyles()` が廃止される代わりに `styled()` を利用することによってカスタマイズできる点は大きな変更点のひとつ。
 
-なおこの後当ブログでは Suspense と React Location
-に焦点を絞って書かせていただく。
+なおこの後当ブログでは Suspense と React Location に焦点を絞って書かせていただく。
 
 ## 参照するソースコードについて
 
-これより参照するソースコードは今年、自身がジョインするプロジェクトとその周りにいるエンジニアを対象として行った
-React ハンズオンを下に説明させていただく。
+これより参照するソースコードは今年、自身がジョインするプロジェクトとその周りにいるエンジニアを対象として行った React ハンズオンを下に説明させていただく。
 
 その際に一般利用可能な Pokemon API を Web アプリ内で使って進めた。
 
 https://github.com/jiyuujin/pokemon
 
-この度の目標は Hooks API をベースとした Web
-アプリケーションを作ることとした。またターゲットを考慮して、フレームワーク
-Next.js を一切使わない選択をとった。
+この度の目標は Hooks API をベースとした Web アプリケーションを作ることとした。またターゲットを考慮して、フレームワーク Next.js を一切使わない選択をとった。
 
 その目標を達成するため複数の技術的なマイルストーンを合わせ準備している。
 
@@ -102,28 +94,25 @@ Next.js を一切使わない選択をとった。
 
 ### Suspense
 
-React 18 の Concurrent Rendering
-という機能で、コンポーネントそのものが「ローディング中でまだレンダリングできない」状態になる。
+React 18 の Concurrent Rendering という機能で、コンポーネントそのものが「ローディング中でまだレンダリングできない」状態になる。
 
 ```js
-import { useQuery } from "react-query";
-import "./App.css";
-import "./assets/gallery.css";
+import { useQuery } from 'react-query'
+import './App.css'
+import './assets/gallery.css'
 
-import { CardList } from "./components/CardList";
+import { CardList } from './components/CardList'
 
 function App() {
-  const { data, error } = useQuery("items", async () => {
-    return await fetch(
-      `${process.env.REACT_APP_POKEMON_API}/pokemon?limit=200&offset=200`,
-    ).then(
+  const { data, error } = useQuery('items', async () => {
+    return await fetch(`${process.env.REACT_APP_POKEMON_API}/pokemon?limit=200&offset=200`).then(
       (res) => res.json(),
-    );
-  });
+    )
+  })
 
-  if (!data) return <div>Loading..</div>;
+  if (!data) return <div>Loading..</div>
 
-  if (error) return <div>Failed</div>;
+  if (error) return <div>Failed</div>
 
   return (
     <div className="App">
@@ -131,30 +120,27 @@ function App() {
         <CardList data={data.results} search={searchText} />
       </div>
     </div>
-  );
+  )
 }
 ```
 
-Suspense を使う場合は CardList
-の責務が簡略化される。具体的にローディング中の処理は CardList の責務で無くなる。
+Suspense を使う場合は CardList の責務が簡略化される。具体的にローディング中の処理は CardList の責務で無くなる。
 
 ```js
-import { useQuery } from "react-query";
-import "./App.css";
-import "./assets/gallery.css";
+import { useQuery } from 'react-query'
+import './App.css'
+import './assets/gallery.css'
 
-import { CardList } from "./components/CardList";
+import { CardList } from './components/CardList'
 
 function App() {
-  const { data, error } = useQuery("items", async () => {
-    return await fetch(
-      `${process.env.REACT_APP_POKEMON_API}/pokemon?limit=200&offset=200`,
-    ).then(
+  const { data, error } = useQuery('items', async () => {
+    return await fetch(`${process.env.REACT_APP_POKEMON_API}/pokemon?limit=200&offset=200`).then(
       (res) => res.json(),
-    );
-  });
+    )
+  })
 
-  if (error) return <div>Failed</div>;
+  if (error) return <div>Failed</div>
 
   return (
     <div className="App">
@@ -164,7 +150,7 @@ function App() {
         </React.Suspense>
       </div>
     </div>
-  );
+  )
 }
 ```
 
@@ -174,27 +160,22 @@ function App() {
 <React.Suspense fallback={<>Loading..</>}>
   <Search text={searchText} setText={handleInputClick} />
   <CardList data={data?.results} search={searchText} />
-</React.Suspense>;
+</React.Suspense>
 ```
 
-React 18 の SSR ストリーミングは Suspense を前提に、初期状態を表す HTML
-を最速で送ってその後データが揃ったらその HTML を置き換える。
+React 18 の SSR ストリーミングは Suspense を前提に、初期状態を表す HTML を最速で送ってその後データが揃ったらその HTML を置き換える。
 
 これを活用するために非同期処理は Suspense を用いて書く必要がある。
 
 https://github.com/reactwg/react-18/discussions/37
 
-またそのレンダリングがサーバ側で非同期的に行われる特徴を Server Components
-にも活かせる。
+またそのレンダリングがサーバ側で非同期的に行われる特徴を Server Components にも活かせる。
 
 :::message is-primary Server Components とは。
 
-Client Components は props を渡すと仮想 DOM が返る。一方で絶対 React
-コンポーネントを async にできない props を受け取ったら同期的に仮想 DOM
-を返さないといけない。
+Client Components は props を渡すと仮想 DOM が返る。一方で絶対 React コンポーネントを async にできない props を受け取ったら同期的に仮想 DOM を返さないといけない。
 
-なお Server Comonents とそれが import
-しているあらゆるものはバンドルに一切含まれない。
+なお Server Comonents とそれが import しているあらゆるものはバンドルに一切含まれない。
 
 これこそ Zero-bundle-size と言われている所以です。
 
@@ -202,39 +183,35 @@ Client Components は props を渡すと仮想 DOM が返る。一方で絶対 R
 
 ### React Location
 
-[React Location](https://github.com/tannerlinsley/react-location) は React Query
-の作者でもある @tannerlinsley が開発した React 用の新しい Router
-ライブラリです。
+[React Location](https://github.com/tannerlinsley/react-location) は React Query の作者でもある @tannerlinsley が開発した React 用の新しい Router ライブラリです。
 
 https://github.com/tannerlinsley/react-location
 
 同氏は他にも React Table や React Chart などのライブラリも公開しています。
 
-React Router が Remix との組み合わせを想定しているのに対し、兼ねてより SPA
-として利用するため CSR 下での非同期処理やキャッシュなどが盛り込まれている。
+React Router が Remix との組み合わせを想定しているのに対し、兼ねてより SPA として利用するため CSR 下での非同期処理やキャッシュなどが盛り込まれている。
 
-React Router
-と比較して、別途ルーティングリストとして切れるようになったのは大きい。
+React Router と比較して、別途ルーティングリストとして切れるようになったのは大きい。
 
 ```js
 export const routes = [
   {
-    path: "/",
+    path: '/',
     element: <Index />,
   },
   {
-    path: "/about",
+    path: '/about',
     element: <About />,
   },
-];
+]
 ```
 
 `src/App.tsx` で Router コンポーネントでラップする。
 
 ```js
-import { routes } from "./routes.constants";
+import { routes } from './routes.constants'
 
-const location = new ReactLocation();
+const location = new ReactLocation()
 
 function App() {
   return (
@@ -243,7 +220,7 @@ function App() {
         <Outlet />
       </div>
     </Router>
-  );
+  )
 }
 ```
 
@@ -283,17 +260,16 @@ const routes = [
 `useMatch` フックを利用して loader データを使う。
 
 ```js
-import { useMatch } from "react-location";
+import { useMatch } from 'react-location'
 
 function Index() {
   const {
     data: { data },
-  } = useMatch();
+  } = useMatch()
 }
 ```
 
-激重 API などを対象に上手く Route Loader
-も使えたら、パフォーマンス最適化に繋がりそうだ。
+激重 API などを対象に上手く Route Loader も使えたら、パフォーマンス最適化に繋がりそうだ。
 
 ### API 更新
 
@@ -303,22 +279,20 @@ React 18 で各種 API の更新が入るようです。
 - [useId](https://github.com/reactwg/react-18/discussions/111)
 - [useInsertionEffect](https://github.com/reactwg/react-18/discussions/110)
 
-なお
-[ルート要素へのレンダリング API](https://github.com/reactwg/react-18/discussions/5)
-も更新されるようです。
+なお [ルート要素へのレンダリング API](https://github.com/reactwg/react-18/discussions/5) も更新されるようです。
 
 ```js
-import ReactDOM from "react-dom";
-import App from "App";
+import ReactDOM from 'react-dom'
+import App from 'App'
 
-const container = document.getElementById("root");
+const container = document.getElementById('root')
 
 // React 17-
-ReactDOM.render(<App />, container);
+ReactDOM.render(<App />, container)
 
 // React 18+
-const root = ReactDOM.createRoot(container);
-root.render(<App />);
+const root = ReactDOM.createRoot(container)
+root.render(<App />)
 ```
 
 ## 最後に
@@ -327,15 +301,7 @@ root.render(<App />);
 
 詳しくは各種ブランチをチェックいただければ幸いです。
 
-- React Router の基礎を
-  [feature/react-router](https://github.com/jiyuujin/pokemon/tree/feature/react-router)
-  ブランチで確認する
-- React Router で Suspense の利用を
-  [feature/react-query_suspense](https://github.com/jiyuujin/pokemon/tree/feature/react-query_suspense)
-  ブランチで確認する
-- React Location の基礎を
-  [feature/react-location](https://github.com/jiyuujin/pokemon/tree/feature/react-location)
-  ブランチで確認する
-- React Location で Route Loader オブジェクトの利用を
-  [enhance/react-location_route-loader](https://github.com/jiyuujin/pokemon/tree/enhance/react-location_route-loader)
-  ブランチで確認する
+- React Router の基礎を [feature/react-router](https://github.com/jiyuujin/pokemon/tree/feature/react-router) ブランチで確認する
+- React Router で Suspense の利用を [feature/react-query_suspense](https://github.com/jiyuujin/pokemon/tree/feature/react-query_suspense) ブランチで確認する
+- React Location の基礎を [feature/react-location](https://github.com/jiyuujin/pokemon/tree/feature/react-location) ブランチで確認する
+- React Location で Route Loader オブジェクトの利用を [enhance/react-location_route-loader](https://github.com/jiyuujin/pokemon/tree/enhance/react-location_route-loader) ブランチで確認する

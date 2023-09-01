@@ -12,9 +12,7 @@ tags:
   - Vue
 ---
 
-これまでにお仕事で [Vue CLI](https://cli.vuejs.org/)
-をベースに使った場面は無く、今回 [CakePHP](https://cakephp.org/jp)
-のフロントエンドに Vue CLI を組み込んだ経験を中心に記録します。
+これまでにお仕事で [Vue CLI](https://cli.vuejs.org/) をベースに使った場面は無く、今回 [CakePHP](https://cakephp.org/jp) のフロントエンドに Vue CLI を組み込んだ経験を中心に記録します。
 
 ### Vue CLI を導入する
 
@@ -27,8 +25,7 @@ vue create frontend
 
 具体的なインストール方法は割愛、以下公式ページをご確認ください。
 
-<a class="link-preview" href="https://cli.vuejs.org/guide/installation.html">Vue
-CLI Installation</a>
+<a class="link-preview" href="https://cli.vuejs.org/guide/installation.html">Vue CLI Installation</a>
 
 ルートディレクトリに今回の主役 vue.config.js です。
 
@@ -62,13 +59,12 @@ configureWebpack: {
 プロジェクトの起点が決まれば、トランスパイルしてできたファイル群の置き場所を決めます。
 
 ```js
-chainWebpack:
-((config) => {
-  if (process.env.NODE_ENV === "production") {
-    config.output.filename("[name].js");
-    config.output.chunkFilename("js/[name].js");
+chainWebpack: (config) => {
+  if (process.env.NODE_ENV === 'production') {
+    config.output.filename('[name].js')
+    config.output.chunkFilename('js/[name].js')
   }
-});
+}
 ```
 
 ハッシュ値を付けずにトランスパイルも可能。
@@ -111,10 +107,7 @@ CI を使って自動化しています。
 
 ## 最後に、
 
-サーバサイドでルーティングが既に存在していましたが、将来的な SPA
-移行に備えるため、順当に `vue-router`
-を採用し、フロントエンドでルーティングを管理しました。 `frontend/main.ts`
-内で、既に存在していたサーバサイドのルーティングに合わせてルーティングリストを準備します。
+サーバサイドでルーティングが既に存在していましたが、将来的な SPA 移行に備えるため、順当に `vue-router` を採用し、フロントエンドでルーティングを管理しました。 `frontend/main.ts` 内で、既に存在していたサーバサイドのルーティングに合わせてルーティングリストを準備します。
 
 ```html
 <div id="app">
@@ -122,5 +115,4 @@ CI を使って自動化しています。
 </div>
 ```
 
-`.tpl` ファイルに実 DOM を配置することで、無事「仮想
-DOM」としてレンダリングされることを確認しましょう。
+`.tpl` ファイルに実 DOM を配置することで、無事「仮想 DOM」としてレンダリングされることを確認しましょう。

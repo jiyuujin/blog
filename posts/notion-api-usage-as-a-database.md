@@ -13,22 +13,19 @@ tags:
   - CMS
 ---
 
-Notion API が 5 月 14 日に Public Beta
-となった。既に公へ出ているブログなどいくつか確認させていただくと下記の辺りが気になる。
+Notion API が 5 月 14 日に Public Beta となった。既に公へ出ているブログなどいくつか確認させていただくと下記の辺りが気になる。
 
 - パラグラフブロックの文字数制限があるっぽい
 - 画像情報を取れない
 
 基本的に様子見のスタンスではあるが、簡単に試してみたのでその話を。
 
-[公式ドキュメント](https://developers.notion.com/docs) の Create a new
-integration で integration を作成することから始まる。
+[公式ドキュメント](https://developers.notion.com/docs) の Create a new integration で integration を作成することから始まる。
 
 - Internal integration
 - Public integration
 
-上記 2 つ選択肢のうち特に public な integration として設定する予定も無いので
-Internal integration を選択する。
+上記 2 つ選択肢のうち特に public な integration として設定する予定も無いので Internal integration を選択する。
 
 作成後トークンが自動的に生成される。
 
@@ -76,28 +73,23 @@ curl -X POST https://api.notion.com/v1/pages \
 
 ## SDK を使う
 
-実際の現場では SDK
-を使うことが想定されるでしょう。また下記に示した延長線上でスキーマの定義を済ませると
-CMS としても導入しやすそうです。
+実際の現場では SDK を使うことが想定されるでしょう。また下記に示した延長線上でスキーマの定義を済ませると CMS としても導入しやすそうです。
 
 [makenotion/notion-sdk-js](https://github.com/makenotion/notion-sdk-js)
 
 ### データベースアイテムを追加する
 
-今回のデータベースは Name
-カラムのみ存在させた。これ以外のカラムを追加したい場合は、適宜追加したいカラムに合わせて
-properties の中で設定すれば良い。
+今回のデータベースは Name カラムのみ存在させた。これ以外のカラムを追加したい場合は、適宜追加したいカラムに合わせて properties の中で設定すれば良い。
 
-データベースアイテムを追加する際、事前に `Client({{ auth: XXX })` を書いて
-Notion クライアントをインスタンス化すれば良い。
+データベースアイテムを追加する際、事前に `Client({{ auth: XXX })` を書いて Notion クライアントをインスタンス化すれば良い。
 
 ```js
-const { Client, LogLevel } = require("@notionhq/client");
+const { Client, LogLevel } = require('@notionhq/client')
 
 const notion = new Client({
   auth: process.env.NOTION_API_KEY,
-  logLevel: process.env.NODE_ENV !== "production" && LogLevel.DEBUG,
-});
+  logLevel: process.env.NODE_ENV !== 'production' && LogLevel.DEBUG,
+})
 
 // データベースアイテムを追加する
 const response = await notion.pages.create({
@@ -109,32 +101,31 @@ const response = await notion.pages.create({
       title: [
         {
           text: {
-            content: "Sample",
+            content: 'Sample',
           },
         },
       ],
     },
   },
-});
+})
 ```
 
 ### データベースアイテムを取得する
 
-データベースアイテムを取得する際も同じく、事前に Notion
-クライアントをインスタンス化すれば良い。
+データベースアイテムを取得する際も同じく、事前に Notion クライアントをインスタンス化すれば良い。
 
 ```js
-const { Client, LogLevel } = require("@notionhq/client");
+const { Client, LogLevel } = require('@notionhq/client')
 
 const notion = new Client({
   auth: process.env.NOTION_API_KEY,
-  logLevel: process.env.NODE_ENV !== "production" && LogLevel.DEBUG,
-});
+  logLevel: process.env.NODE_ENV !== 'production' && LogLevel.DEBUG,
+})
 
 // データベースアイテムを追加する
 const response = await notion.databases.query({
   database_id: process.env.OHAYO_NOTES_DATABASE_ID,
-});
+})
 ```
 
 #### ソートも容易に
@@ -142,13 +133,12 @@ const response = await notion.databases.query({
 下記 sorts オプションを設定すれば良い。
 
 ```js
-sorts:
-[
+sorts: [
   {
-    timestamp: "created_time",
-    direction: "descending",
+    timestamp: 'created_time',
+    direction: 'descending',
   },
-];
+]
 ```
 
 ## 実際の場面で GitHub Actions と合わせた例を

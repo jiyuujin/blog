@@ -29,9 +29,7 @@ tags:
   - 新たに freee アクセシビリティ研修動画が公開されている
   - Global Accessibility Awareness Day 2022 (GAAD Japan) 登壇者が発表されている
 
-記事と合わせ
-[登壇スライド](https://docs.google.com/presentation/d/1IGtF7dFfB4QTHNPBDND8KeczHRSrs0Uy7eBMvYqYHdQ/edit?usp=sharing)
-も作成しています。
+記事と合わせ [登壇スライド](https://docs.google.com/presentation/d/1IGtF7dFfB4QTHNPBDND8KeczHRSrs0Uy7eBMvYqYHdQ/edit?usp=sharing) も作成しています。
 
 https://docs.google.com/presentation/d/1IGtF7dFfB4QTHNPBDND8KeczHRSrs0Uy7eBMvYqYHdQ/edit?usp=sharing
 
@@ -39,9 +37,7 @@ https://docs.google.com/presentation/d/1IGtF7dFfB4QTHNPBDND8KeczHRSrs0Uy7eBMvYqY
 
 前置きとして、前回は markuplint の導入を進めました。
 
-その詳細は
-[markuplint おさわり会](https://blog.nekohack.me/posts/setup-markuplint-to-audit-accessibility)
-に記載しているので、是非ともチェックいただきたい。
+その詳細は [markuplint おさわり会](https://blog.nekohack.me/posts/setup-markuplint-to-audit-accessibility) に記載しているので、是非ともチェックいただきたい。
 
 ## markuplint ルールのカスタマイズ
 
@@ -54,8 +50,7 @@ https://docs.google.com/presentation/d/1IGtF7dFfB4QTHNPBDND8KeczHRSrs0Uy7eBMvYqY
 - CSS-in-JS 利用の際に `<div>` 要素で `css` 属性の使用を許容する
 - `permitted-contents` ルールの利用を考慮する
 
-なお、 `<audio>` / `<video>` 要素で `track`
-属性が書かれていないケースが挙げられる。これは字幕に対応していないことを意味しており、下記のようなエラーを確認できる。
+なお、 `<audio>` / `<video>` 要素で `track` 属性が書かれていないケースが挙げられる。これは字幕に対応していないことを意味しており、下記のようなエラーを確認できる。
 
 ```bash
 error: 要素「track」が必要です (required-element)
@@ -101,8 +96,7 @@ Prettier ルールとの Conflict を解消します。
 
 ### アンカー `<a>` 要素の `rel` 属性で入力すべき値を個別に調整する
 
-`rel` 属性で `noopener`
-が含まれているか、機械的にチェックしたいケースがあります。
+`rel` 属性で `noopener` が含まれているか、機械的にチェックしたいケースがあります。
 
 ```.markuplintrc
 {
@@ -124,9 +118,7 @@ Prettier ルールとの Conflict を解消します。
 
 ### メディア要素の `controlslist` 属性で入力可能な値を調整する
 
-[`controlslist` 属性](https://developer.mozilla.org/ja/docs/Web/HTML/Element/video#attr-controlslist)
-を設定することで、メディア要素 (`<audio>` / `<video>`)
-に表示するコントロールの選択を補助してくれます。
+[`controlslist` 属性](https://developer.mozilla.org/ja/docs/Web/HTML/Element/video#attr-controlslist) を設定することで、メディア要素 (`<audio>` / `<video>`) に表示するコントロールの選択を補助してくれます。
 
 この属性に入る可能性の値をあらかじめ定義しておき、機械的にチェックしたいケースがあります。
 
@@ -148,8 +140,7 @@ Prettier ルールとの Conflict を解消します。
 
 ### CSS-in-JS 利用の際に `<div>` 要素で `css` 属性の使用を許容する
 
-CSS-in-JS に Styled Components や Emotion を利用している場合に、 `<div>` 要素で
-`css` 属性を使っているケースがあります。
+CSS-in-JS に Styled Components や Emotion を利用している場合に、 `<div>` 要素で `css` 属性を使っているケースがあります。
 
 ```.markuplintrc
 {
@@ -169,8 +160,7 @@ CSS-in-JS に Styled Components や Emotion を利用している場合に、 `<
 
 ### `permitted-contents` ルールの利用を考慮する
 
-[`permitted-contents`](https://markuplint.dev/rules/permitted-contents)
-のルールで個別のタグを定義していけば、より精度の高いチェックツールが完成されています。
+[`permitted-contents`](https://markuplint.dev/rules/permitted-contents) のルールで個別のタグを定義していけば、より精度の高いチェックツールが完成されています。
 
 ```.markuplintrc
 {
@@ -207,53 +197,40 @@ CSS-in-JS に Styled Components や Emotion を利用している場合に、 `<
 
 ### `<aside>` 要素でアクセシビリティマッピングの変更を認識する
 
-詳細は [こちら](https://blog.w0s.jp/669) よりご確認いただきたい。また
-[参照 PR](https://github.com/w3c/html-aam/pull/350)
-と合わせチェックいただくと良いように考えています。
+詳細は [こちら](https://blog.w0s.jp/669) よりご確認いただきたい。また [参照 PR](https://github.com/w3c/html-aam/pull/350) と合わせチェックいただくと良いように考えています。
 
 https://blog.w0s.jp/669
 
-`<section>` や `<article>` 、 `<nav>` 要素と同じく比較的自由な場所に配置できる
-`<aside>` のデフォルトロールは `complementary` となります。
+`<section>` や `<article>` 、 `<nav>` 要素と同じく比較的自由な場所に配置できる `<aside>` のデフォルトロールは `complementary` となります。
 
-`complementary`
-はトップレベルのランドマークに対して、補足的なコンテンツがメインコンテンツに関連していない場合はより一般的なロールを割り当てる必要があります。
+`complementary` はトップレベルのランドマークに対して、補足的なコンテンツがメインコンテンツに関連していない場合はより一般的なロールを割り当てる必要があります。
 
 結果として状況により適用ロールを変えることでその解決を図りました。
 
 ### `<dialog>` 要素でアクセシビリティを意識する
 
-詳細は [こちら](https://web.dev/building-a-dialog-component/)
-よりご確認いただきたい。
+詳細は [こちら](https://web.dev/building-a-dialog-component/) よりご確認いただきたい。
 
 https://web.dev/building-a-dialog-component/
 
-先日 Safari 15.4 をもって正式にリリースされた `<dialog>`
-要素。この要素を使ったダイアログ作成と、アクセシビリティについてもより深く掘り下げて書かれています。
+先日 Safari 15.4 をもって正式にリリースされた `<dialog>` 要素。この要素を使ったダイアログ作成と、アクセシビリティについてもより深く掘り下げて書かれています。
 
-ダイアログ表示とユーザー入力を無視する `inert` / `autofocus` 属性や ESC
-キーの非表示など。
+ダイアログ表示とユーザー入力を無視する `inert` / `autofocus` 属性や ESC キーの非表示など。
 
 ### 代替テキストはなぜ簡潔にすべきか
 
-詳細は
-[こちら](https://www.mitsue.co.jp/knowledge/blog/a11y/202204/19_1430.html)
-よりご確認いただきたい。
+詳細は [こちら](https://www.mitsue.co.jp/knowledge/blog/a11y/202204/19_1430.html) よりご確認いただきたい。
 
-そもそも代替テキストが必要なものという認識はさておき、代替テキストを設定するためには、下記のような
-2 つの選択肢が挙げられます。
+そもそも代替テキストが必要なものという認識はさておき、代替テキストを設定するためには、下記のような 2 つの選択肢が挙げられます。
 
 - システムがあらかじめ入れておく
 - 顧客にその都度入れて貰う
 
-そのうち後者の最たる例が、つい最近 Twitter に入った画像の
-[alt 属性](https://help.twitter.com/ja/using-twitter/add-image-descriptions)
-となります。
+そのうち後者の最たる例が、つい最近 Twitter に入った画像の [alt 属性](https://help.twitter.com/ja/using-twitter/add-image-descriptions) となります。
 
 https://help.twitter.com/ja/using-twitter/add-image-descriptions
 
-実際 alt
-属性に設定したい情報をユーザに入力させるというものですが、想定されていない使われ方もちらほら散見されており色々と物議を醸しているようです。
+実際 alt 属性に設定したい情報をユーザに入力させるというものですが、想定されていない使われ方もちらほら散見されており色々と物議を醸しているようです。
 
 いずれにせよ代替テキストへ長い文言を設定した場合に、スクリーンリーダーで読み上げてくれるものの、大変聞き辛い印象しか残らないウェブサイトとなってしまう可能性があります。
 
@@ -274,15 +251,12 @@ https://newsrelea.se/GKxagV
 
 ### Global Accessibility Awareness Day 2022 (GAAD Japan) 登壇者が発表されている
 
-今年も 5 月の第 3 木曜日に開催予定、合わせて
-[登壇者](https://www.gaad.jp/speakers/) も続々と発表されています。
+今年も 5 月の第 3 木曜日に開催予定、合わせて [登壇者](https://www.gaad.jp/speakers/) も続々と発表されています。
 
 [登壇者一覧 - GAAD Japan 2022](https://www.gaad.jp/speakers/)
 
 ## その他
 
-記事と合わせ
-[登壇スライド](https://docs.google.com/presentation/d/1IGtF7dFfB4QTHNPBDND8KeczHRSrs0Uy7eBMvYqYHdQ/edit?usp=sharing)
-も作成しています。
+記事と合わせ [登壇スライド](https://docs.google.com/presentation/d/1IGtF7dFfB4QTHNPBDND8KeczHRSrs0Uy7eBMvYqYHdQ/edit?usp=sharing) も作成しています。
 
 https://docs.google.com/presentation/d/1IGtF7dFfB4QTHNPBDND8KeczHRSrs0Uy7eBMvYqYHdQ/edit?usp=sharing

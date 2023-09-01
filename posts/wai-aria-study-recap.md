@@ -12,19 +12,16 @@ tags:
 
 ## WAI-ARIA 勉強会
 
-いま一度見直しておきたい
-[動画](https://www.youtube.com/watch?app=desktop&v=ZLL0_W5w1vo) です。
+いま一度見直しておきたい [動画](https://www.youtube.com/watch?app=desktop&v=ZLL0_W5w1vo) です。
 
 - [YouTube アーカイヴ動画](https://www.youtube.com/watch?app=desktop&v=ZLL0_W5w1vo)
 - [トゥギャッター WAI-ARIA なにもわからない](https://togetter.com/li/1847023)
 
 ## 狙い・成果物
 
-WAI-ARIA を誤って使っていませんか。下手に WAI-ARIA
-を使用しているとクリーンリーダーなどの支援技術は上手く読み取ってくれません。
+WAI-ARIA を誤って使っていませんか。下手に WAI-ARIA を使用しているとクリーンリーダーなどの支援技術は上手く読み取ってくれません。
 
-WAI-ARIA
-とは何ぞや、という概要説明から、実際プロダクトのアクセシビリティを改善するために取り組んだ知見などを中心に聞ける良い場となっていそうです。
+WAI-ARIA とは何ぞや、という概要説明から、実際プロダクトのアクセシビリティを改善するために取り組んだ知見などを中心に聞ける良い場となっていそうです。
 
 ## 資料一覧
 
@@ -37,13 +34,10 @@ WAI-ARIA
 - 暗黙のロール
   - [WAI-ARIA を学ぶときに整理しておきたいこと](https://zenn.dev/yusukehirao/articles/e3512a58df58fd)
 - [WAI-ARIA 実装の 5 つのルール](https://accessible-usable.net/2020/06/entry_200627.html)
-- [WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices-1.1/)
-  (一部和訳が怪しいので時折原語も混ぜながら)
+- [WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices-1.1/) (一部和訳が怪しいので時折原語も混ぜながら)
   - [WAI-ARIA オーサリング・プラクティス 1.1](https://waic.jp/docs/2019/NOTE-wai-aria-practices-1.1-20190207/)
 - モーダルダイアログ実装で考えるべき事柄
-  - Authoring Practices
-    [3.9 Dialog (Modal)](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal)
-    を見ながら考慮する
+  - Authoring Practices [3.9 Dialog (Modal)](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal) を見ながら考慮する
     - [UI における見えるけど利用できない非活性な領域の実装と inert 属性について](https://standard.shiftbrain.com/blog/unavailable-inert-regions-and-inert-attribute)
 - SmartHR の取り組み
   - [「やさしさ」禁止！SmartHR のプログレッシブデザイン宣言](https://note.com/oujimiyahara/n/n44e25b43f814)
@@ -52,7 +46,8 @@ WAI-ARIA
     - [Cheatsheet](https://testing-library.com/docs/dom-testing-library/cheatsheet/#queries)
   - Puppeteer
     - [Puppeteer と ARIA Handler](https://quramy.medium.com/puppeteer-と-aria-handler-188c7ebbed8)
-    - [Puppetaria: accessibility-first Puppeteer scripts](https://developer.chrome.com/blog/puppetaria/)
+    - [Puppetaria: accessibility-first Puppeteer scripts
+      ](https://developer.chrome.com/blog/puppetaria/)
 - アクセシビリティテスト (E2E)
   - DOM と CSS OM から成るアクセシビリティオブジェクトモデル (AOM) を利用する
   - [acot](https://github.com/acot-a11y/acot)
@@ -70,13 +65,10 @@ WAI-ARIA
 - WAI-ARIA の使用を検討する際、その箇所の仕様を確認する (絶対)
 - 暗黙のロールを調べる
 - `aria-label` 属性は特に重要です
-- `aria-`
-  で始まる属性を介して変更するステートとプロパティは同じものとして考えて良い
+- `aria-` で始まる属性を介して変更するステートとプロパティは同じものとして考えて良い
 - `hidden` 属性は特殊、基本的に `hidden` 属性より `aria-hidden` 属性を使用する
-- Authoring Practices の輪読会では 3
-  章「デザインパターンとウィジェット」を重点的に見ていったそうです
-- 悪い ARIA なら ARIA の無い方がマシ、その方針を前提に Authoring Practices
-  を応用する
+- Authoring Practices の輪読会では 3 章「デザインパターンとウィジェット」を重点的に見ていったそうです
+- 悪い ARIA なら ARIA の無い方がマシ、その方針を前提に Authoring Practices を応用する
 - Authoring Practices に載っていないパターンは地道に頑張るしか無さそうです
 
 なお、 WAI-ARIA を機械的にチェックできると良い。

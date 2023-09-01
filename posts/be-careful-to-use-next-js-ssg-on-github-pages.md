@@ -13,8 +13,7 @@ tags:
   - GithubPages
 ---
 
-GitHub Actions から GitHub Pages へ通すため `.github/workflows/deploy.yml`
-にデプロイするためのソースコードを書く。
+GitHub Actions から GitHub Pages へ通すため `.github/workflows/deploy.yml` にデプロイするためのソースコードを書く。
 
 ここでのポイントは 2 点。
 
@@ -45,25 +44,20 @@ jobs:
           PUBLISH_DIR: ./out
 ```
 
-[Static HTML Export](https://nextjs.org/docs/advanced-features/static-html-export)
-を利用することで Web サーバに Node.js
-を必要とせず、クライントのみで実行できる静的 HTML にアプリを出力する。
+[Static HTML Export](https://nextjs.org/docs/advanced-features/static-html-export) を利用することで Web サーバに Node.js を必要とせず、クライントのみで実行できる静的 HTML にアプリを出力する。
 
 ```bash
 npm run export
 ```
 
-Vercel や Netlify を利用する場合にこれをもって完結できる一方 GitHub Pages
-を利用する場合ではハマる箇所が多々存在するため今回書かせていただいた。
+Vercel や Netlify を利用する場合にこれをもって完結できる一方 GitHub Pages を利用する場合ではハマる箇所が多々存在するため今回書かせていただいた。
 
 - JavaScript ファイルが 404 になってしまう
 - CSS ファイルなどのリソースを読み込めない
 
 ### JavaScript ファイルが 404 になってしまう
 
-これは GitHub Pages の仕様で `_`
-から始まるディレクトリが見えなくなる事象を回避するため `.nojekyll`
-をデプロイ対象のディレクトリ `out` に配置する。
+これは GitHub Pages の仕様で `_` から始まるディレクトリが見えなくなる事象を回避するため `.nojekyll` をデプロイ対象のディレクトリ `out` に配置する。
 
 ```bash
 touch out/.nojekyll
@@ -71,28 +65,27 @@ touch out/.nojekyll
 
 ### CSS ファイルなどのリソースを読み込めない
 
-`https://{アカウント名}.github.io/{リポジトリ名}` のように basePath が無い URL
-で取得しないよう assetPrefix を設定する。
+`https://{アカウント名}.github.io/{リポジトリ名}` のように basePath が無い URL で取得しないよう assetPrefix を設定する。
 
 ```js
-const REPO_NAME = "";
+const REPO_NAME = ''
 
-const urlPrefix = process.env.NODE_ENV === "production" ? "/" + REPO_NAME : "";
+const urlPrefix = process.env.NODE_ENV === 'production' ? '/' + REPO_NAME : ''
 
 const nextConfig = {
   assetPrefix: urlPrefix,
   basePath: urlPrefix,
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
 ```
 
 favicon や `manifest.json` を読み込む際も assetPrefix を設定する。
 
 ```js
-import Head from "next/head";
+import Head from 'next/head'
 
-const urlPrefix = process.env.NODE_ENV === "production" ? "/conf2021" : "";
+const urlPrefix = process.env.NODE_ENV === 'production' ? '/conf2021' : ''
 
 const SEO = () => {
   return (
@@ -102,10 +95,10 @@ const SEO = () => {
         <link rel="manifest" href={`${urlPrefix}/manifest.json`} />
       </Head>
     </>
-  );
-};
+  )
+}
 
-export default SEO;
+export default SEO
 ```
 
 :::message is-primary
@@ -113,14 +106,14 @@ export default SEO;
 Next.js で PWA を実現するため next-pwa を利用する。
 
 ```js
-const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 
 const nextConfig = {
   //
-};
+}
 
-module.exports = withPWA(nextConfig);
+module.exports = withPWA(nextConfig)
 ```
 
 :::

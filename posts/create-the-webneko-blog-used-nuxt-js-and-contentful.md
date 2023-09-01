@@ -12,15 +12,13 @@ tags:
   - CMS
 ---
 
-特別なスタイルを当てなければブログの開発にたった 1 日。インフラの構築もたった 1
-日、テスト環境では Netlify を、本番環境では AWS Fargate を採用。
+特別なスタイルを当てなければブログの開発にたった 1 日。インフラの構築もたった 1 日、テスト環境では Netlify を、本番環境では AWS Fargate を採用。
 
 ## Model を作成する
 
 予め Contentful の管理画面より登録でき次第スペース、テンプレートを作成。
 
-またフロントエンドフレームワーク (Nuxt.js) から Contentful
-の入るデータにアクセスするため必要なトークンを設定。
+またフロントエンドフレームワーク (Nuxt.js) から Contentful の入るデータにアクセスするため必要なトークンを設定。
 
 ```bash
 # スペース
@@ -51,12 +49,9 @@ contentful space accesstoken create --name nuxt-blog
 
 ### 特記事項
 
-画像投稿は `Hero Image` より容易に設定可能。Contentful 内 CDN
-を利用しているようですが、個人的には Imgur
-を優先して使うので、あまり使うことは無いかも。
+画像投稿は `Hero Image` より容易に設定可能。Contentful 内 CDN を利用しているようですが、個人的には Imgur を優先して使うので、あまり使うことは無いかも。
 
-`tags` や `category` は以下 `validations`
-に見られるようにバリデーションを設定可能。
+`tags` や `category` は以下 `validations` に見られるようにバリデーションを設定可能。
 
 ```json
 {
@@ -141,8 +136,7 @@ contentful space accesstoken create --name nuxt-blog
 
 ## Nuxt で REST を実行する
 
-一通り `.contentful.json` に設定を記述するが、Nuxt では `.env` を新たに作って、
-process.env でアクセスできるようにします。
+一通り `.contentful.json` に設定を記述するが、Nuxt では `.env` を新たに作って、 process.env でアクセスできるようにします。
 
 ```.js
 module.exports = {

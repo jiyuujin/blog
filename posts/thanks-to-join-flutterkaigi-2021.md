@@ -79,8 +79,7 @@ https://github.com/FlutterKaigi/confwebsite2021/graphs/contributors
 
 ## 製作のきっかけ
 
-製作を開始したのはキックオフミーティングからひと月経った 2021 年 04
-月。ウェブサイトの大枠としてごくシンプルな形ではその頃の時点で完成していた。
+製作を開始したのはキックオフミーティングからひと月経った 2021 年 04 月。ウェブサイトの大枠としてごくシンプルな形ではその頃の時点で完成していた。
 
 製作開始当時から考えていたウェブサイトのページデザインについて下記の通りだ。
 
@@ -93,11 +92,9 @@ https://github.com/FlutterKaigi/confwebsite2021/graphs/contributors
 
 ## 技術スタック
 
-Flutter をメインとするカンファレンスの開催にあたっては、 Flutter
-を使わないウェブサイト製作なんて全く考えられなかった。
+Flutter をメインとするカンファレンスの開催にあたっては、 Flutter を使わないウェブサイト製作なんて全く考えられなかった。
 
-製作を開始した 1 か月前に Flutter 2 が登場して Web が stable となり、思い切って
-Flutter for Web の事例を日本で創り出す必要があった。
+製作を開始した 1 か月前に Flutter 2 が登場して Web が stable となり、思い切って Flutter for Web の事例を日本で創り出す必要があった。
 
 具体的に書きたいトピックスは下記の通り。
 
@@ -109,8 +106,7 @@ Flutter for Web の事例を日本で創り出す必要があった。
 
 ### ローカライゼーション
 
-対応言語は英語と日本語。各種 Web
-ブラウザで選択されている言語に合わせており、言語切り替えの機能を盛り込んでいない。
+対応言語は英語と日本語。各種 Web ブラウザで選択されている言語に合わせており、言語切り替えの機能を盛り込んでいない。
 
 `pubspec.yaml` に flutter_localizations を設定する。
 
@@ -122,8 +118,7 @@ dependencies:
 
 生成する `l10n.yaml` のディレクトリ `lib/l10n` を指定する。
 
-あと文言一覧 `app_ja.arb` 、 `app_en.arb` 並びに l10n
-の定義を記したファイルが必要だ。
+あと文言一覧 `app_ja.arb` 、 `app_en.arb` 並びに l10n の定義を記したファイルが必要だ。
 
 ```yaml
 arb-dir: lib/l10n
@@ -152,15 +147,11 @@ https://twitter.com/jiyuujinlab/status/1463671840056885253?s=20
 - ボタンをホバーした時の挙動が考えられているか
 - レイアウトが崩れることの無いか
 
-当ウェブサイトを製作して分かったこと、それは Flutter
-デフォルトのウィジェットを採用している以上、最悪何も考えなくても達成できているようです。
+当ウェブサイトを製作して分かったこと、それは Flutter デフォルトのウィジェットを採用している以上、最悪何も考えなくても達成できているようです。
 
-さらに各ウィジェットと SemanticNode の関連度の付与を目的として、実際に
-`Semantic Widget` と絡めた設計を推し進める必要がある。実際 FlutterKaigi 2021
-ウェブサイトではそこまで進められていないため、これが「完全な形」ではないひとつの根拠です。
+さらに各ウィジェットと SemanticNode の関連度の付与を目的として、実際に `Semantic Widget` と絡めた設計を推し進める必要がある。実際 FlutterKaigi 2021 ウェブサイトではそこまで進められていないため、これが「完全な形」ではないひとつの根拠です。
 
-昨日のセッション「アクセシビリティが高い Flutter
-アプリケーションを開発する」を改めて見直したい。
+昨日のセッション「アクセシビリティが高い Flutter アプリケーションを開発する」を改めて見直したい。
 
 https://speakerdeck.com/akihisasengoku/akusesibiriteigagao-iflutterapurikesiyonwokai-fa-suru
 
@@ -168,8 +159,7 @@ https://speakerdeck.com/akihisasengoku/akusesibiriteigagao-iflutterapurikesiyonw
 
 FlutterKaigi 2021 ウェブサイトでは「捕色」を考えた。
 
-Flutter のブランドカラー並びに FlutterKaigi
-ロゴはブルーを基調しており、その対角線上に存在するオレンジをイベント申込ボタンの背景色として設定することにした。
+Flutter のブランドカラー並びに FlutterKaigi ロゴはブルーを基調しており、その対角線上に存在するオレンジをイベント申込ボタンの背景色として設定することにした。
 
 |                     FlutterKaigi ロゴ                     |               申込・タイムテーブルボタン群                |
 | :-------------------------------------------------------: | :-------------------------------------------------------: |
@@ -181,8 +171,7 @@ Flutter のブランドカラー並びに FlutterKaigi
 
 ![](https://i.imgur.com/Ph2zNJz.jpg)
 
-また `SystemMouseCursors.click`
-を設定したことにより、手動でカーソルを実現できる。
+また `SystemMouseCursors.click` を設定したことにより、手動でカーソルを実現できる。
 
 ```dart
 return IconButton(
@@ -253,18 +242,13 @@ return Tooltip(
 
 ## 新しい発見もあった
 
-白を基調としたシンプルなものに一定の満足を感じながら、無地の背景が殺風景であることに違和感を覚え、自ら
-issue を切ったところひとつの「提案」がやって来た。
+白を基調としたシンプルなものに一定の満足を感じながら、無地の背景が殺風景であることに違和感を覚え、自ら issue を切ったところひとつの「提案」がやって来た。
 
-DartPad で
-[アニメーション](https://dartpad.dev/?id=ff4a449f0e9cfbb0b79d6e397d9ce12b&null_safety=true)
-を確認できる。
+DartPad で [アニメーション](https://dartpad.dev/?id=ff4a449f0e9cfbb0b79d6e397d9ce12b&null_safety=true) を確認できる。
 
-DartPad は最近、パッケージサポートが入って Firebase や Google font
-なども書けるようになった。
+DartPad は最近、パッケージサポートが入って Firebase や Google font なども書けるようになった。
 
-折角の機会というもの有り難く、この FlutterLogo
-を無造作に散りばめたアニメーションを取り入れた。
+折角の機会というもの有り難く、この FlutterLogo を無造作に散りばめたアニメーションを取り入れた。
 
 ```dart
 final _random = math.Random();
@@ -339,8 +323,7 @@ class _CanvasState extends State<_Canvas> with SingleTickerProviderStateMixin {
 
 ### ホスティングについて
 
-当初 `github.io` を利用する方法も模索していたが、実際は Firebase hosting
-のプレビュー・本番の 2 ステージという、結果としてはミニマムな形で進めた。
+当初 `github.io` を利用する方法も模索していたが、実際は Firebase hosting のプレビュー・本番の 2 ステージという、結果としてはミニマムな形で進めた。
 
 `channelId` を切り替えることで、デプロイ環境も自動的に切り替えられる。
 
@@ -365,18 +348,15 @@ jobs:
           FIREBASE_CLI_PREVIEWS: hostingchannels
 ```
 
-React や Vue
-同様、経ったひとつのコマンドを実行することでシンプルなデプロイが実現する。
+React や Vue 同様、経ったひとつのコマンドを実行することでシンプルなデプロイが実現する。
 
-なお `--web-renderer html`
-を付けて実行している理由、それはレンダリング時に日本語の描画問題を回避してくれるためです。
+なお `--web-renderer html` を付けて実行している理由、それはレンダリング時に日本語の描画問題を回避してくれるためです。
 
 ## 最後に
 
 FlutterKaigi 2021 無事開催でき、スタッフ一同ほっと一安心です。
 
-また本日以降 Flutter Advent Calendar 2021 で様々な Flutter
-の知見が集まるでしょう。少し早いですが、良い一年をお迎えください。
+また本日以降 Flutter Advent Calendar 2021 で様々な Flutter の知見が集まるでしょう。少し早いですが、良い一年をお迎えください。
 
 <!--
 ### もうひとつ宣伝をば
@@ -395,16 +375,13 @@ FlutterKaigi 2021 無事開催でき、スタッフ一同ほっと一安心で�
 
 ### Apple WebGL 2.0 のエラーについて
 
-当ウェブサイトを始め Flutter for Web 製のウェブサイトが iOS 15.0 / macOS
-Monterey 12.0.0 で表示されなくなった。
+当ウェブサイトを始め Flutter for Web 製のウェブサイトが iOS 15.0 / macOS Monterey 12.0.0 で表示されなくなった。
 
 https://github.com/flutter/flutter/issues/89655#issuecomment-942813217
 
-ですが、先月 26 日リリースの iOS 15.1 / macOS Monterey 12.0.1
-でその不具合は治っている。
+ですが、先月 26 日リリースの iOS 15.1 / macOS Monterey 12.0.1 でその不具合は治っている。
 
-ただしこれ以前のバージョンでは `GPU Process: Canvas Rendering`
-をオフにしないとレンダリングされない。
+ただしこれ以前のバージョンでは `GPU Process: Canvas Rendering` をオフにしないとレンダリングされない。
 
 `設定` - `Safari` - `詳細` - `Experimental Features` で設定して欲しい。
 

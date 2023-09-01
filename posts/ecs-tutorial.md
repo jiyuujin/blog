@@ -18,5 +18,4 @@ https://github.com/jiyuujin/ecs-tutorial
 
 CentOS + PHP 7.4 で phpinfo() を出力する簡単な Web アプリ。
 
-Docker 環境に加え GitHub Actions を利用して ECR にログイン ECS
-でデプロイするところまでを含む。
+Docker 環境に加え GitHub Actions を利用して ECR にログイン ECS でデプロイするところまでを含む。

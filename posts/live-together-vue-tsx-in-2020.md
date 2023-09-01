@@ -16,11 +16,10 @@ tags:
 
 現時点で基本的には Vue を TSX で書けるようになっておりまだまだ苦労を伴う。
 
-そんな TSX を Composition API
-と合わせて書いた時に感じた苦労話などを先日投稿、v-okinawa #3
-でもリモートながら喋らせていただいてます。
+そんな TSX を Composition API と合わせて書いた時に感じた苦労話などを先日投稿、v-okinawa #3 でもリモートながら喋らせていただいてます。
 
-> v-okinawa #3 https://blog.nekohack.me/posts/enter-the-final-v-okinawa-in-2019
+> v-okinawa #3
+> https://blog.nekohack.me/posts/enter-the-final-v-okinawa-in-2019
 
 そして今日はその TSX を使って Vue を書くためのスタートアップについて書きました。
 
@@ -34,13 +33,11 @@ tags:
 2. Class Component
 3. vue-property-decorator
 
-当然これらを使っても TSX で書けるのですが、来たる Vue3 に向け Composition API
-採用によって第一に書きやすいこと。
+当然これらを使っても TSX で書けるのですが、来たる Vue3 に向け Composition API 採用によって第一に書きやすいこと。
 
 より迅速にスタートアップできること、そして TSX による厳密な型管理を実現できる。
 
-あとは React と Vue の双方で TSX
-を書けるようになることは、互いに往き来しやすいというメリットも生まれそうです。
+あとは React と Vue の双方で TSX を書けるようになることは、互いに往き来しやすいというメリットも生まれそうです。
 
 ## Webpack と Vue、そして TSX
 
@@ -54,10 +51,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
           },
           {
-            loader: "ts-loader",
+            loader: 'ts-loader',
             options: {
               appendTsSuffixTo: [/\.vue$/],
             },
@@ -67,17 +64,16 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: "vue-loader",
+        use: 'vue-loader',
       },
     ],
   },
-};
+}
 ```
 
 こんな感じで各種ローダを読み込むと最低限 Vue を TS で書けるようになる。
 
-ここまではさくっと流した上で、TSX で書くための準備として Babel
-を設定する必要がある。
+ここまではさくっと流した上で、TSX で書くための準備として Babel を設定する必要がある。
 
 今回は babel-plugin-transform-vue-jsx を使いたいので。
 
@@ -111,9 +107,7 @@ export default Vue.extend({
 
 ## Vue CLI で TSX を使う
 
-構築できたとはいえ実際のプロジェクト導入にあたって、Webpack
-を直接メンテすることは極力避けたいですね。ということで Vue CLI の中で TSX
-を使いましょう。
+構築できたとはいえ実際のプロジェクト導入にあたって、Webpack を直接メンテすることは極力避けたいですね。ということで Vue CLI の中で TSX を使いましょう。
 
 ```bash
 vue create vue-tsx-boilerplate
@@ -121,18 +115,14 @@ vue create vue-tsx-boilerplate
 
 このように `vue create` すると @vue/cli-plugin-babel を確認できる。
 
-JSX を JavaScript に変換してくれる babel-plugin-transform-vue-jsx
-が既に含まれている。
+JSX を JavaScript に変換してくれる babel-plugin-transform-vue-jsx が既に含まれている。
 
 ではこれで TSX を書いて動くのか、残念ながら動きません。
 
-その理由は createComponent を h
-にマッピングできていないから。これを解決するため、自動で createComponent を h
-にマッピングしてくれる babel-preset-vca-jsx を利用します。
+その理由は createComponent を h にマッピングできていないから。これを解決するため、自動で createComponent を h にマッピングしてくれる babel-preset-vca-jsx を利用します。
 
 ```js
-presets:
-["vca-jsx"];
+presets: ['vca-jsx']
 ```
 
 TSX のトランスパイル設定を忘れずに。
@@ -197,25 +187,23 @@ export default createComponent({
 
 実際に私自身が書いているお供に vue-styled-components の存在があります。
 
-使い方こそ特筆すべき事項も無くて README を見て構築できるが react 同様 CSS in JS
-で書けるのですんなりと入っていけました。
+使い方こそ特筆すべき事項も無くて README を見て構築できるが react 同様 CSS in JS で書けるのですんなりと入っていけました。
 
 <a class ="link-preview" href="https://www.npmjs.com/package/vue-styled-components">vue-styled-components</a>
 
-ただし CSS in JS
-自体向き不向きがあると思っているので必ずしもオススメはしません。
+ただし CSS in JS 自体向き不向きがあると思っているので必ずしもオススメはしません。
 
 以下のようにスタイルをテンプレートに直接書く方法もあります。
 
 ```js
 {
-  `
+  ;`
     <style jsx>
         .title {
             height: 100%;
         }
     </style>
-`;
+`
 }
 ```
 
@@ -239,10 +227,8 @@ export default createComponent({
 </script>
 ```
 
-無理に拡張子を TSX にする必要はなく、Vue
-ならではの書き方を踏襲することがとりあえず良さそうです。
+無理に拡張子を TSX にする必要はなく、Vue ならではの書き方を踏襲することがとりあえず良さそうです。
 
 来る 2020 年、早いうちにも Vue3 が正式に登場することになります (るでしょう)
 
-Vue を TSX
-で書く元年になるとも思っているので、個人的にはこの年末年始にでも慣らしておこうかな。
+Vue を TSX で書く元年になるとも思っているので、個人的にはこの年末年始にでも慣らしておこうかな。

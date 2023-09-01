@@ -24,15 +24,11 @@ tags:
 - `HTMLAttributes`
 - (より広義で) `HTMLProps`
 
-結論をいうと、積極的に Props の型定義で `ComponentProps`
-を利用して欲しいと考えています。
+結論をいうと、積極的に Props の型定義で `ComponentProps` を利用して欲しいと考えています。
 
-`IntrinsicElements` や `ComponentProps`
-で、複雑な型定義が書かれていますが、大まかにいえばラッパーのひとつと認識できます。
+`IntrinsicElements` や `ComponentProps` で、複雑な型定義が書かれていますが、大まかにいえばラッパーのひとつと認識できます。
 
-実際、開発者の目線で
-[`@types/react`](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react)
-の内部実装を確認してみることをおすすめいたします。
+実際、開発者の目線で [`@types/react`](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react) の内部実装を確認してみることをおすすめいたします。
 
 ### `IntrinsicElements` と `ComponentProps`
 
@@ -43,14 +39,15 @@ tags:
 
 interface ReactComponentElement<
   T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>,
-  P = Pick<ComponentProps<T>, Exclude<keyof ComponentProps<T>, "key" | "ref">>,
+  P = Pick<ComponentProps<T>, Exclude<keyof ComponentProps<T>, 'key' | 'ref'>>,
 > extends ReactElement<P, Exclude<T, number>> {}
 
-type ComponentProps<
-  T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>,
-> = T extends JSXElementConstructor<infer P> ? P
-  : T extends keyof JSX.IntrinsicElements ? JSX.IntrinsicElements[T]
-  : {};
+type ComponentProps<T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>> =
+  T extends JSXElementConstructor<infer P>
+    ? P
+    : T extends keyof JSX.IntrinsicElements
+    ? JSX.IntrinsicElements[T]
+    : {}
 ```
 
 ### `HTMLAttributes` と `HTMLProps`
@@ -75,70 +72,65 @@ interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
 
 ## I/F 設計の例
 
-`Input` / `TextArea` コンポーネントで HTML 標準の `HTMLInputElement`
-を利用してみます。
+`Input` / `TextArea` コンポーネントで HTML 標準の `HTMLInputElement` を利用してみます。
 
 ### `Input` コンポーネント
 
 `React.ComponentProps` で `input` を指定しましょう。
 
 ```ts
-export type InputProps = React.ComponentProps<"input">;
+export type InputProps = React.ComponentProps<'input'>
 ```
 
-`Input` コンポーネントの props に `React.ComponentProps`
-で指定した型定義を利用しましょう。
+`Input` コンポーネントの props に `React.ComponentProps` で指定した型定義を利用しましょう。
 
 ```ts
-import React from "react";
+import React from 'react'
 
-export type _InputProps = React.ComponentProps<"input">;
+export type _InputProps = React.ComponentProps<'input'>
 
-export type InputProps = _InputProps;
+export type InputProps = _InputProps
 
 export function Input(props: InputProps) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('')
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) =>
-    setInput(event.currentTarget.value);
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => setInput(event.currentTarget.value)
 
-  const onClick = () => onSearch(input);
+  const onClick = () => onSearch(input)
 
-  return <input {...props} onChange={onChange} />;
+  return <input {...props} onChange={onChange} />
 }
 ```
 
-ここで `_InputProps` に存在しない型のひとつとして、今回は `onSearch()` を新たに
-Props の型定義へ追加したいと考えます。
+ここで `_InputProps` に存在しない型のひとつとして、今回は `onSearch()` を新たに Props の型定義へ追加したいと考えます。
 
 ```ts
-import React from "react";
+import React from 'react'
 
-export type _InputProps = React.ComponentProps<"input">;
+export type _InputProps = React.ComponentProps<'input'>
 
 export interface InputProps extends _InputProps {
-  onSearch: (input: string) => void; // onSearch() の型定義を追加します
+  onSearch: (input: string) => void // onSearch() の型定義を追加します
 }
 
 export function Input(props: InputProps) {
-  const { onSearch, ...rest } = props;
-  const [input, setInput] = useState("");
+  const { onSearch, ...rest } = props
+  const [input, setInput] = useState('')
 
-  const canSend = rest.value;
+  const canSend = rest.value
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) =>
-    setInput(event.currentTarget.value);
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => setInput(event.currentTarget.value)
 
-  const onClick = () => onSearch(input);
+  const onClick = () => onSearch(input)
 
   return (
     <div>
       <input {...rest} onChange={onChange} />
       <button disabled={disabled || !canSend}>
-        <Icon name={canSend ? "carbon" : "masked-carbon"} />
+        <Icon name={canSend ? 'carbon' : 'masked-carbon'} />
       </button>
     </div>
-  );
+  )
 }
 ```
 
@@ -147,59 +139,55 @@ export function Input(props: InputProps) {
 `React.ComponentProps` で `textarea` を指定しましょう。
 
 ```ts
-export type TextAreaProps = React.ComponentProps<"textarea">;
+export type TextAreaProps = React.ComponentProps<'textarea'>
 ```
 
-`TextArea` コンポーネントの props に `React.ComponentProps`
-で指定した型定義を利用しましょう。
+`TextArea` コンポーネントの props に `React.ComponentProps` で指定した型定義を利用しましょう。
 
 ```ts
-import React from "react";
+import React from 'react'
 
-export type _TextAreaProps = React.ComponentProps<"textarea">;
+export type _TextAreaProps = React.ComponentProps<'textarea'>
 
-export type TextAreaProps = _TextAreaProps;
+export type TextAreaProps = _TextAreaProps
 
 export function TextArea(props: TextAreaProps) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('')
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) =>
-    setInput(event.currentTarget.value);
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => setInput(event.currentTarget.value)
 
-  const onClick = () => onSearch(input);
+  const onClick = () => onSearch(input)
 
-  return <input {...rest} onChange={onChange} />;
+  return <input {...rest} onChange={onChange} />
 }
 ```
 
-ここで `_TextAreaProps` に存在しない型のひとつとして、今回は `onSearch()`
-を新たに Props の型定義へ追加したいと考えます。
+ここで `_TextAreaProps` に存在しない型のひとつとして、今回は `onSearch()` を新たに Props の型定義へ追加したいと考えます。
 
 ```ts
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from 'react'
 
-export type _TextAreaProps = React.HTMLProps<HTMLTextAreaElement>;
+export type _TextAreaProps = React.HTMLProps<HTMLTextAreaElement>
 
 export interface TextAreaProps extends _TextAreaProps {
-  onSearch: (input: string) => void;
+  onSearch: (input: string) => void
 }
 
 export const TextArea = (props: TextAreaProps) => {
-  const { rows = 1, onSearch, ...rest } = props;
-  const [input, setInput] = useState("");
+  const { rows = 1, onSearch, ...rest } = props
+  const [input, setInput] = useState('')
 
-  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    setInput(event.currentTarget.value);
+  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => setInput(event.currentTarget.value)
 
-  const onClick = () => onSearch(input);
+  const onClick = () => onSearch(input)
 
   return (
     <div>
       <textarea {...rest} onChange={onChange} rows={rows} />
       <button disabled={disabled || !canSend}>
-        <Icon name={canSend ? "carbon" : "masked-carbon"} />
+        <Icon name={canSend ? 'carbon' : 'masked-carbon'} />
       </button>
     </div>
-  );
-};
+  )
+}
 ```

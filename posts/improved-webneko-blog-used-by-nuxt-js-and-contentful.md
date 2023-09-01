@@ -13,42 +13,38 @@ tags:
 
 ## Vuex でコンテンツ管理を目指す
 
-たった 2 日で開発のスタートアップを切った当ブログ。ですが UI
-コンポーネントの作成を /pages 下に集中させるため、 Vuex
-で全てのブログデータを管理することにしました。
+たった 2 日で開発のスタートアップを切った当ブログ。ですが UI コンポーネントの作成を /pages 下に集中させるため、 Vuex で全てのブログデータを管理することにしました。
 
 ```js
 client
-  .getEntries(contentfulOptions)
-  .then((entries) => {
-    commit("setPosts", entries.items);
-    // console.log(entries)
-  })
-  .catch(console.error);
+    .getEntries(contentfulOptions)
+    .then(entries => {
+      commit('setPosts', entries.items)
+      // console.log(entries)
+    })
+    .catch(console.error)
 ```
 
-`search` パラメータが存在した場合にのみ、ES 構文の `includes`
-を使って特定します。
+`search` パラメータが存在した場合にのみ、ES 構文の `includes` を使って特定します。
 
 ```js
-const searchPosts = entries.items.filter((item) => {
-  if (item.fields.title.includes(params.search) === true) return item;
-});
-commit("setPosts", searchPosts);
+const searchPosts = entries.items.filter(item => {
+    if (item.fields.title.includes(params.search) === true) return item
+})
+commit('setPosts', searchPosts)
 ```
 
-基本的には `content_type` と `order` を付ければ取得できます。また `skip` と
-`limit` のオプションを追加することで簡単にページネーションも実現できます。
+基本的には `content_type` と `order` を付ければ取得できます。また `skip` と `limit` のオプションを追加することで簡単にページネーションも実現できます。
 
 ```js
 const PAGE_SIZE = 10;
 
 const contentfulOptions = {
-  content_type: process.env.CTF_BLOG_POST_TYPE_ID,
-  order: ORDER,
-  skip: (params.skip - 1) * PAGE_SIZE,
-  limit: PAGE_SIZE,
-};
+    content_type: process.env.CTF_BLOG_POST_TYPE_ID,
+    order: ORDER,
+    skip: (params.skip - 1) * PAGE_SIZE,
+    limit: PAGE_SIZE
+}
 ```
 
 ## Markdown 部分のスタイル修正
@@ -71,68 +67,64 @@ dependencies: {
 
 ### ちょっとしたスタイルを付けたい
 
-ちょっとしたスタイルを付ける場合 `markdown-it-container`
-を使えば容易に応用できる。
+ちょっとしたスタイルを付ける場合 `markdown-it-container` を使えば容易に応用できる。
 
 ```js
-const md = require("markdown-it");
+const md = require('markdown-it')
 export default {
   markdownit: {
     use: [
       [
-        "markdown-it-container",
-        "warning",
+        'markdown-it-container',
+        'warning',
         {
           validate: function (params) {
-            return params.trim().match(/^message\s+(.*)$/);
+            return params.trim().match(/^message\s+(.*)$/)
           },
           render: function (tokens, idx) {
-            const m = tokens[idx].info.trim().match(/^message\s+(.*)$/);
+            const m = tokens[idx].info.trim().match(/^message\s+(.*)$/)
             if (tokens[idx].nesting === 1) {
               return (
-                '<div class="message ' + md.utils.escapeHtml(m[1]) +
-                '"><div class="message-body">'
-              );
+                '<div class="message ' + md.utils.escapeHtml(m[1]) + '"><div class="message-body">'
+              )
             } else {
-              return "</div></div>\n";
+              return '</div></div>\n'
             }
           },
         },
       ],
     ],
   },
-};
+}
 ```
 
 ### リンクであることを分かり易くしたい
 
-リンクであることを分かり易くする場合 `markdown-it-link-attributes` や
-`markdown-it-attrs` を使って実現できる。
+リンクであることを分かり易くする場合 `markdown-it-link-attributes` や `markdown-it-attrs` を使って実現できる。
 
 ```js
 export default {
   markdownit: {
     use: [
       [
-        "markdown-it-link-attributes",
+        'markdown-it-link-attributes',
         {
           pattern: /https?:/,
           attrs: {
-            target: "_blank",
-            rel: "nofollow noopener noreferrer",
+            target: '_blank',
+            rel: 'nofollow noopener noreferrer',
           },
         },
       ],
-      "markdown-it-attrs",
+      'markdown-it-attrs',
     ],
   },
-};
+}
 ```
 
 ### ハイライトを付けたい
 
-ソースコードなど、特定の箇所に対してハイライトを付ける場合
-`markdown-it-highlightjs` と `highlight.js` を使えば容易に導入できる。
+ソースコードなど、特定の箇所に対してハイライトを付ける場合 `markdown-it-highlightjs` と `highlight.js` を使えば容易に導入できる。
 
 ```js
 const hl = require('highlight.js')

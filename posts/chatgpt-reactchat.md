@@ -12,13 +12,11 @@ tags:
   - React
 ---
 
-React のハンズオン第 1 弾を昨年 3 月、そして第 2
-弾を先日開催させていただいたことに伴い Zenn book を執筆させていただきました。
+React のハンズオン第 1 弾を昨年 3 月、そして第 2 弾を先日開催させていただいたことに伴い Zenn book を執筆させていただきました。
 
 https://zenn.dev/jiyuujin/books/react-x-vite-x-liff-more
 
-中でも今回、これまでに React
-でカスタムフックを作成する理由、方法について学んできました。
+中でも今回、これまでに React でカスタムフックを作成する理由、方法について学んできました。
 
 今回、準備したチャレンジ課題を解説していきます。
 
@@ -26,11 +24,9 @@ https://zenn.dev/jiyuujin/books/react-x-vite-x-liff-more
 
 - `<textarea>` をベースにしたコンポーネントを作成する
 - ChatGPT の API を実行するため、カスタムフック `useChatCompletion()` を作成する
-- `<textarea>` よりユーザーの入力した値を取得し、それを受け取って ChatGPT の API
-  を実行した結果へ反映する
+- `<textarea>` よりユーザーの入力した値を取得し、それを受け取って ChatGPT の API を実行した結果へ反映する
 
-なお、ChatGPT の API へアクセスするカスタムフックは `useChatCompletion()`
-とします。
+なお、ChatGPT の API へアクセスするカスタムフックは `useChatCompletion()` とします。
 
 ## `<textarea>` をベースにしたコンポーネントを作成する
 
@@ -40,8 +36,7 @@ https://zenn.dev/jiyuujin/books/react-x-vite-x-liff-more
 | :----------------------------------- | :----------------------------------- |
 | ![](https://i.imgur.com/IEPBQWZ.png) | ![](https://i.imgur.com/WJojfua.png) |
 
-`<textarea>` に必要な `ChatInput`
-コンポーネントと、送信用ボタンのアイコンを作成する必要があります。
+`<textarea>` に必要な `ChatInput` コンポーネントと、送信用ボタンのアイコンを作成する必要があります。
 
 - `ChatInput` コンポーネントを作成する
 - 送信用ボタンのアイコンを作成する
@@ -50,27 +45,25 @@ https://zenn.dev/jiyuujin/books/react-x-vite-x-liff-more
 
 `ChatInput` コンポーネントとして `src/components/ChatInput.tsx` を作成します。
 
-実際 `ChatInput` コンポーネントにおける props の型定義に HTML 標準の
-`HTMLTextAreaElement` を利用します。
+実際 `ChatInput` コンポーネントにおける props の型定義に HTML 標準の `HTMLTextAreaElement` を利用します。
 
 ```ts
-import React, { ChangeEvent, useState } from "react";
-import { ReactComponent as Carbon } from "../assets/carbon.svg";
+import React, { ChangeEvent, useState } from 'react'
+import { ReactComponent as Carbon } from '../assets/carbon.svg'
 
-export type _ChatInputProps = React.HTMLProps<HTMLTextAreaElement>;
+export type _ChatInputProps = React.HTMLProps<HTMLTextAreaElement>
 
 export interface ChatInputProps extends _ChatInputProps {
-  onSearch: (input: string) => void;
+  onSearch: (input: string) => void
 }
 
 export const ChatInput = (props: ChatInputProps) => {
-  const { rows = 1, onSearch, ...rest } = props;
-  const [input, setInput] = useState("");
+  const { rows = 1, onSearch, ...rest } = props
+  const [input, setInput] = useState('')
 
-  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    setInput(event.currentTarget.value);
+  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => setInput(event.currentTarget.value)
 
-  const onClick = () => onSearch(input);
+  const onClick = () => onSearch(input)
 
   return (
     <div className="flex gap-1">
@@ -79,12 +72,11 @@ export const ChatInput = (props: ChatInputProps) => {
         <Carbon />
       </button>
     </div>
-  );
-};
+  )
+}
 ```
 
-このように、コンポーネントにおける Props
-の型定義では、既にある型定義を利用していきましょう。
+このように、コンポーネントにおける Props の型定義では、既にある型定義を利用していきましょう。
 
 `React.ComponentProps` を利用する方法に焦点を当てた記事があります。
 
@@ -93,23 +85,22 @@ https://blog.nekohack.me/posts/react-componentprops-htmlprops
 続いて、スタイルに Tailwind CSS を充てると、下のように書くことが可能となります。
 
 ```ts
-import React, { ChangeEvent, useState } from "react";
-import { ReactComponent as Carbon } from "../assets/carbon.svg";
+import React, { ChangeEvent, useState } from 'react'
+import { ReactComponent as Carbon } from '../assets/carbon.svg'
 
-export type _ChatInputProps = React.HTMLProps<HTMLTextAreaElement>;
+export type _ChatInputProps = React.HTMLProps<HTMLTextAreaElement>
 
 export interface ChatInputProps extends _ChatInputProps {
-  onSearch: (input: string) => void;
+  onSearch: (input: string) => void
 }
 
 export const ChatInput = (props: ChatInputProps) => {
-  const { rows = 1, onSearch, ...rest } = props;
-  const [input, setInput] = useState("");
+  const { rows = 1, onSearch, ...rest } = props
+  const [input, setInput] = useState('')
 
-  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    setInput(event.currentTarget.value);
+  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => setInput(event.currentTarget.value)
 
-  const onClick = () => onSearch(input);
+  const onClick = () => onSearch(input)
 
   return (
     <div className="flex gap-1">
@@ -123,8 +114,8 @@ export const ChatInput = (props: ChatInputProps) => {
         <Carbon />
       </button>
     </div>
-  );
-};
+  )
+}
 ```
 
 #### 送信用ボタンのアイコンを作成する
@@ -133,9 +124,7 @@ export const ChatInput = (props: ChatInputProps) => {
 
 ![](https://i.imgur.com/OCX2gWO.png)
 
-実際 Vite + React 上でこのような SVG
-アイコンを使用するため、[`vite-plugin-svgr`](https://www.npmjs.com/package/vite-plugin-svgr)
-をインストールする必要があります。
+実際 Vite + React 上でこのような SVG アイコンを使用するため、[`vite-plugin-svgr`](https://www.npmjs.com/package/vite-plugin-svgr) をインストールする必要があります。
 
 ```bash
 # pnpm
@@ -150,51 +139,46 @@ yarn add -D vite-plugin-svgr
 
 https://www.npmjs.com/package/vite-plugin-svgr
 
-vite.config.js より
-[`vite-plugin-svgr`](https://www.npmjs.com/package/vite-plugin-svgr)
-を読み込みます。
+vite.config.js より [`vite-plugin-svgr`](https://www.npmjs.com/package/vite-plugin-svgr) を読み込みます。
 
 ```js
-import svgr from "vite-plugin-svgr";
+import svgr from 'vite-plugin-svgr'
 
 export default {
   plugins: [
     react(),
     svgr(), // => ここを追加する
   ],
-};
+}
 ```
 
-これをもって SVG アイコンが React
-コンポーネントとして読み込まれるようになります。
+これをもって SVG アイコンが React コンポーネントとして読み込まれるようになります。
 
-そして、指定したい箇所に対し `<Carbon />` と書くことで、実際に SVG アイコンが
-React コンポーネントとして読み込まれるようになります。
+そして、指定したい箇所に対し `<Carbon />` と書くことで、実際に SVG アイコンが React コンポーネントとして読み込まれるようになります。
 
 ```ts
-import { ReactComponent as Carbon } from "../assets/carbon.svg";
+import { ReactComponent as Carbon } from '../assets/carbon.svg'
 ```
 
 これより解答例になります。
 
 ```ts
-import React, { ChangeEvent, useState } from "react";
-import { ReactComponent as Carbon } from "../assets/carbon.svg";
+import React, { ChangeEvent, useState } from 'react'
+import { ReactComponent as Carbon } from '../assets/carbon.svg'
 
-export type _ChatInputProps = React.HTMLProps<HTMLTextAreaElement>;
+export type _ChatInputProps = React.HTMLProps<HTMLTextAreaElement>
 
 export interface ChatInputProps extends _ChatInputProps {
-  onSearch: (input: string) => void;
+  onSearch: (input: string) => void
 }
 
 export const ChatInput = (props: ChatInputProps) => {
-  const { rows = 1, onSearch, ...rest } = props;
-  const [input, setInput] = useState("");
+  const { rows = 1, onSearch, ...rest } = props
+  const [input, setInput] = useState('')
 
-  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    setInput(event.currentTarget.value);
+  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => setInput(event.currentTarget.value)
 
-  const onClick = () => onSearch(input);
+  const onClick = () => onSearch(input)
 
   return (
     <div className="flex gap-1">
@@ -203,30 +187,29 @@ export const ChatInput = (props: ChatInputProps) => {
         <Carbon />
       </button>
     </div>
-  );
-};
+  )
+}
 ```
 
 スタイルに Tailwind CSS を充てると、下のように書けます。
 
 ```ts
-import React, { ChangeEvent, useState } from "react";
-import { ReactComponent as Carbon } from "../assets/carbon.svg";
+import React, { ChangeEvent, useState } from 'react'
+import { ReactComponent as Carbon } from '../assets/carbon.svg'
 
-export type _ChatInputProps = React.HTMLProps<HTMLTextAreaElement>;
+export type _ChatInputProps = React.HTMLProps<HTMLTextAreaElement>
 
 export interface ChatInputProps extends _ChatInputProps {
-  onSearch: (input: string) => void;
+  onSearch: (input: string) => void
 }
 
 export const ChatInput = (props: ChatInputProps) => {
-  const { rows = 1, onSearch, ...rest } = props;
-  const [input, setInput] = useState("");
+  const { rows = 1, onSearch, ...rest } = props
+  const [input, setInput] = useState('')
 
-  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    setInput(event.currentTarget.value);
+  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => setInput(event.currentTarget.value)
 
-  const onClick = () => onSearch(input);
+  const onClick = () => onSearch(input)
 
   return (
     <div className="flex gap-1">
@@ -240,8 +223,8 @@ export const ChatInput = (props: ChatInputProps) => {
         <Carbon />
       </button>
     </div>
-  );
-};
+  )
+}
 ```
 
 ## ChatGPT の API 実行できる環境を整備する
@@ -250,8 +233,7 @@ OpenAI を使うために OpenAI Console より OPENAI SECRET を発行、作成
 
 ### 環境変数を設定する
 
-OpenAI Console で作成した OPENAI SECRET を `VITE_APP_OPENAPI_SECRET`
-に設定します。
+OpenAI Console で作成した OPENAI SECRET を `VITE_APP_OPENAPI_SECRET` に設定します。
 
 ```.env
 VITE_APP_FIREBASE_KEY="YOUR_VITE_APP_FIREBASE_KEY"
@@ -262,9 +244,7 @@ VITE_APP_LIFF_ID="YOUR_VITE_APP_LIFF_ID"
 VITE_APP_OPENAPI_SECRET="YOUR_VITE_APP_OPENAPI_SECRET" # => ここを上書きする
 ```
 
-API の詳細は
-[Chat completions 公式](https://platform.openai.com/docs/guides/chat/chat-completions-beta)
-を確認しながら、その実行を書いてみましょう。
+API の詳細は [Chat completions 公式](https://platform.openai.com/docs/guides/chat/chat-completions-beta) を確認しながら、その実行を書いてみましょう。
 
 https://platform.openai.com/docs/guides/chat/chat-completions-beta
 
@@ -275,38 +255,35 @@ https://platform.openai.com/docs/guides/chat/chat-completions-beta
 まずは、カスタムフック `useChatCompletion()` を作成します。
 
 ```ts
-const OPENAPI_CHAT_COMPLETIONS_API =
-  "https://api.openai.com/v1/chat/completions";
-const OPENAPI_SECRET = import.meta.env.VITE_APP_OPENAPI_SECRET;
+const OPENAPI_CHAT_COMPLETIONS_API = 'https://api.openai.com/v1/chat/completions'
+const OPENAPI_SECRET = import.meta.env.VITE_APP_OPENAPI_SECRET
 
 export interface Message {
-  role: "system" | "user" | "assistant";
-  content: string;
+  role: 'system' | 'user' | 'assistant'
+  content: string
 }
 
 export function useChatCompletion() {
-  async function chatCompletions(
-    messages: Message[],
-  ): Promise<Message | undefined> {
+  async function chatCompletions(messages: Message[]): Promise<Message | undefined> {
     const body = JSON.stringify({
-      model: "gpt-3.5-turbo",
+      model: 'gpt-3.5-turbo',
       messages,
-    });
+    })
 
     const res = await fetch(OPENAPI_CHAT_COMPLETIONS_API, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${OPENAPI_SECRET}`,
       },
       body,
-    });
-    const data = await res.json();
+    })
+    const data = await res.json()
 
-    return data.choices[0].message;
+    return data.choices[0].message
   }
 
-  return { chatCompletions };
+  return { chatCompletions }
 }
 ```
 
@@ -315,48 +292,45 @@ export function useChatCompletion() {
 続いてフォーム用に、カスタムフック `useChatForm()` を作成します。
 
 ```ts
-import { useState } from "react";
-import { useChatCompletion } from "./useChatCompletion";
+import { useState } from 'react'
+import { useChatCompletion } from './useChatCompletion'
 
 export function useChatForm() {
-  const [answer, setAnswer] = useState("");
-  const { chatCompletions } = useChatCompletion();
+  const [answer, setAnswer] = useState('')
+  const { chatCompletions } = useChatCompletion()
 
   async function search(input: string) {
     if (!input) {
-      alert("Please input something.");
-      return;
+      alert('Please input something.')
+      return
     }
 
     const res = await chatCompletions([
       {
-        role: "user",
+        role: 'user',
         content: input,
       },
-    ]);
-    setAnswer(res?.content || "");
+    ])
+    setAnswer(res?.content || '')
   }
 
-  return { answer, search };
+  return { answer, search }
 }
 ```
 
-pages コンポーネントの `src/pages/Top.tsx`
-より作成したカスタムフックを使用することを目指します。
+pages コンポーネントの `src/pages/Top.tsx` より作成したカスタムフックを使用することを目指します。
 
-これは ChatGPT のレスポンスを取得する責務をカスタムフック `useChatCompletion()`
-に隠蔽、もうひとつ作成のカスタムフック `useChatForm()`
-よりアクセスさせることを狙います。
+これは ChatGPT のレスポンスを取得する責務をカスタムフック `useChatCompletion()` に隠蔽、もうひとつ作成のカスタムフック `useChatForm()` よりアクセスさせることを狙います。
 
 ```ts
-const { answer, search } = useChatForm();
+const { answer, search } = useChatForm()
 ```
 
 結果として、関連する責務が `useChatForm()` に隠蔽されるようなっていれば OK。
 
 ```ts
 export function Top() {
-  const { answer, search } = useChatForm();
+  const { answer, search } = useChatForm()
 
   return (
     <div>
@@ -365,13 +339,11 @@ export function Top() {
         <ChatInput onSearch={search} />
       </h2>
     </div>
-  );
+  )
 }
 ```
 
-回答は
-[`ver.2023.2.1` branch](https://github.com/jiyuujin/vite-react-liff/tree/ver.2023.2.1)
-をご確認いただければ幸いです。
+回答は [`ver.2023.2.1` branch](https://github.com/jiyuujin/vite-react-liff/tree/ver.2023.2.1) をご確認いただければ幸いです。
 
 ざっとソースコードを確認したい方は、下記コミットログをご確認ください。
 
@@ -379,8 +351,6 @@ https://github.com/jiyuujin/vite-react-liff/commit/5d363733cf2e0413bb791109e0434
 
 ## 最後に
 
-なおも引き続き、ChatGPT を始めとした AI
-関連のニュースや知見が、目まぐるしい量であふれています。
+なおも引き続き、ChatGPT を始めとした AI 関連のニュースや知見が、目まぐるしい量であふれています。
 
-日々、様々な活用事例が誕生し AI
-の精度もブラッシュアップされると共に、私たちもそれに合わせて学習することを心がけていきましょう。
+日々、様々な活用事例が誕生し AI の精度もブラッシュアップされると共に、私たちもそれに合わせて学習することを心がけていきましょう。

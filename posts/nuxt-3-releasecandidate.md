@@ -36,14 +36,12 @@ Nuxt 2 と比べても内部アーキテクチャから全てが新しく変わ�
 - `/pages` 配下のコンポーネントで `<script setup>` の syntax を使う
 - `/components` 配下のコンポーネントで Options API を使う
 
-前者は
-[非同期の `<script setup>`](https://v3.nuxtjs.org/guide/features/data-fetching#using-async-setup)
-を使って Contentful 上のデータを取得している。
+前者は [非同期の `<script setup>`](https://v3.nuxtjs.org/guide/features/data-fetching#using-async-setup) を使って Contentful 上のデータを取得している。
 
 ```js
-import { fetchPosts } from "~/api/blog";
+import { fetchPosts } from '~/api/blog'
 
-const posts = await fetchPosts();
+const posts = await fetchPosts()
 ```
 
 ```js
@@ -68,8 +66,7 @@ export const fetchPosts = (isLatest?: boolean) => {
 
 一方、後者は Nuxt 2 時代のコンポーネントをそのまま流用している。
 
-もちろんソースコードの統一性を考慮した際 Composition API に変更した上で
-`<script setup>` の syntax を使った方が良いでしょう。
+もちろんソースコードの統一性を考慮した際 Composition API に変更した上で `<script setup>` の syntax を使った方が良いでしょう。
 
 しかし、最悪そのままでも動くといえば動くので、結果的に流用させていただいた。
 
@@ -94,35 +91,31 @@ nuxi generate
 - CSS を吐き出す `app.buildAssetsDir` に `/_nuxt/` を設定する
 
 ```js
-import { defineNuxtConfig } from "#app";
+import { defineNuxtConfig } from '#app'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   router: {
-    base: "/",
+    base: '/',
   },
   app: {
-    buildAssetsDir: "/_nuxt/",
-    baseURL: "/",
+    buildAssetsDir: '/_nuxt/',
+    baseURL: '/',
   },
-  target: "static",
+  target: 'static',
   generate: {
-    dir: "dist",
+    dir: 'dist',
   },
-});
+})
 ```
 
-これまで Nuxt 2 では generate
-時に吐き出す先のディレクトリを設定すれば良かったもの、この設定だけで Nuxt 3
-はホスティングされなかったことに注意したい。
+これまで Nuxt 2 では generate 時に吐き出す先のディレクトリを設定すれば良かったもの、この設定だけで Nuxt 3 はホスティングされなかったことに注意したい。
 
-ブラッシュアップの過程を経てより楽ちんな設定に留まれば良いことも考えつつ、先も述べたように静的サイト化もまだ
-experimental (実験的) な機能のひとつです。
+ブラッシュアップの過程を経てより楽ちんな設定に留まれば良いことも考えつつ、先も述べたように静的サイト化もまだ experimental (実験的) な機能のひとつです。
 
 ## 当ブログのドメイン切替
 
-ゴールデンウィークの合間である先月 29
-日に、本番運用で使用するドメインを切り替えた。
+ゴールデンウィークの合間である先月 29 日に、本番運用で使用するドメインを切り替えた。
 
 なお、これまでに運用していたウェブサイトを、サブドメインに移行している。
 
@@ -131,8 +124,7 @@ experimental (実験的) な機能のひとつです。
 
 前者 Nuxt SSR を利用して AWS Fargate 上のコンテナで運用している。
 
-これに対し AWS Amplify
-のホスティング機能を使い静的なファイルとして落とし込んだ。
+これに対し AWS Amplify のホスティング機能を使い静的なファイルとして落とし込んだ。
 
 今回特別に記したいのは下記の通りです。
 
@@ -142,37 +134,34 @@ experimental (実験的) な機能のひとつです。
 - Google Adsense を設定する
 - RSS フィードを生成する
 
-いずれも自分自身でごにょごにょ書いたことで Nuxt 3
-への更新も早くから実現できた訳です。
+いずれも自分自身でごにょごにょ書いたことで Nuxt 3 への更新も早くから実現できた訳です。
 
 ### Analytics を設定する
 
-これまで運用していたブログでは Analytics 3
-を利用していたが、折角なのでこれを機に Analytics 4 を利用するよう切り替えた。
+これまで運用していたブログでは Analytics 3 を利用していたが、折角なのでこれを機に Analytics 4 を利用するよう切り替えた。
 
 #### Analytics 3 に対応する
 
-Google Tag Manager を読み込むため `@nuxtjs/google-gtag`
-をインストールする必要がある。
+Google Tag Manager を読み込むため `@nuxtjs/google-gtag` をインストールする必要がある。
 
 Google Analytics の管理画面で発行した ID を環境変数 `GTAG_ID` に設定する。
 
 ```js
-import { defineNuxtConfig } from "nuxt";
-import { gtagList } from "./app/utils/gtag.constants";
+import { defineNuxtConfig } from 'nuxt'
+import { gtagList } from './app/utils/gtag.constants'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   modules: [
     [
-      "@nuxtjs/google-gtag",
+      '@nuxtjs/google-gtag',
       {
         id: process.env.NUXT_GTAG_ID,
         debug: !isProd,
       },
     ],
   ],
-});
+})
 ```
 
 #### Analytics 4 に対応する
@@ -180,77 +169,74 @@ export default defineNuxtConfig({
 こちらも同様に `nuxt.config.ts` で Google Tag Manager を読み込む必要がある。
 
 ```js
-import { defineNuxtConfig } from "nuxt";
-import { gtagList } from "./app/utils/gtag.constants";
+import { defineNuxtConfig } from 'nuxt'
+import { gtagList } from './app/utils/gtag.constants'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   head: {
     meta: [...gtagList()],
     __dangerouslyDisableSanitizersByTagID: {
-      GAsrc: ["innerHTML"],
-      GAcode: ["innerHTML"],
+      GAsrc: ['innerHTML'],
+      GAcode: ['innerHTML'],
     },
   },
-});
+})
 ```
 
 Google Analytics の管理画面で発行した ID を環境変数 `GTAG_ID` に設定する。
 
 ```js
-const GAcode =
-  `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.GTAG_ID}');`;
+const GAcode = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.GTAG_ID}');`
 
 export const gtagList = () => {
   return [
     {
-      hid: "GAsrc",
-      src: "https://www.googletagmanager.com/gtag/js?id=" + process.env.GTAG_ID,
+      hid: 'GAsrc',
+      src: 'https://www.googletagmanager.com/gtag/js?id=' + process.env.GTAG_ID,
     },
-    { hid: "GAcode", innerHTML: GAcode },
-  ];
-};
+    { hid: 'GAcode', innerHTML: GAcode },
+  ]
+}
 ```
 
 ### Google Adsense を設定する
 
-これまで運用していたブログでは Adsense を組み込んでいたが、これからも Adsense
-のお世話になるよう設定した。
+これまで運用していたブログでは Adsense を組み込んでいたが、これからも Adsense のお世話になるよう設定した。
 
 `nuxt.config.ts` で Google Adsense のライブラリを読み込む必要がある。
 
 ```js
-import { defineNuxtConfig } from "nuxt";
-import { adsenseList } from "./app/utils/adsense.constants";
+import { defineNuxtConfig } from 'nuxt'
+import { adsenseList } from './app/utils/adsense.constants'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   head: {
     meta: [...adsenseList()],
     __dangerouslyDisableSanitizersByTagID: {
-      ADsrc: ["innerHTML"],
-      ADcode: ["innerHTML"],
+      ADsrc: ['innerHTML'],
+      ADcode: ['innerHTML'],
     },
   },
-});
+})
 ```
 
 Google Adsense の管理画面で発行した ID を環境変数 `ADSENSE_ID` に設定する。
 
 ```js
-export const ADcode = "(adsbygoogle = window.adsbygoogle || []).push({});";
+export const ADcode = '(adsbygoogle = window.adsbygoogle || []).push({});'
 
 export const adsenseList = () => {
   return [
     {
-      hid: "ADsrc",
-      src:
-        `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_ID}`,
-      crossorigin: "anonymous",
+      hid: 'ADsrc',
+      src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_ID}`,
+      crossorigin: 'anonymous',
     },
-    { hid: "ADcode", innerHTML: ADcode },
-  ];
-};
+    { hid: 'ADcode', innerHTML: ADcode },
+  ]
+}
 ```
 
 ### RSS フィードを生成する
@@ -263,63 +249,62 @@ export const adsenseList = () => {
 - Nuxt 3 では `/public` 下に静的ファイルを置く
 
 ```js
-const contentful = require("contentful");
+const contentful = require('contentful')
 
-const fs = require("fs-extra");
-const { Feed } = require("feed");
-const { promisify } = require("util");
+const fs = require('fs-extra')
+const { Feed } = require('feed')
+const { promisify } = require('util')
 
-const path = require("path");
-require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
+const path = require('path')
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') })
 
 let feed = new Feed({
-  title: "Web猫ブログ",
+  title: 'Web猫ブログ',
   description:
-    "2018年10月より運営の当ブログを始め、Vue.jsやNuxtを使ったフロントエンドを中心に設計・開発しています。",
-  feed_url: "https://webneko.dev/feeds.xml",
-  site_url: "https://webneko.dev/",
-  copyright: "nekohack",
-  language: "ja",
-});
+    '2018年10月より運営の当ブログを始め、Vue.jsやNuxtを使ったフロントエンドを中心に設計・開発しています。',
+  feed_url: 'https://webneko.dev/feeds.xml',
+  site_url: 'https://webneko.dev/',
+  copyright: 'nekohack',
+  language: 'ja',
+})
 
 const client = contentful.createClient({
   space: process.env.CTF_SPACE_ID,
   accessToken: process.env.CTF_CDA_ACCESS_TOKEN,
-});
+})
 
 client
   .getEntries({
     content_type: process.env.CTF_BLOG_POST_TYPE_ID,
-    order: "-fields.publishDate",
+    order: '-fields.publishDate',
   })
   .then(async (entries) => {
     for (let index = 0; index < entries.items.length; index++) {
-      const post = entries.items[index];
+      const post = entries.items[index]
       feed.items.push({
         title: post.fields.title,
         id: `https://webneko.dev/posts/${post.fields.slug}`,
         link: `https://webneko.dev/posts/${post.fields.slug}`,
         author: [
           {
-            name: "jiyuujin",
+            name: 'jiyuujin',
           },
         ],
         description: post.fields.description,
         body: post.fields.body,
         date: new Date(post.fields.publishDate),
-      });
+      })
     }
-    await promisify(fs.writeFile)("./app/public/feeds.xml", feed.rss2());
+    await promisify(fs.writeFile)('./app/public/feeds.xml', feed.rss2())
   })
   .catch((err) => {
-    console.log(err);
-  });
+    console.log(err)
+  })
 
 export default function () {}
 ```
 
-GitHub Actions
-によるトリガー実行と合わせたことで、日々ブログの更新を監視している。
+GitHub Actions によるトリガー実行と合わせたことで、日々ブログの更新を監視している。
 
 ## 最後に
 

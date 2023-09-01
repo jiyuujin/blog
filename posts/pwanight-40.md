@@ -11,8 +11,7 @@ tags:
   - WWDC
 ---
 
-PWA Night として記念すべき 40 回目に、先日行われた Google I/O 2022 と WWDC 2022
-の Recap と称して登壇させていただいた。
+PWA Night として記念すべき 40 回目に、先日行われた Google I/O 2022 と WWDC 2022 の Recap と称して登壇させていただいた。
 
 https://pwanight.connpass.com/event/250815/
 
@@ -22,41 +21,34 @@ https://docs.google.com/presentation/d/1Y5ubD-CzpH8nFVWBaD_Fq5RSHCzxhTi6yIsAp45V
 
 ## 簡潔なまとめ
 
-私の肩書き上 Web エンジニアとアプリエンジニアを名乗っていることで、やや Web
-とモバイルに偏重気味になっている点はお許しください。
+私の肩書き上 Web エンジニアとアプリエンジニアを名乗っていることで、やや Web とモバイルに偏重気味になっている点はお許しください。
 
 - Web 界隈では、特に Apple の Web に対する気合を感じた
 - モバイル界隈では、言語の書き味が良くなった
 - その他 AR などの新技術
 
-中でも Google I/O の Developer Keynote トップで提供された話題として ARCore
-は新鮮だ。
+中でも Google I/O の Developer Keynote トップで提供された話題として ARCore は新鮮だ。
 
-今後その API
-を利用したサービスが出てくるものと考えると、さぞかし夢も広がるでしょう。
+今後その API を利用したサービスが出てくるものと考えると、さぞかし夢も広がるでしょう。
 
 ### Web 界隈
 
 - Google I/O、 WWDC 共に Web で大きな動きが多かった
 - 特に Apple の Web に対する気合を感じた
 
-Container queries や Subgrid など Safari
-で使えるようになったのはもちろん、待望の push
-通知も近く実現される知らせは大きな話題です。
+Container queries や Subgrid など Safari で使えるようになったのはもちろん、待望の push 通知も近く実現される知らせは大きな話題です。
 
-macOS (Safari 16) では間も無く、また iOS や iPadOS では 2023
-年にも実現されるとのこと。
+macOS (Safari 16) では間も無く、また iOS や iPadOS では 2023 年にも実現されるとのこと。
 
-CSS
-技法は下記に示すようにモダンブラウザで広く使える状態であることが確認されているようです。
+CSS 技法は下記に示すようにモダンブラウザで広く使える状態であることが確認されているようです。
 
 |                                                          | Chrome | Safari | Firefox |
 | :------------------------------------------------------- | :----- | :----- | :------ |
-| subgrid                                                  | ❌     | 🙆🏻‍♀️  | 🙆🏻‍♀️   |
-| subgrid<br/>grid-template-columns<br/>grid-template-rows | 🙆🏻‍♀️  | 🙆🏻‍♀️  | ❌      |
-| focus-visible                                            | 🙆🏻‍♀️  | 🙆🏻‍♀️  | 🙆🏻‍♀️   |
-| contain                                                  | 🙆🏻‍♀️  | 🙆🏻‍♀️  | 🙆🏻‍♀️   |
-| dialog                                                   | 🙆🏻‍♀️  | 🙆🏻‍♀️  | 🙆🏻‍♀️   |
+| subgrid                                                  | ❌     | 🙆🏻‍♀️     | 🙆🏻‍♀️      |
+| subgrid<br/>grid-template-columns<br/>grid-template-rows | 🙆🏻‍♀️     | 🙆🏻‍♀️     | ❌      |
+| focus-visible                                            | 🙆🏻‍♀️     | 🙆🏻‍♀️     | 🙆🏻‍♀️      |
+| contain                                                  | 🙆🏻‍♀️     | 🙆🏻‍♀️     | 🙆🏻‍♀️      |
+| dialog                                                   | 🙆🏻‍♀️     | 🙆🏻‍♀️     | 🙆🏻‍♀️      |
 
 ### モバイル界隈
 
@@ -65,11 +57,9 @@ CSS
 - [Dart 2.17: Productivity and integration](https://medium.com/dartlang/dart-2-17-b216bfc80c5d)
 - [Introducing Flutter 3](https://medium.com/flutter/introducing-flutter-3-5eb69151622f)
 
-なんといっても、この Flutter 3 で 6
-プラットフォームの開発が同時進められるようになったのは大きいと考えています。
+なんといっても、この Flutter 3 で 6 プラットフォームの開発が同時進められるようになったのは大きいと考えています。
 
-ちなみに、昨年リリースの Flutter 2 では Null Safety
-対応が主な更新だったりするものの、今回そこまで更新するために手こずったという話はほとんど聞かれません。
+ちなみに、昨年リリースの Flutter 2 では Null Safety 対応が主な更新だったりするものの、今回そこまで更新するために手こずったという話はほとんど聞かれません。
 
 また Dart/Swift の書き味が良くなっている。
 
@@ -97,15 +87,10 @@ Twitter には IE 丸々 28 年の歴史を振り返るショートムービー�
 
 https://twitter.com/ooboonto/status/1535623399065718784?s=21&t=F33O5EtFjc04zrY3Hk463g
 
-なお、前々から EOL のアナウンスがあったので、各プロダクト企業を始め IE
-対応しない旨を明言することもしばしば。
+なお、前々から EOL のアナウンスがあったので、各プロダクト企業を始め IE 対応しない旨を明言することもしばしば。
 
-昨年、自身が書いた
-[記事](https://blog.nekohack.me/posts/pray-the-internet-explorer-for-memorial)
-があるので、こちらも合わせてご確認いただければ幸いです。
+昨年、自身が書いた [記事](https://blog.nekohack.me/posts/pray-the-internet-explorer-for-memorial) があるので、こちらも合わせてご確認いただければ幸いです。
 
-とはいえ IE
-を前提としたアプリケーションもまだ多く存在しているらしく、まだまだ完全に抜け切れないというのが率直なところのようです。
+とはいえ IE を前提としたアプリケーションもまだ多く存在しているらしく、まだまだ完全に抜け切れないというのが率直なところのようです。
 
-ちなみに WindowsServer 2022 では、引き続き IE11
-が使えるらしいので、これはまあ複雑なところです。
+ちなみに WindowsServer 2022 では、引き続き IE11 が使えるらしいので、これはまあ複雑なところです。
