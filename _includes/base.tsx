@@ -15,10 +15,7 @@ export default ({ title, description, slug, children }: Data) => (
       />
       <script src="https://embed.zenn.studio/js/listen-embed-event.js" />
       <title>{title || blogTitle}</title>
-      <meta
-        property="description"
-        content={description || blogDescription}
-      />
+      <meta property="description" content={description || blogDescription} />
       <meta property="og:site_name" content={title || blogTitle} />
       <meta property="og:type" content="website" />
       <meta
@@ -42,8 +39,6 @@ export default ({ title, description, slug, children }: Data) => (
       <meta property="twitter:creator" content="@jiyuujin_dev" />
       <meta property="twitter:site" content="@jiyuujin_dev" />
     </head>
-    <body>
-      {children}
-    </body>
+    <body>{children}</body>
   </html>
 );

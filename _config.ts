@@ -13,11 +13,9 @@ const site = lume({
   location: new URL("https://blog.nekohack.me/"),
 });
 
-site.use(jsx())
-  .use(windi())
-  .use(zennRenderer())
-  .use(resolveUrls())
-  .use(pagefind());
+site.use(jsx()).use(windi()).use(zennRenderer()).use(resolveUrls()).use(
+  pagefind(),
+);
 
 site.copy("assets");
 

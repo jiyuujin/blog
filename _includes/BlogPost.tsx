@@ -14,7 +14,8 @@ export const BlogPost = ({ post }: { post: PageData }) => (
     </h3>
 
     <div className="flex gap-x-2 flex-wrap">
-      {(post.data.tags ?? []).filter((e) => !(/^\s*$/.test(e)))
+      {(post.data.tags ?? [])
+        .filter((e) => !/^\s*$/.test(e))
         .map((tag: string) => (
           <div key={tag} className="text-bluegray-500 font-bold">
             {`#${tag}`}

@@ -10,20 +10,12 @@
     "build": "deno task lume"
   },
   "lint": {
-    "exclude": [
-      "./_site",
-      "./_bin"
-    ],
+    "exclude": ["./_site", "./_bin", "./posts"],
     "rules": {
-      "tags": [
-        "recommended"
-      ]
+      "tags": ["recommended"]
     }
   },
   "fmt": {
-    "exclude": [
-      "./_site",
-      "./_bin"
-    ]
+    "exclude": ["./_site", "./_bin", "./posts"]
   }
 }
