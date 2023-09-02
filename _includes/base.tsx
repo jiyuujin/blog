@@ -13,6 +13,7 @@ export default ({ title, description, slug, children }: Data) => (
         rel="stylesheet"
         href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css"
       />
+      <link rel="stylesheet" href="https://esm.sh/zenn-content-css?css" />
       <script src="https://embed.zenn.studio/js/listen-embed-event.js" />
       <title>{title || blogTitle}</title>
       <meta property="description" content={description || blogDescription} />
