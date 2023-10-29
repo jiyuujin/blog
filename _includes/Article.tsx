@@ -14,7 +14,7 @@ export default ({
     <a href={joinUrl("/")}>&lt; Return to index</a>
     <div className="flex justify-center flex-col gap-y-4">
       <header className="w-full h-120 lt-sm:h-96 bg-cover bg-center bg-no-repeat">
-        <div className="h-full px-6 mx-auto flex flex-col items-center justify-center">
+        <div className="max-w-screen-sm h-full px-6 mx-auto flex flex-col items-center justify-center">
           <svg
             className="bg-cover bg-center bg-no-repeat w-25 h-25 border-4 border-white rounded-full"
             background-color="black"
@@ -62,7 +62,7 @@ export default ({
         </div>
       </header>
 
-      <div className="max-w-screen px-6 pt-2 mx-auto">
+      <div className="max-w-screen-sm px-6 pt-2 mx-auto">
         <article className="znc post-detail leading-loose">{children}</article>
       </div>
     </div>
