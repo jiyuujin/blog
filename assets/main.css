@@ -14,6 +14,13 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+main {
+  display: block;
+  max-width: 80ch;
+  padding: 0 1.02rem;
+  margin: auto;
+}
+
 .post-detail div a {
   color: #fd0f82;
 }
