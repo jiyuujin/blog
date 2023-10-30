@@ -36,9 +36,7 @@ export default ({
         <h1 className="mt-3 text-4xl text-gray-900 font-bold">
           {title ?? "個人ブログ"}
         </h1>
-        {description && (
-          <p className="text-xl text-gray-600">{description}</p>
-        )}
+        {description && <p className="text-xl text-gray-600">{description}</p>}
         <p className="text-gray-500/80">
           <span>By {"jiyuujin"} at</span>
           {publish_date && (
