@@ -40,6 +40,8 @@ export default ({ title, description, slug, children }: Data) => (
       <meta property="twitter:creator" content="@jiyuujin_dev" />
       <meta property="twitter:site" content="@jiyuujin_dev" />
     </head>
-    <body>{children}</body>
+    <body>
+      <main>{children}</main>
+    </body>
   </html>
 );
