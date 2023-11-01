@@ -16,6 +16,10 @@ export default ({ title, description, slug, children }: Data) => (
       <link rel="stylesheet" href="https://esm.sh/zenn-content-css?css" />
       <script src="https://embed.zenn.studio/js/listen-embed-event.js" />
       <title>{title || blogTitle}</title>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+      />
       <meta property="description" content={description || blogDescription} />
       <meta property="og:site_name" content={title || blogTitle} />
       <meta property="og:type" content="website" />
