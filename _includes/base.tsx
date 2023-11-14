@@ -15,6 +15,12 @@ export default ({ title, description, slug, children }: Data) => (
       />
       <link rel="stylesheet" href="https://esm.sh/zenn-content-css?css" />
       <script src="https://embed.zenn.studio/js/listen-embed-event.js" />
+      <script
+        type="text/javascript"
+        src="https://b.st-hatena.com/js/bookmark_button.js"
+        charset="utf-8"
+        async="async"
+      />
       <title>{title || blogTitle}</title>
       <meta
         name="viewport"

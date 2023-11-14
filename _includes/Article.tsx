@@ -3,6 +3,7 @@ export const layout = "base.tsx";
 export default ({
   title,
   description,
+  slug,
   publish_date,
   children,
   tags,
@@ -58,7 +59,45 @@ export default ({
     </header>
 
     <div className="max-w-screen px-6 pt-2 mx-auto">
+      <a
+        href={`https://b.hatena.ne.jp/entry/https://blog.nekohack.me/posts/${slug}`}
+        target="_blank"
+        rel="noopenner noreferrer"
+        className="hatena-bookmark-button"
+        data-hatena-bookmark-layout="touch-counter"
+        title={`${title}をはてなブックマークに追加`}
+      >
+        <img
+          src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+          alt={`${title}をはてなブックマークに追加`}
+          width="20"
+          height="20"
+          style={{ border: "none" }}
+        />
+      </a>
+    </div>
+
+    <div className="max-w-screen px-6 pt-2 mx-auto">
       <article className="znc post-detail leading-loose">{children}</article>
+    </div>
+
+    <div className="max-w-screen px-6 pt-2 mx-auto">
+      <a
+        href={`https://b.hatena.ne.jp/entry/https://blog.nekohack.me/posts/${slug}`}
+        target="_blank"
+        rel="noopenner noreferrer"
+        className="hatena-bookmark-button"
+        data-hatena-bookmark-layout="touch-counter"
+        title={`${title}をはてなブックマークに追加`}
+      >
+        <img
+          src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
+          alt={`${title}をはてなブックマークに追加`}
+          width="20"
+          height="20"
+          style={{ border: "none" }}
+        />
+      </a>
     </div>
   </>
 );
