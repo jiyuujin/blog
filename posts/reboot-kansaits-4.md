@@ -38,14 +38,18 @@ https://kansaits.connpass.com/event/299545/
 
 ざっくりいま流行りの AI や Hono から TypeScript の内部実装まで、幅広い内容を聞くことができました。
 
-node の環境でも、ChatGPT をゆるふわに使えるようにしたライブラリ LangChain.js について。Next.js の boiler template を使うことで、容易に確認できるという話。
+それぞれの詳細は、登壇スライドを読んでいただくとして、改めて見直しておきたいところ。
 
-TypeScript の内部コードを読んでみて、レイヤごとに解説されて、たいへん分かりやすかったです。
+node の環境でも、ゆるふわに ChatGPT を使えるようにしたライブラリ LangChain.js について。Next.js の boiler template を使うことで、容易にスタートアップできるという話。
 
-TypeScript 5.2 より導入された Copy Array メソッドでは総じてパフォーマンス良く、型アサーションエラーで特段ハマることも少ないため、素直に使っていきましょう。
+TypeScript の内部コードを読んでみた話、レイヤごとに解説されたいへん分かりやすかったです。
+
+TypeScript 5.2 より導入された Copy Array メソッドは総じてパフォーマンスも良く、型エラーで特段ハマることも少ないため、素直に使っていきましょう。
 
 https://speakerdeck.com/optimisuke/langchainyarunarapythonyoritypescriptnofang-gainziyane
 
 https://speakerdeck.com/ryounasso/typescript-konhairanonei-ce-nipian-zu-woru-reru
 
 https://speakerdeck.com/jiko21/copying-array-methods-arrived-at-typescript
+
+https://speakerdeck.com/is_ryo/honogaliang-sasou
