@@ -178,6 +178,19 @@ export default defineNuxtConfig({
 })
 ```
 
+#### Function デプロイを実行する
+
+satori を動かすため、netlify-lambda で puppeteer を起動する必要があります。
+
+ここで netlify-lambda は、内部的に AWS Lambda になるので、AWS 用にビルドされた chrome が使えます。
+
+netlify.toml の `functions.server.external_node_modules` に chrome-aws-lambda を追加してあげることで、それを実現できます。
+
+```
+[functions.server]
+  external_node_modules = ["chrome-aws-lambda"]
+```
+
 ### 静的な情報を扱うページで nuxt-og-image を使う
 
 まず、セッションの詳細ページにおける OGP 画像が生成から。
@@ -338,6 +351,10 @@ export default defineNuxtConfig({
 
 ![](https://i.imgur.com/CjcOxfT.png)
 
-もちろん Web ブラウザの Elements ツリーから、直接 Meta タグを確認することもできます。
+正直使いこなしているレベル感にはありませんが、画像または SVG ベースでレンダリングされている様子を可視化できます。
+
+と同時に Web ブラウザの Elements ツリーから、直接 Meta タグを確認することもできます。
 
 Vue Fes 2023 における動作確認では基本 Elements ツリーから、直接 Meta タグ並びに OGP 画像を確認いたしました。
+
+必要に応じて、ダブルチェックしながら進めれば良さそうかと思います。
