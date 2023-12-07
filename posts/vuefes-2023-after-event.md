@@ -72,6 +72,8 @@ https://speakerdeck.com/kazupon/vue-and-vite-rustify
 
 LINE ヤフーコミュニケーションズ株式会社の中村さんからは Historie について、株式会社 Fusic の夛田さんからは NativeScript についてのトークがありました。
 
+(資料共有があれば、随時更新させていただきます)
+
 中でも Storybook でいうストーリーを Vue ファイルと同じように記述できる Historie については、自ら初めて耳にしました。
 
 https://histoire.dev/
