@@ -52,7 +52,17 @@ https://v2.vuejs.org/lts/
 - [oxc](https://github.com/oxc-project/oxc)
 - [biome](https://github.com/biomejs/biome)
 
-するとこれらのキーワードだけをかいつまんでみたところ、時間なんぼあっても足りません。
+すでに oxc については、[Playground](https://web-infra-dev.github.io/oxc/playground/?code=3YCAAIDigYCAgICAgIC0G8rnONK88yBy9gF2iiieayjKrgMZxIq8mEeJXIshFBO8zDODxzozyHKiRmdtKDlDz0HUZFkWB4B5wVzdkq%2BhvCdGU5OGn9PJKUj5tg6elK%2Fm8pTzAOv1iGD8WKMC7xIUU4xP3NM1DnHfz6P28P%2BJIhsB7RfO8L94faI%2BtOkb3vuFivobKq3tPfG2pJbAqyvRcRWZSvQEPqAEsT13hmbuZNFE8fu5ccv52vz4MjzzV6extOFeq8JN4MsEWiICWI%2Fu71ITxNBMKbFtFGsMGoNm26S7mp%2BjpHb3R5hoz95vCfe5ka1xhWBmVuB1fn9%2FZ93pFw%3D%3D) をはじめ、[VS Code の拡張機能](https://marketplace.visualstudio.com/items?itemName=oxc.oxc-vscode) も存在するとのことで、試す価値があるように思います。
+
+また、biome (v1.4.0) の Prettier チャレンジに対するフォーマット結果が最近、話題になりました。
+
+https://github.com/biomejs/biome/issues/739
+
+Prettier の「JS/TS/JSX に関するテストケースを 95% 以上通す」Rust 実装を募集しました。
+
+https://console.algora.io/challenges/prettier
+
+こういったキーワードだけをかいつまんでみたところ、時間なんぼあっても足りません。
 
 ですが、かなりぎゅっと凝縮した形で話されておりますので、その中身については以下スライドのリンクよりご確認ください。
 
