@@ -1,6 +1,6 @@
 ---
 layout: Article.tsx
-publish_date: 2023-12-05
+publish_date: 2023-12-08
 title: 'Vue Fes 2023 アフターイベント @LY (Fukuoka)'
 description: 'LINE ヤフーコミュニケーションズさんの Vue Fes Japan 2023 スポンサリングに伴うアフターイベント開催にあたって、kazupon 氏と同行させていただきましたので、その記録をば。'
 slug: vuefes-2023-after-event
@@ -11,7 +11,7 @@ tags:
   - VueFes
 ---
 
-この記事は jiyuujin Advent Calendar 2023 の 5 日目の記事になります。
+この記事は jiyuujin Advent Calendar 2023 の 8 日目の記事になります。
 
 https://adventar.org/calendars/9670
 
@@ -54,13 +54,9 @@ https://v2.vuejs.org/lts/
 
 すでに oxc については、[Playground](https://web-infra-dev.github.io/oxc/playground/?code=3YCAAIDigYCAgICAgIC0G8rnONK88yBy9gF2iiieayjKrgMZxIq8mEeJXIshFBO8zDODxzozyHKiRmdtKDlDz0HUZFkWB4B5wVzdkq%2BhvCdGU5OGn9PJKUj5tg6elK%2Fm8pTzAOv1iGD8WKMC7xIUU4xP3NM1DnHfz6P28P%2BJIhsB7RfO8L94faI%2BtOkb3vuFivobKq3tPfG2pJbAqyvRcRWZSvQEPqAEsT13hmbuZNFE8fu5ccv52vz4MjzzV6extOFeq8JN4MsEWiICWI%2Fu71ITxNBMKbFtFGsMGoNm26S7mp%2BjpHb3R5hoz95vCfe5ka1xhWBmVuB1fn9%2FZ93pFw%3D%3D) をはじめ、[VS Code の拡張機能](https://marketplace.visualstudio.com/items?itemName=oxc.oxc-vscode) も存在するとのことで、試す価値があるように思います。
 
-また、biome (v1.4.0) の Prettier チャレンジに対するフォーマット結果が最近、話題になりました。
+また、[Prettier チャレンジ](https://console.algora.io/challenges/prettier) に対するフォーマット結果で 96% を叩き出した Rust 実装が biome (この場では 1.4.0) というのも最近話題になり、それにも触れられました。
 
 https://github.com/biomejs/biome/issues/739
-
-Prettier の「JS/TS/JSX に関するテストケースを 95% 以上通す」Rust 実装を募集しました。
-
-https://console.algora.io/challenges/prettier
 
 こういったキーワードだけをかいつまんでみたところ、時間なんぼあっても足りません。
 
@@ -88,6 +84,8 @@ Vue Fes 2023 アフターイベントとしては、運営サイドが把握す�
 
 ![](https://i.imgur.com/X6WFHOq.jpg)
 
+おそらく、年末手前に kazupon 氏からもふりかえりのブログが上がってくるかと思いますので、そのポストまで暫くの間お待ちください。
+
 当日同時間帯に公開されたアフタームービーは、コアスタッフの [keigo](https://twitter.com/kspace_trk) 氏が作り上げた傑作になりますので、こちらも合わせてチェックいただければ。
 
 https://www.youtube.com/watch?v=rWIal-epFXQ&t=3s
@@ -96,7 +94,9 @@ https://www.youtube.com/watch?v=rWIal-epFXQ&t=3s
 
 ### Web サイトをリードしてきた身から一言
 
-今年 1 年間私自身 Vue Fes 2023 公式 Web サイトの製作・運用をリードしてきましたが、昨年以上の技術的なチャレンジを推進し新たなカンファレンス体験を創造してきた一方、オンラインネームカードではユーザーには分かりづらい仕様の下リリースを推進したことが、多々ご迷惑をおかけすることにも繋がりました。
+昨年の Vue Fes Japan Online 2022 より 2 年連続、Vue Fes コアスタッフひとりとして活動させていただきました。個人的には、本業で一切 Vue を触らない生活を送っている (かつては永らく Vue を触っていた) ので、そうしたオープンソースとそのプロダクトに触れる機会を作りたかった想いがありました。
+
+特に今年 1 年間私自身 Vue Fes 2023 公式 Web サイトの製作・運用をリードしてきた中で、昨年以上の技術的なチャレンジを推進し新たなカンファレンス体験を創造してきた一方、オンラインネームカードではユーザーには分かりづらい仕様の下リリースを推進したことが、多々ご迷惑をおかけすることにも繋がりました。
 
 現時点自身の中で改めるべきポイントは把握しておりますが、来年も (特に不都合なければ) Web サイト製作に参画させていただく予定ですので、より良いカンファレンス体験が得られることを目指していきます。
 
