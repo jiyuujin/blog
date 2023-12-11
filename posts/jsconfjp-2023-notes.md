@@ -12,9 +12,31 @@ tags:
 
 X (Twitter) の [`#jsconfjp`](https://twitter.com/search?q=%23jsconfjp&src=typed_query) を確認させていただきました。
 
+https://jsconf.jp/2023/schedule/
+
+トラック A。
+
+(あいにく非公開となっているようでした)
+
+トラック B。
+
+https://www.youtube.com/watch?v=N1lhkH33fwY
+
+トラック C。
+
+https://www.youtube.com/watch?v=pdgB0Y5ZQGk
+
+トラック D。
+
+https://www.youtube.com/watch?v=rDfPXDEot_A
+
 ## 登壇スライド一覧
 
 他、分かり次第更新させていただきます。
+
+### Web Internals: Mastering the JavaScript Engine
+
+(TBD)
 
 ### Deep dive into Biome
 
@@ -24,9 +46,21 @@ https://speakerdeck.com/nissydev/deep-dive-into-biome-in-jsconf-2023
 
 https://speakerdeck.com/baseballyama/jsconf-jp-2023-llm-da-gui-mo-yan-yu-moderu-quan-sheng-shi-dai-nokai-fa-purakuteisu
 
+### Machine learning with Javascript using Tensorflow.JS
+
+(TBD)
+
 ### Build and Publish in 2023
 
 https://jsconfjp-slide.pages.dev/
+
+### Micro frontends in Action
+
+(TBD)
+
+### Game Development with JavaScript
+
+(TBD)
 
 ### フロントエンドリアーキテクチャリングと開発チームのスキルトランスファーにおける 9 ヶ月間の奮闘記
 
@@ -36,13 +70,33 @@ https://speakerdeck.com/wakamsha/hurontoendoriakitekutiyaringutokai-fa-timunosuk
 
 https://www.docswell.com/s/hireroo/5987RP-2023-11-19-JSConfJP-confidence-boundaries-of-values
 
+### Beyond the Web of Today
+
+(TBD)
+
 ### Next.js App Router クライアントキャッシュの仕組み
 
 https://main--remarkable-figolla-a694f0.netlify.app/1
 
+### Building Text Containers in Canvas
+
+(TBD)
+
+### Trusted Types: DOM XSS Proteciton at Scale
+
+(TBD)
+
 ### Next.js App Router での MPA フロントエンド刷新
 
 https://speakerdeck.com/mugi_uno/next-dot-js-app-router-deno-mpa-hurontoendoshua-xin
+
+### Mastering Cryptography Fundamentals with Node's crypto module
+
+(TBD)
+
+### パスワードレス認証がもたらすユーザー体験の向上と考慮点
+
+(TBD)
 
 ### Static Analysis: Shockingly Awesome! ⚡️
 
@@ -57,6 +111,14 @@ https://zenn.dev/sosukesuzuki/articles/ab5377c8a99cb7
 
 https://speakerdeck.com/yusukebe/hono-v3-and-v4
 
+### ChatGPT っぽいUIを実現する技術
+
+(TBD)
+
+### Unleash Your Product's Potential: A Beginner's Guide to Growth Engineering
+
+(TBD)
+
 ### Bun がメジャーリリースされたけど、本当に Bun は Node.js に取って代るほどすごいのか？を AWS Lambda で検証してみた
 
 https://speakerdeck.com/smt7174/bun-gameziyaririsusaretakedo-ben-dang-nibun-hanode-dot-js-niqu-tutedai-warunoka-woaws-lambda-dejian-zheng-sitemita
@@ -68,6 +130,10 @@ https://docs.google.com/presentation/d/1hjs2J4fScWcs42oJ11F9uv1iuSnb_25TEZxyJo6U
 ### Kotlin で書かれた GraphQL サーバーを Node.js でモジュラモノリス化している話
 
 https://speakerdeck.com/hokaccha/modular-monolith-graphql-server-with-node-dot-js
+
+### Let’s expand reality
+
+(TBD)
 
 ### PrivacySandboxAPI を使ったブラウザ上での広告オークションについて
 
@@ -81,9 +147,17 @@ https://speakerdeck.com/clown0082/visually-experience-the-beauty-of-mathematics-
 
 https://speakerdeck.com/kinocoboy2/jsconfjp2023-storybookqu-dong-kai-fa-nozai-xian-xing-toxiao-lu-hua
 
+### React Server Components: The Back-end Killer?
+
+(TBD)
+
 ### Intl の今までとこれから
 
 https://speakerdeck.com/sajikix/intlnojin-madetokorekara
+
+### Practical guide to building accessible forms in React
+
+(TBD)
 
 ### デザインシステム仕切り直し
 
