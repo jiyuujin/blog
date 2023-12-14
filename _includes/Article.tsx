@@ -10,7 +10,7 @@ export default ({
   reaction,
 }) => (
   <>
-    <header className="max-w-screen mx-auto w-full h-120">
+    <header className="max-w-screen mx-auto w-full py-16">
       <div className="h-full px-6 flex flex-col items-center justify-center">
         <svg
           className="w-25 h-25 border-4 border-white rounded-full"
