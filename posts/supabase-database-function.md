@@ -2,7 +2,7 @@
 layout: Article.tsx
 publish_date: 2023-12-13
 title: 'Vue Fes 2023 ネームカードの裏側で Supabase Database Function は動いていた'
-description: '5 年ぶりのオフライン開催を遂げた Vue Fes 2023 では一般参加者に対し、オンラインネームカード機能を提供しました。その裏側でチケット購入状況との照合に Supabase database Function が一役を買った話に触れさせていただきます。'
+description: '5 年ぶりのオフライン開催を遂げた Vue Fes 2023 では一般参加者に対し、オンラインネームカード機能を提供しました。その裏側でチケット購入状況との照合に Supabase Database Function が一役を買った話に触れさせていただきます。'
 slug: supabase-database-function
 reaction: 👻
 category: Server
