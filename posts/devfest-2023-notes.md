@@ -126,6 +126,10 @@ https://hackmd.io/@krgm4d/S1-Cxoa4a#/
 
 https://www.slideshare.net/saigusa758cloudy/cloudfirestoreschemacodegenerationforflutterpdf
 
+### 開発中の flutterfire_gen パッケージについて
+
+https://zenn.dev/kosukesaigusa/articles/flutterfire_gen
+
 ## 特に注目している箇所
 
 JSConf JP 2023 同様色々、注目したいものは多かったように考えています。
