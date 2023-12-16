@@ -40,7 +40,7 @@ https://github.com/google-cloud-japan/sa-ml-workshop/blob/main/blog/Fashion%20co
 
 ### 個人アプリ開発 (メンテナンス) 14 年の歴史
 
-(TBD)
+https://speakerdeck.com/yanzm/my-personal-app-development-history
 
 ### 大画面デバイスにどう向き合えば良いのか？
 
