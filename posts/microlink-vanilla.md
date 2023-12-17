@@ -7,7 +7,8 @@ slug: microlink-vanilla
 reaction: 😇
 category: Front
 tags:
-  - Nuxt
+  - Nuxt2
+  - Vue
   - Contentful
   - TypeScript
 ---

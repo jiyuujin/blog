@@ -7,7 +7,8 @@ slug: create-the-webneko-blog-used-nuxt-js-and-contentful
 reaction: ⛰
 category: Front
 tags:
-  - Nuxt
+  - Nuxt2
+  - Vue
   - Contentful
   - CMS
 ---

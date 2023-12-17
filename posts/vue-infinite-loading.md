@@ -7,10 +7,10 @@ slug: vue-infinite-loading
 reaction: 🗞
 category: Front
 tags:
-  - Nuxt
+  - Nuxt2
+  - Vue
   - Contentful
   - TypeScript
-  - Vue
 ---
 
 ## インストールする

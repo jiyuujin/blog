@@ -1,15 +1,15 @@
 ---
 layout: Article.tsx
 publish_date: 2022-05-30
-title: 'Nuxt v3 にあげる'
-description: 'Nuxt v3 (RC) がリリースされたことに伴い、当時の Web 猫ブログをそれに更新した経験を簡単に書かせていただきました。'
+title: 'Nuxt 3 にあげる'
+description: 'Nuxt 3 (RC) がリリースされたことに伴い、当時の Web 猫ブログをそれに更新した経験を簡単に書かせていただきました。'
 slug: nuxt-3-releasecandidate
 reaction: 👶🏻
 category: Front
 tags:
   - TypeScript
+  - Nuxt3
   - Vue
-  - Nuxt
   - AWS
   - AWSAmplify
 ---

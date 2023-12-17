@@ -7,8 +7,8 @@ slug: deploy-webneko-blog-to-fargate-in-ecs
 reaction: 🐈
 category: Server
 tags:
+  - Nuxt2
   - Vue
-  - Nuxt
   - AWS
   - AWSECS
   - AWSFargate

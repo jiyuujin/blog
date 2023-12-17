@@ -7,7 +7,8 @@ slug: typesafed-blog
 reaction: 💪
 category: Front
 tags:
-  - Nuxt
+  - Nuxt2
+  - Vue
   - TypeScript
   - Contentful
 ---

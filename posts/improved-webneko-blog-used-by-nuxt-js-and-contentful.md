@@ -7,7 +7,8 @@ slug: improved-webneko-blog-used-by-nuxt-js-and-contentful
 reaction: 🛠
 category: Front
 tags:
-  - Nuxt
+  - Nuxt2
+  - Vue
   - Contentful
 ---
 

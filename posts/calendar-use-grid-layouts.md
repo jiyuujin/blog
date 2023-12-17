@@ -7,9 +7,9 @@ slug: calendar-use-grid-layouts
 reaction: 🗓
 category: Front
 tags:
+  - Nuxt2
   - Vue
   - Advent-Calendar
-  - Nuxt
   - CSS
 ---
 

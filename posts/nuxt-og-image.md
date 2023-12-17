@@ -8,8 +8,8 @@ reaction: 🐡
 category: Server
 tags:
   - Advent-Calendar
-  - Nuxt
   - Nuxt3
+  - Vue
   - VueFes
 ---
 

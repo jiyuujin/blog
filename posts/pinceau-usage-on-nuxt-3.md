@@ -9,7 +9,6 @@ category: Front
 tags:
   - Advent-Calendar
   - Pinceau
-  - Nuxt
   - Nuxt3
   - VueFes
 ---

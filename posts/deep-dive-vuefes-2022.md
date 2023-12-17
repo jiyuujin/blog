@@ -7,9 +7,8 @@ slug: deep-dive-vuefes-2022
 reaction: 🌊
 category: Front
 tags:
-  - Vue
-  - Nuxt
   - NuxtBridge
+  - Vue
   - VueFes
   - Advent-Calendar
 ---

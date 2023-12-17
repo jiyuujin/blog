@@ -7,8 +7,8 @@ slug: nuxt-full-static-generation
 reaction: 💯
 category: Server
 tags:
+  - Nuxt2
   - Vue
-  - Nuxt
 ---
 
 ## 動的ルーティングを導入した際に出会す 404 エラー

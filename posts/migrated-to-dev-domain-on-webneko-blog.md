@@ -10,8 +10,6 @@ tags:
   - AWS
   - AWSECS
   - AWSFargate
-  - Nuxt
-  - Vue
   - Hosting
   - Netlify
   - HTTPS

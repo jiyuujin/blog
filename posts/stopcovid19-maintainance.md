@@ -7,9 +7,8 @@ slug: stopcovid19-maintainance
 reaction: 💉
 category: Server
 tags:
-  - Nuxt
+  - Nuxt2
   - Vue
-  - Vue2
   - Vercel
   - COVID19
 ---
