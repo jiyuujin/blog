@@ -73,9 +73,9 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 - Tailwind CSS
 - GSAP animation
 - TypeScript
-- Composition API
-- `<script setup>` syntax
-- Newt
+- [Composition API](https://ja.vuejs.org/api/composition-api-setup)
+- [`<script setup>`](https://ja.vuejs.org/api/sfc-script-setup) syntax
+- [Newt](https://www.newt.so/)
 - Netlify
 
 捕捉事項は 2 点あります。ひとつは GSAP について Vue Fes 2019 の [ウェブサイト](https://vuefes.jp/2019) より基本的なアニメーションロジックを引き継いでいます。

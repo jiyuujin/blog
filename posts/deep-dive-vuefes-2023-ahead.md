@@ -107,11 +107,11 @@ https://note.com/hachi_ihcah/n/na60e5fa4a64e
 今回のキーワードについて、下記キーワードが挙げられます。
 
 - Nuxt 3 (Vue 3) -> 今回は Nuxt 3 正式版を使用しています
-- Pinceau (CSS in TS) -> 新たに挑戦しています
 - TypeScript -> vue-tsc を導入しています
-- Composition API
-- `<script setup>` syntax
-- Newt FormApp -> 新たに挑戦しています
+- [Composition API](https://ja.vuejs.org/api/composition-api-setup)
+- [`<script setup>`](https://ja.vuejs.org/api/sfc-script-setup) syntax
+- [Pinceau](https://pinceau.dev/) (CSS in JS/TS) -> 新たに挑戦しています
+- [Newt FormApp](https://www.newt.so/form-app) -> 新たに挑戦しています
 - Netlify
 
 基本的に、今年は思い切って挑戦することをモットーに行動させていただきます。
