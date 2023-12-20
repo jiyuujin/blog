@@ -107,11 +107,11 @@ https://note.com/hachi_ihcah/n/na60e5fa4a64e
 今回のキーワードについて、下記キーワードが挙げられます。
 
 - Nuxt 3 (Vue 3) -> 今回は Nuxt 3 正式版を使用しています
-- Pinceau (CSS in TS) -> 新たに挑戦しています
 - TypeScript -> vue-tsc を導入しています
-- Composition API
-- `<script setup>` syntax
-- Newt FormApp -> 新たに挑戦しています
+- [Composition API](https://ja.vuejs.org/api/composition-api-setup)
+- [`<script setup>`](https://ja.vuejs.org/api/sfc-script-setup) syntax
+- [Pinceau](https://pinceau.dev/) (CSS in JS/TS) -> 新たに挑戦しています
+- [Newt FormApp](https://www.newt.so/form-app) -> 新たに挑戦しています
 - Netlify
 
 基本的に、今年は思い切って挑戦することをモットーに行動させていただきます。
@@ -154,7 +154,19 @@ css({
 
 実際、メンバー間のムードや昨年の KPT など総合的に鑑みて Pinceau を選定、この 1 年間はお世話になろうと決意した形になります。
 
+## Pinceau の使える環境を構築する
+
+pinceau パッケージをインストールしましょう。
+
+もし Nuxt 3 をお使いであれば、シンプルに構築できます。
+
+```bash
+pnpm install -D pinceau
+```
+
 Pinceau の導入については、[公式ドキュメント](https://pinceau.dev/get-started/installation) と合わせご確認ください。
+
+nuxt.config.ts の module に `pinceau/nuxt` を追加してください。
 
 ```js
 export default defineNuxtConfig({
@@ -162,11 +174,23 @@ export default defineNuxtConfig({
 })
 ```
 
+### トークン情報をカスタマイズする
+
 今回、採用した Nuxt (v3 正式版) 上では、Pinceau のテーマ及びユーティリティに対する型定義の設定など自動で読み込まれるようになっています。
 
-CSS を書く上で必要となるデザイントークンについては、プロジェクトルートに tokens.config.ts を置きます。
+```ts
+import { defineTheme } from 'pinceau'
 
-そして nuxt.config.ts より `pinceau.configFileName` を読み込んでください。
+export default defineTheme({
+  //
+})
+```
+
+メディアクエリをはじめ、カラーやフォントサイズなどに代表されるデザイントークンを定義してみます。
+
+ルートに tokens.config.ts を作成します。
+
+作成した tokens.config.ts をnuxt.config.ts より読み込みます。
 
 ```js
 export default defineNuxtConfig({
