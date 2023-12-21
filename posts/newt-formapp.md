@@ -24,7 +24,7 @@ https://x.com/newt_cms/status/1598113633124634624?s=20
 
 https://vuefes.jp/2023/#form
 
-Vue Fes 2023 では、以下内容を集めています。
+Vue Fes 2023 では、以下内容を集めました。
 
 - お名前
 - メールアドレス
