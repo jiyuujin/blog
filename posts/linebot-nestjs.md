@@ -2,7 +2,7 @@
 layout: Article.tsx
 publish_date: 2023-12-20
 title: 'LINE Messaging API を Nest.js 上で動かす'
-description: 'ChatGPT (OpenAI) と組み合わせることの多い LINE Messaging API の導入方法について、簡単に書かせていただきました。なお、今回はハマったワナを中心に書かせていただきます。'
+description: 'ChatGPT (OpenAI) と組み合わせることの多い (とされる) LINE Messaging API の導入方法について、ハマったワナを中心に書かせていただきます。'
 slug: linebot-nestjs
 reaction: 🐼
 category: Server
@@ -17,7 +17,7 @@ tags:
 
 https://adventar.org/calendars/9670
 
-現在ジョインさせていただいているプロジェクト [Engagement/Relation](https://wevnal.co.jp/service/chatbot/) でも、LINE チャットボットを利用しており、その API 仕様を認識させていただく機会が多く増えました。
+現在ジョインさせていただいているプロジェクト [BOTCHAN](https://wevnal.co.jp/service/chatbot/) の Engagement / Relation でも、LINE チャットボットを利用しており、その API 仕様を認識させていただく機会が多く増えました。
 
 https://wevnal.co.jp/service/chatbot/
 
