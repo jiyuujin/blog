@@ -45,7 +45,7 @@ export default ({ title, description, slug, children }: Data) => (
         content={description || blogDescription}
       />
       <meta property="twitter:title" content={title || blogTitle} />
-      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:card" content="summary" />
       <meta property="twitter:site" content="@jiyuujin_dev" />
       <meta property="twitter:creator" content="@jiyuujin_dev" />
       <meta property="twitter:site" content="@jiyuujin_dev" />
