@@ -4,7 +4,7 @@ import {
   title as blogTitle,
 } from "../_config.ts";
 
-export default ({ title, description, slug, children }: Data) => (
+export default ({ title, description, slug, reaction, children }: Data) => (
   <html lang="ja">
     <head>
       <meta charSet="utf-8" />
@@ -41,11 +41,23 @@ export default ({ title, description, slug, children }: Data) => (
           : "https://blog.nekohack.me/"}
       />
       <meta
+        property="twitter:image"
+        content={reaction
+          ? `https://blog-og-image.jiyuujinunite.workers.dev/${reaction}`
+          : ""}
+      />
+      <meta
         property="twitter:description"
         content={description || blogDescription}
       />
       <meta property="twitter:title" content={title || blogTitle} />
       <meta property="twitter:card" content="summary" />
+      <meta
+        property="twitter:image"
+        content={reaction
+          ? `https://blog-og-image.jiyuujinunite.workers.dev/${reaction}`
+          : ""}
+      />
       <meta property="twitter:site" content="@jiyuujin_dev" />
       <meta property="twitter:creator" content="@jiyuujin_dev" />
       <meta property="twitter:site" content="@jiyuujin_dev" />
