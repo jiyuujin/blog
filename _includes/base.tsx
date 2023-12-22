@@ -41,7 +41,7 @@ export default ({ title, description, slug, reaction, children }: Data) => (
           : "https://blog.nekohack.me/"}
       />
       <meta
-        property="twitter:image"
+        property="og:image"
         content={reaction
           ? `https://blog-og-image.jiyuujinunite.workers.dev/${reaction}`
           : ""}
