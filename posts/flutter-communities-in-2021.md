@@ -15,7 +15,7 @@ tags:
   - COVID19
 ---
 
-Qiita Advent Calendar に出稿するのも今日が最後、ここに来て箸休めです。
+Qiita Advent Calendar に参加させていただくのも今日が最後、ここに来て箸休めです。
 
 これまでの技術記事はこちらより確認いただけます。
 
@@ -26,7 +26,7 @@ Qiita Advent Calendar に出稿するのも今日が最後、ここに来て箸�
 
 一大 OSS プロダクトへの寄与を始め、仕事とプライベート双方でお世話になった Vite の知見を発信させていただきました。
 
-## 飛躍の 2021 年だった
+## とにかく飛躍した 2021 年だった
 
 今年 2021 年も COVID19 が話題を駆け巡った中、個人として Flutter コミュニティの大きいニュースは 4 つありました。
 
@@ -47,24 +47,25 @@ Qiita Advent Calendar に出稿するのも今日が最後、ここに来て箸�
 
 CI 並びにデプロイ周辺の整備から始まって、ベースデザインの構築、Pull Request のレビューにも積極的に参画させていただきました。
 
-### 仕事と技術コミュニティの両立を目指す
+### 別で Flutter Meetup を推進する
 
-ミートアップ運営を Flutter Meetup Tokyo と交互に進めていくことについて関係者と合意をとりました。
+ミートアップ運営を Flutter Meetup Tokyo と交互に進めていくことについて、関係者と合意をとりました。
 
 早速来年 2022 年年初めのミートアップは Flutter Meetup Tokyo さんとの共催となります。
 
-[@preview](https://flutter-jp.connpass.com/event/233672/)
+https://flutter-jp.connpass.com/event/233672/
 
 交互に進めると決めた理由、それは当面の間オフライン形式の開催に回帰することが到底難しい。
 
-Flutter Meetup Tokyo と交互に進めることで、それぞれ運営の負担を減らせることも嬉しいニュースになります。
+Flutter Meetup Tokyo と交互に進めることで、それぞれ運営の負担を減らせることも、嬉しい知らせとなりました。
 
-### コミュニティを更なる高みへ誘う
+### Flutter Meetup Osaka を更なる高みへ誘う
 
 そしてもうひとつビッグなニュースは Flutter Meetup Network への加入となります。
 
-- [Flutter Meetup Tokyo](https://www.meetup.com/ja-JP/flutter-meetup-osaka/?_locale=ja-JP)
-- [Flutter Meetup Osaka](https://www.meetup.com/ja-JP/flutter-meetup-tokyo/?_locale=ja-JP)
+[Flutter Meetup Tokyo](https://www.meetup.com/ja-JP/flutter-meetup-osaka/?_locale=ja-JP)
+
+[Flutter Meetup Osaka](https://www.meetup.com/ja-JP/flutter-meetup-tokyo/?_locale=ja-JP)
 
 この加入自体ほんの序章に過ぎず、これまで以上に一段と気持ちが引き締められます。
 

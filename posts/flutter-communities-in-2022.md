@@ -1,7 +1,7 @@
 ---
 layout: Article.tsx
 publish_date: 2022-12-24
-title: 'Flutter コミュニティの 2022 年'
+title: 'Flutter コミュニティの 2022 年、FlutterKaigi 2022 ふりかえり'
 description: 'この記事は Flutter Advent Calendar 2022 の 24 日目の記事です。今年の Flutter コミュニティを中心に振り返る。'
 slug: flutter-communities-in-2022
 reaction: 🦌
@@ -21,9 +21,11 @@ Qiita Advent Calendar に出稿するのも今日が最後、ここに来て箸�
 
 今年は 2 つの大きな技術カンファレンスを裏で支援していました。
 
-仕事とプライベート双方でお世話になった Vite の知見を発信させていただいた。
+そのうちのひとつ FlutterKaigi について書きます。
 
-## スケールと挑戦の 2022 年だった
+なお、今年は仕事とプライベート双方でお世話になった Vite の知見を発信させていただいた。
+
+## スケールに挑戦の 2022 年だった
 
 まずは、これまでのふりかえりを下に示してみます。
 
@@ -42,15 +44,15 @@ Qiita Advent Calendar に出稿するのも今日が最後、ここに来て箸�
 
 中でも FlutterKaigi の運営に携わるスタッフをスケールした経験こそ、一番価値がありました。
 
-2021 年、携わったスタッフ一覧を下に示します。
+2021 年、携わったスタッフ一覧 (計 13 名) を下に示してみます。
 
 ![](https://i.imgur.com/9u4ocyw.png)
 
-そして今年 2022 年、携わったスタッフ一覧を下に示します。
+そして今年 2022 年、携わったスタッフ一覧 (計 23 名) を下に示してみます。
 
 ![](https://i.imgur.com/4475MVb.png)
 
-率直に数で見ると 2 倍も、意欲あるスタッフに来ていただきました。
+率直に数だけで 2 倍近くの意欲あるスタッフに来ていただきました。
 
 これも 6 月末、スタッフ募集を正式に [告知](https://medium.com/flutterkaigi/flutterkaigi-2022%E3%81%AB%E5%90%91%E3%81%91%E3%81%A6-45323dbbe0fb) させていただいた結果、これほどの方々に来ていただいたお陰となっています。
 
@@ -58,9 +60,32 @@ https://medium.com/flutterkaigi/flutterkaigi-2022%E3%81%AB%E5%90%91%E3%81%91%E3%
 
 いま一度このタイミングに、感謝を申し上げます。
 
-### FlutterKaigi 2022 ウェブサイト閲覧件数
+### 数字で見る FlutterKaigi 2023
 
-今年のウェブサイトでは、新たに Google アナリティクス 4 を導入しています。
+今年の FlutterKaigi 2022 ウェブサイトでは、新たに Google アナリティクス 4 を導入しています。
+
+07 月 19 日 (火) から 11 月 29 日 (火) までのデータを計測しました。
+
+- 訪問者数 4932 名
+- 閲覧回数について `page_view` というイベント名を観測したところ 11000 回
+- スクロール回数について `scroll` というイベント名を観測したところ 11000 回
+
+https://flutterkaigi.jp/2022
+
+それ以外の具体的な数字については、FlutterKaigi 公式の開催報告をご確認いただければ。
+
+- YouTube 配信情報
+- 事前登録(申込)、参加者数
+- アンケート
+- FlutterKaigi 2022 ウェブサイト閲覧件数
+
+https://medium.com/flutterkaigi/flutterkaigi-2022-%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A-2750ad4eb19a
+
+#### Flutter for Web で Google アナリティクス 4 を利用する
+
+Google アナリティクス 4 の設定は、至ってシンプルとなります。
+
+ここより先は Web 開発者の一参考資料として、聞いてください。
 
 `web/index.html` に `G-XXXXXXXXXX` を設定します。
 
@@ -75,34 +100,6 @@ https://medium.com/flutterkaigi/flutterkaigi-2022%E3%81%AB%E5%90%91%E3%81%91%E3%
   gtag('config', 'G-XXXXXXXXXX')
 </script>
 ```
-
-Google アナリティクス 4 の設定は、至ってシンプルとなります。
-
-と、ここから先は Web 開発者の一参考資料として、聞いていただければ。
-
-07 月 19 日 (火) から 11 月 29 日 (火) までのデータを計測しました。
-
-- ユーザー 4932 名
-
-閲覧者の利用 OS は、以下の通りとなります。
-
-- macOS 50%
-- iOS 27%
-- Windows 13%
-- Android 10%
-- Others (Linux) 1%
-
-Web 開発者として気になるのは、閲覧者の Web ブラウザの比率でしょうか。
-
-- Chrome 66%
-- Safari (in-app 含む) 29%
-- Edge 2%
-- Firefox 1%
-- Others (Android Webview, etc) 1%
-
-時を同じくして [Vue Fes Japan Online 2022](https://vuefes.jp/2022) と比較するも、全く同じ比率になっていることがわかります。
-
-Vue Fes の詳細は [Deep Dive into Vue Fes 2022](https://blog.nekohack.me/posts/deep-dive-vuefes-2022) をご確認ください。
 
 ## 2022 年 Flutter 技術動向
 
@@ -144,15 +141,14 @@ https://medium.com/dartlang/the-road-to-dart-3-afdd580fbefa
 
 https://github.com/flutter/flutter/issues/91605
 
-### Flutter エコシステムでは
+### FlutterKaigi 2022 ウェブサイトでは
 
-FlutterKaigi 2022 ウェブサイトでも、いくつか (中でも serverpod 以外で) お世話になっています。
+FlutterKaigi 2022 ウェブサイトでも、いくつかお世話になっています。
 
-- go_router
-- riverpod
-- serverpod
+- ルーティングで go_router
+- 状態管理で riverpod
 
-#### go_router
+#### go_router について
 
 昨年の FlutterKaigi 2021 ウェブサイトに引き続き、アプリ内で完結させるためのルーティングを設定できるようにしました。
 
@@ -202,9 +198,9 @@ https://github.com/flutter/packages/blob/main/packages/go_router/lib/src/router.
 
 この Navigator 2.0 は少々癖もの (私感) の一方で、Navigator 1.0 と一緒に使用でき、必ずしもそれらを置き換えるものでもありません。
 
-#### Riverpod
+#### riverpod について
 
-今年の FlutterKaigi 2022 ウェブサイトでは、状態管理ツールとして Riverpod も合わせて使用しています。
+今年の FlutterKaigi 2022 ウェブサイトでは、状態管理ツールとして riverpod も合わせて使用しています。
 
 基本的には、main.dart などの最上位ルートへ `ProviderScope` を利用することで、全ての Provider が global に宣言されるようなります。
 
@@ -302,35 +298,6 @@ Widget build(BuildContext context, WidgetRef ref) {
 
 riverpod_generator の `@riverpod` は、ソースコード内のクラスとメソッドの Provider を自動的に生成するために使用できる注釈 API となります。
 
-#### Serverpod
-
-目下、Dart でバックエンドを書けるフレームワーク Serverpod が開発されています。
-
-v1 へのロードマップは [こちら](https://github.com/serverpod/serverpod/projects/1) にあります。
-
-https://github.com/serverpod/serverpod/projects/1
-
-[serverpod_cli](https://pub.dev/packages/serverpod_cli) をインストールします。
-
-```bash
-# serverpod_cli
-dart pub global activate serverpod_cli
-```
-
-合わせて [Docker](https://www.docker.com/) もインストールしておきましょう。
-
-```bash
-# serverpod create
-serverpod create mypod
-```
-
-`docker-compose` コマンドを使用することで、Serverpod を起動します。
-
-```bash
-docker-compose up --build --detach
-serverpod run
-```
-
 ### Web の書き心地を実感する
 
 当初 url_launcher の `launch()` を利用した際に、Web ブラウザ上でそのリンクを確認できません。
@@ -381,7 +348,7 @@ Link(
 
 `target` に `LinkTarget.blank` を指定することで、独立のブラウザとして指定のリンクが開かれます。
 
-### Web 体験に近付ける努力を惜しまない
+#### さらに Web 体験を向上させる努力を惜しまない
 
 一般的な Web サイトでは当たり前のように、ハッシュ (`#`) 付き URL を実装できます。
 
