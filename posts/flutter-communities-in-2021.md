@@ -8,7 +8,6 @@ reaction: ✊🏻
 category: Poem
 tags:
   - Review
-  - FlutterKaigi
   - Flutter
   - FlutterMeetup
   - Advent-Calendar
