@@ -25,7 +25,7 @@ Vue Fes Japan 2023
 
 https://vuefes.jp/2023
 
-なお、先週 20 日にも kazupon 氏より、今回の Vue Fes 2023 のふりかえりについて [寄稿](https://note.com/kazu_pon/n/n82c8ef7be24a) されています。
+なお、先週 20 日にも kazupon 氏より、今回の Vue Fes 2023 全体のふりかえりについて [寄稿](https://note.com/kazu_pon/n/n82c8ef7be24a) されています。
 
 https://note.com/kazu_pon/n/n82c8ef7be24a
 
