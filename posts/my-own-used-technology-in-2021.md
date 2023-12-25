@@ -2,7 +2,7 @@
 layout: Article.tsx
 publish_date: 2021-12-27
 title: 'Web デベロッパーとして 2021 年に使った技術スタック'
-description: '今年も振り返る。昨年に続いて 2021 年の最後に 2 年も続いた「コロナ禍」な 1 年間を振り返る。'
+description: '今年も振り返る。2021 年の最後に 2 年も続いた「コロナ禍」な 1 年間を振り返る。'
 slug: my-own-used-technology-in-2021
 reaction: ⛄️
 category: Poem
@@ -22,10 +22,15 @@ tags:
 
 前半はフロントエンドエンジニアを主に時たまサーバサイドも触れながら、後半はフロントエンドに限らずサービス開発エンジニアとしてプロダクトの成長に関わらせていただきました。
 
-また今年も個人としてのプロダクトをいくつか製作・運用を進めています。
+半期前半は主に CakePHP/React/AWS を使用しているサービスの運用・開発を進めました。
 
-- 半期前半は主に CakePHP/React/AWS を使用しているサービスの運用・開発に
-- 半期後半は主に React/Express/WebSocket/AWS を使用しているサービスの運用・開発に
+https://smaregi.jp/
+
+半期後半は主に React/Express/WebSocket/AWS を使用しているサービスの運用・開発を進めました。
+
+https://jp.vcube.com/eventdx/eventin
+
+また今年も個人としてのプロダクトをいくつか製作・運用を進めています。
 
 そうした前提の下で一年間の KPT、利用した技術一覧を見ていきます。
 
@@ -42,7 +47,7 @@ tags:
   - 2021/04/12 [コミュニティハンズオンにおける DevRel のすゝめ](https://blog.nekohack.me/posts/challenge-the-community-handson-2021)
 - 日本初 Flutter カンファレンス (FlutterKaigi) のオーガナイズ
 - VS Code Meetup 主催のカンファレンス (VSCodeCon JP) のお手伝い
-- OSS にコントリビュート 7 プロジェクト
+- コントリビュート 101 プロジェクト
   - nuxt-community/content-module
   - FlutterKaigi/2021
   - etc
@@ -50,8 +55,8 @@ tags:
 
 ### Problem : 上手く行かなかったこと
 
-- 比較的モダンな技術スタックを使っていてもなお、もっとできることがあるよねと考えさせられた
 - Flutter ハンズオンで自身の満足がいく運営の下進められなかった
+  - ハンズオンコンテンツは、大西氏 (通称: 大西先生) に全てを任せていたものの、さすがに任せ過ぎて介入を試みたところで意見の衝突があった
 - 下半期は PWA Night を始めとした各種コミュニティの運営に支障を来たした
   - 昨年に続いて v-kansai の活動は引き続き停止したまま
 

@@ -2,7 +2,7 @@
 layout: Article.tsx
 publish_date: 2022-12-29
 title: 'Web デベロッパーとして 2022 年に使った技術スタック'
-description: '今年も振り返ります。昨年とはうって変わって「三年ぶり」尽くしな一年間を振り返ります。'
+description: '今年も振り返る。昨年とはうって変わって「3 年ぶり」尽くしな 1 年間を振り返る。'
 slug: my-own-used-technology-in-2022
 reaction: ⛳️
 category:
@@ -28,11 +28,15 @@ https://www.figma.com/proto/12yGlG2LfcrkJ3eWDot0vj/Slides?node-id=13%3A279&start
 
 前半・後半ともにサーバサイドへ触れながらも、フロントエンド全般について、サービス開発エンジニアとしてプロダクト (EventIn) の成長に関わらせていただきました。
 
+https://jp.vcube.com/eventdx/eventin
+
 昨年より、腰を据えて React/WebSocket/AWS を使用しているサービスの改善に努められている点は大きいと考えています。
 
 今年も個人のプロダクトのみならず、OSS への関与を強めています。
 
-また、個人のプロダクトとして 2018 年より Nuxt 製の技術ブログがありましたが、最近 (秋口にかけ) Deno 製の技術ブログにリプレースしています。
+また、個人のプロダクトとして 2018 年より Nuxt 製の技術ブログがありましたが、最近 (秋口にかけ) Deno 製の技術ブログのリプレースを実験中となります。
+
+ちなみに、ブログの載せ替えについては暫し、検討させていただければと考えております。
 
 | before                                | after              |
 | :------------------------------------ | :----------------- |
@@ -47,8 +51,8 @@ https://www.figma.com/proto/12yGlG2LfcrkJ3eWDot0vj/Slides?node-id=13%3A279&start
 - 開発者の視点でアクセシブルな開発を啓蒙、フロントエンド環境刷新
 - デザインシステム構築に向け汎用コンポーネント開発を始め、共有資産の形成に注力
 - ブログ 31 件
-  - [当ブログ](https://blog.nekohack.me/) で技術記事を 14 件、スクラップを 10 件
-  - [Zenn](https://zenn.dev/) で技術記事を 3 件、ブックを 2 件、スクラップを 1 件
+  - [当ブログ](https://blog.nekohack.me/) で技術記事を 24 件
+  - [Zenn](https://zenn.dev/) で技術記事 (スクラップ含む) を 4 件、ブックを 2 件
   - [Note](https://note.com/) で個人・イベント振り返りを 1 件
 - 登壇 11 件 (外部の勉強会やハンズオンで 4 件、内々の勉強会やハンズオンで 7 件)
   - 2022/12/21 [今年自分が OSS プロダクトの中で、特にこれをやって Web 体験向上した話](https://www.figma.com/proto/12yGlG2LfcrkJ3eWDot0vj/Slides?node-id=13%3A279&starting-point-node-id=13%3A279)
@@ -68,7 +72,7 @@ https://www.figma.com/proto/12yGlG2LfcrkJ3eWDot0vj/Slides?node-id=13%3A279&start
 - LINE 主催のカンファレンス (Rev Up) のお手伝い
 - VS Code Meetup 主催のカンファレンス (VSCodeCon JP) のお手伝い
   - 進行形。ただし、昨年ほどコミットできない見通しとなります mm
-- OSS にコントリビュート 10 プロジェクト
+- コントリビュート 88 プロジェクト
   - FlutterKaigi/2022
   - chooyan-eng/flutter_calendar
   - chooyan-eng/calendar_widget
@@ -80,9 +84,9 @@ https://www.figma.com/proto/12yGlG2LfcrkJ3eWDot0vj/Slides?node-id=13%3A279&start
 
 ### Problem : 上手く行かなかったこと
 
-- 比較的モダンな技術スタックを使っていてもなお、もっとできることがあるよねと考えさせられた
-- ミートアップという名目のイベント開催が停滞していた
+- ミートアップのイベント開催が停滞していた
   - Flutter 日本ユーザーグループ主催のミートアップを開催していなかった
+- ミートアップのイベント運営に入れなかった
   - 昨年より引き続き PWA Night を始めとした各種コミュニティの運営に支障を来たした
 
 今年は、より小規模なチームの下、プロジェクトを進めました。実際そうした場では、これまでと違いモブプロ・モブワークの取組をはじめ、スクラムらしいプロジェクトの進め方を実践しています。
