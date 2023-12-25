@@ -7,7 +7,6 @@ slug: deep-dive-vuefes-2023-ahead
 reaction: 👻
 category: Front
 tags:
-  - Newt
   - Nuxt3
   - Vue
   - VueFes
