@@ -74,7 +74,7 @@ interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
 
 `Input` / `TextArea` コンポーネントで HTML 標準の `HTMLInputElement` を利用してみます。
 
-### `Input` コンポーネント
+### テキストフィールドコンポーネントを例に
 
 `React.ComponentProps` で `input` を指定しましょう。
 
@@ -134,7 +134,7 @@ export function Input(props: InputProps) {
 }
 ```
 
-### `TextArea` コンポーネント
+### 複数行入力できるテキストフィールドコンポーネントを例に
 
 `React.ComponentProps` で `textarea` を指定しましょう。
 
