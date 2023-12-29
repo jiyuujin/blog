@@ -9,7 +9,12 @@ category: Front
 tags:
   - React
   - Jotai
+  - Advent-Calendar
 ---
+
+この記事は jiyuujin Advent Calendar 2023 の 15 日目の記事になります。
+
+https://adventar.org/calendars/9670
 
 とあるジョインさせていただいているプロジェクト [EventIn](https://jp.vcube.com/eventdx/eventin) で jotai を使っています。
 
