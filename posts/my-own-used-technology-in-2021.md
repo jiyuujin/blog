@@ -26,11 +26,44 @@ tags:
 
 https://smaregi.jp/
 
-半期後半は主に React/Express/WebSocket/AWS を使用しているサービスの運用・開発を進めました。
+半期後半は主戦場となるプロジェクトを変え、主に React/Express/WebSocket/AWS を使用しているサービスの運用・開発を進めました。
 
 https://jp.vcube.com/eventdx/eventin
 
-また今年も個人としてのプロダクトをいくつか製作・運用を進めています。
+主に昨年を含めたこの 2 年間、取り組んできたプロジェクトでは下記の通りとなります。
+
+- スマレジ POS
+  - PWA 対応のセルフオーダー画面を構築 (AWS Lambda や Vue を利用)
+  - React/MobX を利用した MPA 環境を構築
+  - プラグインベースの開発に向けたフロントエンド用プラットフォーム、デザインシステム (仮) を構築
+- EventIn
+  - React/Express/WebSocket を使用しているサービスにおける導線改善
+
+今年もちょっとしたツール製作などを含めても React/TypeScript をメインに書いた一方で、お仕事の場面では全く Vue を書きませんでした。
+
+またアクセシブルな開発の実現に向けて、プロジェクト内でアクセシビリティの啓蒙推進を開始させており、そのベースのひとつとも言えるプロジェクト内で適用予定のガイドライン策定は、目下進行中となります。
+
+また、今年も個人としてのプロダクトも、合わせていくつか製作・運用を進めています。
+
+ここで今年利用した技術の一覧を下に示してみます。
+
+[![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/1-repos-per-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+[![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/3-stats.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/4-productive-time.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
+
+これは [GitHub Profile Summary Cards](https://github.com/vn7n24fzkq/github-profile-summary-cards-example) という便利ツールを使わせてもらい自動生成している。自身の Github アカウント内のみ、他 Gitlab を使っているプロジェクト等あったが、この自動生成分には含まれていない。
+
+https://github.com/vn7n24fzkq/github-profile-summary-cards-example
+
+なお、今年もテーマの主軸は TypeScript/React/AWS の辺りとなります。
+
+https://docs.google.com/spreadsheets/d/1ft-vSMBrJW9z--xdtgSHGkME_ph9i2hbHMRFwyG255s/edit?usp=sharing
+
+昨年同様、適宜業務の必要に応じてフロントエンド環境の刷新から運用効率化の一端を担うツール製作まで、幅広く動いていた一方でイベント振り返りを Note で書いた点が昨年と違います。
+
+昨年の記事と比較・参照していただけますと幸いです。
+
+https://blog.nekohack.me/posts/my-own-used-technology-in-2020
 
 そうした前提の下で一年間の KPT、利用した技術一覧を見ていきます。
 
@@ -40,7 +73,7 @@ https://jp.vcube.com/eventdx/eventin
 - 属人化解消を目的としてエンジニア教育に注力
 - ブログ 38 件
   - [当ブログ](https://blog.nekohack.me/) で技術記事を 28 件
-  - [Note](https://note.com/) で個人・イベント振り返りを 10 件
+  - [note](https://note.com/) で個人・イベント振り返りを 10 件
 - 登壇 3 件
   - 2021/11/01 [VSCondeCon JP 2021 の内幕](https://blog.nekohack.me/posts/inside-the-website-in-vscodecon-jp-2021)
   - 2021/10/28 [Github issues を CMS として扱う](https://blog.nekohack.me/posts/github-issues-usage-as-a-cms)
@@ -63,47 +96,6 @@ https://jp.vcube.com/eventdx/eventin
 昨年以上に設計を考えさせられる比重 (時間) が大きいと感じた。プロダクトの安定稼働はもちろん、それと並行していかに機能開発とそのブラッシュアップを高めていくかと言うのを求めていることを実感しました。
 
 またコミュニティについては整理する時間が必要だ。場合によっては運営を下りる選択肢も厭いません。
-
-## 利用した技術の一覧
-
-[![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-[![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/1-repos-per-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/2-most-commit-language.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-[![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/3-stats.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards) [![](https://raw.githubusercontent.com/jiyuujin/github-profile-summary-cards/master/profile-summary-card-output/github/4-productive-time.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
-
-これは [GitHub Profile Summary Cards](https://github.com/vn7n24fzkq/github-profile-summary-cards-example) という便利ツールを使わせてもらい自動生成している。自身の Github アカウント内のみ、他 Gitlab を使っているプロジェクト等あったが、この自動生成分には含まれていない。
-
-なお、今年もテーマの主軸は TypeScript/React/AWS の辺りとなります。
-
-https://docs.google.com/spreadsheets/d/1ft-vSMBrJW9z--xdtgSHGkME_ph9i2hbHMRFwyG255s/edit?usp=sharing
-
-昨年同様、適宜業務の必要に応じてフロントエンド環境の刷新から運用効率化の一端を担うツール製作まで、幅広く動いていた一方でイベント振り返りを Note で書いた点が昨年と違います。
-
-昨年の記事と比較・参照していただけると幸いです。
-
-[Web デベロッパとして 2020 年に使った技術スタック](https://blog.nekohack.me/posts/my-own-used-technology-in-2020)
-
-## 技術、そしてこれから
-
-スキルに焦点を合わせて書かせていただいた昨年の振り返りとは趣向を変えて、今年はプロジェクトに焦点を合わせて書かせていただきました。
-
-この 2 年間、取り組んできたプロジェクトでは下記の通りとなります。
-
-- スマレジ POS
-  - PWA 対応のセルフオーダー画面を構築 (AWS Lambda や Vue を利用)
-  - React/MobX を利用した MPA 環境を構築
-  - プラグインベースの開発に向けたフロントエンド用プラットフォーム、デザインシステム (仮) を構築
-- EventIn
-  - React/Express/WebSocket を使用しているサービスにおける導線改善
-
-今年もちょっとしたツール製作などを含めても React/TypeScript をメインに書いた一方で、昨年後半から 1 年以上にわたってお仕事の場面ではほとんど Vue を書きませんでした。
-
-またアクセシブルな開発の実現に向けて、プロジェクト内でアクセシビリティの啓蒙を推進させました。
-
-そのベースのひとつとも言えるでしょうガイドラインの策定は、目下進行中となります。
-
-来年以降、公開できる範囲内でその知見を共有できれば幸いです。
-
-また FlutterKaigi 2021 ティザーサイトの製作を通し、コントリビュートの機会を獲得できたことも大きい。
 
 ## 最後に
 
