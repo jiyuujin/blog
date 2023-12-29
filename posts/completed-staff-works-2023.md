@@ -97,7 +97,7 @@ https://medium.com/flutterkaigi
 
 (BOTCHAN)
 
-https://botchan.chat/
+https://wevnal.co.jp/service/chatbot/
 
 (EventIn)
 
