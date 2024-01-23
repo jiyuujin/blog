@@ -58,9 +58,9 @@ export default ({ title, description, slug, reaction, children }: Data) => (
           ? `https://blog-og-image.jiyuujinunite.workers.dev/${reaction}`
           : ""}
       />
-      <meta property="twitter:site" content="@jiyuujin_dev" />
-      <meta property="twitter:creator" content="@jiyuujin_dev" />
-      <meta property="twitter:site" content="@jiyuujin_dev" />
+      <meta property="twitter:site" content="@jiyuujinlab" />
+      <meta property="twitter:creator" content="@jiyuujinlab" />
+      <meta property="twitter:site" content="@jiyuujinlab" />
     </head>
     <body>
       <main>{children}</main>
