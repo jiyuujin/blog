@@ -63,8 +63,8 @@ https://wevnal.co.jp/service/chatbot/
 
 - 開発者の視点で設計を重視した開発の啓蒙、旗振り役としてそれを推進
 - ブログ 37 件
-  - [当ブログ](https://blog.nekohack.me/) で技術記事を 31 件
-  - [Zenn](https://zenn.dev/) で技術記事 (スクラップ含む) を 1 件、ブックを 1 件
+  - [当ブログ](https://blog.nekohack.me/) で技術記事を 30 件
+  - [Zenn](https://zenn.dev/) で技術記事 (スクラップ含む) を 2 件、ブックを 1 件
   - [しずかなインターネット](https://sizu.me/) で 3 件
   - [note](https://note.com/) で個人・イベント振り返りを 1 件
 - 一昨年、昨年に続き 3 度目にして、初めてのオフライン開催となった Flutter カンファレンス (FlutterKaigi) のオーガナイズ
