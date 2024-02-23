@@ -1,4 +1,5 @@
 import lume from "lume/mod.ts";
+import favicon from "lume/plugins/favicon.ts";
 import feed from "lume/plugins/feed.ts";
 import jsx from "lume/plugins/jsx.ts";
 import windi from "lume/plugins/windi_css.ts";
@@ -15,6 +16,9 @@ const site = lume({
 });
 
 site
+  .use(favicon({
+    input: "/assets/bakeneko2.svg",
+  }))
   .use(feed({
     output: ["/feed.rss", "/feed.json"],
     sort: "publish_date=desc",
