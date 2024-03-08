@@ -8,6 +8,7 @@ export default ({ title, description, slug, reaction, children }: Data) => (
   <html lang="ja">
     <head>
       <meta charSet="utf-8" />
+      <link rel="stylesheet" href="/assets/reset.css" />
       <link rel="stylesheet" href="/assets/main.css" />
       <link
         rel="stylesheet"
