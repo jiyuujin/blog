@@ -15,7 +15,7 @@ tags:
 
 ## Vite の早さに惹かれて
 
-お仕事の場面で CRA (create-react-app) 環境のビルド高速化を目的のひとつに Vite や ESBuild などの導入経験がある。
+お仕事の場面で Create-React-App (CRA) 環境のビルド高速化を目的のひとつに Vite や ESBuild などの導入経験がある。
 
 それがきっかけで、最近抜きんでている Vite を静的サイトジェネレータとしても使ってみた。
 

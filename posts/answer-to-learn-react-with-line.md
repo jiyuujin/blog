@@ -33,7 +33,7 @@ LIFF は LINE Front-end Framework の略で [LINE 社](https://linecorp.com/) �
 
 企画にあたって利用するフロントエンド・フレームワークの候補は下記の通りです。
 
-- [create-react-app](https://github.com/facebook/create-react-app) (CRA)
+- [Create-React-App](https://github.com/facebook/create-react-app) (CRA)
 - React on [Vite](https://github.com/vitejs/vite)
 - [Next.js](https://github.com/vercel/next.js)
 
@@ -50,9 +50,9 @@ LIFF は LINE Front-end Framework の略で [LINE 社](https://linecorp.com/) �
 
 今流行りの Next.js では `getStaticPaths` や `getStaticProps` に代表される独自のプレレンダリング機能を始め、把握する情報は多いと判断しました。
 
-また CRA は React 経験者誰しもが通る道にあるフロントエンド・フレームワークですが、最近の開発速度が低調になってきている点は非常に気掛かりです。
+また Create-React-App (CRA) は React 経験者誰しもが通る道にあるフロントエンド・フレームワークですが、最近の開発速度が低調になってきている点は非常に気掛かりです。
 
-CRA の低調な開発に肩を並べるように、時を同じく [Vite 2 の React サポート入り](https://vitejs.dev/blog/announcing-vite2.html) もあって、広く Vite がフロントエンドのビルドに使われ始めようとしています。
+Create-React-App (CRA) の低調な開発に肩を並べるように、時を同じく [Vite 2 の React サポート入り](https://vitejs.dev/blog/announcing-vite2.html) もあって、広く Vite がフロントエンドのビルドに使われ始めようとしています。
 
 フロントエンド・フレームワークは三者三様、様々な背景が存在します。どれを選択すれば良いか、逆に選択してはいけないといったことも特にありません。
 
