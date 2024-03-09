@@ -34,7 +34,7 @@ LIFF は LINE Front-end Framework の略で [LINE 社](https://linecorp.com/) �
 
 企画にあたって利用するフロントエンド・フレームワークの候補は下記の通りです。
 
-- [create-react-app](https://github.com/facebook/create-react-app) (CRA)
+- [Create-React-App](https://github.com/facebook/create-react-app) (CRA)
 - React on [Vite](https://github.com/vitejs/vite)
 - [Next.js](https://github.com/vercel/next.js)
 
@@ -45,7 +45,7 @@ LIFF は LINE Front-end Framework の略で [LINE 社](https://linecorp.com/) �
 - React を触る
 - JSX (TSX) に慣れる
 
-CRA は React 経験者誰しもが通る道にあるフロントエンド・フレームワークですが、最近の開発速度が低調になってきている点は非常に気掛かりです。
+Create-React-App (CRA) は React 経験者誰しもが通る道にあるフロントエンド・フレームワークですが、最近の開発速度が低調になってきている点は非常に気掛かりです。
 
 それに対し今流行っているのが、ビルドツール Vite の利用と、フレームワーク Next.js の利用です。
 

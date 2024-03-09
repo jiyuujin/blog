@@ -14,7 +14,7 @@ tags:
 
 ## jsx-a11y 用 ESLint プラグインを導入する
 
-当方 React (CRA) のプロジェクトにおけるアクセシビリティを考慮するため、jsx-a11y 用 ESLint プラグイン [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) をインストールすることにしました。
+当方 Create-React-App (CRA) のプロジェクトにおけるアクセシビリティを考慮するため、jsx-a11y 用 ESLint プラグイン [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y) をインストールすることにしました。
 
 ```bash
 # npm

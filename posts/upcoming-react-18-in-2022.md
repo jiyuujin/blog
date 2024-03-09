@@ -26,7 +26,7 @@ tags:
     - React Router v6.0
     - React Location v1.0
     - MUI v5.0 (リブランディング)
-- CRA (create-react-app)
+- Create-React-App (CRA)
   - CRA 5
     - Webpack 5 support
 - Remix (React framework for SSR)
