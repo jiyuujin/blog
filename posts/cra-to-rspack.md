@@ -1,8 +1,8 @@
 ---
 layout: Article.tsx
 publish_date: 2024-03-08
-title: 'Create-React-App (CRA) から Rspack へリプレースした際の気付き'
-description: 'Create-React-App (CRA) から Rspack へリプレースした際の気付きを簡単に書かせていただきました。'
+title: 'Rspack へリプレースした際の気付き'
+description: 'Create-React-App (CRA) からのリプレースを経験に書かせていただきました。'
 slug: cra-to-rspack
 reaction: 🚚
 category: Front
