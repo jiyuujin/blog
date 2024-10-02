@@ -2,7 +2,7 @@
 layout: Article.tsx
 publish_date: 2023-12-06
 title: 'turborepo 配下でデザインシステムを構築する'
-description: '小噺になります。Vue Fes 2022 並びに Vue Fes 2023 で、使用 (予定) のコンポーネント群について、超・簡易的なデザインシステムを構築している。'
+description: '小噺になります。Vue Fes Japan Online 2022 並びに Vue Fes Japan 2023 で、使用 (予定) のコンポーネント群について、超・簡易的なデザインシステムを構築している。'
 slug: vuefes-ui-experimental
 reaction: 🗼
 category: Front

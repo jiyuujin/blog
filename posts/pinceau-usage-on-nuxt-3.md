@@ -2,7 +2,7 @@
 layout: Article.tsx
 publish_date: 2023-12-14
 title: 'Vue (Nuxt 3) で Pinceau (CSS-in-JS/TS) を使う'
-description: 'Vue Fes 2023 では、CSS を書く方法として CSS-in-JS/TS ツールの Pinceau を取り入れさせていただいたので、その使用感をば。'
+description: 'Vue Fes Japan 2023 では、CSS を書く方法として CSS-in-JS/TS ツールの Pinceau を取り入れさせていただいたので、その使用感をば。'
 slug: pinceau-usage-on-nuxt-3
 reaction: 💃
 category: Front
@@ -81,7 +81,7 @@ Pinceau パッケージをインストールしましょう。
 
 Pinceau の導入については、[公式ドキュメント](https://pinceau.dev/get-started/installation) と合わせご確認ください。
 
-Vue Fes 2023 ウェブサイトでは、Nuxt 3 の上に構築を目指していましたので、とてもシンプルに構築できます。
+Vue Fes Japan 2023 ウェブサイトでは、Nuxt 3 の上に構築を目指していましたので、とてもシンプルに構築できます。
 
 ```bash
 pnpm install -D pinceau
@@ -234,7 +234,7 @@ css({
 
 ## Pinceau 1.0 ベータへ更新する
 
-Vue Fes 2023 ウェブサイトでは、当日直前のバージョン更新を避けるため、この新しい 1.0 ベータへ更新せず、当日を迎えたのでその恩恵は受けていません。
+Vue Fes Japan 2023 ウェブサイトでは、当日直前のバージョン更新を避けるため、この新しい 1.0 ベータへ更新せず、当日を迎えたのでその恩恵は受けていません。
 
 なお、1.0 ベータについては、以下 CHANGELOG をご確認いただきたい。
 

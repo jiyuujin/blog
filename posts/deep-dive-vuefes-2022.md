@@ -1,8 +1,8 @@
 ---
 layout: Article.tsx
 publish_date: 2022-12-16
-title: 'Deep Dive into Vue Fes 2022'
-description: 'Vue Fes 2022 ウェブサイトのリードを担当させていただいた経験と、そのついでに Nuxt 3 の話題も触れさせていただきます。'
+title: 'Vue Fes Japan Online 2022 ティザーの裏側'
+description: 'Vue Fes Japan Online 2022 ウェブサイトのリードを担当させていただいた経験と、そのついでに Nuxt 3 の話題も触れさせていただきます。'
 slug: deep-dive-vuefes-2022
 reaction: 🌊
 category: Front
@@ -31,7 +31,7 @@ https://vuefes.jp/2022
 
 https://note.com/kazu_pon/n/nc9926a474c03
 
-## 数字で見る Vue Fes 2022
+## 数字で見る Vue Fes Japan Online 2022
 
 リリース回数は 28 回、2 月に製作を開始した後、めでたく初期ローンチを 4 月 11 日に迎え 745 回のコミットを経ました。その内、前半の一部については Vue.js 日本ユーザーグループの公式 Twitter アカウントや Slack で公表させていただいております。
 
@@ -63,9 +63,9 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 - Firefox 2%
 - Others (Android Webview, etc) 1%
 
-これらの数字を振り返ってみるだけでも大変勉強になりますが、この Advent Calendar では実際どうやって Vue Fes 2022 のウェブサイトを運営してきたのか書かせていただきます。
+これらの数字を振り返ってみるだけでも大変勉強になりますが、この Advent Calendar では実際どうやって Vue Fes Japan Online 2022 のウェブサイトを運営してきたのか書かせていただきます。
 
-## キーワードで見る Vue Fes 2022
+## キーワードで見る Vue Fes Japan Online 2022
 
 今回のキーワードについて、下記キーワードが挙げられます。
 
@@ -78,7 +78,7 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 - [Newt](https://www.newt.so/)
 - Netlify
 
-捕捉事項は 2 点あります。ひとつは GSAP について Vue Fes 2019 の [ウェブサイト](https://vuefes.jp/2019) より基本的なアニメーションロジックを引き継いでいます。
+捕捉事項は 2 点あります。ひとつは GSAP について Vue Fes Japan 2019 の [ウェブサイト](https://vuefes.jp/2019) より基本的なアニメーションロジックを引き継いでいます。
 
 使用の前提として、クライアントサイドでアニメーションを動作させるのを考慮する必要があります。
 
@@ -315,7 +315,7 @@ module.exports = {
 
 Nuxt Bridge では Vue 2 系を使用しながら Nuxt 3 で搭載の Nitro も使用できます。
 
-Vue Fes 2022 ウェブサイトを製作した当時は SG 未対応だったこともあり Nuxt Bridge を採用しています。
+Vue Fes Japan 2022 ウェブサイトを製作した当時は SG 未対応だったこともあり Nuxt Bridge を採用しています。
 
 Composition 関数を管理するための `composables` が追加され、コンポーネント設計の新しい考え方も生まれています。
 
@@ -325,7 +325,7 @@ Composition 関数を管理するための `composables` が追加され、コ�
 
 https://v3.nuxtjs.org/community/roadmap/
 
-Vue Fes 2022 ウェブサイトの Nuxt を 3 へ上げた際、いくつか [対応](https://github.com/vuejs-jp/vuefes-2022/pull/326) を要します。
+Vue Fes Japan 2022 ウェブサイトの Nuxt を 3 へ上げた際、いくつか [対応](https://github.com/vuejs-jp/vuefes-2022/pull/326) を要します。
 
 https://github.com/vuejs-jp/vuefes-2022/pull/326
 
@@ -396,7 +396,7 @@ app.vue を誤ってルートに置いてしまった場合は正しくレンダ
 
 #### SVG アイコンの扱い
 
-Vue Fes 2022 ウェブサイトでは SVG アイコンの扱いを変更する必要がありました。
+Vue Fes Japan Online 2022 ウェブサイトでは SVG アイコンの扱いを変更する必要がありました。
 
 これまで [`@nuxtjs/svg`](https://github.com/nuxt-community/svg-module) を利用していました。
 
@@ -428,15 +428,15 @@ import VuefesLogo from '~/assets/icon/vuefes_logo.svg'
 
 これまでのウェブサイトで採用された技術スタックを下記に示した。
 
-[Vue Fes 2018](https://vuefes.jp/2018)
+[Vue Fes Japan 2018](https://vuefes.jp/2018)
 
 ![](https://i.imgur.com/gID4eSC.png)
 
-[Vue Fes 2019](https://vuefes.jp/2019)
+[Vue Fes Japan 2019](https://vuefes.jp/2019)
 
 ![](https://i.imgur.com/Icux8cC.png)
 
-[Vue Fes 2020](https://vuefes.jp/2020)
+[Vue Fes Japan 2020](https://vuefes.jp/2020)
 
 ![](https://i.imgur.com/NFWlai6.png)
 
@@ -466,4 +466,4 @@ import VuefesLogo from '~/assets/icon/vuefes_logo.svg'
 
 知見発信の促進や、地方の Vue.js コミュニティの再興など、この 3 年余りの期間で失ってしまった文化を取り戻さなければいけないという使命も感じたりしています。
 
-来たる Vue Fes 2023 (仮称) でも引き続きコアスタッフのひとりとして、微力ながらお手伝いさせていただければ (余程の差し込み等無ければ) と前向きに考えています。
+来たる Vue Fes Japan 2023 (仮称) でも引き続きコアスタッフのひとりとして、微力ながらお手伝いさせていただければ (余程の差し込み等無ければ) と前向きに考えています。
