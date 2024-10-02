@@ -1,8 +1,8 @@
 ---
 layout: Article.tsx
 publish_date: 2023-12-25
-title: 'Vue Fes 2023 ティザーの裏側 完全版'
-description: '昨年に続いて Vue Fes 2023 Web サイトの技術をリードさせていただいておりました。今回目玉機能のネームカードを中心として、昨年 Web サイトの取組との違いを触れさせていただきました。'
+title: 'Vue Fes Japan 2023 ティザーの裏側 完全版'
+description: '昨年に続いて Vue Fes Japan 2023 Web サイトの技術をリードさせていただいておりました。今回目玉機能のネームカードを中心として、昨年 Web サイトの取組との違いを触れさせていただきました。'
 slug: deep-dive-vuefes-2023-final
 reaction: 🎄
 category: Poem
@@ -25,11 +25,11 @@ Vue Fes Japan 2023
 
 https://vuefes.jp/2023
 
-なお、先週 20 日にも kazupon 氏より、今回の Vue Fes 2023 全体のふりかえりについて [寄稿](https://note.com/kazu_pon/n/n82c8ef7be24a) されています。
+なお、先週 20 日にも kazupon 氏より、今回の Vue Fes Japan 2023 全体のふりかえりについて [寄稿](https://note.com/kazu_pon/n/n82c8ef7be24a) されています。
 
 https://note.com/kazu_pon/n/n82c8ef7be24a
 
-## Vue Fes 2023 ウェブサイトについて
+## Vue Fes Japan 2023 ウェブサイトについて
 
 今年も Nuxt を選定、もちろん利用するバージョンも 3 を使用させていただきました。
 
@@ -49,7 +49,7 @@ https://github.com/vuejs-jp/vuefes-2023/graphs/contributors
 
 コントリビュートいただきました皆さまには、改めて感謝申し上げます。
 
-## 昨年とココが違う Vue Fes 2023
+## 昨年とココが違う Vue Fes Japan 2023
 
 デザインはわかまつさんの [記事](https://note.com/hachi_ihcah/n/na60e5fa4a64e) を確認していただくとして、これより先は開発の視点で書かせていただきます。
 
@@ -65,7 +65,7 @@ https://note.com/hachi_ihcah/n/na60e5fa4a64e
 - [Pinceau](https://pinceau.dev/) (CSS in JS/TS)
 - Nuxt module [nuxt-og-image](https://nuxt.com/modules/og-image)
 - Name Card
-  - Supabase の [Database Function](https://supabase.com/docs/guides/database/functions) と [Webhook](https://supabase.com/docs/guides/database/webhooks) を利用して Pass Market の購入状況を反映
+  - Supabase の [Database Function](https://supabase.com/docs/guides/database/functions) と合わせて利用しつつ、チケットプラットフォーム Pass Market の購入状況を反映
 - Netlify
 
 特に、昨年と違う点に絞って、下の表に落とし込んでみます。
@@ -121,7 +121,7 @@ https://vuefes.jp/2023/sessions/harlan-zw
 
 また、エッジの動作も保証しており、Vercel Edge、Netlify Edge また Cloudflare Workers などと組み合わせられます。
 
-なお、Vue Fes 2023 ウェブサイトに取り入れる際、その当時まだ Netlify Function のみで、まだ Edge への対応はサポートされていませんでした。
+なお、Vue Fes Japan 2023 ウェブサイトに取り入れる際、その当時まだ Netlify Function のみで、まだ Edge への対応はサポートされていませんでした。
 
 こちらの OGP 画像生成の詳細については、先日書いた記事をご確認・参照いただければ。
 
@@ -135,7 +135,7 @@ https://vuefes.jp/2023/users/e4c8e6e2-d4ee-4f98-bba9-1c08e2f7baae
 
 ![](https://i.imgur.com/xi4Q8kd.jpg)
 
-今回 5 年ぶりのオフライン開催を目指していた Vue Fes 2023 では、その場で同じ Web 界隈並びに Vue 界隈に生息する者同士、自分自身を紹介・近況を報告するツテのひとつとして、ネームカードがあればどうだろうという素朴な想いから、私が **言い出しっぺ** として企画しています。
+今回 5 年ぶりのオフライン開催を目指していた Vue Fes Japan 2023 では、その場で同じ Web 界隈並びに Vue 界隈に生息する者同士、自分自身を紹介・近況を報告するツテのひとつとして、ネームカードがあればどうだろうという素朴な想いから、私が **言い出しっぺ** として企画しています。
 
 海外のカンファレンス、たとえば [Vite Conf](https://viteconf.org/23/) などでこうしたネームカードが大々的に行われていたりしますが、純粋にこれを日本国内でもやってみたいという想いがありました。
 
@@ -260,9 +260,9 @@ https://blog.nekohack.me/posts/supabase-database-function/
 
 ## 最後に
 
-というわけで、昨年に続いて今回も Vue Fes コアスタッフのひとりとして、公式ウェブサイトでさまざまなことにチャレンジさせていただいておりました。
+というわけで、昨年に続いて今回もコアスタッフのひとりとして、公式ウェブサイトでさまざまなことにチャレンジさせていただいておりました。
 
-また、コアスタッフのひとりとしてさらにカメラマンのひとりとして kazupon 氏と福岡へも同行させていただきました。
+またコアスタッフとして、そしてカメラマンのひとりとして kazupon 氏と福岡へも同行させていただきました。
 
 その際のブログも、先日書かせていただいております。
 
@@ -276,9 +276,9 @@ https://blog.nekohack.me/posts/vuefes-2023-after-event/
 
 ですが結果としてネームカードを進めて良かった、オンラインで自身のネームカードを確認できる喜びを感じられたという声を多々耳にすることも、事実として感じました。
 
-すでに、来年の Vue Fes 2024 に向け水面下では動き始めており、自身は引き続きウェブサイトチームのひとりとして様々なチャレンジをさせていただく予定で考えていますが、どなたがそのリーダーを務めるかは現時点で分かりません。
+すでに、来年に向け水面下では動き始めており、自身は引き続きウェブサイトチームのひとりとして様々なチャレンジをさせていただく予定で考えていますが、どなたがそのリーダーを務めるかは現時点では決まっておりません。
 
-もし、来年 Vue Fes 2024 のウェブサイトに携わってみたいという方がいらっしゃれば、ご気軽に (DM など) お声がけください。
+もし、来年のウェブサイトに携わってみたいという方がいらっしゃれば、ご気軽に (DM など) お声がけください。
 
 おそらく、来年初め辺りにも Vue Fes 公式 note より、募集が入ることになると思いますので、その場でも問題ありません。
 
@@ -290,6 +290,6 @@ https://vuekansai.connpass.com/
 
 ### 昨年のふりかえり
 
-ちなみに、昨年の Vue Fes 2022 の [ふりかえり記事](http://blog.nekohack.me/posts/deep-dive-vuefes-2022) も合わせて再掲しておきます。
+ちなみに、昨年の Vue Fes Japan Online 2022 の [ふりかえり記事](http://blog.nekohack.me/posts/deep-dive-vuefes-2022) も合わせて再掲しておきます。
 
 http://blog.nekohack.me/posts/deep-dive-vuefes-2022

@@ -1,8 +1,8 @@
 ---
 layout: Article.tsx
 publish_date: 2023-12-13
-title: 'Vue Fes 2023 ネームカードの裏側で Supabase Database Function は動いていた'
-description: '5 年ぶりのオフライン開催を遂げた Vue Fes 2023 では一般参加者に対し、オンラインネームカード機能を提供しました。その裏側でチケット購入状況との照合に Supabase Database Function が一役を買った話に触れさせていただきます。'
+title: 'Vue Fes Japan 2023 ネームカードの裏側で Supabase Database Function は動いていた'
+description: '5 年ぶりのオフライン開催を遂げた Vue Fes Japan 2023 では一般参加者に対し、オンラインネームカード機能を提供しました。その裏側でチケット購入状況との照合に Supabase Database Function が一役を買った話に触れさせていただきます。'
 slug: supabase-database-function
 reaction: 👻
 category: Server
@@ -41,7 +41,7 @@ Pass Market の管理画面より、参加者一覧並びに購入時アンケ�
 
 Firebase や Supabase が選定候補の上がりました。
 
-結果的に Vue Fes 2023 では、Supabase を選定させていただきましたが、なんといっても型定義の自動生成は選定の根拠として大きく占めています。
+結果的に Vue Fes Japan 2023 では、Supabase を選定させていただきましたが、なんといっても型定義の自動生成は選定の根拠として大きく占めています。
 
 率直に、お手元のプロジェクトルートで `supabase gen` を実行するだけと、敷居は決して高くありません。
 
@@ -151,7 +151,7 @@ create trigger on_new_receipt_created
 
 こちらで Supabase プロジェクトへ pm_receipts テーブルにおける webhook の適応を完了しました。
 
-ちなみに Vue Fes 2023 では、この各参加者の購入情報の紐付けについて、データベースの function からのみに制限いたしました。
+ちなみに Vue Fes Japan 2023 では、この各参加者の購入情報の紐付けについて、データベースの function からのみに制限いたしました。
 
 Vue Fes 運営サイドのみ、チケット管理プラットフォーム Pass Market の情報へアクセス、参加者の購入情報を格納した CSV データを取得できます。
 

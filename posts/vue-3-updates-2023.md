@@ -15,7 +15,7 @@ tags:
 
 https://adventar.org/calendars/9670
 
-先日 Vue Fes 2023 ウェブサイトのリポジトリが公開されました。
+先日 Vue Fes Japan 2023 ウェブサイトのリポジトリが公開されました。
 
 https://github.com/vuejs-jp/vuefes-2023
 
@@ -105,7 +105,7 @@ defineProps<{
 
 ### 型周りの開発者改善を経て
 
-Vue Fes 2023 の InputField.vue における Props を確認してみましょう。
+Vue Fes Japan 2023 の InputField.vue における Props を確認してみましょう。
 
 React っぽさが抜けていない場合、下のように書いてしまいます。
 

@@ -2,7 +2,7 @@
 layout: Article.tsx
 publish_date: 2023-12-21
 title: 'Newt の FormApp を利用して、問い合わせフォームを作成する'
-description: 'Vue Fes 2023 では、問い合わせフォームとそれを管理する方法として Newt の FormApp を取り入れさせていただいたので、その使用感をば。'
+description: 'Vue Fes Japan 2023 では、問い合わせフォームとそれを管理する方法として Newt の FormApp を取り入れさせていただいたので、その使用感をば。'
 slug: newt-formapp
 reaction: ☎️
 category: Front
@@ -20,11 +20,11 @@ https://adventar.org/calendars/9670
 
 https://x.com/newt_cms/status/1598113633124634624?s=20
 
-そこで Vue Fes 2023 では、昨年 Newt の CMS を使っていたご縁より引き続き、この FormApp を利用させていただくことになりました。
+そこで Vue Fes Japan 2023 では、昨年 Newt の CMS を使っていたご縁より引き続き、この FormApp を利用させていただくことになりました。
 
 https://vuefes.jp/2023/#form
 
-Vue Fes 2023 では、以下内容を集めました。
+Vue Fes Japan 2023 では、以下内容を集めました。
 
 - お名前
 - メールアドレス
@@ -159,7 +159,7 @@ https://github.com/vuejs-jp/vuefes-2023/blob/main/app/composables/useFormReCaptc
 
 ## 余談
 
-Vue Fes 2023 にて設計・実装を進めた当時こそ、テンプレートやそれにまつわる記事も書かれておりませんでしたが、いま始めるなら Newt 公式よりブログが書かれており、これらも合わせてご確認いただけますと。
+Vue Fes Japan 2023 にて設計・実装を進めた当時こそ、テンプレートやそれにまつわる記事も書かれておりませんでしたが、いま始めるなら Newt 公式よりブログが書かれており、これらも合わせてご確認いただけますと。
 
 (Nuxt 3 で FormApp を使おう編)
 

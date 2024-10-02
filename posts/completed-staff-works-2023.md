@@ -2,7 +2,7 @@
 layout: Article.tsx
 publish_date: 2023-11-20
 title: '2 つのスタッフ業を掛け持つ'
-description: '昨年に続いて Vue Fes 2023 Web サイトのリードの傍ら、FlutterKaigi 2023 オーガナイザーのひとりとして、スタッフ業を掛け持ちさせていただきました。'
+description: '昨年に続いて Vue Fes Japan 2023 Web サイトのリードの傍ら、FlutterKaigi 2023 オーガナイザーのひとりとして、スタッフ業を掛け持ちさせていただきました。'
 slug: completed-staff-works-2023
 reaction: 🦶
 category: Poem

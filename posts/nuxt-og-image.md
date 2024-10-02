@@ -27,7 +27,7 @@ https://nuxt.com/modules/og-image
 
 Vue Fes Japan 2023 でも来日、一スピーカーとして登壇された [Harlan Wilton 氏](https://twitter.com/harlan_zw) が中心となって、開発が進められています。
 
-Vue Fes 2023 公式 Web サイトでは、静的ビルド (`nuxt generate`) によって、スタティックな HTML を吐き出しています。
+Vue Fes Japan 2023 公式 Web サイトでは、静的ビルド (`nuxt generate`) によって、スタティックな HTML を吐き出しています。
 
 ### OGP 画像生成の下となるテンプレートを作る
 
@@ -54,7 +54,7 @@ export default defineNuxtConfig({
 })
 ```
 
-ちなみに Vue Fes 2023 では、全体的に `/components` 配下のディレクトリをドメインごと区切っておりそのすべてが小文字で始まっているため、デフォルトの大文字で始まるディレクトリ名 `/components/Og` には違和感を覚え、カスタマイズすることを選択いたました。
+ちなみに Vue Fes Japan 2023 では、全体的に `/components` 配下のディレクトリをドメインごと区切っておりそのすべてが小文字で始まっているため、デフォルトの大文字で始まるディレクトリ名 `/components/Og` には違和感を覚え、カスタマイズすることを選択いたました。
 
 そして、実際に `/components/og` 配下に OgTemplate.vue 作成を進めていきます。
 
@@ -314,7 +314,7 @@ export default defineNuxtConfig({
 
 なお、実際の製作過程において、こちらの静的ビルドを思い切って SSR へ切り替えるなどの方策も考えられました。ですが、大胆な改修も求められるので現実的な方策と考えず、SSR への切り替えを採用することはありませんでした。
 
-初期ローンチの際、合わせて OGP のレンダリングまでちゃんと考慮しつつ、ホスティング先 (今回の Vue Fes 2023 であれば Netlify を使う) とその手法も検討する必要はありましたが、とはいえ SSG で事足りるであろうとたかをくくってしまっていたのは正直なところになります。
+初期ローンチの際、合わせて OGP のレンダリングまでちゃんと考慮しつつ、ホスティング先 (今回の Vue Fes Japan 2023 であれば Netlify を使う) とその手法も検討する必要はありましたが、とはいえ SSG で事足りるであろうとたかをくくってしまっていたのは正直なところになります。
 
 ### OGP 画面を確認するため Nuxt DevTools を利用する
 
@@ -355,6 +355,6 @@ export default defineNuxtConfig({
 
 と同時に Web ブラウザの Elements ツリーから、直接 Meta タグを確認することもできます。
 
-Vue Fes 2023 における動作確認では基本 Elements ツリーから、直接 Meta タグ並びに OGP 画像を確認いたしました。
+Vue Fes Japan 2023 における動作確認では基本 Elements ツリーから、直接 Meta タグ並びに OGP 画像を確認いたしました。
 
 必要に応じて、ダブルチェックしながら進めれば良さそうかと思います。

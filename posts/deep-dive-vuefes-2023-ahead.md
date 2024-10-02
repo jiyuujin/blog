@@ -1,8 +1,8 @@
 ---
 layout: Article.tsx
 publish_date: 2023-04-19
-title: 'Vue Fes 2023 ティザーオープンの裏側'
-description: '昨年に続いて Vue Fes 2023 Web サイトの技術をリードさせていただいております。先週迎えた初期ローンチに伴い、今回は早めに昨年との違いを触れさせていただきました。'
+title: 'Vue Fes Japan 2023 ティザーオープンの裏側'
+description: '昨年に続いて Vue Fes Japan 2023 Web サイトの技術をリードさせていただいております。先週迎えた初期ローンチに伴い、今回は早めに昨年との違いを触れさせていただきました。'
 slug: deep-dive-vuefes-2023-ahead
 reaction: 👻
 category: Front
@@ -89,7 +89,7 @@ https://vuefes.jp/2023
 
 基本的な構造こそ昨年とあまり変わっておらず、初期ローンチ以後度重なる機能追加を経るも、全体の体裁は崩れないものと考えています。
 
-なお、今年は Vue Fes 2023 全体として広報活動にも注力しており、先日デザイナーのわかまつさんが今回のウェブサイトのデザインについて [寄稿](https://note.com/hachi_ihcah/n/na60e5fa4a64e) されています。
+なお、今年は Vue Fes Japan 2023 全体として広報活動にも注力しており、先日デザイナーのわかまつさんが今回のウェブサイトのデザインについて [寄稿](https://note.com/hachi_ihcah/n/na60e5fa4a64e) されています。
 
 <!-- note のリンクを貼り付ける -->
 
@@ -99,7 +99,7 @@ https://note.com/hachi_ihcah/n/na60e5fa4a64e
 
 ![](https://i.imgur.com/QFyYEXG.png)
 
-## 昨年とココが違う Vue Fes 2023
+## 昨年とココが違う Vue Fes Japan 2023
 
 デザインはわかまつさんの記事を確認していただくとして、これより先は開発の視点で書かせていただきました。
 
@@ -289,7 +289,7 @@ https://www.newt.so/docs/tutorials/contact-form-in-nuxt
 
 HTML 標準のバリデーションで間に合う場合はこのまま進めてください。しかし、固有のバリデーションを実装する場合は、vee-validate と合わせ `fetch` を利用していただくこととなります。
 
-なお、今回 Vue Fes 2023 では、問い合わせ専用のカスタム hook を作成しました。
+なお、今回 Vue Fes Japan 2023 では、問い合わせ専用のカスタム hook を作成しました。
 
 問い合わせに必要なデータモデルを作成します。
 
@@ -434,9 +434,9 @@ const { name, email, detail, isSent, onSubmit } = useForm()
 
 続いて、型定義について、見ていきます。
 
-今回 Vue Fes 2023 では初めて、SFC ファイルの型チェックライブラリ [`vue-tsc`](https://www.npmjs.com/package/vue-tsc) を利用しています。
+今回 Vue Fes Japan 2023 では初めて、SFC ファイルの型チェックライブラリ [`vue-tsc`](https://www.npmjs.com/package/vue-tsc) を利用しています。
 
-というのも、昨年 Vue Fes 2022 では、その `vue-tsc` を採用せずウェブサイトの開発を進めていたの、などと指摘を受けてしまいますが。
+というのも、昨年 Vue Fes Japan Online 2022 では、その `vue-tsc` を採用せずウェブサイトの開発を進めていたの、などと指摘を受けてしまいますが。
 
 ```bash
 vue-tsc --noEmit
@@ -463,7 +463,7 @@ vue-tsc --noEmit
 
 しかし、その中でも引き続きウェブサイトチームのプロジェクトリードを担当させていただき、初期ローンチを果たしたいま開催のその日まで邁進させていきたいと考えています。
 
-ちなみに、昨年の Vue Fes 2022 の [ふりかえり記事](http://blog.nekohack.me/posts/deep-dive-vuefes-2022) も合わせて再掲しておきます。
+ちなみに、昨年の Vue Fes Japan Online 2022 の [ふりかえり記事](http://blog.nekohack.me/posts/deep-dive-vuefes-2022) も合わせて再掲しておきます。
 
 http://blog.nekohack.me/posts/deep-dive-vuefes-2022
 
