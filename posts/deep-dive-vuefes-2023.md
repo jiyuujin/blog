@@ -3,7 +3,7 @@ layout: Article.tsx
 publish_date: 2023-12-25
 title: 'Vue Fes Japan 2023 ティザーの裏側 完全版'
 description: '昨年に続いて Vue Fes Japan 2023 Web サイトの技術をリードさせていただいておりました。今回目玉機能のネームカードを中心として、昨年 Web サイトの取組との違いを触れさせていただきました。'
-slug: deep-dive-vuefes-2023-final
+slug: deep-dive-vuefes-2023
 reaction: 🎄
 category: Poem
 tags:
@@ -64,7 +64,7 @@ https://note.com/hachi_ihcah/n/na60e5fa4a64e
 - [Newt FormApp](https://www.newt.so/form-app)
 - [Pinceau](https://pinceau.dev/) (CSS in JS/TS)
 - Nuxt module [nuxt-og-image](https://nuxt.com/modules/og-image)
-- Name Card
+- ネームカード
   - Supabase の [Database Function](https://supabase.com/docs/guides/database/functions) と合わせて利用しつつ、チケットプラットフォーム Pass Market の購入状況を反映
 - Netlify
 
@@ -92,42 +92,12 @@ https://note.com/hachi_ihcah/n/na60e5fa4a64e
 
 その上で、今回捕捉するのは、以下 3 点挙げることとしました。
 
-- CSS 選定
-- nuxt-og-image の構築
-- オンラインネームカード製作・運営の裏側
+- CSS (Pinceau) 選定 (ブログは [こちら](https://blog.nekohack.me/posts/pinceau-usage-on-nuxt-3/) を参照)
+- nuxt-og-image の構築 (ブログは [こちら](https://blog.nekohack.me/posts/nuxt-og-image/) を参照)
+- ネームカード製作・運営の裏側
 - その他 (Lint / Typecheck)
 
-### Pinceau (CSS in JS/TS)
-
-CSS-in-JS/TS ツールの Pinceau ですが Design System に則って、デザイントークンと呼ばれる情報を管理できます。
-
-実際 CSS を書く際に必要となるデザイントークンは、プロジェクトルートの tokens.config.ts に置いています。
-
-こちらの Pinceau の詳細については、先日書いた記事をご確認・参照いただければ。
-
-https://blog.nekohack.me/posts/pinceau-usage-on-nuxt-3/
-
-### Nuxt module nuxt-og-image
-
-セッション、ネームカードに伴う各参加者の詳細ページでは、OGP 画像が生成されています。
-
-(Harlan Wilton 氏)
-
-https://vuefes.jp/2023/sessions/harlan-zw
-
-![](https://i.imgur.com/NwmgKnj.png)
-
-こちらの仕組みとしてはたいへん面白く、内部的に [Satori](https://github.com/vercel/satori) が動いており、実際に Tailwind / UnoCSS を使用しつつ、レンダリングしています。
-
-また、エッジの動作も保証しており、Vercel Edge、Netlify Edge また Cloudflare Workers などと組み合わせられます。
-
-なお、Vue Fes Japan 2023 ウェブサイトに取り入れる際、その当時まだ Netlify Function のみで、まだ Edge への対応はサポートされていませんでした。
-
-こちらの OGP 画像生成の詳細については、先日書いた記事をご確認・参照いただければ。
-
-https://blog.nekohack.me/posts/nuxt-og-image/
-
-### Name Card
+### ネームカード
 
 ネームカードではオフライン・オンラインともに提供され、中でもオンラインのネームカードについてはあらかじめ作成期間に作成申請いただくと、完全な形でそれを手元のデバイスで確認できるようにした機能となっています。
 
@@ -287,9 +257,3 @@ https://blog.nekohack.me/posts/vuefes-2023-after-event/
 またこうした知見発信の促進はもちろん、ローカルの Vue.js コミュニティ v-kansai の再興なども、来年こそやっていけたらと考えています。
 
 https://vuekansai.connpass.com/
-
-### 昨年のふりかえり
-
-ちなみに、昨年の Vue Fes Japan Online 2022 の [ふりかえり記事](http://blog.nekohack.me/posts/deep-dive-vuefes-2022) も合わせて再掲しておきます。
-
-http://blog.nekohack.me/posts/deep-dive-vuefes-2022
