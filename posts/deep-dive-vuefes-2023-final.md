@@ -3,7 +3,7 @@ layout: Article.tsx
 publish_date: 2023-12-25
 title: 'Vue Fes Japan 2023 ティザーの裏側 完全版'
 description: '昨年に続いて Vue Fes Japan 2023 Web サイトの技術をリードさせていただいておりました。今回目玉機能のネームカードを中心として、昨年 Web サイトの取組との違いを触れさせていただきました。'
-slug: deep-dive-vuefes-2023
+slug: deep-dive-vuefes-2023-final
 reaction: 🎄
 category: Poem
 tags:
