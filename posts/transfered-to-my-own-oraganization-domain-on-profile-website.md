@@ -25,8 +25,8 @@ tags:
 
 この度ドメインを移管しました。
 
-- old: https://yuukit.me
-- new: https://yuma-kitamura.nekohack.me
+- old: https://yuukit.me/
+- new: https://yuma-kitamura.nekohack.me/
 
 ## そもそもドメイン移管した訳
 
