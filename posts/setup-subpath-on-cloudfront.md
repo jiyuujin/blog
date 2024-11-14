@@ -13,7 +13,7 @@ tags:
 
 今回多言語化を実施したプロフィールサイトは以下に示した通り。
 
-https://yuukit.me/
+https://yuma-kitamura.nekohack.me/
 
 この度ルートのみ、ミニマムな構成に `/ja` と `/en` を新たに設定したことでルート (index.html) 以外のページを更新した時に遭遇した 404 エラー。
 
