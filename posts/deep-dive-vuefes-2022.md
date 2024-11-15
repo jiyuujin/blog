@@ -92,13 +92,15 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 
 まずは、円形から構成されるコンポーネントのアニメーションを見ていきます。
 
+:::details 円形から構成されるコンポーネント。
+
 | shape                                | implementation                                                                                                                |
 | :----------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
 | ![](https://i.imgur.com/STiWRwp.png) | [`/components/shapes/HeadCircle.vue`](https://github.com/vuejs-jp/vuefes-2022/blob/main/app/components/shapes/HeadCircle.vue) |
 
-続いて三角形から構成されるコンポーネントのアニメーションから、三角形の個数によりそのロジックを分類していきます。
+:::
 
-1 つの三角形から構成されるコンポーネントのアニメーションについて。
+:::details 1 つの三角形から構成されるコンポーネント。
 
 ここでは `Triangle` と命名しています。
 
@@ -106,7 +108,9 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 | :----------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
 | ![](https://i.imgur.com/G7nLPns.png) | [`/components/shapes/HeadTriangle.vue`](https://github.com/vuejs-jp/vuefes-2022/blob/main/app/components/shapes/HeadTriangle.vue) |
 
-2 つの三角形から構成されるコンポーネントのアニメーションについて。
+:::
+
+:::details 2 つの三角形から構成されるコンポーネント。
 
 ここでは `Slash` と命名しています。
 
@@ -114,7 +118,9 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 | :----------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
 | ![](https://i.imgur.com/HSre1pA.png) | [`/components/shapes/HeadSlash.vue`](https://github.com/vuejs-jp/vuefes-2022/blob/main/app/components/shapes/HeadSlash.vue) |
 
-4 つの三角形から構成されるコンポーネントのアニメーションについて。
+:::
+
+:::details 4 つの三角形から構成されるコンポーネント。
 
 ここでは `Cross` と命名しています。
 
@@ -122,7 +128,9 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 | :----------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
 | ![](https://i.imgur.com/n2UCx8Q.png) | [`/components/shapes/HeadCross.vue`](https://github.com/vuejs-jp/vuefes-2022/blob/main/app/components/shapes/HeadCross.vue) |
 
-三角形より話題は変わって、四角形 (長方形) から構成されるコンポーネントのアニメーションから。
+:::
+
+:::details 四角形 (長方形) から構成されるコンポーネント。
 
 ここでは `Horizontal` と命名しています。
 
@@ -130,13 +138,15 @@ Web 開発者として気になるのは、閲覧者の Web ブラウザの比�
 | :----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
 | ![](https://i.imgur.com/WxHSUBo.png) | [`/components/shapes/HeadHorizontal.vue`](https://github.com/vuejs-jp/vuefes-2022/blob/main/app/components/shapes/HeadHorizontal.vue) |
 
-ここまで、それぞれの形状における画像生成、点移動、回転を実現しています。
+:::
 
-また、最後の形状として静的画像 (`***.jpg`) のアニメーションも見ていきます。
+:::details 静的画像 (`***.jpg`) から構成されるコンポーネント。
 
 ここでは `Photo` と命名しています。
 
 [`/components/shapes/HeadPhoto.vue`](https://github.com/vuejs-jp/vuefes-2022/blob/main/app/components/shapes/HeadPhoto.vue)
+
+:::
 
 こうして得られた各形状について、詳細なアニメーションロジックを `useAnimationParts()` フックへ書いていきます。
 

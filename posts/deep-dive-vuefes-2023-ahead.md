@@ -247,7 +247,7 @@ export default defineTheme({
 
 奇しくも時を同じくして、[Newt](https://www.newt.so/) 公式のチュートリアルが発表されていました。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">NewtのForm Appを利用して、Nuxt3で問い合わせフォームを作成するチュートリアルを公開しました🎉<br><br>自動返信・受信通知の設定はもちろん、少し面倒なバリデーションやGoogle reCAPTCHA v3の導入についても扱っています。Nuxtでフォームを作ってみたい方は是非どうぞ🥳<a href="https://t.co/v5WO3wOCxH">https://t.co/v5WO3wOCxH</a></p>&mdash; Newt (@newt_cms) <a href="https://twitter.com/newt_cms/status/1626009600943362049?ref_src=twsrc%5Etfw">February 16, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://x.com/newt_cms/status/1626009600943362049
 
 一応、Newt 公式のチュートリアルが発表されたのは、問い合わせツールの選定後になります。
 
@@ -414,9 +414,9 @@ const { name, email, detail, isSent, onSubmit } = useForm()
 
 まずは、適切な Lint ツールを選定します。といってももちろん適切なツール選定ということ自体、今年に限ったものではありません。
 
-昨年と違って StyleLint を止めました。そもそも CSS in TS のひとつ Pinceau を採用する以上、CSS に Lint をかける意味は無いと判断しました。
+昨年と違って StyleLint を止めました。そもそも CSS in TS のひとつ Pinceau を採用する以上、CSS に Lint をかける意味は無いと判断させていただきました。
 
-一方、今年初めて markuplint を導入しています。昨今アクセシビリティの考え方を通して、ありとあらゆる人たちが一切の障壁なく平等にウェブサイトが使用できるのを目指す必要があります。
+一方、今年初めて markuplint を導入させていただきました。昨今アクセシビリティの考え方を通して、ありとあらゆる人たちが一切の障壁なく平等にウェブサイトが使用できるのを目指す必要があります。
 
 ただ、現状 recommend ルールのプリセット適用にとどまっており、以後ルールの見直し、拡充を図っていきます。
 
@@ -442,7 +442,7 @@ const { name, email, detail, isSent, onSubmit } = useForm()
 vue-tsc --noEmit
 ```
 
-実際 vue-tsc が使用されているプロジェクトもかなり多いか、と。
+実際 vue-tsc が使用されているプロジェクトも、いまとなってはかなり多いかと考えています。
 
 - [vue-tsc で SFC 内の template も含めて TypeScript の型チェックを行う](https://madogiwa0124.hatenablog.com/entry/2022/05/14/215610)
 - [vue-tsc を使った TypeScript Strict Mode の漸進的導入](https://tech.visasq.com/introduce-vue-tsc/)
@@ -450,16 +450,7 @@ vue-tsc --noEmit
 
 ## 最後に
 
-という形で、昨年に続いて今回も Vue Fes コアスタッフのひとりとして、さまざまなことにチャレンジさせていただいております。
-
-今回、昨年とは違う点を中心に、さわりの部分を解説してきた技術仕様のうち、まだいくつかの課題を抱えたままのものもあるでしょう。
-
-<!--
-具体的な話は割愛 mm
-
-`tokens.config.ts` でカラーを定義します。
-ここで pinceau の挙動が怪しいのでは、という問題に直面しています。
--->
+という形で、昨年に続いて今回も Vue Fes コアスタッフのひとりとして、さまざまなことにチャレンジさせていただいておりました。
 
 しかし、その中でも引き続きウェブサイトチームのプロジェクトリードを担当させていただき、初期ローンチを果たしたいま開催のその日まで邁進させていきたいと考えています。
 
