@@ -264,7 +264,62 @@ const fetchContent = (query?: Query) =>
   })
 ```
 
-ここまで来るとフロントエンドの描画となりますが、これより先は割愛させていただきます。
+ここまで来ると、あとはフロントエンドの描画になります。
+
+### フォントやカラーの定義
+
+`tailwind.config.js` でカラーを定義します。
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'vue-blue': '#35495E',
+        'vue-green': '#42b893',
+        'typescript-blue': '#3178C6',
+        asagi: '#33A6B8',
+        sangosyu: '#F17C67',
+        tohoh: '#FFC408',
+        hiwamoegi: '#90B44B',
+        tsuchi: '#E5E5E5',
+        sponsor: '#F5F6F7',
+      },
+    },
+  },
+}
+```
+
+一番の花形 TOP 画像のアニメーションでも、その恩恵を利用しています。
+
+<video controls playsinline width="100%" autoplay loop muted="true" type="video/mp4" src="https://i.imgur.com/Cc8JbTG.mp4">
+  Sorry, your browser doesn't support embedded videos.
+</video>
+
+同じくそこで使用する色を定義できます。
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'anime-typescript-blue': '#4374AA',
+        'anime-asagi': '#4D9EAA',
+        'anime-vue-green': '#5AB088',
+        'anime-hiwamoegi': '#93AF5E',
+        'anime-sangosyou': '#D47373',
+        'anime-tohoh': '#E7C350',
+        'timetable-timeslot': 'rgba(52, 73, 94, 0.7);',
+        'track-a': '#90B44B',
+        'track-b': '#F17C67',
+        'track-c': '#3178C6',
+      },
+    },
+  },
+}
+```
+
+先に述べた GSAP のアニメーションも、この `tailwind.config.js` で定義した色を使用しています。
 
 ## 最後に
 
