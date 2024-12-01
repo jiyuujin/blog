@@ -3,8 +3,8 @@ layout: Article.tsx
 publish_date: 2023-12-17
 title: '2023 年に撮ったもの一覧'
 description: '今年は久しく「ポートレイトを撮る」お写歩の活動についてを振り返る。'
-slug: portrait-2023
-reaction: 🐢
+slug: photographer-2023
+reaction: 🐇
 category: Poem
 tags:
   - Review
@@ -31,7 +31,7 @@ Vue Fes では公式カメラマンの方々もいらっしゃったので、セ
 
 https://photos.app.goo.gl/fzDwAUJae3eo9P4J9
 
-https://photos.app.goo.gl/xZeFr9v9vV1MLqCG8
+https://photos.app.goo.gl/thzKRWQSCEu3k5pR6
 
 細かいことを言わせてもらうと、カンファレンスという大きな「ハコ」で撮影する場合は、最低 200mm のレンズをおすすめしたい。
 
@@ -44,9 +44,9 @@ https://photos.app.goo.gl/xZeFr9v9vV1MLqCG8
 
 スピーカーの顔、とりわけ顔の表情によりフォーカスを当てたかった想いがあります。しかし、それはほぼできませんでした。
 
-Vue Fes Japan 2023 の会場 [中野セントラルパーク](https://www.nakano-centralpark.jp/) については、想定以上に広過ぎました。
+Vue Fes Japan 2023 の会場 [中野セントラルパーク](https://www.nakano-centralpark.jp/) については、想定以上に広過ぎました。事前に会場見学等の場面で確認していたら、その後の取るべき選択肢も違っていたような気がしています。
 
-これも、フロントエンドカンファレンス関西 2019 以来の経験とあって、感覚が鈍っていました。
+とはいえこうした判断も、フロントエンドカンファレンス関西 2019 以来進めてきた経験とあって、結構その辺りの感覚が鈍っていました。
 
 コロナ禍期間中は、航空写真一本というある種「異常」な状態も、そういった感覚を鈍らせた原因かと思います。
 
