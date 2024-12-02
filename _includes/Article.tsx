@@ -1,3 +1,6 @@
+import { Icon } from "./Icon.tsx";
+import { getIcons } from "./utils.tsx";
+
 export const layout = "base.tsx";
 
 export default ({
@@ -10,7 +13,7 @@ export default ({
   reaction,
 }) => (
   <>
-    <header className="max-w-screen mx-auto w-full py-16">
+    <header className="max-w-screen mx-auto w-full py-4">
       <div className="h-full px-6 flex flex-col items-center justify-center">
         <svg
           className="w-25 h-25 border-4 border-white rounded-full"
@@ -57,6 +60,18 @@ export default ({
         </div>
       </div>
     </header>
+
+    <div className="max-w-screen px-6">
+      <ul className="flex justify-center pt-4 lt-sm:pt-2">
+        {getIcons().map((icon, key) => (
+          <li key={key} className="mx-3 my-3">
+            <a href={icon.url} target="_blank">
+              <Icon name={icon.name} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
 
     <div className="max-w-screen px-6 pt-2 mx-auto">
       <a
