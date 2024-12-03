@@ -1,8 +1,8 @@
 ---
 layout: Article.tsx
-publish_date: 2024-11-20
+publish_date: 2024-12-04
 title: 'FlutterKaigi 2024 有明周辺のランチマップ (あくまで非公式です)'
-description: 'FlutterKaigi 2024 では非公式という位置付けながら、ランチマップ機能の提供を試みました。その裏側で Supabase Database Function が一役を買った話に触れさせていただきます。'
+description: 'FlutterKaigi 2024 では非公式という位置付けながら、ランチマップ機能の提供を試みました。その裏側で PostGIS と Database Function が一役を買った話に触れさせていただきます。'
 slug: flutterkaigi-2024-lunchmap
 reaction: 🍚
 category: Server
@@ -12,6 +12,12 @@ tags:
   - FlutterKaigi
   - Flutter
 ---
+
+:::message
+
+Flutter アプリ内でお世話になっている Widget (Sliver、Map Widget など) については今回、割愛させていただいております。
+
+:::
 
 FlutterKaigi 2024
 
@@ -163,4 +169,4 @@ st_point(<経度>, <緯度>)
 
 非営利な技術コミュニティに対し、コミット可能なコミュニティプランを検討して欲しいなどと考える場面も多い今日このころ。
 
-というわけで、今回も FlutterKaigi コアスタッフのひとりとして前・当日を迎えましょう。
+というわけで、今回も FlutterKaigi コアスタッフのひとりとして ~~前・当日を迎えましょう~~。
