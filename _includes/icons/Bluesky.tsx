@@ -1,8 +1,8 @@
-export function Bluesky({ size = 24, color = "currentColor" }) {
+export function Bluesky({ size = 24 }) {
   return (
     <svg
-      width={26}
-      height={24}
+      width={size + 2}
+      height={size}
       viewBox="0 0 600 530"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
