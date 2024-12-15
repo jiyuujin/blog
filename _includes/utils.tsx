@@ -17,20 +17,20 @@ export function getPosts(): Page[] {
 export function getIcons(): { name: string; url: string }[] {
   return [
     {
-      name: 'github',
-      url: 'https://github.com/jiyuujin',
+      name: "github",
+      url: "https://github.com/jiyuujin",
     },
     {
-      name: 'mastodon',
-      url: 'https://times.nekohack.me/',
+      name: "mastodon",
+      url: "https://times.nekohack.me/",
     },
     {
-      name: 'bluesky',
-      url: 'https://bsky.app/profile/jiyuujin.bsky.social',
+      name: "bluesky",
+      url: "https://bsky.app/profile/jiyuujin.bsky.social",
     },
     {
-      name: 'x_twitter',
-      url: 'https://x.com/jiyuujinlab',
+      name: "x_twitter",
+      url: "https://x.com/jiyuujinlab",
     },
   ];
 }

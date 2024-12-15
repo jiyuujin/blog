@@ -1,4 +1,4 @@
-export function GitHub({ size = 24, color = 'currentColor' }) {
+export function GitHub({ size = 24, color = "currentColor" }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24">
       <g clipPath="url(#clip0_9914_10)">
@@ -13,5 +13,5 @@ export function GitHub({ size = 24, color = 'currentColor' }) {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }

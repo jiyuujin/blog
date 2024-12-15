@@ -1,4 +1,4 @@
-export function Twitter({ size = 24, color = 'currentColor' }) {
+export function Twitter({ size = 24, color = "currentColor" }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 20">
       <g clipPath="url(#a)">
@@ -13,5 +13,5 @@ export function Twitter({ size = 24, color = 'currentColor' }) {
         </clipPath>
       </defs>
     </svg>
-  )
+  );
 }
