@@ -1,7 +1,7 @@
 ---
 layout: Article.tsx
 publish_date: 2023-12-29
-title: '閉会宣言、Web デベロッパーとしての 2023 年まとめ'
+title: '閉会宣言、2023 年にさわった技術'
 description: '今年も振り返る。昨年以上にコミュニティ活動を深化させた 1 年間を振り返る。'
 slug: my-own-used-technology-in-2023
 reaction: 🏇
@@ -25,6 +25,8 @@ https://adventar.org/calendars/9670
 来年のことをいまのうちから言及するのは時期尚早かと考えていますが、25 日連続ポストしなくても良いのではなど考えたり、年の瀬に議論の種が増えました。
 
 なお、4 年前より継続して書いてきた記事と比較・参照していただればと幸いです。
+
+(過去の記事)
 
 - [Web デベロッパとして 2022 年に使った技術スタック](https://blog.nekohack.me/posts/my-own-used-technology-in-2022)
 - [Web デベロッパとして 2021 年に使った技術スタック](https://blog.nekohack.me/posts/my-own-used-technology-in-2021)
@@ -61,7 +63,10 @@ https://wevnal.co.jp/service/chatbot/
 
 ### Keep : 良かったこと / 今後も続けたいこと
 
-- 開発者の視点で設計を重視した開発の啓蒙、旗振り役としてそれを推進
+開発者の視点で設計を重視した開発の啓蒙、旗振り役としてそれを推進させていただいておりました。
+
+(総括)
+
 - ブログ 37 件
   - [当ブログ](https://blog.nekohack.me/) で技術記事を 30 件
   - [Zenn](https://zenn.dev/) で技術記事 (スクラップ含む) を 2 件、ブックを 1 件
@@ -71,8 +76,8 @@ https://wevnal.co.jp/service/chatbot/
 - 昨年に続いて 5 年ぶりのオフライン開催となった Vue.js 日本ユーザーグループ主催のカンファレンス (Vue Fes) のお手伝い
 - ローカルの TypeScript コミュニティ kansai.ts 開催の復活
 - コントリビュート 84 プロジェクト
-  - flutter-osaka-dev/flutter-chat
-  - vuejs-jp/vuefes-2023
+  - [vuejs-jp/vuefes-2023](https://github.com/vuejs-jp/vuefes-2023)
+  - [flutter-osaka-dev/flutter-chat](https://github.com/flutter-osaka-dev/flutter-chat)
   - etc
 
 EventIn プロジェクトの UI リニューアルもひと段落つき、デザインシステム構築に向け汎用コンポーネント開発も終わりを迎えました。
@@ -82,6 +87,8 @@ EventIn プロジェクトの UI リニューアルもひと段落つき、デ�
 続いて wevnal では、新しいチームメンバーの下プロジェクトを進めたことに伴い、前プロジェクトの知見を言語化する時間にあてさせていただきつつ、日々現状の認識合わせとそれに伴うアウトプット化をリードさせていただいております。
 
 ### Problem : 上手く行かなかったこと
+
+(総括)
 
 - 登壇や執筆が 0 件だった
   - そもそもオンライン勉強会をやらなくなっていること、オフライン勉強会もごく限られた場所では積極的にやられていることなどが考えられる

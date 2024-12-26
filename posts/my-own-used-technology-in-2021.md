@@ -1,7 +1,7 @@
 ---
 layout: Article.tsx
 publish_date: 2021-12-27
-title: 'Web デベロッパーとして 2021 年に使った技術スタック'
+title: '2021 年にさわった技術'
 description: '今年も振り返る。2021 年の最後に 2 年も続いた「コロナ禍」な 1 年間を振り返る。'
 slug: my-own-used-technology-in-2021
 reaction: ⛄️
@@ -14,6 +14,8 @@ tags:
 2021 年最後のポスト。
 
 昨年の記事と比較・参照していただればと幸いです。
+
+(過去の記事)
 
 - [Web デベロッパとして 2020 年に使った技術スタック](https://blog.nekohack.me/posts/my-own-used-technology-in-2020)
 - [Web デベロッパとして 2019 年に使った技術スタック](https://blog.nekohack.me/posts/my-own-used-technology-in-2019)
@@ -69,8 +71,12 @@ https://blog.nekohack.me/posts/my-own-used-technology-in-2020
 
 ### Keep : 良かったこと / 今後も続けたいこと
 
-- 開発者の視点でアクセシブルな開発を啓蒙、パフォーマンス最適化、フロントエンド環境刷新
-- 属人化解消を目的としてエンジニア教育に注力
+開発者の視点でアクセシブルな開発を啓蒙、パフォーマンス最適化、フロントエンド環境を刷新させてもらっていました。
+
+また、属人化解消を目的としてエンジニア教育にも注力いたしました。
+
+(総括)
+
 - ブログ 38 件
   - [当ブログ](https://blog.nekohack.me/) で技術記事を 28 件
   - [note](https://note.com/) で個人・イベント振り返りを 10 件
