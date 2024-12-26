@@ -1,7 +1,7 @@
 ---
 layout: Article.tsx
 publish_date: 2022-12-29
-title: 'Web デベロッパーとして 2022 年に使った技術スタック'
+title: '2022 年にさわった技術'
 description: '今年も振り返る。昨年とはうって変わって「3 年ぶり」尽くしな 1 年間を振り返る。'
 slug: my-own-used-technology-in-2022
 reaction: ⛳️
@@ -13,6 +13,8 @@ tags:
 2022 年最後のポスト。
 
 一昨昨年や一昨年、昨年の記事と比較・参照していただればと幸いです。
+
+(過去の記事)
 
 - [Web デベロッパとして 2021 年に使った技術スタック](https://blog.nekohack.me/posts/my-own-used-technology-in-2021)
 - [Web デベロッパとして 2020 年に使った技術スタック](https://blog.nekohack.me/posts/my-own-used-technology-in-2020)
@@ -84,8 +86,12 @@ FlutterKaigi 2021 では事前収録の下、ドキュメントに遺すこと�
 
 ### Keep : 良かったこと / 今後も続けたいこと
 
-- 開発者の視点でアクセシブルな開発を啓蒙、フロントエンド環境刷新
-- デザインシステム構築に向け汎用コンポーネント開発を始め、共有資産の形成に注力
+開発者の視点でアクセシブルな開発を啓蒙、フロントエンド環境を刷新させてもらっていました。
+
+また、デザインシステム構築に向け汎用コンポーネント開発を始め、共有資産の形成に注力いたしました。
+
+(総括)
+
 - ブログ 31 件
   - [当ブログ](https://blog.nekohack.me/) で技術記事を 24 件
   - [Zenn](https://zenn.dev/) で技術記事 (スクラップ含む) を 4 件、ブックを 2 件
@@ -109,13 +115,13 @@ FlutterKaigi 2021 では事前収録の下、ドキュメントに遺すこと�
 - VS Code Meetup 主催のカンファレンス (VSCodeCon JP) のお手伝い
   - 進行形。ただし、昨年ほどコミットできない見通しとなります mm
 - コントリビュート 88 プロジェクト
-  - FlutterKaigi/2022
-  - chooyan-eng/flutter_calendar
-  - chooyan-eng/calendar_widget
-  - chooyan-eng/calendar_logic
-  - vuejs-jp/vuefes-2022
-  - LPF-REVUP/lpf-revup-2022
-  - vscodejp/conference
+  - [FlutterKaigi/20223](https://github.com/FlutterKaigi/20223)
+  - [chooyan-eng/flutter_calendar](https://github.com/chooyan-eng/flutter_calendar)
+  - [chooyan-eng/calendar_widget](https://github.com/chooyan-eng/calendar_widget)
+  - [chooyan-eng/calendar_logic](https://github.com/chooyan-eng/calendar_logic)
+  - [vuejs-jp/vuefes-2022](https://github.com/vuejs-jp/vuefes-2022)
+  - [LPF-REVUP/lpf-revup-2022](https://github.com/LPF-REVUP/lpf-revup-2022)
+  - [vscodejp/conference](https://github.com/vscodejp/conference)
   - etc
 
 今年の主軸も TypeScript/React の辺りとなりましたが、最近 Rust の学習を始めています。実際、その Rust の学習については、ちょっとした CLI の製作より触れ始め、簡易的な API サーバを構築したりと Rust 力を研鑽しています。
@@ -123,6 +129,8 @@ FlutterKaigi 2021 では事前収録の下、ドキュメントに遺すこと�
 また、開発フローの改善やモブプロの推進を始め、プロジェクトメンバーの意思統一や設計の認識合わせに努めています。
 
 ### Problem : 上手く行かなかったこと
+
+(総括)
 
 - ミートアップのイベント開催が停滞していた
   - Flutter 日本ユーザーグループ主催のミートアップを開催していなかった

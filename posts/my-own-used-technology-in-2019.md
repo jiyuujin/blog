@@ -1,7 +1,7 @@
 ---
 layout: Article.tsx
 publish_date: 2019-12-06
-title: 'Web デベロッパーとして 2019 年に使った技術スタック'
+title: '2019 年にさわった技術'
 description: '自身が主催、参加する年内最後のミートアップ v-kansai #12 の機会に 2019 年の振り返りをさせていただきました。'
 slug: my-own-used-technology-in-2019
 reaction: 😄
