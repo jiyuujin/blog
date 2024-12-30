@@ -92,6 +92,20 @@ https://blog.nekohack.me/posts/my-own-used-technology-in-2020
   - etc
 - Twitter スペースの運営を通して MC 力を身に付けた
 
+コロナ禍の期間中にありながら、その時期特有の取組のひとつとして、Twitter スペースを利用した「朝活」の取組を継続させていただきました。
+
+毎朝喋る内容を Notion のドキュメントに記録するため、Notion のデータベース機能を使用させていただきました。
+
+ドキュメントのテンプレートを事前に準備、Notion API を利用することで、ドキュメントのベースを作成するのを効率化できます。
+
+https://blog.nekohack.me/posts/notion-api-usage-as-a-database/
+
+開催にこぎ着けた FlutterKaigi 2021 について、無事に初回の開催を遂げることができました。
+
+https://blog.nekohack.me/posts/flutter-communities-in-2021/
+
+https://blog.nekohack.me/posts/thanks-to-join-flutterkaigi-2021/
+
 ### Problem : 上手く行かなかったこと
 
 - Flutter ハンズオンで自身の満足がいく運営の下進められなかった
