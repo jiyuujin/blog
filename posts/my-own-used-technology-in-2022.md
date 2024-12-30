@@ -124,7 +124,39 @@ FlutterKaigi 2021 では事前収録の下、ドキュメントに遺すこと�
   - [vscodejp/conference](https://github.com/vscodejp/conference)
   - etc
 
-今年の主軸も TypeScript/React の辺りとなりましたが、最近 Rust の学習を始めています。実際、その Rust の学習については、ちょっとした CLI の製作より触れ始め、簡易的な API サーバを構築したりと Rust 力を研鑽しています。
+今年は一段と、カンファレンスのスタッフ業に注力させていただいておりました。
+
+(FlutterKaigi 2022 ふりかえり)
+
+https://blog.nekohack.me/posts/flutter-communities-in-2022/
+
+(LINE Developers 主催の Rev Up 2022 ふりかえり)
+
+https://blog.nekohack.me/posts/deep-dive-revup-2022/
+
+(Vue Fes Japan Online 2022 ふりかえり)
+
+https://blog.nekohack.me/posts/deep-dive-vuefes-2022/
+
+来年は、オフラインでカンファレンスを開催できれば良いなどと考えつつ、そういった方面の知見吸収、界隈の方々との交流・発信に注力させていただければ。
+
+なお、スキル・書きものについては、今年も TypeScript/React の辺りに主軸が置かれましたが、最近 Rust の学習を始めさせてもらっています。
+
+ハンズオンを企画させてもらうことが多く、アプリケーションを構築する上で必要な考え方を、改めて再認識させられる時間となりました。
+
+(モノレポを学習したい)
+
+https://blog.nekohack.me/posts/monorepo-tutorial/
+
+(Flutter におけるパッケージ開発を学習したい)
+
+https://blog.nekohack.me/posts/answer-to-learn-calendar-app-on-flutter/
+
+(Vite によってバンドルされた React 上の Web アプリで LINE API を使用したい)
+
+https://blog.nekohack.me/posts/answer-to-learn-react-with-line/
+
+実際、その Rust の学習については、ちょっとした CLI の製作より触れ始め、簡易的な API サーバを構築したりと Rust 力を研鑽しています。
 
 また、開発フローの改善やモブプロの推進を始め、プロジェクトメンバーの意思統一や設計の認識合わせに努めています。
 
