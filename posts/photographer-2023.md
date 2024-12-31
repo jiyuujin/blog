@@ -35,16 +35,23 @@ https://photos.app.goo.gl/thzKRWQSCEu3k5pR6
 
 細かいことを言わせてもらうと、カンファレンスという大きな「ハコ」で撮影する場合は、最低 200mm のレンズをおすすめしたい。
 
+FlutterKaigi 2023 でお世話になっている株式会社ナビタイムさんの会場について。
+
+![](https://i.imgur.com/4j77zZe.jpg)
+
 正直 100mm 以内のレンズでも、カンファレンスの場で撮影する分に事足りるといえば、それは間違いありません。
 
 (この度、活用していたレンズたち)
 
+- [AF-S NIKKOR 80-400mm f/4.5-5.6G ED VR](https://www.nikon-image.com/products/nikkor/fmount/af-s_nikkor_80-400mm_f45-56g_ed_vr/spec.html)
+- [AI AF Zoom-Nikkor 80-200mm f/2.8D ED](https://www.nikon-image.com/products/nikkor/fmount/ai_af_zoom-nikkor_80-200mm_f28d_ed/)
+- [AF-S NIKKOR 70-200mm f/2.8G ED VR II](https://www.nikon-image.com/products/nikkor/fmount/af-s_nikkor_70-200mm_f28g_ed_vr_2/spec.html)
 - [AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR](https://www.nikon-image.com/products/nikkor/fmount/af-s_dx_nikkor_18-140mm_f35-56g_ed_vr/spec.html)
 - [AF-S NIKKOR 85mm f/1.8G](https://www.nikon-image.com/products/nikkor/fmount/af-s_nikkor_85mm_f18g/spec.html)
 
-スピーカーの顔、とりわけ顔の表情によりフォーカスを当てたかった想いがあります。しかし、それはほぼできませんでした。
+スピーカーの顔、とりわけ顔の表情によりフォーカスを当てたかった想いがあったものの、それを今回は狙いませんでした。
 
-Vue Fes Japan 2023 の会場 [中野セントラルパーク](https://www.nakano-centralpark.jp/) については、想定以上に広過ぎました。事前に会場見学等の場面で確認していたら、その後の取るべき選択肢も違っていたような気がしています。
+なお、Vue Fes Japan 2023 の会場 [中野セントラルパーク](https://www.nakano-centralpark.jp/) については、想定以上に広過ぎました。事前に会場見学等の場面で確認していたら、その後の取るべき選択肢も違っていたような気がしています。
 
 とはいえこうした判断も、フロントエンドカンファレンス関西 2019 以来進めてきた経験とあって、結構その辺りの感覚が鈍っていました。
 
