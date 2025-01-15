@@ -12,7 +12,7 @@ export const description =
   "Nuxt製のウェブログとして2018年10月より個人ブログの運営を開始、2023年春先にかけLume製へリプレースを進め、アプリケーション構築を目的としたデータ設計に従事しています。";
 
 const site = lume({
-  location: new URL("https://blog.nekohack.me/"),
+  location: new URL(`https://blog.nekohack.me${Deno.env.get('IS_PREVIEW') ? `/pr-preview-${Deno.env.get('PR_NUMBER')}` : '/'}`),
 });
 
 site
