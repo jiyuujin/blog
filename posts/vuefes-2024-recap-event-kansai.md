@@ -1,7 +1,7 @@
 ---
 layout: Article.tsx
 publish_date: 2025-01-30
-title: 'Vue Fes Japan 2024 Recap イベント @ SBI 日本少額短期保険 (Osaka)'
+title: 'Vue Fes Japan 2024 Recap イベント @ SBI日本少額短期保険 (Osaka)'
 description: 'Vue Fes Japan 2024 Recap イベントとして v-kansai 主催のイベントを関西 (大阪) にて開催させていただきましたので、その記録をば。'
 slug: vuefes-2024-recap-event-kansai
 reaction: 🥰
@@ -14,11 +14,11 @@ tags:
 
 https://vuefes.jp/2024/sessions/hal
 
-会場は、グランフロント大阪に拠点を構える「SBI 日本少額短期保険株式会社」様。
+会場は、グランフロント大阪に拠点を構える「SBI日本少額短期保険株式会社」様。
 
 ![](https://i.imgur.com/mmi6ATq.jpg)
 
-### SBI 日本少額短期保険株式会社について
+### SBI日本少額短期保険株式会社について
 
 ---
 
