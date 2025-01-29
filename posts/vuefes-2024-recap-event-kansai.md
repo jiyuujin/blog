@@ -1,6 +1,6 @@
 ---
 layout: Article.tsx
-publish_date: 2025-01-30
+publish_date: 2025-01-29
 title: 'Vue Fes Japan 2024 Recap イベント @ SBI日本少額短期保険 (Osaka)'
 description: 'Vue Fes Japan 2024 Recap イベントとして v-kansai 主催のイベントを関西 (大阪) にて開催させていただきましたので、その記録をば。'
 slug: vuefes-2024-recap-event-kansai
