@@ -44,7 +44,7 @@ export default ({ title, description, slug, reaction, children }: Data) => (
       <meta
         property="og:image"
         content={reaction
-          ? `https://blog-og-image.jiyuujinunite.workers.dev/${reaction}`
+          ? `https://blog-og-image.jiyuujinunite.workers.dev/?emoji=${reaction}`
           : ""}
       />
       <meta
@@ -56,7 +56,7 @@ export default ({ title, description, slug, reaction, children }: Data) => (
       <meta
         property="twitter:image"
         content={reaction
-          ? `https://blog-og-image.jiyuujinunite.workers.dev/${reaction}`
+          ? `https://blog-og-image.jiyuujinunite.workers.dev/?emoji=${reaction}`
           : ""}
       />
       <meta property="twitter:site" content="@jiyuujinlab" />
