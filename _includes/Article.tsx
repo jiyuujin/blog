@@ -13,59 +13,65 @@ export default ({
   reaction,
 }) => (
   <>
-    <header className="max-w-screen mx-auto w-full py-4">
-      <div className="h-full px-6 flex flex-col items-center justify-center">
+    <header className="max-w-screen-xl mx-auto w-full py-8">
+      <div className="px-6 flex flex-col items-center text-center">
         <svg
-          className="w-25 h-25 border-4 border-white rounded-full"
-          background-color="black"
+          className="w-24 h-24 border-4 border-white rounded-full bg-black bg-opacity-50"
+          viewBox="0 0 300 300"
         >
           <circle
-            cx="50%"
-            r="150"
+            cx="150"
+            cy="150"
+            r="140"
             stroke="white"
             strokeWidth="10"
             fill="black"
-            opacity="50%"
+            opacity="0.5"
           />
           <text
-            x="50%"
-            y="50%"
+            x="150"
+            y="150"
             textAnchor="middle"
             dominantBaseline="central"
             fontSize="60"
+            fill="white"
           >
             {reaction}
           </text>
         </svg>
-        <h1 className="mt-3 text-4xl text-gray-900 font-bold">
+        <h1 className="mt-4 text-4xl font-bold text-gray-900">
           {title ?? "個人ブログ"}
         </h1>
-        {description && <p className="text-xl text-gray-600">{description}</p>}
-        <p className="text-gray-500/80">
-          <span>By {"jiyuujin"} at</span>
+        {description && (
+          <p className="mt-2 text-lg text-gray-600">{description}</p>
+        )}
+        <p className="mt-2 text-sm text-gray-500">
+          <span>By jiyuujin at</span>
           {publish_date && (
             <time dateTime={publish_date.toISOString()}>
               {publish_date.toLocaleDateString("en-US")}
             </time>
           )}
         </p>
-        <div className="flex gap-x-2 flex-wrap">
-          {(tags ?? [])
-            .filter((e) => !/^\s*$/.test(e))
-            .map((tag: string) => (
-              <div key={tag} className="text-bluegray-500 font-bold">
-                {`#${tag}`}
-              </div>
-            ))}
-        </div>
+        {tags?.length > 0 && (
+          <div className="mt-3 flex gap-2 flex-wrap justify-center">
+            {tags
+              .filter((tag: string) => tag.trim() !== "")
+              .map((tag: string) => (
+                <span key={tag} className="text-sm text-gray-500 font-medium">
+                  #{tag}
+                </span>
+              ))}
+          </div>
+        )}
       </div>
     </header>
 
-    <div className="max-w-screen px-6">
-      <ul className="flex justify-center pt-4 lt-sm:pt-2">
-        {getIcons().map((icon, key) => (
-          <li key={key} className="mx-3 my-3">
-            <a href={icon.url} target="_blank">
+    <div className="max-w-screen-xl mx-auto px-6">
+      <ul className="flex justify-center py-4">
+        {getIcons().map((icon, idx) => (
+          <li key={idx} className="mx-3">
+            <a href={icon.url} target="_blank" rel="noopener noreferrer">
               <Icon name={icon.name} />
             </a>
           </li>
@@ -73,11 +79,11 @@ export default ({
       </ul>
     </div>
 
-    <div className="max-w-screen px-6 pt-2 mx-auto">
+    <div className="max-w-screen-xl mx-auto px-6">
       <a
         href={`https://b.hatena.ne.jp/entry/https://blog.nekohack.me/posts/${slug}`}
         target="_blank"
-        rel="noopenner noreferrer"
+        rel="noopener noreferrer"
         className="hatena-bookmark-button"
         data-hatena-bookmark-layout="touch-counter"
         title={`${title}をはてなブックマークに追加`}
@@ -92,15 +98,15 @@ export default ({
       </a>
     </div>
 
-    <div className="max-w-screen px-6 pt-2 mx-auto">
+    <div className="max-w-screen-xl mx-auto px-6 pt-6">
       <article className="znc post-detail leading-loose">{children}</article>
     </div>
 
-    <div className="max-w-screen px-6 pt-2 mx-auto">
+    <div className="max-w-screen-xl mx-auto px-6 pt-4">
       <a
         href={`https://b.hatena.ne.jp/entry/https://blog.nekohack.me/posts/${slug}`}
         target="_blank"
-        rel="noopenner noreferrer"
+        rel="noopener noreferrer"
         className="hatena-bookmark-button"
         data-hatena-bookmark-layout="touch-counter"
         title={`${title}をはてなブックマークに追加`}
@@ -114,5 +120,11 @@ export default ({
         />
       </a>
     </div>
+
+    <footer className="max-w-screen-xl mx-auto px-6 py-6 text-center">
+      <p className="text-sm text-gray-600">
+        © 2018–2025 nekohack Company. some rights reserved.
+      </p>
+    </footer>
   </>
 );
