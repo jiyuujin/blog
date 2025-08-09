@@ -22,6 +22,7 @@ export default ({ title, description, slug, reaction, children }: Data) => (
         charset="utf-8"
         async="async"
       />
+      <script src="https://js.stripe.com/v3/"></script>
       <title>{title || blogTitle}</title>
       <meta
         name="viewport"

@@ -1,4 +1,5 @@
 import { Icon } from "./Icon.tsx";
+import { StripeCheckout } from "./StripeCheckout.tsx";
 import { getIcons } from "./utils.tsx";
 
 export const layout = "base.tsx";
@@ -114,5 +115,7 @@ export default ({
         />
       </a>
     </div>
+
+    <StripeCheckout />
   </>
 );
