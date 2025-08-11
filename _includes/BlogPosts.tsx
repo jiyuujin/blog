@@ -1,7 +1,7 @@
-import type { Data as PageData } from "lume/core/file.ts";
+import type { Page } from "lume/core.ts";
 import { BlogPost } from "./BlogPost.tsx";
 
-export const BlogPosts = ({ posts }: { posts: PageData[] }) => (
+export const BlogPosts = ({ posts }: { posts: Page[] }) => (
   <div className="max-w-screen px-6">
     <ul
       id="blogMain"

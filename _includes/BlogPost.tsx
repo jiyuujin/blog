@@ -1,4 +1,4 @@
-import type { Data as PageData } from "lume/core/file.ts";
+import type { PageData } from "lume/core.ts";
 import { joinUrl } from "./utils.tsx";
 
 export const BlogPost = ({ post }: { post: PageData }) => (
@@ -24,7 +24,7 @@ export const BlogPost = ({ post }: { post: PageData }) => (
     </div>
 
     <p className="text-gray-500/80">
-      <span>By jiyuujin</span>
+      <span>By {"jiyuujin"}</span>
       {post.data.publish_date && (
         <time dateTime={post.data.publish_date.toISOString()}>
           {` at ${post.data.publish_date.toLocaleDateString("en-US")}`}
