@@ -1,18 +1,17 @@
+export type { Data } from "https://deno.land/x/lume@v2.5.3/core/file.ts";
+export { default as loader } from "https://deno.land/x/lume@v2.5.3/core/loaders/text.ts";
 export type {
-  Data,
   Engine,
   Helper,
-  Page,
-  Site,
-} from "https://deno.land/x/lume@v1.17.5/core.ts";
-export { merge } from "https://deno.land/x/lume@v1.17.5/core/utils.ts";
-export { default as loader } from "https://deno.land/x/lume@v1.17.5/core/loaders/text.ts";
-export {
-  createExtractor,
+} from "https://deno.land/x/lume@v2.5.3/core/renderer.ts";
+export type { default as Site } from "https://deno.land/x/lume@v2.5.3/core/site.ts";
+export { merge } from "https://deno.land/x/lume@v2.5.3/core/utils/object.ts";
+export { createExtractor } from "https://deno.land/std@0.224.0/front_matter/mod.ts";
+export type {
   Format,
-} from "https://deno.land/std@0.191.0/front_matter/mod.ts";
-export type { Parser } from "https://deno.land/std@0.191.0/encoding/front_matter/mod.ts";
-export { parse as parseYAML } from "https://deno.land/std@0.191.0/yaml/parse.ts";
+  Parser,
+} from "https://deno.land/std@0.224.0/front_matter/mod.ts";
+export { parse as parseYAML } from "https://deno.land/std@0.224.0/yaml/parse.ts";
 
-import zenn from "npm:zenn-markdown-html@0.1.148";
+import zenn from "npm:zenn-markdown-html@0.2.1";
 export const markdownToHtml = zenn.default;
