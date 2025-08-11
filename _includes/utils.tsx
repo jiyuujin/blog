@@ -1,4 +1,4 @@
-import { Page } from "../plugins/zenn-renderer/deps.ts";
+import { Page } from "lume/core/file.ts";
 import site from "../_config.ts";
 
 export function joinUrl(to: string): string {

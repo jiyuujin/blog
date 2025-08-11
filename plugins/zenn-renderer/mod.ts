@@ -1,6 +1,9 @@
-import type { Data, Engine, Helper, Site } from "lume/core.ts";
+import type { Data } from "lume/core/file.ts";
 import loader from "lume/core/loaders/text.ts";
-import { merge } from "lume/core/utils.ts";
+import type { Engine, Helper } from "lume/core/renderer.ts";
+import type Site from "lume/core/site.ts";
+import { merge } from "lume/core/utils/object.ts";
+
 import { markdownToHtml } from "./deps.ts";
 
 export interface Options {
@@ -26,7 +29,7 @@ export class MarkdownEngine implements Engine {
     return Promise.resolve(content);
   }
 
-  renderSync(_content: string, _data?: Data, _filename?: string): string {
+  renderComponent(_content: string, _data?: Data, _filename?: string): string {
     const content = markdownToHtml(_content, {
       embedOrigin: "https://embed.zenn.studio",
     });
@@ -43,10 +46,11 @@ export default function (userOptions?: Partial<Options>) {
   return function (site: Site) {
     const engine = new MarkdownEngine();
 
-    site.loadPages(options.extensions, loader, engine);
+    // site.loadPages(options.extensions, loader, engine);
+    site.loadPages(options.extensions, loader);
 
     function filter(string: string, _inline = false): string {
-      return engine.renderSync(string?.toString() || "").trim();
+      return engine.renderComponent(string?.toString() || "").trim();
     }
 
     site.filter("md", filter as Helper);

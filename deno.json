@@ -5,17 +5,17 @@
     "jsxImportSource": "npm:react"
   },
   "tasks": {
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "serve": "deno task lume -s",
     "build": "deno task lume"
   },
   "lint": {
-    "exclude": ["./_site", "./_bin", "./posts"],
+    "exclude": ["./_site", "./_bin", "./posts", "./assets/bakeneko2.svg"],
     "rules": {
       "tags": ["recommended"]
     }
   },
   "fmt": {
-    "exclude": ["./_site", "./_bin", "./posts"]
+    "exclude": ["./_site", "./_bin", "./posts", "./assets/bakeneko2.svg"]
   }
 }
