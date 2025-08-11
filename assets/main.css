@@ -24,11 +24,11 @@ main {
   margin: auto;
 }
 
-.post-detail div a {
+.post-detail a {
   color: #fd0f82;
 }
 
-.post-detail div h2 {
+.post-detail h2 {
   padding: 1rem 1.25rem;
   margin: 1.25rem 0;
   color: #35495e;
@@ -37,7 +37,7 @@ main {
   border-left: solid 5px #42b883;
 }
 
-.post-detail div h3 {
+.post-detail h3 {
   padding: 1rem 1.25rem;
   margin: 1.25rem 0;
   color: #35495e;
@@ -46,7 +46,7 @@ main {
   border-left: solid 5px #35495e;
 }
 
-.post-detail div h4 {
+.post-detail h4 {
   padding: 1rem 1.25rem;
   margin: 1.25rem 0;
   color: #35495e;
@@ -55,7 +55,7 @@ main {
   border-left: solid 5px #ccc;
 }
 
-.post-detail div p {
+.post-detail p {
   margin: 1rem 0;
   line-height: 2;
   color: #000;
@@ -64,7 +64,7 @@ main {
   text-align: left;
 }
 
-.post-detail div ol {
+.post-detail ol {
   padding: 0 0 0 1.125rem;
   margin: 0;
   color: #35495e;
@@ -73,7 +73,7 @@ main {
   text-align: left;
 }
 
-.post-detail div ul {
+.post-detail ul {
   padding: 0 0 0 1.125rem;
   margin: 0;
   color: #35495e;
@@ -83,34 +83,34 @@ main {
   list-style: disc;
 }
 
-.post-detail div dd {
+.post-detail dd {
   padding: 0 0 0 1.125rem;
   font-size: 1rem;
   font-weight: 400;
 }
 
-.post-detail div table {
+.post-detail table {
   margin: 1rem 0 1.125rem 0;
   font-size: 1rem;
   font-weight: 400;
   border-collapse: collapse;
 }
 
-.post-detail div td,
-.post-detail div th {
+.post-detail td,
+.post-detail th {
   padding: 1.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   border: 2px solid #ccb8a3;
 }
 
-.post-detail div th {
+.post-detail th {
   padding: 1.125rem 1.25rem;
   font-size: 1rem;
   font-weight: 400;
 }
 
-.post-detail div pre {
+.post-detail pre {
   padding: 1.25rem 1.125rem;
   overflow-x: scroll;
   font-size: 1rem;
@@ -118,29 +118,29 @@ main {
   text-align: left;
 }
 
-.post-detail div code {
+.post-detail code {
   background-color: rgba(175, 184, 193, 0.4);
   font-size: 1rem;
   font-weight: 400;
 }
 
-.post-detail div img {
+.post-detail img {
   width: 80%;
   margin: 0 10%;
 }
 
-.post-detail div iframe {
+.post-detail iframe {
   width: 100%;
 }
 
-.post-detail div details {
+.post-detail details {
   margin-bottom: 24px;
   font-size: 1rem;
   font-weight: 400;
   text-align: left;
 }
 
-.embed-card {
+.post-detail .embed-card {
   max-width: 600px;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
@@ -154,18 +154,18 @@ main {
   transition: box-shadow 0.2s ease;
 }
 
-.embed-card:hover {
+.post-detail .embed-card:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.embed-card a {
+.post-detail .embed-card a {
   display: flex;
   text-decoration: none;
   color: inherit;
   align-items: stretch;
 }
 
-.embed-card-image {
+.embed-card .embed-card-image {
   width: 120px;
   height: 120px;
   flex-shrink: 0;
@@ -176,14 +176,14 @@ main {
   justify-content: center;
 }
 
-.embed-card-image img {
+.embed-card .embed-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.embed-card-content {
+.embed-card .embed-card-content {
   padding: 1rem;
   flex: 1;
   display: flex;
@@ -191,7 +191,7 @@ main {
   justify-content: center;
 }
 
-.embed-card-content h3 {
+.embed-card .embed-card-content h3 {
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 0.4rem;
@@ -199,7 +199,7 @@ main {
   line-height: 1.4;
 }
 
-.embed-card-content p {
+.embed-card .embed-card-content p {
   font-size: 0.875rem;
   color: #4a5568;
   margin: 0;
@@ -207,18 +207,18 @@ main {
 }
 
 @media (max-width: 480px) {
-  .embed-card a {
+  .post-detail .embed-card a {
     flex-direction: column;
   }
 
-  .embed-card-image {
+  .embed-card .embed-card-image {
     width: 100%;
     height: 160px;
     border-right: none;
     border-bottom: 1px solid #e2e8f0;
   }
 
-  .embed-card-content {
+  .embed-card .embed-card-content {
     padding: 0.75rem 1rem;
   }
 }
