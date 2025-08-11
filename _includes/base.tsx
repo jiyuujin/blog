@@ -1,4 +1,4 @@
-import type { Data } from "lume/core/file.ts";
+import type { Data } from "lume/core";
 import {
   description as blogDescription,
   title as blogTitle,
@@ -12,14 +12,10 @@ export default ({ title, description, slug, reaction, children }: Data) => (
       <link rel="stylesheet" href="/assets/main.css" />
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap"
-      />
-      <link
-        rel="stylesheet"
         href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css"
       />
-      {/* <link rel="stylesheet" href="https://esm.sh/zenn-content-css?css" /> */}
-      {/* <script src="https://embed.zenn.studio/js/listen-embed-event.js" /> */}
+      <link rel="stylesheet" href="https://esm.sh/zenn-content-css?css" />
+      <script src="https://embed.zenn.studio/js/listen-embed-event.js" />
       <script
         type="text/javascript"
         src="https://b.st-hatena.com/js/bookmark_button.js"

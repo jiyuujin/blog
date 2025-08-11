@@ -2,13 +2,10 @@ import lume from "lume/mod.ts";
 import favicon from "lume/plugins/favicon.ts";
 import feed from "lume/plugins/feed.ts";
 import jsx from "lume/plugins/jsx.ts";
-// import windi from "lume/plugins/windi_css.ts"; // replace to "unocss" if you prefer UnoCSS
-// import windicss from "./plugins/windicss/mod.ts";
-import unocss from "lume/plugins/unocss.ts";
+import windi from "lume/plugins/windi_css.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import pagefind from "lume/plugins/pagefind.ts";
-// import zennRenderer from "./plugins/zenn-renderer/mod.ts";
-import mdRenderer from "./plugins/md-renderer/mod.ts";
+import zennRenderer from "./plugins/zenn-renderer/mod.ts";
 
 export const title = "個人ブログ";
 export const description =
@@ -37,14 +34,8 @@ site
     },
   }))
   .use(jsx())
-  // .use(windicss())
-  .use(unocss({
-    cssFile: "/assets/main.css",
-    transformers: [],
-    reset: "tailwind",
-  }))
-  // .use(zennRenderer())
-  .use(mdRenderer())
+  .use(windi())
+  .use(zennRenderer())
   .use(resolveUrls())
   .use(pagefind());
 
