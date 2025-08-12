@@ -4,6 +4,7 @@ import type { Engine, Helper } from "lume/core/renderer.ts";
 import type Site from "lume/core/site.ts";
 import { merge } from "lume/core/utils/object.ts";
 import MarkdownIt from "npm:markdown-it";
+import hljs from "npm:highlight.js";
 
 import { fetchOGP } from "./deps.ts";
 
@@ -27,7 +28,21 @@ export class MarkdownEngine implements Engine {
     _data?: Data,
     _filename?: string,
   ): Promise<string> {
-    const md = new MarkdownIt();
+    const md = new MarkdownIt({
+      highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return '<pre><code class="hljs">' +
+              hljs.highlight(str, { language: lang, ignoreIllegals: true })
+                .value +
+              "</code></pre>";
+          } catch (__) {
+            // Ignore errors
+          }
+        }
+        return "";
+      },
+    });
     let html = md.render(_content);
 
     const regex = /<p>\s*(https?:\/\/[^\s<>"']+)\s*<\/p>/g;
