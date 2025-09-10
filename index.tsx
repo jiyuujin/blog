@@ -6,8 +6,8 @@ import { Icon } from "./_includes/Icon.tsx";
 
 export const layout = "base.tsx";
 
-export default (_: Data) => {
-  const posts = getPosts();
+export default async (_: Data) => {
+  const posts = await getPosts();
 
   return (
     <>
