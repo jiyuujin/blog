@@ -3,8 +3,8 @@ import loader from "lume/core/loaders/text.ts";
 import type { Engine, Helper } from "lume/core/renderer.ts";
 import type Site from "lume/core/site.ts";
 import { merge } from "lume/core/utils/object.ts";
-import MarkdownIt from "npm:markdown-it";
-import hljs from "npm:highlight.js";
+import MarkdownIt from "npm:markdown-it@14.1.0";
+import hljs from "npm:highlight.js@11.11.1";
 
 import { fetchOGP } from "./deps.ts";
 
