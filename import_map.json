@@ -1,6 +1,10 @@
 {
   "imports": {
     "lume/": "https://deno.land/x/lume@v2.5.3/",
-    "date-fns": "npm:date-fns@2.30.0"
+    "date-fns": "npm:date-fns@2.30.0",
+    "highlight.js": "npm:highlight.js@11.11.1",
+    "markdown-it": "npm:markdown-it@14.1.0",
+    "rss-parser": "npm:rss-parser@3.13.0",
+    "ts-pattern": "npm:ts-pattern@5.8.0"
   }
 }
