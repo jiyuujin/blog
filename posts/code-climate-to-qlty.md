@@ -26,7 +26,7 @@ https://docs.qlty.sh/what-is-qlty
 
 https://docs.qlty.sh/migration/guide
 
-## Qlty CLI を使ってみる
+:::details Qlty CLI を使ってみる
 
 `qlty check` で、各種 Linter (ESLint など) を実行し、コードの静的解析を行います。
 
@@ -40,7 +40,9 @@ qlty check ./src/index.ts
 qlty check ./src/index.ts > qlty_output.txt
 ```
 
-### Qlty CLI を利用する
+:::
+
+## Qlty CLI を利用する
 
 Code Climate API 利用時の設定ファイル .codeclimate.yaml を .qlty/qlty.toml に置き換えます。
 
@@ -50,7 +52,13 @@ Code Climate API 利用時の設定ファイル .codeclimate.yaml を .qlty/qlty
 qlty config show
 ```
 
-Qlty CLI を利用すると、下記のような YAML を書けば対応することができます。
+GitHub のリポジトリに以下の Secrets を設定してください：
+
+| Secret 名 | 内容 |
+| --- | --- |
+| `QLTY_TOKEN` | Code Climate の API キー（ダッシュボードにて API キーを取得） |
+
+Qlty CLI を利用すると、下記のようなワークフローを書くことで、GitHub Actions にてチェックすることができます。
 
 :::details Qlty CLI を利用する。
 
@@ -119,3 +127,5 @@ jobs:
 ```
 
 :::
+
+このように PR が作成された時点で、変更されたファイルを対象に解析が実行されます。
