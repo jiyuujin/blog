@@ -45,6 +45,13 @@ export class MarkdownEngine implements Engine {
     });
     let html = md.render(_content);
 
+    const hasTable = html.includes("<table>");
+
+    if (hasTable) {
+      html = html.replaceAll("<table>", "<div class='table-wrapper'><table>");
+      html = html.replaceAll("</table>", "</table></div>");
+    }
+
     const regex = /<p>\s*(https?:\/\/[^\s<>"']+)\s*<\/p>/g;
     const matches = [...html.matchAll(regex)];
 
