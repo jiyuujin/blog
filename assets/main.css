@@ -89,23 +89,29 @@ main {
   font-weight: 400;
 }
 
+.post-detail .table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .post-detail table {
   margin: 1rem 0 1.125rem 0;
   font-size: 1rem;
   font-weight: 400;
   border-collapse: collapse;
+  width: auto;
 }
 
 .post-detail td,
 .post-detail th {
-  padding: 1.25rem 1.5rem;
+  padding: 0.75rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   border: 2px solid #ccb8a3;
 }
 
 .post-detail th {
-  padding: 1.125rem 1.25rem;
+  padding: 0.75rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
 }
