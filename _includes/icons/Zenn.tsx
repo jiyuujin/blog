@@ -1,7 +1,7 @@
-export const Zenn = ({ color = "currentColor" }) => (
+export const Zenn = ({ color = "currentColor", size = 24 }) => (
   <svg
-    width="24px"
-    height="24px"
+    width={size}
+    height={size}
     viewBox="0 0 88.3 88.3"
     xmlns="http://www.w3.org/2000/svg"
     fill={color}

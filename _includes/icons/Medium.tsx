@@ -1,7 +1,7 @@
-export const Medium = ({ color = "currentColor" }) => (
+export const Medium = ({ color = "currentColor", size = 24 }) => (
   <svg
-    width="40px"
-    height="24px"
+    width={size}
+    height={size}
     viewBox="0 0 42 25"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

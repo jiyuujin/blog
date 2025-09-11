@@ -5,9 +5,17 @@ import { Zenn } from "./icons/Zenn.tsx";
 import { Mastodon } from "./icons/Mastodon.tsx";
 import { Bluesky } from "./icons/Bluesky.tsx";
 import { Twitter } from "./icons/Twitter.tsx";
+import { Note } from "./icons/Note.tsx";
 
 export interface IconProps {
-  name: "github" | "medium" | "zenn" | "mastodon" | "bluesky" | "x_twitter";
+  name:
+    | "github"
+    | "medium"
+    | "zenn"
+    | "note"
+    | "mastodon"
+    | "bluesky"
+    | "x_twitter";
 }
 
 export const Icon = (props: IconProps) => {
@@ -17,6 +25,7 @@ export const Icon = (props: IconProps) => {
     .with("github", () => <GitHub />)
     .with("medium", () => <Medium />)
     .with("zenn", () => <Zenn />)
+    .with("note", () => <Note />)
     .with("mastodon", () => <Mastodon />)
     .with("bluesky", () => <Bluesky />)
     .with("x_twitter", () => <Twitter />)

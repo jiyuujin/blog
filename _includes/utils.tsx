@@ -47,9 +47,27 @@ async function getZennPosts(): Promise<Page[]> {
   }));
 }
 
+async function getNotePosts(): Promise<Page[]> {
+  const feed = await parser.parseURL("https://note.com/uraneko/rss");
+  return feed.items.map((item) => ({
+    data: {
+      title: item.title || "Untitled",
+      description: item.contentSnippet || "",
+      slug: item.guid || "",
+      publish_date: new Date(item.pubDate) || "",
+      tags: item.categories ? [...item.categories, "note"] : ["note"],
+      reactions: [],
+      url: item.link || "",
+      source: "note",
+    },
+    content: item.content || "",
+  }));
+}
+
 export async function getPosts(): Promise<Page[]> {
   const mediumPosts = await getMediumPosts();
   const zennPosts = await getZennPosts();
+  const notePosts = await getNotePosts();
 
   const localPosts: Page[] = site.pages.map((p) => ({
     ...p,
@@ -59,7 +77,9 @@ export async function getPosts(): Promise<Page[]> {
     },
   }));
 
-  return [...localPosts, ...mediumPosts, ...zennPosts].sort(comparePage);
+  return [...localPosts, ...mediumPosts, ...zennPosts, ...notePosts].sort(
+    comparePage,
+  );
 }
 
 export function getIcons(): { name: string; url: string }[] {
@@ -75,6 +95,10 @@ export function getIcons(): { name: string; url: string }[] {
     {
       name: "zenn",
       url: "https://zenn.dev/jiyuujin",
+    },
+    {
+      name: "note",
+      url: "https://note.com/uraneko",
     },
     {
       name: "mastodon",
