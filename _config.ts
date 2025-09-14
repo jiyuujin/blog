@@ -9,6 +9,7 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 import pagefind from "lume/plugins/pagefind.ts";
 // import zennRenderer from "./plugins/zenn-renderer/mod.ts";
 import mdRenderer from "./plugins/md-renderer/mod.ts";
+import "https://deno.land/std/dotenv/load.ts";
 
 export const title = "個人ブログ";
 export const description =
