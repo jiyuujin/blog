@@ -89,10 +89,6 @@ export function getIcons(): { name: string; url: string }[] {
       url: "https://github.com/jiyuujin",
     },
     {
-      name: "mixi2",
-      url: "https://mixi.social/@jiyuujin",
-    },
-    {
       name: "medium",
       url: "https://medium.com/@jiyuujin",
     },
