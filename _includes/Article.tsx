@@ -1,5 +1,5 @@
 import { Icon } from "./Icon.tsx";
-import { StripeCheckout } from "./StripeCheckout.tsx";
+// import { StripeCheckout } from "./StripeCheckout.tsx";
 import { getIcons } from "./utils.tsx";
 
 export const layout = "base.tsx";
@@ -122,7 +122,7 @@ export default ({
       </a>
     </div>
 
-    <StripeCheckout />
+    {/* <StripeCheckout /> */}
 
     <footer className="max-w-screen-xl mx-auto px-6 py-6 text-center">
       <p className="text-sm text-gray-600">
