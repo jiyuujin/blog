@@ -19,6 +19,11 @@ jobs:
 
       - name: Transpile Lume
         run: deno task build
+        env:
+          STRIPE_PUBLIC_LIVE_KEY: ${{ secrets.STRIPE_PUBLIC_LIVE_KEY }}
+          STRIPE_PUBLIC_TEST_KEY: ${{ secrets.STRIPE_PUBLIC_TEST_KEY }}
+          STRIPE_PUBLIC_LIVE_API: ${{ secrets.STRIPE_PUBLIC_LIVE_API }}
+          STRIPE_PUBLIC_TEST_API: ${{ secrets.STRIPE_PUBLIC_TEST_API }}
 
       - name: upload artifact
         uses: actions/upload-pages-artifact@v3
