@@ -5,7 +5,7 @@
     "jsxImportSource": "npm:react"
   },
   "tasks": {
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run -A --allow-scripts -",
     "serve": "deno task lume -s",
     "build": "deno task lume"
   },
