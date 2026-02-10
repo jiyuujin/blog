@@ -267,5 +267,7 @@ export default ({
         </div>
       </div>
     </footer>
+
+    <script src="https://rocket-form.nekohack.me/loader.js?id=blog-pay"></script>
   </>
 );
