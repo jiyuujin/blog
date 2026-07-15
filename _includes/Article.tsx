@@ -170,11 +170,9 @@ export default ({
           </p>
 
           <a
-            href="#"
-            data-bot-id="blog-interview"
-            onClick={(e) => {
-              e.preventDefault();
-            }}
+            href="https://form-app-website.pages.dev/survey/EKCJti4fvJv5KHW8xqsf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-white text-blue-600 font-bold text-base md:text-lg rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
           >
             <span>アンケートに回答する</span>
@@ -270,7 +268,6 @@ export default ({
       </div>
     </footer>
 
-    <script src="https://rocket-form.nekohack.me/loader.js?id=blog-interview" />
     <script src="https://rocket-form.nekohack.me/loader.js?id=blog-pay" />
   </>
 );
