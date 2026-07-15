@@ -112,9 +112,5 @@ export function getIcons(): { name: string; url: string }[] {
       name: "bluesky",
       url: "https://bsky.app/profile/jiyuujin.bsky.social",
     },
-    {
-      name: "x_twitter",
-      url: "https://x.com/jiyuujinlab",
-    },
   ];
 }
