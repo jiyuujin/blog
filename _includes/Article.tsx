@@ -175,7 +175,7 @@ export default ({
             onClick={(e) => {
               e.preventDefault();
             }}
-            className="inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-white text-blue-600 font-bold text-base md:text-lg rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
+            className="rf-btn-trig inline-flex items-center gap-3 px-8 md:px-10 py-4 md:py-5 bg-white text-blue-600 font-bold text-base md:text-lg rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
           >
             <span>アンケートに回答する</span>
             <svg
