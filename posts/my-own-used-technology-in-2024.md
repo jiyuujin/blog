@@ -53,7 +53,7 @@ https://zenn.dev/p/comm_vue_nuxt
   - [Zenn](https://zenn.dev/) で技術記事を 3 件、スクラップを 8 件
   - [note](https://note.com/) で個人・イベント振り返りを 1 件
 - 4 年連続の開催となった Flutter カンファレンス (FlutterKaigi) のオーガナイズ
-- 3 年連続の開催となった Vue.js 日本ユーザーグループ主催のカンファレンス (Vue Fes) のお手伝い
+- 3 年連続の開催となった Vue.js 日本ユーザーグループ主催のカンファレンス (Vue Fes Japan) のお手伝い
 - コントリビュート 34 プロジェクト
   - [vuejs-jp/vuefes-2024](https://github.com/vuejs-jp/vuefes-2024)
   - [jiyuujin/mastersync-app](https://github.com/jiyuujin/mastersync-app)
@@ -93,7 +93,7 @@ https://rspack.dev/blog/announcing-1-0
 
 昨年の登壇や執筆が 0 件となってしまったのに加え、ブログも比較的少なかったと認識しています。
 
-Vue Fes ウェブサイトをリードさせてもらっていた経験から、10 月の当日直前と 12 月の全体的なふりかえりで、今年の目玉のひとつ「シェア URL」を中心に書かせていただきました。
+Vue Fes Japan ウェブサイトをリードさせてもらっていた経験から、10 月の当日直前と 12 月の全体的なふりかえりで、今年の目玉のひとつ「シェア URL」を中心に書かせていただきました。
 
 https://zenn.dev/comm_vue_nuxt/articles/deep-dive-vuefes-2024-waiwai
 
@@ -103,7 +103,7 @@ https://zenn.dev/comm_vue_nuxt/articles/vuefes-2024-follow-up
 
 https://vuefes-2024-docs.pages.dev/
 
-そんな Vue Fes について、来年は自身の介入の度合を調整 or 場合によっては離脱させていただく予定となる可能性を否定しません。
+そんな Vue Fes Japan について、来年は自身の介入の度合を調整 or 場合によっては離脱させていただく予定となる可能性を否定しません。
 
 また、年の瀬より具体的なアクションをとり始めておりますが、来年はフロントエンドカンファレンス関西 (仮) を復活開催へ主導させていただきたく年始のキックオフをセットアップ、興味のある方とのヒアリングを開始します。
 

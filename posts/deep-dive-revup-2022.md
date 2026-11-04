@@ -237,7 +237,7 @@ module.exports = {
 }
 ```
 
-Vue Fes と違い厳密なデザインは決まっていませんが、唯一フォントやカラーコードに限って決まっていました。
+Vue Fes Japan と違い厳密なデザインは決まっていませんが、唯一フォントやカラーコードに限って決まっていました。
 
 それは tailwind.config.cjs の `theme.extend.colors` で定義しています。
 

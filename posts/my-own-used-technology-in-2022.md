@@ -110,7 +110,7 @@ FlutterKaigi 2021 では事前収録の下、ドキュメントに遺すこと�
 - 執筆 1 件
   - 2022/09/16 [Git & GitHub 連携で役立つ機能](https://gihyo.jp/magazine/SD/archive/2022/202210)
 - 昨年に続いて 2 度目の開催となった Flutter カンファレンス (FlutterKaigi) のオーガナイズ
-- Vue.js 日本ユーザーグループ主催のカンファレンス (Vue Fes) のお手伝い
+- Vue.js 日本ユーザーグループ主催のカンファレンス (Vue Fes Japan) のお手伝い
 - LINE 主催のカンファレンス (Rev Up) のお手伝い
 - VS Code Meetup 主催のカンファレンス (VSCodeCon JP) のお手伝い
   - 進行形。ただし、昨年ほどコミットできない見通しとなります mm
