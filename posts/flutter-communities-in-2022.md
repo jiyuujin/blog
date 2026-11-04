@@ -16,7 +16,7 @@ Qiita Advent Calendar に出稿するのも今日が最後、ここに来て箸�
 
 これまでの技術記事はこちらより確認いただけます。
 
-- [Deep Dive into Vue Fes](https://blog.nekohack.me/posts/deep-dive-vuefes-2022)
+- [Deep Dive into Vue Fes Japan](https://blog.nekohack.me/posts/deep-dive-vuefes-2022)
 - [Deep Dive into Rev Up](https://blog.nekohack.me/posts/deep-dive-revup-2022)
 
 今年は 2 つの大きな技術カンファレンスを裏で支援していました。

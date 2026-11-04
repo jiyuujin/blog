@@ -153,9 +153,9 @@ create trigger on_new_receipt_created
 
 ちなみに Vue Fes Japan 2023 では、この各参加者の購入情報の紐付けについて、データベースの function からのみに制限いたしました。
 
-Vue Fes 運営サイドのみ、チケット管理プラットフォーム Pass Market の情報へアクセス、参加者の購入情報を格納した CSV データを取得できます。
+Vue Fes Japan 運営サイドのみ、チケット管理プラットフォーム Pass Market の情報へアクセス、参加者の購入情報を格納した CSV データを取得できます。
 
-このように Vue Fes 運営サイドのみ操作できること、各参加者が自由気ままに購入情報を更新できなくさせるという仕様を目指したこととの理由から、このデータベースの function が上手くハマりました。
+このように Vue Fes Japan 運営サイドのみ操作できること、各参加者が自由気ままに購入情報を更新できなくさせるという仕様を目指したこととの理由から、このデータベースの function が上手くハマりました。
 
 https://vuefes.jp/2023/passmarket-console/
 

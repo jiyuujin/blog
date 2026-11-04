@@ -71,7 +71,7 @@ https://jp.vcube.com/eventdx/eventin
   - [しずかなインターネット](https://sizu.me/) で 3 件
   - [note](https://note.com/) で個人・イベント振り返りを 1 件
 - 一昨年、昨年に続き 3 度目にして、初めてのオフライン開催となった Flutter カンファレンス (FlutterKaigi) のオーガナイズ
-- 昨年に続いて 5 年ぶりのオフライン開催となった Vue.js 日本ユーザーグループ主催のカンファレンス (Vue Fes) のお手伝い
+- 昨年に続いて 5 年ぶりのオフライン開催となった Vue.js 日本ユーザーグループ主催のカンファレンス (Vue Fes Japan) のお手伝い
 - ローカルの TypeScript コミュニティ kansai.ts 開催の復活
 - コントリビュート 84 プロジェクト
   - [vuejs-jp/vuefes-2023](https://github.com/vuejs-jp/vuefes-2023)
@@ -92,9 +92,9 @@ FlutterKaigi 2023 では、初のオフライン開催を遂げることがで�
 
 https://blog.nekohack.me/posts/flutter-communities-in-2023/
 
-Vue Fes では、走りを見せていた Supabase へ、個人的に一筋の光を見出しました。
+Vue Fes Japan では、走りを見せていた Supabase へ、個人的に一筋の光を見出しました。
 
-良くも悪くも話題持ちきりとなっていた Vue Fes ネームカードについて、Supabase Database Function が裏でチケットプラットフォームと繋がっていた話を書かせていただいております。
+良くも悪くも話題持ちきりとなっていた Vue Fes Japan ネームカードについて、Supabase Database Function が裏でチケットプラットフォームと繋がっていた話を書かせていただいております。
 
 (Vue Fes Japan 2023 ふりかえり)
 
@@ -106,7 +106,7 @@ https://blog.nekohack.me/posts/supabase-database-function/
 
 - 登壇や執筆が 0 件だった
   - そもそもオンライン勉強会をやらなくなっていること、オフライン勉強会もごく限られた場所では積極的にやられていることなどが考えられる
-- Vue Fes ウェブサイトチームのリードに、大きく時間・工数が割かれた
+- Vue Fes Japan ウェブサイトチームのリードに、大きく時間・工数が割かれた
   - こればかりはチームメンバーの稼働状況に一因があり、自身が巻き取るしか解決策がありませんでした
 - ミートアップのイベント運営に入れなかった
   - 一昨年より引き続き、各種コミュニティ PWA Night や VS Code Meetup の運営に支障を来たした

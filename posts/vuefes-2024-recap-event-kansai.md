@@ -50,7 +50,7 @@ https://speakerdeck.com/hal_spidernight/vue-dot-jsdeiosapuriwozuo-rufang-fa
 
 https://speakerdeck.com/hal_spidernight/vitepresswo2zhou-jian-shi-tutemitagan-xiang
 
-続いて私自身より、Vue Fes Japan Online 2022 より 3 年連続、Vue Fes コアスタッフひとりとして活動していた話について、ざっくり総括させていただききました。個人的には、本業で一切 Vue を触らない生活を送っている (かつては永らく Vue を触っていた) ので、そうしたオープンソースとそのプロダクトに触れる機会を作りたかった想いがありました。
+続いて私自身より、Vue Fes Japan Online 2022 より 3 年連続、Vue Fes Japan コアスタッフひとりとして活動していた話について、ざっくり総括させていただききました。個人的には、本業で一切 Vue を触らない生活を送っている (かつては永らく Vue を触っていた) ので、そうしたオープンソースとそのプロダクトに触れる機会を作りたかった想いがありました。
 
 昨年 1 年間私自身 Vue Fes Japan 2024 公式 Web サイトの製作・運用をリードしてきた中で昨年抱えてきた課題を解決しつつ、昨年以上の技術的なチャレンジを推進させていただきました。
 
