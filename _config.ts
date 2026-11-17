@@ -37,6 +37,23 @@ site
       description: "=description",
     },
   }))
+  .use(feed({
+    output: ["/feeds/tracc.rss", "/feeds/tracc.json"],
+    query: "category=Tracc",
+    sort: "publish_date=desc",
+    limit: 100,
+    info: {
+      title: "Tracc ブログ",
+      description: "カンファレンスのスポンサー募集・対応・振り返りの実践ガイド",
+    },
+    items: {
+      title: "=title",
+      description: "=description",
+      published: "=publish_date",
+      updated: "=publish_date",
+      content: "$ article",
+    },
+  }))
   .use(jsx())
   // .use(windicss())
   .use(unocss({
