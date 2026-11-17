@@ -5,7 +5,7 @@ title: 'カンファレンス運営を支える 5 つの個人開発プロダク
 description: ''
 slug: tracc-notes
 reaction: 🪢
-category: Poem
+category: Tracc
 tags:
   - Dart
   - Flutter
