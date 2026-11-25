@@ -54,6 +54,22 @@ site
       content: "$ article",
     },
   }))
+  .use(feed({
+    output: ["/feeds/karaoke-bingo.rss", "/feeds/karaoke-bingo.json"],
+    query: "category=karaoke-bingo",
+    sort: "publish_date=desc",
+    limit: 10,
+    info: {
+      title: "カラオケ採点でビンゴ お知らせ",
+      description: "カラオケ採点でビンゴのお知らせ・更新情報",
+    },
+    items: {
+      title: "=title",
+      description: "=description",
+      published: "=publish_date",
+      updated: "=publish_date",
+    },
+  }))
   .use(jsx())
   // .use(windicss())
   .use(unocss({
